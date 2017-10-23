@@ -1,0 +1,62 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+body{
+    background-color: #dfdfdf;
+}
+#noset{
+    width: 100%;
+}
+#noset .noset{
+    height: 96px;
+    background-color: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 34px;
+    color: #282828;
+    text-align: center;
+    line-height: 96px;
+    position: relative;
+}
+#noset .noset a::before{
+    content: " ";
+    width: 21px;
+    height: 41px;
+    background: url(../img/banner-details-page_06.png) 0 0 no-repeat;
+    position: absolute;
+    left: 30px;
+    top: 28px;
+}
+#noset .navBar,
+#noset .navBar-exit{
+    background-color: #fff;
+    padding: 0 30px;
+}
+#noset .navBar div{
+    height: 88px;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 28px;
+    line-height: 88px;
+    color: #686868;
+}
+#noset .navBar div span{
+    float: right;
+    margin-right: 44px;
+}
+#noset .navBar div{
+    position: relative;
+}
+no#set .navBar div:nth-of-type(3){
+    border: 0;
+}
+#noset .navBar div:nth-of-type(1) a::before,
+#noset .navBar div:nth-of-type(2) a::before,
+#noset .navBar div:nth-of-type(3) a::before{
+    content: " ";
+    width: 17px;
+    height: 33px;
+    background: url(../img/back1@2x.png) 0 0 no-repeat;
+    position: absolute;
+    right: 0;;
+    top: 27px;
+}

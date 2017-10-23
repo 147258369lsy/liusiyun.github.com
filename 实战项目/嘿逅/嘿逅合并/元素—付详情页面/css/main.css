@@ -1,0 +1,61 @@
+	    *{
+		    margin: 0;
+		    padding: 0;
+	    }
+	    a{text-decoration: none;}
+	    #payment_details{
+    		height: 1302px;
+    		width: 750px;
+    		background-color: #F2F2F2;
+    		margin:50px auto;
+            border:1px solid #ccc;
+    	}
+    	#payment_details .banner{
+    		width: 690px;
+    		margin:auto;	
+    	}
+    	#payment_details  .topBar{
+    		height: 96px;
+    		width: 100%;
+            line-height: 96px;
+            text-align:center;
+    		font-size: 26px;
+    		position: relative;
+    		background-color:#fff;	
+    	}
+    	#payment_details .alipay{
+    		height: 404px;
+    		border-top:1px solid #cbcbcb;
+    		border-bottom:1px solid #cbcbcb;
+    		background-color:#fff;
+    	}
+    	#payment_details .banner.finish{
+    		height: 90px;
+    		background-color:#FF9914;
+    		line-height: 90px;
+    		text-align:center;
+    		font-size:20px;
+    		color:#fff;
+    		margin-top:40px;
+    		border-radius: 10px;
+    	}
+    	#payment_details .alipay p{
+    		text-align: center;
+    	}
+    	#payment_details .alipay p:nth-of-type(1){
+    		margin-top: 50px;
+    	}
+    	#payment_details .alipay p:nth-of-type(2){
+    		margin-top: 40px;
+            font-size:30px;
+            color:#ff9914;
+    	}
+    	#payment_details .alipay p:nth-of-type(3){
+    		font-size:20px;
+    		color:#989898;
+    	}
+    	#payment_details .alipay p:nth-of-type(4){
+    		font-size:66px;
+    		color:#282828;
+    		margin-top: 25px;
+    	}

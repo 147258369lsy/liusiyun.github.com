@@ -1,0 +1,243 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.dabox{
+    width: 1000px;
+    /*height: 2200px;*/
+    /*border: 1px solid red;*/
+    background-color: #f2f2f2;
+    margin: auto;
+}
+.dabox .div-diyi{
+    width: 100%;
+    height: 665px;
+    background-color: white;
+    margin-top: 30px;
+}
+.div-diyi .div-hongpa{
+    float: left;
+    color: #282828;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+ul li{
+    list-style: none;
+}
+.div-diyi .div-ul ul{
+    float: left;
+    margin-left: 360px;
+    margin-top: 30px;
+}
+.div-diyi .div-ul ul li{
+    width: 12px;
+    height: 12px;
+    background-color: #282828;
+    border-radius: 50% ;
+    float: left;
+    margin-left: 10px;
+}
+.div-diyi .geqiangfa{
+    clear: both;
+}
+.div-diyi .div-tuyi{
+    float: left;
+    margin-top: 10px;
+    /*margin-left: 10px;*/
+}
+.div-diyi .div-situ .div-bigtu{
+    width: 1022px;
+    height: 212px;
+}
+.div-diyi .div-situ{
+    float: left;
+    margin-top: 10px;
+    width: 750px;
+    height: 230px;
+    overflow: hidden;
+}
+.div-situ .div-tu1{
+    float: left;
+    width: 240px;
+    height: 240px;
+    text-align: center;
+}
+.div-situ .div-tu2{
+    float: left;
+    margin-left: 10px;
+    width: 240px;
+    height: 260px;
+    text-align: center;
+}
+.div-tu1 ,.div-tu2 ,span{
+    display: block;
+    color: #686868;
+    font-size: 28px;
+}
+.div-div{
+    width: 100%;
+    height: 20px;
+    background-color: #f2f2f2;
+}
+/*................2...................*/
+.div-dier{
+    width: 100%;
+    height: 665px;
+    background-color: white;
+    float: left;
+}
+.div-dier .div-weinin{
+    color: #282828;
+    font-size: 30px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.div-dier .div-ul ul{
+    float: left;
+    margin-left: 410px;
+    margin-top: 30px;
+}
+.div-dier .div-ul ul li{
+    width: 12px;
+    height: 12px;
+    background-color: #282828;
+    border-radius: 50% ;
+    float: left;
+    margin-left: 10px;
+}
+
+.div-dier .div-diertu{
+    float: left;
+    margin-top: 28px;
+    margin-left: -120px;
+}
+.div-diertu .div-hangzhou{
+    color: #282828;
+    font-size: 28px;
+    margin-top: 10px;
+}
+.div-diertu .span-xiang{
+    float: left;
+    margin-top: 10px;
+}
+.div-diertu .span-pa{
+    float: left;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.div-diertu .div-pingfangmi{
+    float: left;
+    font-size: 28px;
+    color: #282828;
+    margin-top: 50px;
+    margin-left: -200px;
+}
+.div-diertu .span-dibiao{
+    float: left;
+    margin-top: 105px;
+    margin-left: -445px;
+}
+.div-diertu .span-xihujingqu{
+    float: left;
+    margin-top: 105px;
+    margin-left: -395px;
+    color: #8e8e8e;
+    font-size: 28px;
+}
+.div-diertu .span-qian{
+    float: left;
+    margin-left: 100px;
+    margin-top: 115px;
+    color: #ff9914;
+    font-size: 24px;
+}
+
+
+
+/*...................3.......................*/
+.dabox .div-disantu{
+    width: 100%;
+    height: 590px;
+    float: left;
+    background-color: white;
+}
+.div-disantu .div-sanimg{
+    float: left;
+    margin-left: 10px;
+}
+.div-sanimg img{
+    width: 710px;
+    height: 360px;
+
+}
+.div-disantu .div-dadiv{
+    float: left;
+    /*margin-left: 265px;*/
+}
+.div-disantu .div-lanmu{
+    float: left;
+    color: #8e8e8e;
+    margin-top: 370px;
+    font-size: 28px;
+    margin-left: -710px;
+}
+.div-disantu .div-xiang{
+    float: left;
+    margin-top: 60px;
+    margin-left: -250px;
+}
+.div-disantu .div-pa{
+    float: left;
+    margin-top: 53px;
+    margin-left: -100px;
+}
+.div-disantu .div-ping{
+    float: left;
+    font-size: 24px;
+    color: #8e8e8e;
+    margin-top: 100px;
+    margin-left: -250px;
+}
+.div-disantu .span-di{
+    float: left;
+    margin-top: 150px;
+    margin-left: -380px;
+}
+.div-disantu .span-xihuji{
+    float: left;
+    margin-top: 150px;
+    margin-left: -330px;
+    color: #8e8e8e;
+    font-size: 28px;
+}
+.div-disantu .span-qiann{
+    float: left;
+    color: #ff9914;
+    font-size: 24px;
+    margin-top: 165px;
+    margin-left: 205px;
+}
+/*........................底部...............*/
+ #footer {
+        width: 100%;
+    }
+    #footer ul{
+        width: 100%;
+        height: 100px;
+        margin: 0;
+    }
+    #footer ul li a{
+        text-align: center;
+        /*width: 100%;*/
+        padding: 0;
+        line-height: 100px;
+        /*margin-right:20%; */
+    }
+   
+    #footer ul li{
+        height: 100%;
+        background-color: #fff;
+        box-shadow:  0 0 0 #fff;
+    }

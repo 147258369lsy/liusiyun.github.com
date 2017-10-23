@@ -1,0 +1,27 @@
+*{margin: 0;padding: 0;}
+.comment{
+	width: 750px;
+	margin: 0 auto;
+	border:1px solid red;
+	box-sizing: border-box;
+}
+/*===================topBar=======================*/
+.comment .topBar{
+	height: 128px;
+	background-color: #ccc;
+}
+/*=================content===================*/
+.content .user1{
+
+}
+.content .remen{
+	height: 78px;
+	line-height: 78px;
+	font-size: 30px;
+	color: #696969;
+	padding-left: 30px;
+	border-top: 1px solid #ccc;
+}
+.content .user1 .touxiang{
+	height: 100px;
+}

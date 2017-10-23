@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑";
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+    /*------我的订单-----*/
+
+    section#myOrder {
+        width: 100%;
+        height: 1300px;
+        background-color: #ffffff;
+    }
+    /*------我的订单 标题-----*/
+
+    section#myOrder div.orderTitle {
+        width: 100%;
+        height: 96px;
+        text-align: center;
+        position: relative;
+        border-bottom: 1px solid #cbcbcb;
+    }
+
+    section#myOrder div.orderTitle h4 {
+        font-size: 34px;
+        color: #282828;
+        line-height: 96px;
+    }
+    /*-------------------返回上一层------*/
+
+    section#myOrder div.orderTitle a::before {
+        content: "";
+        width: 44px;
+        height: 44px;
+        background: url(./img/dingbufanhui@2x.png) center center no-repeat;
+        position: absolute;
+        left: 24px;
+        top: 26px;
+    }
+    /*-----------订单的切换图标----------*/
+
+    section#myOrder>div.orderContent {
+        width: 100%;
+    }
+
+    section#myOrder>div.orderContent ul {
+        width: 80%;
+        margin-left: 10%;
+        margin: 20px auto;
+        border: 1px solid #ff9914;
+        border-radius: 25px;
+        overflow: hidden;
+    }
+
+    section#myOrder>div.orderContent ul li {
+        width: 33.33%;
+        text-align: center;
+        border-left: 1px solid #ff9914;
+        color: #dadada;
+        background-color: #ffffff;
+    }
+
+    section#myOrder>div.orderContent ul li a {
+        display: inline-block;
+        width: 200px;
+        border: 0;
+        color: #dadada;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        font-size: 28px;
+        line-height: 50px;
+        background-color: transparent;
+    }
+
+    section#myOrder>div.orderContent ul li.active,
+    section#myOrder>div.orderContent ul li:hover {
+        background-color: #ff9914;
+    }
+
+    section#myOrder>div.orderContent ul li.active a,
+    section#myOrder>div.orderContent ul li:hover a {
+        color: #ffffff;
+    }
+
+    /*--------订单1--------*/
+    section#myOrder div.tab-content{
+        width: 90%;
+        margin-left: 5%;   
+    }
+    section#myOrder div.myOrder_1 {
+        height: 220px;
+        margin-top: 20px;
+    }
+
+    section#myOrder div.myOrder_1_pic {
+        width: 30%;
+        height: 180px;
+        margin: 20px;
+        float: left;
+    }
+    section#myOrder div.myOrder_1_pic img {
+        width: 180px;
+        height: 180px;
+        margin-top: -30px;
+        overflow: hidden;
+    }
+   
+    section#myOrder div.myOrder_1_pic {
+        font-size: 180px;
+        line-height: 180px;
+        text-align: center;
+    }
+
+    section#myOrder div.myOrder_1_text {
+        float: left;
+        height: 210px;
+        width: 60%;
+        color: #686868;
+        font-size: 28px;
+        letter-spacing: 1px;
+        box-sizing: border-box;
+        padding: 20px 0px 10px 0;
+        border-bottom: 1px solid #cbcbcb;
+        position: relative;
+    }
+
+    section#myOrder div.myOrder_1_text a {
+        width: 100%;
+        color: #686868;
+    }
+
+    section#myOrder div.myOrder_1_text p {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+    }
+
+    section#myOrder div.myOrder_1_text p span{
+        color: #fe0000;
+        margin-right: 3px;
+    }
+    </style>
+    
+</head>
+
+<body>
+    <!-- 我的订单 -->
+    <section id="myOrder" class="">
+        <div class="orderTitle">
+            <a href="MyInformation.html"></a>
+            <h4>我的订单</h4>
+        </div>
+        <div class="orderContent ">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active ">
+                    <a href="#tab1 " role="tab" data-toggle="tab">订单</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tab2 " role="tab" data-toggle="tab">待评</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tab3 " role="tab" data-toggle="tab">售后</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div role="tabpanel" class=" fade in tab-pane active" id="tab1">
+                <div class="myOrder_1">
+                    <div class="myOrder_1_pic">
+                        <img src="./img/caideng3.jpg" alt="">
+                    </div>
+                    <div class="myOrder_1_text">
+                        <a class="myOrder_1_about">西瓜灯笼彩色灯笼宝宝生日派对装饰布置商场七夕节活动拉花挂饰</a>
+                        <p class="myOrder_1_price"><span>￥</span>56</p>
+                    </div>
+                </div>
+                <div class="myOrder_1">
+                    <div class="myOrder_1_pic">
+                        <img src="./img/caideng1.jpg" alt="">
+                    </div>
+                    <div class="myOrder_1_text">
+                        <a class="myOrder_1_about">LED彩灯许愿球窗帘灯活动必备LED彩灯串装饰</a>
+                        <p class="myOrder_1_price"><span>￥</span>120</p>
+                    </div>
+                </div>
+                <div class="myOrder_1 ">
+                    <div class="myOrder_1_pic">
+                        <img src="./img/caideng2.jpg" alt="">
+                    </div>
+                    <div class="myOrder_1_text">
+                        <a class="myOrder_1_about">newsoo彩灯led满天星闪灯灯串少女心装饰五角星星装饰灯</a>
+                        <p class="myOrder_1_price"><span>￥</span>99</p>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class=" fade tab-pane" id="tab2">
+                <div class="myOrder_1 ">
+                    <div class="myOrder_1_pic">
+                       <img src="./img/caideng2.jpg" alt="">
+                    </div>
+                    <div class="myOrder_1_text">
+                        <a class="myOrder_1_about">newsoo彩灯led满天星闪灯灯串少女心装饰五角星星装饰灯</a>
+                        <p class="myOrder_1_price">订单已完成</p>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class=" fade tab-pane" id="tab3">
+                <div class="myOrder_1 talking">
+                    <div class="myOrder_1_pic">
+                    <img src="./img/caideng1.jpg" alt="">
+                    </div>
+                    <div class="myOrder_1_text">
+                       <a class="myOrder_1_about">LED彩灯许愿球窗帘灯活动必备LED彩灯串装饰</a>
+                        <p class="myOrder_1_price">已申请退款</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+</body>
+
+</html>

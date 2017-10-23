@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的登录</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+    *{
+    	margin: 0;padding: 0;
+    	list-style: none;
+    }
+    body{
+      background-color:#f2f2f2;
+    }
+     section.load{
+     	width: 100%;
+     	height: 1337px;
+     }
+     div.topTitle{
+     	height: 96px;
+        background-color: #fff;
+        line-height: 96px;
+        text-align: center;
+     }
+     p{
+     	font-size: 34px;
+     	color: #282828;
+     }
+     section.load>div.topTitle a{
+     	display: inline-block;
+     	width: 44px;
+     	height: 44px;
+        background: url(./img/dingbufanhui@2x.png) center center no-repeat;
+        position: absolute;
+        left: 24px;
+        top: 26px;
+     }
+     section.load>div.shuru{
+       background-color: #fff;
+       height: 850px;
+       margin-top: 50px;
+     }
+     section.load>div.shuru input{
+     	display: block;
+     	/*width: 100%;*/
+     	padding-right: 20px;
+     	outline: none;
+	    border: 0;
+	    line-height: 90px;
+	    border-bottom: 1px solid #cbcbcb;
+	    font-size: 24px;
+	    color: #dadada;
+	    position: relative;
+     }
+     i::before{
+     	content: "";
+     	display: inline-block;
+     	width: 44px;
+     	height: 44px;
+     	position: absolute;
+     	
+     }
+     i.yonghuming::before{
+     	background:url(./img/yonghuming@2x.png) center center no-repeat;
+        left: 60px;
+        top: 30px;
+     }
+     i.mima::before{
+     	background:url(./img/mima@2x.png) center center no-repeat;
+     	left: 60px;
+        top: 120px;
+
+     }
+   
+	section.load a.findPassword{
+		display: block;
+		font-size: 26px;
+		width: 200px;
+		height: 30px;
+		color:#888;
+		margin-top: 40px;
+		text-align: center;
+	}
+	section.load>div.shuru span a{
+       margin-top: 40px;
+       display: inline-block;
+	   border-radius: 10px;
+	   font-size: 28px;
+	   color: #fff;
+	   background-color: #ff9914;
+	   line-height: 88px;
+	   text-align: center;
+	}
+	section.load>div.shuru p{
+		display:inline-block;
+		width: 100%;
+		text-align: center;
+		font-size: 28px;
+		color:  #AFE8FF;
+		line-height: 128px;
+		margin-top: 40px;
+	}	
+	section.load>div.shuru div.sanfang{
+		/*width: 100%;*/
+		height: 200px;
+		/*background-color:red;*/
+		border-top:1px solid #d7d7d7;
+	}
+    section.load>div.shuru div.sanfang span{
+    	display: inline-block;
+    	font-size: 28px;
+    	color: #d7d7d7;
+    	background-color: #fff;
+    	text-align: center;
+    	width: 300px;
+    	position: relative;
+    	top: -14px;
+    	left: 50%;
+    	margin-left: -150px;
+    }
+     section.load>div.shuru div.sanfang ul{
+
+			margin-top: 64px;
+		}
+		section.load>div.shuru div.sanfang li a{
+			display: inline-block;
+			margin-left: 50px;
+			width: 70px;
+			height: 70px;
+			background-color: red;	
+			border-radius: 50%;
+		}
+		section.load>div.shuru div.sanfang li:nth-of-type(1) a{
+			background:  url(./img/weixin@2x.png) center center no-repeat;
+		}
+		section.load>div.shuru div.sanfang li:nth-of-type(2) a{
+			background:  url(./img/weibo@2x.png) center center no-repeat;
+		}
+		section.load>div.shuru div.sanfang li:nth-of-type(3) a{
+			background:  url(./img/qq@2x.png) center center  no-repeat;
+		}
+    </style>
+</head>
+
+<body>
+   <section class="load">
+   	<div class="topTitle">
+   		<a href="myinformation_UN.html"></a>
+   		<p>登录</p>
+   	</div>
+   	<div class="shuru col-xs-10 col-xs-offset-1">
+   	    <i class="yonghuming"></i>
+   		<input type="text " class="yonghuming col-xs-offset-2 col-xs-9" value="手机号/会员号/邮箱">
+   		<i class="mima"></i>
+   		<input type="text " class="mima col-xs-offset-2 col-xs-9 " value="密码(6-12位字符/数字/字母)">
+
+   		<a href="#" class="findPassword pull-right ">找回密码</a>
+		<span><a href="myinformation.html" class="col-xs-10 col-xs-offset-1">登录</a></span>
+		<p><a href="javascript:;">注册新用户</a></p>
+
+	    <div class="sanfang col-xs-12">	
+	       <span>第三方用户登录</span>
+	             <ul>
+					<li class="col-xs-4"><a href="#"></a></li>
+					<li class="col-xs-4"><a href="#"></a></li>
+					<li class="col-xs-4"><a href="#"></a></li>
+				</ul>
+   	    </div>
+   	</div>
+   	
+   </section>
+   
+</body>
+
+</html>

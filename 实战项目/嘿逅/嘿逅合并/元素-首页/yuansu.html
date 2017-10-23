@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>元素</title>
+
+	<link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/heihou.css">
+		<style type="text/css">
+		#footer ul li a{
+			padding: 0;
+			line-height: 102px;
+			margin-right:20%;
+		}
+		#footer ul{
+			width: 100%;
+		}
+		#footer ul li{
+			width:25%;
+			height: 100px;
+		}
+		#footer ul li a:nth-of-type(1){
+			margin-left: 72px;
+		}
+		#footer ul li a:nth-of-type(4){
+			margin-left: 30px;
+		}
+		#footer{
+			width: 750px;
+			margin:0 auto;
+		}
+	</style>
+
+</head>
+<body>
+
+	<!-- 元素界面 -->
+	<div class="yuansu banner">
+		<!-- 主题 -->
+
+		<div class="zhuti col-xs-6">
+			<a href="./zhuti.html">
+				<img src="./images/元素_r2_c2.jpg" alt="">
+			</a>
+		</div>
+
+		<!-- 调酒 -->
+		<div class="tiaojiu col-xs-6">
+			<a href="./tiaojiu.html">
+				<img src="./images/调酒_u1697.png" alt="">
+			</a>
+		</div>
+
+		<!-- DJ -->
+		<div class="dj col-xs-6">
+			<a href="DJ.html">
+				<img src="./images/dj_u1699.png" alt="">
+			</a>
+		</div>
+
+		<!-- 模特 -->
+		<div class="mote col-xs-6">
+			<a href="mote.html">
+				<img src="./images/模特_u1701.png" alt="">
+			</a>
+		</div>
+
+		<!-- 美食 -->
+		<div class="meishi col-xs-6">
+			<a href="meishi.html">
+				<img src="./images/美食_u1703.png" alt="">
+			</a>
+		</div>
+
+		<!-- MC -->
+		<div class="mc col-xs-6">
+			<a href="MC.html">
+				<img src="./images/mc_u1705.png" alt="">
+			</a>
+		</div>
+
+		<!-- 互动 -->
+		<div class="hudong col-xs-6">
+			<a href="hudong.html">
+				<img src="./images/互动_u1707.png" alt="">
+			</a>
+		</div>
+
+		<!-- 现场 -->
+		<div class="xianchang col-xs-6">
+			<a href="xianchang.html">
+				<img src="./images/现场_u1709.png" alt="">
+			</a>
+		</div>
+
+		<!-- 底部标签栏 -->
+		<div class="bottom">
+			
+		</div>
+
+		<div id="zhuti">
+			
+		</div>
+	</div>
+	<div id="footer">
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="wrap">
+				<ul class="nav navbar-nav">
+					<li class="col-xs-3"><a href="../index.html"><img src="../img/dibiaoqian_15.png" data-image="./img/dibiaoqian_03.png"></a></li>
+					<li class="col-xs-3"><a href="../zixunshishouye.html"><img src="../img/dibiaoqian_16.png" data-image="./img/dibiaoqian_05.png"></a></li>
+					<li class="col-xs-3"><a href="#"><img src="../img/dibiaoqian_07.png"  data-image="./img/dibiaoqian_07.png"></a></li>
+					<li class="col-xs-3 "><a href="../MyInformation_UN.html"><img src="../img/dibiaoqian_18.png"  data-image="./img/dibiaoqian_09.png"></a></li>
+
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<script>
+	var img = $("#footer ul li img");
+	var arrimgSrc = [];
+	img.on("click",function () {
+	$("#footer ul li img").each(function (index,subimg) {
+	var imgup = subimg.dataset.image;
+	var imghover = $("#footer ul li img").eq(index).attr('src');
+	arrimgSrc.push($(subimg).attr("src"));
+	$(subimg).attr("src",arrimgSrc[index]);
+	});
+	$(this).attr('src',$(this).attr("data-image"));
+
+	});
+
+	</script>
+
+
+	<!-- jQuery 源文件 -->
+    <script src="./lib/jQuery/jquery-3.2.1.js"></script>
+	<!-- Bootstrap的js源文件 -->
+    <script src="./lib/Bootstrap/js/bootstrap.js"></script>
+    
+</body>
+</html>

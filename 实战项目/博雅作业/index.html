@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        .inner_c {
+            width: 1000px;
+            margin: 0 auto;
+            background: #191d3a;
+            height: 58px;
+        }
+
+        .header {
+            background-color: #191d3a;
+            height: 58px;
+        }
+
+        .header .logo {
+            float: left;
+            padding-left: 12px;
+        }
+
+        .header .logo a {
+            display: block;
+            width: 174px;
+            height: 58px;
+            background: url("images/logo.png") no-repeat;
+
+        }
+
+        .header .nav {
+            float: left;
+            margin-left: 39px;
+        }
+
+        .header .nav ul li {
+            float: left;
+            border-left: 1px solid #252947;
+        }
+
+        .header .nav ul li:last-child {
+            border-right: 1px solid #252947;
+        }
+
+        .header .nav ul li a {
+            display: block;
+            width: 100px;
+            height: 58px;
+            font: 14px/58px "微软雅黑";
+            text-align: center;
+            color: #818496;
+
+        }
+
+        .header .nav ul li a.current {
+            background-color: #252947;
+            color: #e2e4ed;
+        }
+
+        .header .nav ul li a:hover {
+            color: #e2e4ed;
+        }
+
+        .header .jrwm {
+            float: left;
+            padding-top: 12px;
+            padding-left: 48px;
+        }
+
+        .header .jrwm a {
+            display: block;
+            width: 98px;
+            height: 32px;
+            background-color: #38b774;
+            border: 1px solid #3aca7a;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            color: white;
+            font-size: 14px;
+
+        }
+
+        .banner {
+            background: url("images/banner.jpg") no-repeat center center;
+            height: 465px;
+        }
+
+        .content {
+            padding-top: 50px;
+            height: 650px;
+        }
+
+        .content .inner_c2 {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content .product {
+            height: 229px;
+            border-bottom: 1px solid #dbe1e7;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .content .product ul li {
+            float: left;
+            width: 218px;
+            height: 229px;
+            margin-right: 43px;
+        }
+
+        .content .product ul li:last-child {
+            width: 217px;
+            margin-right: 0;
+        }
+
+        .content .product ul li p img {
+            width: 100%;
+            height: 130px;
+        }
+
+        .content .product ul li h3 {
+            text-align: center;
+            line-height: 38px;
+            font-size: 14px;
+            font-weight: bold;
+
+        }
+
+        .content .product ul li p.play {
+            text-align: center;
+        }
+
+        .content .product ul li p.play a {
+            font: 12px/12px "微软雅黑";
+            color: #38b774;
+
+            padding-right: 10px;
+            background: url("images/sanjiaoxing.png") no-repeat right center;
+
+        }
+
+        .content .product .balls {
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            margin-left: -40px;
+            background-color: white;
+        }
+
+        .content .product .balls ul li:first-child {
+            background-color: #2fbc71;
+        }
+
+        .content .product .balls ul li {
+            width: 12px;
+            height: 12px;
+
+            background: #b5c0cb;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            float: left;
+            margin-left: 12px;
+            margin-right: 0px;
+        }
+
+        .content .product .balls ul li:last-child {
+            margin-right: 12px;
+        }
+
+        /*信息部分样式开始*/
+        .content .info{
+            padding-top: 50px;
+        }
+        .content .info .boyanews{
+            float: left;
+            background: url("images/bynewsbg.jpg") no-repeat;
+            width: 500px;
+            padding-top: 111px;
+            position: relative;
+        }
+
+        .content .info .more{
+            position: absolute;
+            top: 40px;
+            left: 218px;
+        }
+        .content .info .boyanews ul{
+            padding: 0 20px;
+            padding-top: 5px;
+        }
+        .content .info .boyanews ul li{
+            /*height: 50px;*/
+            line-height: 48px;
+            font-size: 12px;
+            border-bottom: 1px solid #dbe1e7;
+        }
+        .content .info .boyanews ul li span{
+            /*line-height: 50px;*/
+            color: #afbecf;
+            margin-right: 22px;
+        }
+        .content .info .boyanews ul li a{
+            /*line-height: 50px;*/
+            color: #444866;
+            font-size: 14px;
+        }
+
+        .content .info .boyajobs{
+            float: right;
+            background: url("images/byhrbg3.jpg") no-repeat;
+            position: relative;
+            width: 500px;
+        }
+        .content .info .boyajobs .title{
+            padding: 40px 0 0 78px;
+        }
+        .content .info .boyajobs .title h3{
+            width: 119px;
+            height: 51px;
+            background: url("images/zczp.png") no-repeat;
+            text-indent: -999em;
+        }
+        
+        .content .info .boyajobs h4{
+            padding-top: 18px;
+            padding-left: 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .content .info .boyajobs ul{
+            padding-left: 20px;
+            width: 305px;
+        }
+        .content .info .boyajobs ul li{
+            line-height: 34px;
+            border-bottom: 1px solid #6fdea3;
+
+        }
+        .content .info .boyajobs ul li a{
+            font-size: 14px;
+            color: white;;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="inner_c">
+        <div class="logo">
+            <a href="/"></a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a class="current" href="#">首页</a></li>
+                <li><a href="#">博雅游戏</a></li>
+                <li><a href="#">博雅新闻</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">客服中心</a></li>
+                <li><a href="#">投资者关系</a></li>
+            </ul>
+        </div>
+        <div class="jrwm">
+            <a href="#">加入我们</a>
+        </div>
+    </div>
+</div>
+<!--通栏广告-->
+<div class="banner"></div>
+
+<!--内容区域-->
+<div class="content">
+    <div class="inner_c2">
+        <div class="product">
+            <div class="balls">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <ul>
+                <li>
+                    <p class="pro_image">
+                        <img src="images/bpt.jpg" alt=""/>
+                    </p>
+
+                    <h3>BPT宣传片</h3>
+
+                    <p class="play">
+                        <a href="">点击播放</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="pro_image">
+                        <img src="images/gamepic1.jpg" alt=""/>
+                    </p>
+
+                    <h3>BPT宣传片</h3>
+
+                    <p class="play">
+                        <a href="">点击播放</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="pro_image">
+                        <img src="images/gamepic3.jpg" alt=""/>
+                    </p>
+
+                    <h3>BPT宣传片</h3>
+
+                    <p class="play">
+                        <a href="">点击播放</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="pro_image">
+                        <img src="images/video.jpg" alt=""/>
+                    </p>
+
+                    <h3>BPT宣传片</h3>
+
+                    <p class="play">
+                        <a href="">点击播放</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="info">
+            <div class="boyanews">
+                <a href="#" class="more">
+                    <img src="images/more.png" alt=""/>
+                </a>
+                <ul>
+                    <li>
+                        <span>09 / 28</span>
+                        <a href="">
+                            2015博雅国际博客扑克大赛(BPT)在澳门落幕
+                        </a>
+                    </li>
+                    <li>
+                        <span>09 / 28</span>
+                        <a href="">
+                            2015博雅国际博客扑克大赛(BPT)在澳门落幕
+                        </a>
+                    </li>
+                    <li>
+                        <span>09 / 28</span>
+                        <a href="">
+                            2015博雅国际博客扑克大赛(BPT)在澳门落幕
+                        </a>
+                    </li>
+                    <li>
+                        <span>09 / 28</span>
+                        <a href="">
+                            2015博雅国际博客扑克大赛(BPT)在澳门落幕
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="boyajobs">
+                <a href="" class="more">
+                    <img src="images/more2.png" alt=""/>
+                </a>
+                <div class="title">
+                    <h3>专场招聘</h3>
+                    <!--<span>boyaa job</span>-->
+                </div>
+                <h4>专场招聘岗位:</h4>
+                <ul>
+                    <li><a href="">Java开发工程师</a></li>
+                    <li><a href="">Java开发工程师</a></li>
+                    <li><a href="">Java开发工程师</a></li>
+                    <li><a href="">Java开发工程师</a></li>
+                    <li><a href="">Java开发工程师</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
