@@ -1,0 +1,157 @@
+*{padding: 0;margin: 0;}
+body{
+	background-color: #eee;
+}
+ul{
+	list-style: none;
+}
+@font-face {
+	font-family: 'myFont';
+	src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'),
+	url('../font/MiFie-Web-Font.svg') format('svg'),
+	url('../font/MiFie-Web-Font.ttf') format('truetype'),
+	url('../font/MiFie-Web-Font.woff') format('woff');
+}
+/*整个界面的宽高设置*/
+#commentInterface{
+	width: 750px;
+	height: 1373px;
+	background-color: #fff;
+	margin: 20px auto;
+	position: relative;
+}
+/*界面的顶部区域*/
+#commentInterface .top{
+	width: 100%;
+	height: 120px;
+	border-bottom: 1px solid #dfdfdf;
+	position: relative;
+}
+/*attention(关注) 部分*/
+#commentInterface .top .comment{
+	width: 100%;
+	height: 44px;
+	text-align: center;
+	font-size: 34px;
+	color: #282828;
+	position: absolute;
+	left: 0;
+	top: 46px;
+	line-height: 44px;
+}
+/*状态栏部分*/
+#commentInterface .top .zhuangtailan{
+	width: 750px;
+	height: 22px;
+	background: url(../img/zhuangtailan.png) center center no-repeat;
+}
+/*我的关注前面的小于号内容*/
+#commentInterface .top a{
+	text-decoration: none;
+	color: #282828;
+}
+#commentInterface .top  .zhuangtailan span{
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+}
+#commentInterface .top  .back{
+	display:inline-block;
+	width: 21px;
+	height: 44px;
+	position: absolute;
+	top: 50px;
+	left: 40px;
+	/*background-color: red;*/
+	z-index: 100;
+}
+#commentInterface .top span a{
+	display:inline-block;
+	width: 44px;
+	height: 44px;
+	/*position: absolute;*/
+	/*left: 50px;*/
+	/*top: 50px;*/
+	/*background: url(../img/banner-details-page_06.png) center center no-repeat;*/
+}
+
+/*content中的tittle区域*/
+#commentInterface .content .tittle{
+	height: 60px;
+	position: relative;
+}
+#commentInterface .content .tittle span:nth-of-type(1){
+	font-size: 30px;
+	color: #696969;
+	padding-left: 20px;
+	line-height: 60px;
+}
+#commentInterface .content .tittle span:nth-of-type(2){
+	display: inline-block;
+	width: 620px;
+	height: 60px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-bottom: 1px solid #696969;
+}
+#commentInterface .content .tittle span:nth-of-type(2) button{
+	float: right;
+}
+/*显示用户动态评论区域*/
+#commentInterface  .content  .container{
+	padding: 0;
+	width: 100%;
+}
+#commentInterface  .content  .tittle  textarea{
+	resize: none;
+	width: 748px;
+	height: 100px;
+	border: 1px solid gray;
+}
+#commentInterface  .content  .container .media-list{
+	width: 100%;
+}
+#commentInterface  .content  .container .media-list li{
+	width: 100%;
+}
+#commentInterface  .content  .container .media-list li .media-left{
+	padding-left: 30px;
+}
+#commentInterface  .content  .container .media-list li .media-left a{
+	display: block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: red;
+}
+#commentInterface  .content  .container .media-list li .media-left a img{
+	width: 100%;
+	height: 100%;
+}
+#commentInterface  .content  .container .media-list li .media-body{
+
+}
+#commentInterface  .content  .container .media-list li .media-body h4{
+	font-size: 30px;
+	color: #000;
+}
+#commentInterface  .content  .container .media-list li .media-body h4 .userName{
+	font-size: 30px;
+	color: #000;
+}
+#commentInterface  .content  .container .media-list li .media-body h4 i{
+	display: block;
+	height: 60px;
+	float: right;
+	font-size: 26px;
+	color: #888;
+	padding: 17px 30px 0 0;
+	font-style: normal;
+}
+#commentInterface  .content  .container .media-list li .media-body h4 .showTime{
+	font-size: 16px;
+	color: #888;
+	padding-left: 20px;
+}
+

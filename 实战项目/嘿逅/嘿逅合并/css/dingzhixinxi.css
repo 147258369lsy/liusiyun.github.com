@@ -1,0 +1,141 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: '微软雅黑';
+}
+.container{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #f2f2f2;
+	position: relative;
+
+}
+.container > .dingzhi-topBar{
+	background-color: #fff;
+	height: 128px;
+	position: relative;
+	border-bottom: 1px solid #CBCBCB;
+}
+.container > .dingzhi-topBar > p{
+	font-size: 30px;
+	text-align: center;
+	margin-top: 36px;
+}
+.container > .dingzhi-topBar::before{
+	content: "";
+	height: 41px;
+	width: 21px;
+	position: absolute;
+	background: url('../img/banner-details-page_06.png') center center no-repeat;
+	top: 66px;
+	left: 30px;
+	
+}
+.container > .content{
+	width: 100%;
+	/*position: relative;*/
+
+}
+.container > .content > p{
+	font-size: 30px;
+	color: #282828;
+	padding-left: 30px;
+	margin-top: 30px;
+}
+.container > .content > .content-messige {
+	height: 550px;
+	width: 900px;
+
+	margin: 20px auto;
+	background-color: #fff;
+	padding-top: 60px;
+}
+.container > .content > .content-messige > p{
+	padding-left: 100px;
+	font-size: 28px;
+	color: #686868;
+	margin-bottom: 20px;
+}
+.container > .content > .wxts{
+	margin-left: 60px;
+	margin-right: 60px;
+	font-size: 20px;
+	color: #929292;
+	line-height: 1.5;
+	margin-bottom: 46px;
+}
+.container > .content > .wxts > p{
+	text-align: center;
+}
+.container > .content .btn{
+	height: 486px;
+}
+.container > .content .btn > .btncontent{
+	height: 60px;
+	width: 400px;
+	/*margin: 26px auto;*/
+	margin-top: 26px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ff9914;
+	text-align: center;
+	border-radius: 10px;
+	line-height: 60px;
+}
+.container > .content .btn > .btncontent > a{
+	font-size: 34px;
+	text-decoration: none;
+	color: #fff;
+}
+.container > .shareContent{
+	position: absolute;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.7);
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+.container > .shareContent .share{
+	margin-top: 380px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 470px;
+	width: 554px;
+	background-color: #fff;
+	padding-top: 110px;
+	color: #686868;
+}
+.container > .shareContent .share >  p:nth-of-type(1){
+	font-size: 34px;
+	text-align: center;
+	/*color: #686868;*/
+
+}
+.container > .shareContent .share > .box{
+	margin-top: 78px;
+	font-size: 30px;
+	margin-left: 88px;
+	/*color: #686868;*/
+	line-height: 1.5;
+}
+.container > .shareContent .share > .shareBtn{
+	margin-top: 61px;
+	width: 287px;
+	height: 61px;
+	background-color: #ff9914;
+	margin-left: 146px;
+	border-radius: 10px;
+	text-align: center;
+}
+.container > .shareContent .share > .shareBtn > a{
+	font-size: 34px;
+	color: #fff;
+	text-align: center;
+	line-height: 61px;
+	text-decoration: none;
+}
+

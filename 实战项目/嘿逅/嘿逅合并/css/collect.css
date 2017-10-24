@@ -1,0 +1,90 @@
+*{padding: 0;margin: 0;}
+body{
+	background-color: #fff;
+}
+/*interface表示整个界面*/
+#interface{
+	width: 100%;
+	background-color: #fff;
+}
+/*顶部我的收藏区域*/
+#interface .top{
+	width: 100%;
+	height: 120px;
+	border-bottom: 1px solid gray;
+	position: relative;
+}
+ 
+#interface .top .collect{
+	width: 100%;
+	height: 44px;
+	text-align: center;
+	font-size: 34px;
+	color: #282828;
+	position: absolute;
+	left: 0;
+	top: 46px;
+	line-height: 44px;
+}
+/* #interface .top .zhuangtailan{
+	width: 750px;
+	height: 22px;
+	background: url(../img/zhuangtailan.png) center center no-repeat;
+}  */
+#interface .top a::before{
+	content: "";
+	display: block;
+	width: 44px;
+	height: 44px;
+	position: absolute;
+	left: 23px;
+	top: 46px;
+	background: url(../img/banner-details-page_06.png) center center no-repeat;
+	z-index: 10;
+}
+/*内容区域图片区域*/
+#interface .content .content-image{
+	margin:10px 0 0 0;
+	width: 100%;
+	height: 500px;
+	float: left;
+	text-align: center;
+	/*padding-top: 10px;*/
+	position: relative;
+}
+#interface .content{
+	margin:10px ;
+}
+#interface .content .content-image a{
+	
+}
+#interface .content .content-image img{
+	width: 100%;
+	height: 500px;
+}
+#interface .content .content-image .content-bottom{
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 999;
+	opacity: 0.4;
+	background: linear-gradient(to top,#000 10%,#888)
+}
+#interface .content .content-image .content-bottom span:nth-of-type(1){
+	font-size: 30px;
+	color: #fff;
+	float: left;
+	padding-left: 60px;
+	line-height: 60px;
+}
+#interface .content .content-image .content-bottom span:nth-of-type(2){
+	background: url(../img/xin.png) center center no-repeat;
+	width: 42px;
+	height: 36px;
+	display: block;
+	float: right;
+	padding-right: 100px;
+	margin-top: 12px;
+}

@@ -1,0 +1,20 @@
+.yuansu{
+	padding:0px 0 0 0;
+}
+.yuansu > #yuansu > .yuansu-static > a{
+	margin-left: 30px;	
+}
+.yuansu > #yuansu > #DJ{
+	background-color: #000;
+}
+.yuansu > #yuansu > .yuansu-tupian{
+	padding-left: 30px;
+}
+.yuansu > #yuansu > .yuansu-tupian > .yuansu-aixin > img{
+	top: 30px;
+	left:617px;
+}
+.yuansu > #yuansu > .yuansu-tupian > .yuansu-aixin:nth-child(n+3) > img{
+	top: 34px;
+	left:616px;
+}

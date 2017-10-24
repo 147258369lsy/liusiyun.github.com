@@ -1,0 +1,90 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+body{
+    background-color: #f2f2f2;
+}
+#login{
+    width: 100%;
+}
+#login .login{
+    height: 96px;
+    background-color: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 34px;
+    color: #282828;
+    text-align: center;
+    line-height: 96px;
+    position: relative;
+}
+#login .login a::before{
+    content: " ";
+    width: 21px;
+    height: 41px;
+    background: url(../img/banner-details-page_06.png) 0 0 no-repeat;
+    position: absolute;
+    left: 30px;
+    top: 28px;
+}
+#login .loginBar{
+    padding: 75px;
+}
+#login .login-massage{
+    background-color: #fff;
+    padding: 0 30px 42px 30px;
+    border-radius: 10px 10px 0 0;
+}
+#login .login-massage div{
+    height: 88px;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 28px;
+    line-height: 88px;
+    color: #dfdfdf;
+    position: relative;
+}
+#login .login-massage div #searchInput1,
+#login .login-massage div #searchInput2,
+#login .login-massage div #searchInput3{
+    outline: none;
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+#login .login-massage div:nth-of-type(4){
+    border: 0;
+}
+#login .login-massage div:nth-of-type(2) button{
+    width: 120px;
+    height: 45px;
+    line-height: 45px;
+    outline: none;
+    border: 0;
+    background-color: #ff9914;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    margin-top: 22px;
+}
+#login .login-massage .agree #checkbox{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    background-color: red;
+}
+#login .login-button{
+    background-color: #ff9914;
+    line-height: 88px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+#login .login-button a{
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,131 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+.container .top{
+	background-color: #eee;
+	width: 100%;
+	height: 88px;
+	text-align: center;
+	line-height: 28px;
+}
+.container{
+	width: 750px;
+	margin:0 auto;
+	position: relative;
+}
+.container > .top > .top-left{
+ 	font-size: 30px;
+ 	color: #686868;
+ 	margin-top: 40px;
+ 	margin-left: 30px;
+ 	float: left;
+
+}
+.container > .top > .top-left a{
+	color: #686868;
+    text-decoration:none
+}
+
+.container > .top > .top-middle{
+	float: left;
+	/*height: 60px;*/
+	width: 174px;	
+	color: #282828;
+	margin-top: 20px;
+	margin-left: 200px;
+}
+
+.container > .top > .top-middle > P:nth-of-type(1){
+	font-size: 30px;
+}
+.container > .top > .top-middle > P:nth-of-type(2){
+	font-size: 20px;
+	text-align: center;
+}
+
+.container > .top > .btn{
+	height: 50px;
+	width: 88px;
+	background-color: #ff9914;
+	font-size: 20px;
+	border-radius: 8px;
+	float: right;
+	text-align: center;
+	line-height: 50px;
+	margin-top: 22px;
+	margin-right: 40px;
+}
+.container > .top > .btn > a{
+	color: #fff;
+	text-decoration: none;
+}
+.container > .content{
+	clear: both;
+}
+.container > .content > textarea{
+	resize: 0;
+	height: 600px;
+	width: 690px;
+	margin-top: 25px;
+	margin-left: 20px;
+	outline: none;
+	font-size: 24px;
+	color: #282828;
+	border: 0;
+
+}
+.container > .checkBox{
+    width: 100%;
+    height: 68px;
+    background-color: #F2F2F2;
+}
+.container > .checkBox > input{
+	height: 34px;
+	width: 34px;
+	margin-left: 30px;
+	color: red;
+	float: left;
+	margin-top: 5px;
+	border: 3px solid #000;
+}
+.container > .checkBox > span{
+	float: left;
+	margin-left: 20px;
+	color: #686868;
+	font-size: 20px;
+	margin-top: 15px;
+}
+
+.container .hiddenPage{
+	position: absolute;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.7);
+	height: 100%;
+	width: 750px;
+	display: none;
+}
+
+.container .hiddenPage .success{
+	height: 100px;
+	width: 200px;
+	background-color: #ff9914;
+	margin-top: 300px;
+	margin-left: 300px;
+	font-size: 30px;
+	text-align: center;
+	line-height: 100px;
+	border-radius: 10px;
+	color: #fff;
+
+}
+/*底部图片*/
+.container .footerIcon img{
+	width: 750px;
+}

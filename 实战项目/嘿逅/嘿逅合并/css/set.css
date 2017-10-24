@@ -1,0 +1,71 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+body{
+    background-color: #dfdfdf;
+}
+#set{
+    width: 100%;
+}
+#set .set{
+    height: 96px;
+    background-color: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 34px;
+    color: #282828;
+    text-align: center;
+    line-height: 96px;
+    position: relative;
+}
+#set .set a::before{
+    content: " ";
+    width: 21px;
+    height: 41px;
+    background: url(../img/banner-details-page_06.png) 0 0 no-repeat;
+    position: absolute;
+    left: 30px;
+    top: 28px;
+}
+#set .navBar,
+#set .navBar-exit{
+    background-color: #fff;
+    padding: 0 30px;
+}
+#set .navBar div,
+#set .exit{
+    height: 88px;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 28px;
+    line-height: 88px;
+    color: #686868;
+}
+#set .navBar div span{
+    float: right;
+    margin-right: 44px;
+}
+#set .navBar div{
+    position: relative;
+}
+#set .navBar div:nth-of-type(3){
+    border: 0;
+}
+#set .navBar div:nth-of-type(1) a::before,
+#set .navBar div:nth-of-type(2) a::before,
+#set .navBar div:nth-of-type(3) a::before{
+    content: " ";
+    width: 17px;
+    height: 33px;
+    background: url(../img/back1@2x.png) 0 0 no-repeat;
+    position: absolute;
+    right: 0;
+    top: 27px;
+}
+#set .exit{
+    background-color: #fff;
+    margin-top: 20px;
+}
+#set .exit a{
+    color: #ff9914;
+    text-decoration: none;
+}

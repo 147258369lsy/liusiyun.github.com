@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul{
+			list-style: none;
+	
+		}
+		.service{
+			width: 188px;
+			height: 208px;
+			/*background-color: pink;*/
+			margin-top: 100px;
+			margin-left: 100px;
+			border:1px solid #E7E7E7; 
+		}
+        .service .box1{
+        	width: 190px;
+        	height:69px;
+        	border-bottom:1px solid #E7E7E7; 
+        }
+         .service .box1 ul li{
+         	float: left;
+         	width: 46px;
+         	height: 69px;
+         	display: block;
+         	border-right: 1px solid #E7E7E7; 
+         }
+         .service .box1 ul li a.fei:hover{
+          	color:#CB1622;
+          }
+          .service .box1 ul li a.piao:hover{
+          	color:#CB1622;
+          }
+           .service .box1 ul li a.dian:hover{
+          	color:#CB1622;
+          }
+            .service .box1 ul li a.xi:hover{
+          	color:#CB1622;
+          }
+            .service .box2 ul li a.gou:hover{
+          	color:#CB1622;
+          }
+            .service .box2 ul li a.ka:hover{
+          	color:#CB1622;
+          }
+            .service .box2 ul li a.ypiao:hover{
+          	color:#CB1622;
+          }
+             .service .box2 ul li a.cpiao:hover{
+          	color:#CB1622;
+          }
+             .service .box3 ul li a.chou:hover{
+          	color:#CB1622;
+          }
+             .service .box3 ul li a.cai:hover{
+          	color:#CB1622;
+          }
+             .service .box3 ul li a.pka:hover{
+          	color:#CB1622;
+          }
+             .service .box3 ul li a.tiao:hover{
+          	color:#CB1622;
+          }
+        .service .box1 ul li .huafei{
+         width: 17px;
+         height: 23px;
+         background-position: -4px -88px;
+         margin-left: 16px;
+         margin-top: 18px;
+         background-image: url(../images/sprite_fs@1x.png);
+        }
+        .service .box1 ul li a.fei{
+         	text-decoration: none;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+         	padding-top: 45px;
+         	padding-left: 10px;
+         	margin-top: -40px;
+         	width: 37px;
+         	height: 24px;     
+        }
+        .service .box1 ul li .jipiao{
+            width: 22px;
+            height: 22px;
+            background-position: -1px -45px;
+            margin-left: 13px;
+            margin-top: 18px;
+            background-image: url(../images/sprite_fs@1x.png);
+        }
+         .service .box1 ul li a.piao{
+         	text-decoration: none;
+            padding-top: 45px;
+         	padding-left: 10px;
+         	margin-top: -40px;
+         	width: 37px;
+         	height: 24px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+         }
+         .service .box1 ul li .jiudian{
+            width: 20px;
+            height: 22px;
+            background-position: -46px -89px;
+            margin-left: 13px;
+            margin-top: 18px;
+            background-image: url(../images/sprite_fs@1x.png);
+         }
+         .service .box1 ul li a.dian{
+         	text-decoration: none;
+             padding-top: 45px;
+         	padding-left: 10px;
+         	margin-top: -40px;
+         	width: 37px;
+         	height: 24px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+         }
+         .service .box1 ul li .youxi{
+             width: 25px;
+             height: 13px;
+             background-position: -88px -6px;
+             margin-left: 12px;
+             margin-top: 22px;
+             background-image: url(../images/sprite_fs@1x.png);
+          }
+         .service .box1 ul li a.xi{
+         	text-decoration: none;
+              padding-top: 49px;
+         	padding-left: 10px;
+         	margin-top: -40px;
+         	width: 37px;
+         	height: 20px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+         }
+        .service .box2{
+        	width: 190px;
+        	height:69px;
+        	border-bottom:1px solid #E7E7E7; 
+        }
+      .service .box2 ul li{
+         	float: left;
+         	width: 46px;
+         	height: 69px;
+         	display: block;
+         	border-right: 1px solid #E7E7E7; 
+         }
+       .service .box2 ul li .qiye{
+         width: 24px;
+         height: 19px;
+         background-position: -88px -46px;
+         margin-left: 12px;
+         margin-top: 19px;
+         background-image: url(../images/sprite_fs@1x.png);
+        }
+         .service .box2 ul li a.gou{
+         	text-decoration: none;
+              padding-top: 45px;
+         	padding-left: 5px;
+         	margin-top: -40px;
+         	width: 42px;
+         	height: 24px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+       }
+       .service .box2 ul li .jiayou{
+          width: 19px;
+          height: 20px;
+                   background-position: -3px -2px;
+          margin-left: 12px;
+          margin-top: 19px;
+          background-image: url(../images/sprite_fs@1x.png);
+         }
+         .service .box2 ul li a.ka{
+         	text-decoration: none;
+             padding-top: 45px;
+         	padding-left: 5px;
+         	margin-top: -40px;
+         	width: 42px;
+         	height: 24px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+       }
+         .service .box2 ul li .dianying{
+           width: 24px;
+           height: 15px;
+           background-position: -44px -48px;
+           margin-left: 11px;
+           margin-top: 19px;
+           background-image: url(../images/sprite_fs@1x.png);
+          }
+         .service .box2 ul li a.ypiao{
+         	text-decoration: none;
+             padding-top: 50px;
+         	padding-left: 5px;
+         	margin-top: -40px;
+         	width: 42px;
+         	height: 19px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+       }
+         .service .box2 ul li .huoche{
+            width: 18px;
+            height: 23px;
+            background-position: -92px -89px;
+            margin-left: 14px;
+            margin-top: 16px;
+            background-image: url(../images/sprite_fs@1x.png);
+           }
+         .service .box2 ul li a.cpiao{
+         	text-decoration: none;
+              padding-top: 45px;
+         	padding-left: 5px;
+         	margin-top: -40px;
+         	width: 42px;
+         	height: 24px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+       }
+        .service .box3{
+        	width: 190px;
+        	height:69px;
+        }
+      .service .box3 ul li{
+         	float: left;
+         	width: 46px;
+         	height: 69px;
+         	display: block;
+         	/*background-color: gray;*/
+         	border-right: 1px solid #E7E7E7; 
+         }
+         .service .box3 ul li .zhong{
+            width: 20px;
+            height: 21px;
+            background-position: -134px 0px;
+            margin-left: 12px;
+            margin-top: 15px;
+            background-image: url(../images/sprite_fs@1x.png);
+           }
+         .service .box3 ul li a.chou{
+         	text-decoration: none;
+              padding-top: 45px;
+         	padding-left: 10px;
+         	margin-top: -40px;
+         	width: 37px;
+         	height: 24px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+       }
+         .service .box3 ul li .licai{
+           width: 18px;
+           height: 23px;
+           background-position: -135px -45px;
+           margin-left: 12px;
+           margin-top: 15px;
+           background-image: url(../images/sprite_fs@1x.png);
+          }
+         .service .box3 ul li a.cai{
+         	text-decoration: none;
+         	     padding-top: 45px;
+         	padding-left: 10px;
+         	margin-top: -40px;
+         	width: 37px;
+         	height: 24px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+       }
+         .service .box3 ul li .lipin{
+            width: 22px;
+            height: 16px;
+            background-position: -132px -92px;
+            margin-left: 12px;
+            margin-top: 18px;
+            background-image: url(../images/sprite_fs@1x.png);
+           }
+         .service .box3 ul li a.pka{
+         	text-decoration: none;
+         	     padding-top: 48px;
+         	padding-left: 5px;
+         	margin-top: -40px;
+         	width: 42px;
+         	height: 21px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+       }
+        .service .box3 ul li .baitiao{
+            width: 18px;
+            height: 23px;
+            background-position: -47px -1px;
+            margin-left: 14px;
+            margin-top: 14px;
+            background-image: url(../images/sprite_fs@1x.png);
+           }
+         .service .box3 ul li a.tiao{
+         	text-decoration: none;
+         	   padding-top: 45px;
+         	padding-left: 10px;
+         	margin-top: -40px;
+         	width: 37px;
+         	height: 24px;
+         	font-size: 12px;
+         	color:#666666;
+         	float:left;
+       }
+	</style>
+</head>
+<body>
+	<div class="service">
+		<div class="box1">
+			<ul>
+             <li><div class="huafei"></div><a class="fei" href="#">话费</a></li>
+              <li><div class="jipiao"></div><a class="piao" href="#">机票</a></li>
+              <li><div class="jiudian"></div><a class="dian" href="#">酒店</a></li>
+              <li><div class="youxi"></div><a class="xi" href="#">游戏</a></li>
+			</ul>
+		</div>
+		<div class="box2">
+			<ul>
+				<li><div class="qiye"></div><a class="gou" href="#">企业购</a></li>
+				<li><div class="jiayou"></div><a class="ka" href="#">加油卡</a></li>
+				<li><div class="dianying"></div><a class="ypiao" href="#">电影票</a></li>
+				<li><div class="huoche"></div><a class="cpiao" href="#">火车票</a></li>
+			</ul>
+		</div>
+		<div class="box3">
+			<ul>
+				<li><div class="zhong"></div><a class="chou" href="#">众筹</a></li>
+				<li><div class="licai"></div><a class="cai" href="#">理财</a></li>
+				<li><div class="lipin"></div><a class="pka" href="#">礼品卡</a></li>
+				<li><div class="baitiao"></div><a class="tiao" href="#">白条</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

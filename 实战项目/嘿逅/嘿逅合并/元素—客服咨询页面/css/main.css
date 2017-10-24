@@ -1,0 +1,167 @@
+        #service{
+    		height: 1302px;
+    		width: 750px;
+    		background-color:#F2F2F2;
+    		margin:0px auto;
+    	}
+    	.banner{
+    		width: 690px;
+    		margin:auto;
+    	}
+    	#service .topBar{
+    		height: 96px;
+    		width: 100%;
+    		background-color:#F2F2F2;
+            line-height: 96px;
+            text-align:center;
+    		font-size: 26px;
+    		position: relative;	
+    	}
+    	#service .topBar a{
+    		padding-right: 265px;
+    		position: absolute;	
+    		left: 0;	
+    		top: 10px;	
+    	}
+    	#service .chat{
+    		height: 1108px;
+    		width: 100%;
+    		border-top:1px solid #cbcbcb;
+    		border-bottom:1px solid #cbcbcb;
+    		position: relative;
+    		
+    	}
+    	#service .chat .time{
+    		width: 110px;
+    		height: 30px;
+    		background-color:#cbcbcb;
+    		margin:30px auto;
+    		font-size:20px;
+    		text-align:center;
+    		color:#ffffff;
+    	}
+    	#service .chat .head1{
+    		position: absolute;
+    		left: 20px;
+    		top: 90px;
+    	}
+    	#service .chat .head2{
+    		position: absolute;
+    		right: 20px;
+    		top: 210px;
+    	}
+    	#service .chat .head3{
+    		position: absolute;
+    		left: 20px;
+    		top: 320px;
+    	}
+    	#service .chat .head4{
+    		position: absolute;
+    		right: 20px;
+    		top: 450px;
+    	}
+    	.head1 img,
+    	.head2 img,
+    	.head3 img,
+    	.head4 img{
+    		width: 80px;
+    		height: 80px;
+            border-radius: 50%;
+    	}	
+    	#service .chat .chat_frame1,
+    	#service .chat .chat_frame2,
+    	#service .chat .chat_frame3,
+    	#service .chat .chat_frame4{
+    		width: 490px;
+    		border-radius: 8px;
+    		font-size: 26px;
+    		position: relative;
+    		margin:30px auto;
+
+    	}
+    	#service .chat .chat_frame1{
+    		height: 80px;
+    		background-color:#cbcbcb;
+    	    padding:10px;
+            color:#696969;
+    	}
+    	
+    	#service .chat .chat_frame1::before{
+    		content: '';
+            border-left: 16px solid transparent;
+            border-right: 16px solid #cbcbcb;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            position: absolute;
+            top: 35px;
+            left: -32px;
+    	}
+    	#service .chat .chat_frame2{
+    		height: 60px;
+    		background-color:#ffb657;
+    		line-height: 60px;
+    		text-align:center;
+            color:#fff;
+    	}
+    	#service .chat .chat_frame2::before,
+    	#service .chat .chat_frame4::before{
+    		content: '';
+            border-left: 16px solid #ffb657;
+            border-right: 16px solid transparent;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            position: absolute;
+            right: -32px;
+            top: 20px;	
+    	}	
+    	#service .chat .chat_frame3{
+    		height: 108px;
+    		background-color:#cbcbcb;
+    		padding:6px;
+             color:#696969;
+    	}
+    	#service .chat .chat_frame3::before{
+    		content: '';
+            border-left: 16px solid transparent;
+            border-right: 16px solid #cbcbcb;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            position: absolute;
+            top: 42px;
+            left: -32px;
+    	}
+    	#service .chat .chat_frame4{
+    		width: 120px;
+    		height: 60px;
+    		background-color:#ffb657;
+    		position: absolute;
+    		top: 440px;
+    		right: 128px;
+    		line-height: 60px;
+    		text-align:center;
+            color:#fff;
+    	}	
+    	.send{
+    		height: 70px;
+    		background-color:#F2F2F2;
+    		padding-top:26px;
+    		position: relative;
+    	}
+    	.send .yuyin{
+    		float: left;
+    	}
+    	.send .gengduo{
+    		float: right;
+    	}
+    	.send .smile{
+    		float: right;
+    		padding-right: 30px;
+    	}
+    	.send .line{
+           width: 490px;
+           height: 1px;
+           background-color: #cbcbcb;
+           float: right;
+           margin-top: 50px;
+           margin-right: 10px;
+    	}
