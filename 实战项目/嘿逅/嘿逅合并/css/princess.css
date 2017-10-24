@@ -1,0 +1,153 @@
+.wrap{
+    width: 750px;
+    margin:0 auto;
+}
+.qiang{
+    height: 450px;
+}
+#dingbu{
+    background-color:rgba(255, 255, 255, 1);
+}
+#topBar{
+    background-color: rgba(255, 255, 255, 1);
+}
+#topBar{
+    height: 88px;
+    /*background-color: yellow;*/
+    position: relative;
+}
+
+#topBar .wrap .back{
+    width: 17px;
+    height: 33px;
+    margin:27.5px 35px;
+    /*background-color: red;*/
+    display:inline-block;
+}
+#topBar .wrap{
+    position: relative;
+}
+#topBar .wrap .share img{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+}
+#topBar span{
+    color:#686868;
+    font-size:34px;
+    margin-left:203px;
+    position: absolute;
+    top: 25px;
+}
+.bannerBar{
+    position: relative;
+}
+.bannerBar>span:nth-of-type(1){
+    position: absolute;
+    font-size:30px;
+    bottom: 50px;
+    left: 30px;
+    color:#fff;
+    letter-spacing: 2px;
+}
+.bannerBar .love span{
+    display:inline-block;
+    width: 42px;
+    height: 36px;
+    position: absolute;
+    bottom:50px;
+    right: 30px;
+    background:url("../img/love.png") 0 0 no-repeat;
+}
+.main{
+    background-color: #f1f1f1;
+    padding-top:20px;
+}
+.main .cehuashi_information{
+    background-color: #fff;
+    margin: 20px 30px;
+    height: 293px;
+    width: 690px;
+    padding:20px 30px 30px 30px;
+}
+.main .cehuashi_information p{
+    font-size: 22px;
+    color:#686868;
+}
+.main .cehuashi_information p:nth-of-type(1)>span{
+    line-height: 32px;
+
+}
+.main .cehuashi_information p:nth-of-type(1) img{
+    margin-left:85px;
+    display: inline-block;
+}
+.main .cehuashi_information p:nth-of-type(2){
+    line-height: 32px;
+
+}
+.main .cehuashi_information p:nth-of-type(6){
+    line-height: 10px;
+    margin-left:66px;
+}
+.main .sucai{
+    padding-bottom:96px;
+}
+.main .sucai h2{
+     font-size: 28px;
+     color:#929292;
+     padding-left:30px;
+    letter-spacing: 3px;
+
+ }
+.main .sucai h2:nth-of-type(1){
+    font-size:32px;
+    padding:0 0 20px 0;
+    text-align: center;
+    border-bottom:1px solid #dfdfdf;
+}
+.main .sucai img{
+    width: 690px;
+    height:340px;
+    margin:20px 30px 0 30px;
+}
+.share-hidden{
+    width: 750px;
+    height: 600px;
+    background-color: #fff;
+    display:none;
+}
+.share-hidden .share_yemian{
+     display:flex;
+    justify-content: space-around;
+    align-items: center;
+ }
+.share-hidden .share_yemian p{
+    text-align: center;
+    padding-top:29px;
+    font-size:26px;
+    color:#686868;
+}
+.share-hidden h2:nth-of-type(1){
+    margin-top:40px;
+    text-align: center;
+    font-size: 26px;
+}
+.share-hidden .share_yemian{
+    margin-top:150px;
+    margin-bottom:133px;
+}
+.share-hidden a{
+    display:block;
+    font-size: 26px;
+    text-align: center;
+    color: #FDB257;
+    line-height:96px;
+    height: 96px;
+    border-top: 1px solid #cdcdcd;
+    text-decoration: none;
+}
+
+
+   

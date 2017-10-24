@@ -1,0 +1,247 @@
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none;}
+.cehuashi{
+	width: 750px;
+	margin: 0 auto;
+	/*border:1px solid red;*/
+	/*box-sizing: border-box;*/
+	position: relative;
+}
+/*===================点击分享页=============*/
+.cehuashi #fenxiang-mask{
+	position: fixed;
+	width: 750px;
+	top: 0;
+	left: 50%;
+	margin-left:-375px;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 999;
+	display: none;
+}
+.cehuashi #fenxiang-mask .fenxiang{
+	width: 100%;
+	height: 370px;
+	z-index: 99;
+	background-color: #eee;
+	position: absolute;
+	bottom: 0;
+}
+.cehuashi #fenxiang-mask .fenxiang p{
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 40px;
+}
+.cehuashi #fenxiang-mask .fenxiang p a{
+	text-decoration: none;
+	color: #8e8e8e;
+}
+.cehuashi #fenxiang-mask .fenxiang .tubiao{
+	height: 70px;
+	padding: 0 60px;
+}
+.cehuashi #fenxiang-mask .fenxiang .tubiao li{
+	width: 70px;
+	float: left;
+	margin: 20px 40px;
+	text-align: center;
+}
+.cehuashi #fenxiang-mask .fenxiang .tubiao li a{
+    font-size: 28px;
+    color: #757575;
+}
+.cehuashi #fenxiang-mask .fenxiang .quxiao{
+	height: 120px;
+	border-top: 1px solid #ccc;
+    margin-top: 100px;
+    text-align: center;
+}
+.cehuashi #fenxiang-mask .fenxiang .quxiao a{
+   font-size: 40px;
+   height: 80px;
+   line-height: 80px;
+   color: #ffb158;
+}
+/*===================topBar=======================*/
+.topBar{
+	height: 128px;
+}
+.topBar .tubiao{
+	height: 91px;
+	text-align: center;
+   position: relative;
+}
+.topBar .tubiao .left{
+	display: inline-block;
+	width: 20px;
+	height: 40px;
+	background: url(../img/gengduotubiao_03.png) 0 0 no-repeat;
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	left: 30px;
+}
+.topBar .tubiao .right{
+	display: inline-block;
+	width: 34px;
+	height: 40px;
+	background: url(../img/fenxiang@2x.png) 0 0 no-repeat;
+	position: absolute;
+	right: 30px;
+	top: 50%;
+	margin-top: -20px;
+}
+.topBar .tubiao span{
+	line-height: 91px;
+    font-size: 35px;
+}
+/*====================section One===============*/
+#one .jianyuetu{
+	height: 400px;
+	background-color: #ccc;
+	position: relative;
+}
+#one .jianyuetu .picture{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: url(../img/touxiang.jpg) center no-repeat;
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	margin-left: -60px;
+}
+#one .jianyuetu p.name{
+   font-size: 25px;
+   color: #fff;
+   position: absolute;
+   top: 190px;
+   left: 50%;
+   margin-left: -55px;
+}
+#one .jianyuetu p.name span{
+	color: #333;
+	margin-left: 10px;
+}
+#one .jianyuetu .activity{
+	height: 28px;
+	width: 300px;
+	position: absolute;
+	top: 250px;
+	left: 250px;
+}
+#one .jianyuetu .activity .team,
+#one .jianyuetu .activity .party,
+#one .jianyuetu .activity .birthday{
+	display: block;
+	width: 70px;
+	height: 28px;
+	background-color: red;
+	border-radius: 10px;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	float: left;
+	margin: 0 10px;
+}
+#one .jianyuetu p.guanzhu{
+	position: absolute;
+	top: 290px;
+	left: 270px;
+	font-size: 26px;
+	color: white;
+}
+#one .jianyuetu .xingxi{
+	position: absolute;
+	top: 340px;
+	left: 235px;
+}
+#one .jianyuetu .xingxi a{
+	text-decoration: none;
+	color: #ff9914;
+	font-size: 25px;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	display: block;
+	border:2px solid #ff9914;
+	float: left;
+	background-color: #fff;
+	border-radius: 20px;
+	margin: 0 15px;
+}
+/*=====================section TWo=============*/
+#two .case p{
+	font-size: 30px;
+	margin: 30px 0 20px 20px;
+}
+#two .case .happyBirthday{
+	width: 690px;
+	height: 360px;
+	background: url(../img/banner-details-page_69.png);
+	background-color: pink;
+	margin: 0 30px;
+	position: relative;
+}
+#two .case .happyBirthday span.gongzhu{
+	display: block;
+	font-size: 30px;
+	color: white;
+	position: absolute;
+	left: 30px;
+	bottom: 30px;
+}
+#two .case .happyBirthday a span{
+	width: 42px;
+	height: 36px;
+	background: url(../img/shoucang@2x.png) 0 0 no-repeat;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+#two .case .happyBirthday a span.redheart{
+	background: url("../img/shoucang@22x.png")0 0 no-repeat;
+}
+#two .case .qiqiu{
+   width: 690px;
+	height: 360px;
+	background: url(../img/banner-details-page_72.png);
+	background-color: #ccc;
+	margin: 20px 30px 0 30px;
+}
+/*===================footer================*/
+#footer{
+	position: fixed;
+	bottom: 0;
+}
+footer .dingzhi{
+  width: 750px;
+  height: 98px;
+  background-color: #ff9914;
+  box-sizing: border-box;
+}
+footer .dingzhi a{
+	display: block;
+	text-decoration: none;
+	width: 374px;
+	line-height: 98px;
+	color: white;
+	font-size: 35px;
+	text-align: center;
+	float: left;
+}
+footer .dingzhi a.left{
+	float: left;
+	border-right: 1px dashed white;
+}
+footer .dingzhi a.right{
+	float: right;
+}
+footer .specWith{
+   height: 40px;
+   background: url(../img/spec_r2_c1.png) 0 0 no-repeat;
+}

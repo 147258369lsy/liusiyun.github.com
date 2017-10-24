@@ -1,0 +1,331 @@
+.more{
+    width: 710px;
+    margin: 0  auto;
+    margin-top: 10px;
+    display: flex;
+}
+.more span{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 280px;
+}
+.border20px{
+    border-bottom: 20px solid #dfdfdf;
+}
+#xiangqing > a >.picture6{
+
+    background: url("../img/banner-details-page_33.png") center center no-repeat;
+    width: 710px;
+    height: 360px;
+    margin: 30px 20px 0px 20px;
+}
+#xiangqing > .content6{
+    margin-left: 30px;
+    /*border-bottom: 1px solid #dfdfdf;*/
+    margin-top: 10px;
+}
+
+#xiangqing > .content6 > div{
+
+}
+#xiangqing > .content6 > div:nth-of-type(1){
+    font-size: 30px;
+}
+#xiangqing > .content6 > div:nth-of-type(2) > .xing{
+    display: inline-block;
+    /*background-color: #red;*/
+    background: url("../img/banner-details-page_18.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+#xiangqing > .content6> div:nth-of-type(2) > .xing1{
+    display: inline-block;
+    background: url("../img/banner-details-page_20.png") no-repeat 0 0;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+#xiangqing > .content6 > div:nth-of-type(2) > .ico{
+    display: inline-block;
+    background: url("../img/banner-details-page_54.png");
+    width: 58px;
+    height: 28px;
+    margin-top: 16px;
+    margin-left: 10px;
+}
+
+#xiangqing > .content6 > div:nth-of-type(3){
+    display: flex;
+    /*width: 750px;*/
+    font-size: 26px;
+    color: #686868;
+    margin-top:26px;
+    position: relative;
+}
+#xiangqing > .content6 > div:nth-of-type(3) > .icon6{
+    font-style: normal;;
+    display: inline-block;
+    background: url("../img/banner-details-page_58.png") no-repeat center center;
+    width: 44px;
+    height: 44px;
+    margin-top: -2px;
+    margin-bottom: 40px;
+}
+
+#xiangqing > .content6 > .chuzu{
+    width: 688px;
+    height: 380px;
+    background-color: #eee;
+}
+#xiangqing > .content6 > .chuzu > .media  {
+
+    padding: 40px 0px 0px 30px;
+    margin: 0;
+    box-sizing: border-box;
+}
+#xiangqing > .content6 > .chuzu > .media:nth-of-type(2),
+#xiangqing > .content6 > .chuzu > .media:nth-of-type(3){
+    margin-top: -20px;
+}
+#xiangqing > .content6 > .chuzu > .media:nth-of-type(1) > .media-body > h4{
+    font-size: 30px;
+    color: #282828;
+}
+#xiangqing > .content6 > .chuzu > .media:nth-of-type(1) > .media-body > p{
+    font-size: 26px;
+    color: #686868;
+    margin: 0;
+}
+
+#xiangqing > .content6 > .chuzu > .media:nth-of-type(2) > .media-body > h4{
+    font-size: 30px;
+    color: #282828;
+}
+#xiangqing > .content6 > .chuzu > .media:nth-of-type(2) > .media-body > p{
+    font-size: 26px;
+    color: #686868;
+    margin: 0;
+}
+
+#xiangqing > .content6 > .chuzu > .media:nth-of-type(3) > .media-body > h4{
+    font-size: 30px;
+    color: #282828;
+}
+#xiangqing > .content6 > .chuzu > .media:nth-of-type(3) > .media-body > p {
+    font-size: 26px;
+    color: #686868;
+    margin: 0;
+}
+
+#xiangqing > .content6 > .miaoshu > h5{
+    font-size: 30px;
+    color: #282828;
+    margin: 30px 0 20px 0;
+
+}
+#xiangqing > .content6 > .miaoshu > p{
+    font-size: 20px;
+    text-indent: 2em;
+    height: 112px;
+    overflow: hidden;
+}
+#xiangqing > .content6 > .miaoshu > div {
+    margin-top: 30px;
+    cursor: pointer;
+    color: #ff9914;
+}
+#xiangqing > .content6 > .miaoshu > div > img {
+    /*margin-top: 30px;*/
+    width: 20px;
+    height: 10px;
+}
+
+#ssfw {
+    /*background-color: red;*/
+    margin-left: 30px;
+}
+#ssfw > .media{
+    margin: 30px 10px 30px 0;
+}
+#ssfw > .media > .media-left > a > img {
+    width: 210px;
+    height: 212px;
+}
+#ssfw > .media > .media-body{
+    position: relative;
+}
+#ssfw > .media > .media-body > h4{
+    font-size: 30px;
+}
+#ssfw > .media > .media-body > p{
+    font-size: 26px;
+    color: #686868;
+}
+#ssfw > .media > .media-body > p:nth-of-type(2){
+    font-size: 26px;
+    color: #ff9914;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+}
+
+.bottom1px {
+    border-bottom: 1px solid #ccc;
+}
+#ssfw > .miaosha{
+    margin-top: 38px;
+    margin-bottom: 20px;
+}
+#ssfw > .miaosha > .taocan{
+    font-size: 20px;
+    background-color: #ff9914;
+    padding:2px 5px;
+    border-radius: 5px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+#ssfw > .miaosha > .yikoujia {
+    font-size: 20px;
+    background-color: #ff9914;
+    padding:2px 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#ssfw > .miaosha > .money {
+    font-size: 26px;
+    /*background-color: #ff9914;*/
+    border-radius: 5px;
+    color: #ff9914;
+    margin: 0 30px 0 10px;
+}
+
+#ssfw > .miaosha > .money > img {
+    cursor: pointer;
+}
+
+#ssfw > .shijian{
+    display: none;
+}
+#ssfw > .shijian.toggle{
+    display: block;
+}
+#ssfw > .shijian > .shijian1{
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+#ssfw > .shijian > .shijian1 >  div{
+    margin: 5px;
+
+}
+#ssfw > .shijian > .shijian1 >  div >span{
+    /*background-color: red;*/
+    color: #666;
+    font-size: 26px;
+}
+#ssfw > .shijian > .shijian1 >  div:nth-of-type(1) > span.pull-right{
+    color: #ff9914;
+    padding-right: 120px;
+}
+#ssfw > .shijian > .shijian1>  div:nth-of-type(2) > span.pull-right{
+    font-size: 20px;
+    padding-right: 120px;
+}
+
+#ssfw > .shijian > .shijian1 > div:nth-of-type(3) > button{
+    color: #fff;
+    border: 0;
+    width: 60px;
+    height: 30px;
+    background-color: #ff9914;
+    border-radius: 5px;
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
+
+
+
+#ssfw >  .shijian >.shijian2{
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+#ssfw >  .shijian >.shijian2 >  div{
+    margin: 5px;
+
+}
+#ssfw >  .shijian >.shijian2>  div >span{
+    /*background-color: red;*/
+    color: #666;
+    font-size: 26px;
+}
+#ssfw >  .shijian >.shijian2 >  div:nth-of-type(1) > span.pull-right{
+    color: #ff9914;
+    padding-right: 120px;
+}
+#ssfw >  .shijian >.shijian2 >  div:nth-of-type(2) > span.pull-right{
+    font-size: 20px;
+    padding-right: 120px;
+}
+
+#ssfw >  .shijian >.shijian2 > div:nth-of-type(3) > button{
+    color: #fff;
+    border: 0;
+    width: 60px;
+    height: 30px;
+    background-color: #ff9914;
+    border-radius: 5px;
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
+
+#ssfw >  .shijian >.shijian3{
+    position: relative;
+    /*border-bottom: 1px solid #ccc;*/
+}
+#ssfw >  .shijian >.shijian3 >  div{
+    margin: 5px;
+
+}
+#ssfw >  .shijian >.shijian3 >  div >span{
+    /*background-color: red;*/
+    color: #666;
+    font-size: 26px;
+}
+#ssfw >  .shijian >.shijian3 >  div:nth-of-type(1) > span.pull-right{
+    color: #ff9914;
+    padding-right: 120px;
+}
+#ssfw >  .shijian >.shijian3 >  div:nth-of-type(2) > span.pull-right{
+    font-size: 20px;
+    padding-right: 120px;
+}
+
+#ssfw >  .shijian >.shijian3 > div:nth-of-type(3) > button{
+    color: #fff;
+    border: 0;
+    width: 60px;
+    height: 30px;
+    background-color: #ff9914;
+    border-radius: 5px;
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

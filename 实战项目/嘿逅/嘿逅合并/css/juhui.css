@@ -1,0 +1,459 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    /*height: 1000px;*/
+}
+
+#juhui{
+    background-color: #fff
+}
+.more{
+    width: 710px;
+    margin: 0  auto;
+    margin-top: 10px;
+    display: flex;
+}
+.more span{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 220px;
+}
+#juhui > a >.picture1{
+
+     background: url("../img/banner-details-page_11.png") center center no-repeat;
+     width: 710px;
+     height: 360px;
+     margin: 30px 20px 20px 20px;
+ }
+#juhui > .content1{
+    margin-left: 30px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+#juhui > .content1 > div{
+    margin-top: 20px;
+}
+#juhui > .content1 > div:nth-of-type(1){
+    font-size: 30px;
+}
+#juhui > .content1 > div:nth-of-type(2) > .xing{
+    display: inline-block;
+    /*background-color: #red;*/
+    background: url("../img/banner-details-page_18.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+#juhui > .content1 > div:nth-of-type(2) > .xing1{
+    display: inline-block;
+    background: url("../img/banner-details-page_20.png") no-repeat 0 0;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#juhui > .content1 > div:nth-of-type(2) > .ico{
+    display: inline-block;
+    background: url("../img/banner-details-page_15.png");
+    width: 58px;
+    height: 28px;
+    margin-left: 10px;
+}
+
+#juhui > .content1 > div:nth-of-type(3){
+    font-size: 20px;
+    color: #686868;
+}
+#juhui > .content1 > div:nth-of-type(4){
+    display: flex;
+    /*width: 750px;*/
+    font-size: 26px;
+    color: #686868;
+    margin-bottom: 30px;
+    position: relative;
+}
+#juhui > .content1 > div:nth-of-type(4) > .icon1{
+    font-style: normal;;
+    display: inline-block;
+    background: url("../img/banner-details-page_58.png") no-repeat center center;
+    width: 44px;
+    height: 44px;
+
+}
+
+#juhui > .content1 > div:nth-of-type(4) > .yuan1{
+    font-size: 26px;
+    color: #ff9914;
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+}
+
+
+
+
+
+#juhui > a > .picture2{
+
+    background: url("../img/banner-details-page_33.png") center center no-repeat;
+    width: 710px;
+    height: 360px;
+    margin: 30px 20px 20px 20px;
+}
+#juhui > .content2{
+    margin-left: 30px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+#juhui > .content2 > div{
+    margin-top: 20px;
+}
+#juhui > .content2 > div:nth-of-type(1){
+    font-size: 30px;
+}
+#juhui > .content2 > div:nth-of-type(2) > .xing{
+    display: inline-block;
+    /*background-color: #red;*/
+    background: url("../img/banner-details-page_18.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+#juhui > .content2 > div:nth-of-type(2) > .xing1{
+    display: inline-block;
+    background: url("../img/banner-details-page_20.png") no-repeat 0 0;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+#juhui > .content2 > div:nth-of-type(2) > .ico{
+    display: inline-block;
+    background: url("../img/banner-details-page_36.png");
+    width: 58px;
+    height: 28px;
+    margin-left: 10px;
+}
+
+#juhui > .content2 > div:nth-of-type(3){
+    font-size: 20px;
+    color: #686868;
+}
+#juhui > .content2 > div:nth-of-type(4){
+    display: flex;
+    /*width: 750px;*/
+    font-size: 26px;
+    color: #686868;
+    margin-bottom: 30px;
+    position: relative;
+}
+#juhui > .content2 > div:nth-of-type(4) > .icon2{
+    font-style: normal;;
+    display: inline-block;
+    background: url("../img/banner-details-page_58.png") no-repeat center center;
+    width: 44px;
+    height: 44px;
+
+}
+
+#juhui > .content2 > div:nth-of-type(4) > .yuan2{
+    font-size: 26px;
+    color: #ff9914;
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+}
+
+
+#juhui > a > .picture3{
+
+    background: url("../img/banner-details-page_51.png") center center no-repeat;
+    width: 710px;
+    height: 360px;
+    margin: 30px 20px 20px 20px;
+}
+#juhui > .content3{
+    margin-left: 30px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+#juhui > .content3 > div{
+    margin-top: 20px;
+}
+#juhui > .content3 > div:nth-of-type(1){
+    font-size: 30px;
+}
+#juhui > .content3 > div:nth-of-type(2) > .xing{
+    display: inline-block;
+    /*background-color: #red;*/
+    background: url("../img/banner-details-page_18.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+#juhui > .content3 > div:nth-of-type(2) > .xing1{
+    display: inline-block;
+    background: url("../img/banner-details-page_20.png") no-repeat 0 0;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+#juhui > .content3 > div:nth-of-type(2) > .ico{
+    display: inline-block;
+    background: url("../img/banner-details-page_54.png");
+    width: 58px;
+    height: 28px;
+    margin-left: 10px;
+}
+
+#juhui > .content3 > div:nth-of-type(3){
+    font-size: 20px;
+    color: #686868;
+}
+#juhui > .content3 > div:nth-of-type(4){
+    display: flex;
+    /*width: 750px;*/
+    font-size: 26px;
+    color: #686868;
+    margin-bottom: 30px;
+    position: relative;
+}
+#juhui > .content3 > div:nth-of-type(4) > .icon3{
+    font-style: normal;;
+    display: inline-block;
+    background: url("../img/banner-details-page_58.png") no-repeat center center;
+    width: 44px;
+    height: 44px;
+
+}
+
+#juhui > .content3 > div:nth-of-type(4) > .yuan3{
+    font-size: 26px;
+    color: #ff9914;
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+}
+
+
+#juhui > a > .picture4{
+
+    background: url("../img/banner-details-page_66.png") center center no-repeat;
+    width: 710px;
+    height: 360px;
+    margin: 30px 20px 20px 20px;
+}
+#juhui > .content4{
+    margin-left: 30px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+#juhui > .content4 > div{
+    margin-top: 20px;
+}
+#juhui > .content4 > div:nth-of-type(1){
+    font-size: 30px;
+}
+#juhui > .content4 > div:nth-of-type(2) > .xing{
+    display: inline-block;
+    /*background-color: #red;*/
+    background: url("../img/banner-details-page_18.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+#juhui > .content4 > div:nth-of-type(2) > .xing1{
+    display: inline-block;
+    background: url("../img/banner-details-page_20.png") no-repeat 0 0;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+#juhui > .content4 > div:nth-of-type(2) > .ico{
+    display: inline-block;
+    background: url("../img/banner-details-page_54.png");
+    width: 58px;
+    height: 28px;
+    margin-left: 10px;
+}
+
+#juhui > .content4 > div:nth-of-type(3){
+    font-size: 20px;
+    color: #686868;
+}
+#juhui > .content4 > div:nth-of-type(4){
+    display: flex;
+    /*width: 750px;*/
+    font-size: 26px;
+    color: #686868;
+    margin-bottom: 30px;
+    position: relative;
+}
+#juhui > .content4 > div:nth-of-type(4) > .icon4{
+    font-style: normal;;
+    display: inline-block;
+    background: url("../img/banner-details-page_58.png") no-repeat center center;
+    width: 44px;
+    height: 44px;
+
+}
+
+#juhui > .content4 > div:nth-of-type(4) > .yuan4{
+    font-size: 26px;
+    color: #ff9914;
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+}
+
+
+
+#juhui > a > .picture5{
+
+    background: url("../img/banner-details-page_69.png") center center no-repeat;
+    width: 710px;
+    height: 360px;
+    margin: 30px 20px 20px 20px;
+}
+#juhui > .content5{
+    margin-left: 30px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+#juhui > .content5 > div{
+    margin-top: 20px;
+}
+#juhui > .content5 > div:nth-of-type(1){
+    font-size: 30px;
+}
+#juhui > .content5 > div:nth-of-type(2) > .xing{
+    display: inline-block;
+    /*background-color: #red;*/
+    background: url("../img/banner-details-page_18.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+#juhui > .content5 > div:nth-of-type(2) > .xing1{
+    display: inline-block;
+    background: url("../img/banner-details-page_20.png") no-repeat 0 0;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+#juhui > .content5 > div:nth-of-type(2) > .ico{
+    display: inline-block;
+    background: url("../img/banner-details-page_54.png");
+    width: 58px;
+    height: 28px;
+    margin-left: 10px;
+}
+
+#juhui > .content5 > div:nth-of-type(3){
+    font-size: 20px;
+    color: #686868;
+}
+#juhui > .content5 > div:nth-of-type(4){
+    display: flex;
+    /*width: 750px;*/
+    font-size: 26px;
+    color: #686868;
+    margin-bottom: 30px;
+    position: relative;
+}
+#juhui > .content5 > div:nth-of-type(4) > .icon5{
+    font-style: normal;;
+    display: inline-block;
+    background: url("../img/banner-details-page_58.png") no-repeat center center;
+    width: 44px;
+    height: 44px;
+
+}
+
+#juhui > .content5 > div:nth-of-type(4) > .yuan5{
+    font-size: 26px;
+    color: #ff9914;
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+}
+
+
+
+#juhui > a >.picture6{
+
+    background: url("../img/banner-details-page_72.png") center center no-repeat;
+    width: 710px;
+    height: 360px;
+    margin: 30px 20px 20px 20px;
+}
+#juhui > .content6{
+    margin-left: 30px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+#juhui > .content6 > div{
+    margin-top: 20px;
+}
+#juhui > .content6 > div:nth-of-type(1){
+    font-size: 30px;
+}
+#juhui > .content6 > div:nth-of-type(2) > .xing{
+    display: inline-block;
+    /*background-color: #red;*/
+    background: url("../img/banner-details-page_18.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+#juhui > .content6> div:nth-of-type(2) > .xing1{
+    display: inline-block;
+    background: url("../img/banner-details-page_20.png") no-repeat 0 0;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+#juhui > .content6 > div:nth-of-type(2) > .ico{
+    display: inline-block;
+    background: url("../img/banner-details-page_54.png");
+    width: 58px;
+    height: 28px;
+    margin-left: 10px;
+}
+
+#juhui > .content6 > div:nth-of-type(3){
+    font-size: 20px;
+    color: #686868;
+}
+#juhui > .content6 > div:nth-of-type(4){
+    display: flex;
+    /*width: 750px;*/
+    font-size: 26px;
+    color: #686868;
+    margin-bottom: 30px;
+    position: relative;
+}
+#juhui > .content6 > div:nth-of-type(4) > .icon6{
+    font-style: normal;;
+    display: inline-block;
+    background: url("../img/banner-details-page_58.png") no-repeat center center;
+    width: 44px;
+    height: 44px;
+
+}
+
+#juhui > .content6 > div:nth-of-type(4) > .yuan6{
+    font-size: 26px;
+    color: #ff9914;
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+}
+
+

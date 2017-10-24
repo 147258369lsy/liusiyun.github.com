@@ -1,0 +1,52 @@
+
+
+
+/**************元素主界面***************/
+/*版心*/
+.yuansu{
+	width: 750px;
+	background-color: #f2f2f2;
+	margin: 0px auto;
+	margin-bottom: 0;
+	height: 1314px;
+	padding: 0px 30px 0 30px;
+	/*overflow: hidden;*/
+}
+.yuansu > div{
+	padding:0 0 20px 0;
+}
+.yuansu > div:nth-of-type(2n){
+	padding-left: 10px;
+}
+
+
+/****************主题界面****************/
+.yuansu > #yuansu{
+	position: relative;
+}
+.yuansu > #yuansu > .yuansu-static{
+	padding-bottom: 26px;
+}
+.yuansu > #yuansu > .yuansu-static > span{
+	font-size: 34px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+}
+.yuansu > #yuansu  a{
+	display: block;
+}
+.yuansu > #yuansu > .yuansu-tupian > .yuansu-aixin{
+	padding-bottom: 20px;
+	position: relative;
+}
+.yuansu > #yuansu > .yuansu-tupian > .yuansu-aixin > img{
+	width: 42px;
+	height: 36px;
+	/*background: url("../images/aixin1.png");*/
+	position: absolute;
+	top: 32px;
+	left:602px;
+/*	display: none;*/
+}
+
