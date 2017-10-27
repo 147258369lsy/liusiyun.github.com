@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Merlin HTML/CSS template">
+    <meta name="author" content="Hasan Alibegic">
+
+    <title>个人主页</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" async defer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" async defer>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.8.2/venobox.css" async defer> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" async defer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" async defer>
+    <link rel="stylesheet" href="css/style.css" async defer>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="loader">
+        <div class="loading"></div>
+    </div>
+    <div id="navbar-top" style="margin-top: -8px;">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-white" role="navigation">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <a class="navbar-brand nav-external" href="#home">Web Developer</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#home"><i class="icon-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services"><i class="icon-skills"></i> Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#work"><i class="icon-projects"></i>Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#clients"><i class="icon-dictum"></i> Dictum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about"><i class="icon-aboutme"></i>About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact"><i class="icon-phone"></i> Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <section id="home" class="page overlay">
+        <div class="container">
+            <div class="content cover text-center">
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: -100px;">
+                        <h1 class="mt-0 mb-4 animated hiding superShadow" data-animation="fadeInRight" data-delay="700">刘思运</h1>
+                        <h3 class="mt-0 mb-0 animated hiding" data-animation="fadeInLeft" data-delay="600">Make your dreams come true with your hands.</h3>
+                        <a class="mt-0 mb-4 btn btn-blue nav-external animated hiding" data-animation="fadeIn" data-delay="1000" href="#services">HIRE Me</a>
+                        <a href="#services" class="icon-arrow-down nav-external animated hiding" data-animation="fadeInUp" data-delay="900"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="page">
+        <div class="container">
+            <div class="content text-center">
+                <div class="heading">
+                    <h1 class="mt-0 mb-4 animated" data-animation="fadeInLeft">MY SKILLS</h1>
+                    <div class="border"></div>
+                    <h5 class="mt-4 mb-0 animated" data-animation="fadeInRight">During my college years, I learned these WEB knowledge through teachers and my own efforts, and the level of mastery was as follows:</h5>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 service animated hiding" data-animation="fadeInUp" data-delay="300">
+                        <i class="fa fa-5x"><img src="img/图标/js.png" style="width:70px;height: 70px;"></i>
+                        <h3 class="mt-5 mb-4"><a href="#">Javascript:<span>80%</span></a></h3>
+                        <p> 在javascript中学到了这些重点知识:基本数据类型,数组和字符串,运算符和流程控制语句,DOM节点和事件的基本操作,js变量和函数基础,面向对象编程和一些简单函数的封装.</p>
+                    </div>
+                    <div class="col-sm-4 service animated hiding" data-animation="fadeInUp" data-delay="600">
+                        <i class="fa fa-5x"><img src="img/图标/css3.png" style="width:70px;height: 70px;"></i>
+                        <h3 class="mt-5 mb-4"><a href="#">CSS3:80%</a></h3>
+                        <p>在CSS3中,学到了:一些重要的选择器(属性,伪类),CSS3的盒模型和背景(图片,颜色)设置,颜色渐变和径向渐变,伸缩布局,还有重要的@keyframe动画及tramsform2D3D转换</p>
+                    </div>
+                    <div class="col-sm-4 service animated hiding" data-animation="fadeInUp" data-delay="900">
+                       <i class="fa fa-5x"><img src="img/图标/html5.png" style="width:70px;height: 70px;"></i>
+                        <h3 class="mt-5 mb-4"><a href="#">HTML5:90%</a></h3>
+                        <p>在H5中学到了:新的语义标签,音频radio和视屏vedio标签,内联SVG,智能表单元素,以及重要的Canvas画布</p>
+                    </div>
+                    <div class="col-sm-4 service animated hiding" data-animation="fadeInUp" data-delay="900">
+                        <i class="fa fa-5x"><img src="img/图标/ajax.png" style="width:70px;height: 70px;"></i>
+                        <h3 class="mt-5 mb-4"><a href="#">AJAX:70%</a></h3>
+                        <p>ajaxPHP,XHR创建对象,XHR readyStatue,POST和GET请求的配置与区别,跨域问题(jsonp和Script标签引入文件)</p>
+                    </div>
+                    <div class="col-sm-4 service animated hiding" data-animation="fadeInUp" data-delay="900">
+                        <i class="fa fa-5x"><img src="img/图标/angular.png" style="width:70px;height: 70px;"></i>
+                        <h3 class="mt-5 mb-4"><a href="#">ANGULAR:70%</a></h3>
+                        <p>angularScope作用域,angular一些重要的指令(ng-app,ng-controller,ng-model,ng-repeat,ne-click,ng-class等等,angular表达式,过滤器,路由Route,angular的三层分立MVC结构</p>
+                    </div>
+                    <div class="col-sm-4 service animated hiding" data-animation="fadeInUp" data-delay="900">
+                        <i class="fa fa-5x"><img src="img/图标/vue.png" style="width:70px;height: 70px;"></i>
+                        <h3 class="mt-5 mb-4"><a href="#">VUE:70%</a></h3>
+                        <p>数据绑定,Class和Style绑定,表单控件绑定,条件列表渲染,方法与事件处理器,过渡与组件,深入响应式原理等等</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+    <section id="work" class="page">
+        <div class="container">
+            <div class="content text-center">
+                <div class="heading">
+                    <h1 class="mt-0 mb-4">MY Projects</h1>
+                    <div class="border"></div>
+                    <p class="mt-4 mb-0">In the learning process at the web front end, the project I did was as follows:</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="portfolio">
+                            <ul class="filters list-inline">
+                                <li class="list-inline-item">
+                                    <a class="active" data-filter="*" href="#">All</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a data-filter=".photography" href="#">HtmlCssJsJq</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a data-filter=".branding" href="#">Angular</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a data-filter=".web" href="#">Vue</a>
+                                </li>
+                            </ul>
+                            <ul class="items list-unstyled clearfix animated hiding mb-0" data-animation="fadeInRight">
+                                <li class="item branding">
+                                    <a href="https://147258369lsy.github.io/liusiyun.github.com/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/%E4%BA%AC%E4%B8%9C/index.html" data-gall="work" data-vbtype="ajax" id="deleteClass1">
+                                         <img src="img/work/1.png">
+                                        <div class="overlay">
+                                            <span>1.仿京东商城静态网站小项目</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item photography">
+                                    <a href="https://147258369lsy.github.io/lunbotu.github.com/8.16/01%E6%97%8B%E8%BD%AC%E8%BD%AE%E6%92%AD%E5%9B%BE.html" data-gall="work" data-vbtype="ajax" id="deleteClass2">
+                                         <img src="img/work/2.png" >
+                                        <div class="overlay">
+                                            <span>2.JS制作旋转轮播图</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item branding">
+                                    <a href="https://147258369lsy.github.io/liusiyun.github.com/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/FlappyBird/FlappyBird.html" data-gall="work" data-vbtype="ajax" id="deleteClass3">
+                                        <img src="img/work/3.png" alt="">
+                                        <div class="overlay">
+                                            <span>3.用H5的Canvas制作FlyBird小游戏</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item photography">
+                                    <a href="https://147258369lsy.github.io/liusiyun.github.com/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/%E5%BE%AE%E9%87%91%E6%89%80%E9%A1%B9%E7%9B%AEBootstrap/index.html" data-gall="work" data-vbtype="ajax" id="deleteClass4">
+                                        <img src="img/work/4.png" alt="">
+                                        <div class="overlay">
+                                            <span>4.用Bootstrap做的投资理财微金所项目</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item photography">
+                                    <a href="https://147258369lsy.github.io/liusiyun.github.com/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/%E5%98%BF%E9%80%85/%E5%98%BF%E9%80%85%E5%90%88%E5%B9%B6/index.html" data-gall="work" data-vbtype="ajax" id="deleteClass5">
+                                        <img src="img/work/5.png" alt="">
+                                        <div class="overlay">
+                                            <span>5.仿APP嘿逅项目</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item web">
+                                    <a href="https://147258369lsy.github.io/liusiyun.github.com/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/loading%E5%8A%A0%E8%BD%BD/examples/9%E7%A7%8DCSS3loading%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.html" data-gall="work" data-vbtype="ajax" id="deleteClass6">
+                                        <img src="img/work/6.png" alt="">
+                                        <div class="overlay">
+                                            <span>6.九种CSS3制作的Loading加载效果</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item photography">
+                                    <a href="TODosMvc/todomvc-app-template-master/index.html" data-gall="work" data-vbtype="ajax" id="deleteClass7">
+                                        <img src="img/work/7.png" alt="">
+                                        <div class="overlay">
+                                            <span>7.用AngularJs制作的ToDosMvc项目</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item web">
+                                    <a href="" data-gall="work" data-vbtype="ajax" id="deleteClass8">
+                                        <img src="img/work/8.png" alt="">
+                                        <div class="overlay">
+                                            <span>8.个人主页</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="clients" class="page">
+        <div class="container">
+            <div class="content text-center">
+                <div class="row">
+                    <div class="col-sm-12 animated hiding" data-animation="fadeInDown">
+                        <div id="testimonials" class="carousel slide">
+                            <ol class="carousel-indicators">
+                                <li data-target="#testimonials" data-slide-to="0" class="active"></li>
+                                <li data-target="#testimonials" data-slide-to="1" class=""></li>
+                                <li data-target="#testimonials" data-slide-to="2" class=""></li>
+                                <li data-target="#testimonials" data-slide-to="3" class=""></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active flex-column">
+                                    <p class="quote mb-4">对自己的行为负责,社会就会对你的价值买单.</p>
+                                    <p class="client mb-5">黄瑞桦</p>
+                                </div>
+                                <div class="carousel-item flex-column">
+                                    <p class="quote mb-4">用双手实现你的梦想</p>
+                                    <p class="client mb-5">朱家聪</p>
+                                </div>
+                                <div class="carousel-item flex-column">
+                                    <p class="quote mb-4">每天进步一点点,几个月后你将成为一个全新的自己</p>
+                                    <p class="client mb-5">郭杰</p>
+                                </div>
+                                <div class="carousel-item flex-column">
+                                    <p class="quote mb-4">if(今天!=生命的最后一天){为明天的生活而努力!}
+                                    printf("精彩的人生")</p>
+                                    <p class="client mb-5">座右铭</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="page">
+        <div class="container">
+            <div class="content text-center">
+                <div class="heading">
+                    <h2 class="mt-0 mb-4">About Me.</h2>
+                    <div class="border"></div>
+                    <p class="mt-4 mb-0">我叫刘思运,家庭住址江西省吉安市安福县,出生于1995年10月3日,就读于江西宜春学院二本院校,网络工程专业.个人兴趣爱好是:跑步,打乒乓球,玩游戏,看电影电视剧.<br> Life is colorful because of interest!</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInLeft" data-delay="600">
+                        <div class="profile-photo">
+                            <img class="img-fluid" src="img/team/1.jpg" style="width: 300px;height: 200px;">
+                        </div>
+                        <div class="bio mt-4">
+                            <h5 class="mb-1">Running</h5>
+                            <div class="border mt-4 mb-4"></div>
+                            <p>I like running because it not only builds up your body, but also improves sleep quality.</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="http://www.facebook.com" title="Facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="http://www.twitter.com" title="Twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="http://www.linkedin.com" title="LinkedIn">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="http://www.github.com" title="GitHub">
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
+                        <div class="profile-photo">
+                            <img class="img-fluid" src="img/team/2.jpg" style="width: 300px;height: 200px;">
+                        </div>
+                        <div class="bio mt-4">
+                            <h5 class="mb-1">Play table tennis</h5>
+                            <div class="border mt-4 mb-4"></div>
+                            <p>Since I was in high school, I like playing table tennis. I think it's fun.</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="http://www.dribbble.com" title="Dribbble">
+                                        <i class="fa fa-dribbble"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="http://www.pinterest.com" title="Pinterest">
+                                        <i class="fa fa-pinterest"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="http://www.instagram.com" title="Instagram">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
+                        <div class="profile-photo">
+                            <img class="img-fluid" src="img/team/3.jpg" style="width: 300px;height: 200px;">
+                        </div>
+                        <div class="bio mt-4">
+                            <h5 class="mb-1">League of Legends</h5>
+                            <div class="border mt-4 mb-4"></div>
+                            <p>I like to play League of Legends because it used to make me happy.</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="http://www.twitter.com" title="Twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="http://developer.android.com/index.html" title="Android Developers">
+                                        <i class="fa fa-android"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="http://www.stackoverflow.com" title="Stack Overflow">
+                                        <i class="fa fa-stack-overflow"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInRight" data-delay="600">
+                        <div class="profile-photo">
+                            <img class="img-fluid" src="img/team/4.jpg" style="width: 300px;height: 200px;">
+                        </div>
+                        <div class="bio mt-4">
+                            <h5 class="mb-1">Game of Thrones</h5>
+                            <div class="border mt-4 mb-4"></div>
+                            <p>I think this TV play is very meaningful and very good.</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="http://www.plus.google.com" title="Google+">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="http://www.trello.com" title="Trello">
+                                        <i class="fa fa-trello"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="mailto:john.doe@mail.com" title="Email">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="page overlay">
+        <div class="container">
+            <div class="content cover text-center">
+                <div class="heading">
+                    <h1 class="mt-0 mb-4">Getting in touch.</h1>
+                    <div class="border"></div>
+                    <p class="mt-4 mb-0">You deserve it,hire me immediately. Thank you!</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 animated hiding" data-animation="fadeInRight" data-delay="600">
+                        <i class="fa fa-map-marker fa-3x"></i>
+                        <a href="#">目前所在地:浙江省杭州市</a>
+                    </div>
+                    <div class="col-sm-4 animated hiding" data-animation="fadeInDown" data-delay="300">
+                        <i class="fa fa-phone fa-3x"></i>
+                        <a href="tel:9876543210">联系电话:15779170468</a>
+                    </div>
+                    <div class="col-sm-4 animated hiding" data-animation="fadeInLeft" data-delay="600">
+                        <i class="fa fa-envelope fa-3x"></i>
+                        <a href="mailto:john.doe@mail.com">QQ邮箱:1747986707@qq.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 animated hiding" data-animation="fadeInUp">
+                    <ul class="social list-inline">
+                        <li class="list-inline-item">
+                            <a class="facebook" href="http://www.facebook.com" title="Facebook">
+                                <i class="fa fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="twitter" href="http://www.twitter.com" title="Twitter">
+                                <i class="fa fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="google-plus" href="http://www.plus.google.com" title="Google+">
+                                <i class="fa fa-google-plus fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="dribbble" href="http://www.linkedin.com" title="Dribbble">
+                                <i class="fa fa-dribbble fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright" data-animation="fadeInUp">
+                        <h1 id="homePage">刘思运的个人主页</h1>
+                    </p>
+                    <a href="javascript:;" id="backTop">回<br>到<br>顶<br>部</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.3.3/jquery.appear.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.8.2/venobox.min.js"></script>
+    <script src="js/script.js?v=1.0"></script>
+</body>
+
+</html>
