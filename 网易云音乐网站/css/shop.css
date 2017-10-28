@@ -1,0 +1,557 @@
+/*--------------------默认样式------------------*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+html,body{
+	width: 98vw;
+	height: auto;
+	min-width: 1100px;
+	/*overflow: hidden;*/
+}
+
+.w1100{
+	width: 1100px;
+	margin: 0 auto;
+}
+
+
+
+/*--------------------------topBar---------------*/
+section#topBar{
+	width: 100%;
+	height: 70px;
+	background-color: #fff;
+	/*overflow: hidden;*/
+}
+
+div.mainLogo{
+	width: 290px;
+	height: 70px;
+	float: left;
+}
+/*搜索框*/
+div.giftSearch{
+	width: 300px;
+	height: 70px;
+	float: left;
+	margin-left: 334px;
+}
+
+div.giftSearch form{
+	width: 100%;
+	height: 38px;
+	margin-top: 15px;
+	border-radius: 20px;
+	border:1px solid #eee;
+	position: relative;
+}
+div.giftSearch form div.searchIcon{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+}
+div.searchIcon span.round2{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	border-radius: 50%;
+	border:2px solid #858585;
+	position: absolute;
+	left: 0;top: 0;
+}
+div.searchIcon span.hand{
+	width: 2px;
+	height: 10px;
+	background-color: #858585;
+	position: absolute;
+	left: 16px;
+	top: 13px;
+	transform: rotate(-40deg);
+}
+
+div.giftSearch form input{
+	width: 80%;
+	margin: 10px 0 0 34px;
+	border:none;
+	outline: none;
+}
+/*购物车*/
+div.cart{
+	width: 36px;
+	height: 36px;
+	background-color: #ccc;
+	margin: 17px 0 0 41px;
+	float: left;
+	position: relative;
+}
+div.cart span{
+   display: inline-block;
+   width: 18px;
+   height: 18px;
+   background-color: #d33930;
+   color: #fff;
+   position: absolute;
+   right: -2px;
+   top: -8px;
+   border-radius: 50%;
+   text-align: center;
+}
+
+/*登陆*/
+div.signIn{
+	width: 62px;
+	height: 36px;
+	float: left;
+	margin: 15px 0 0 37px;
+	position: relative;
+}
+div.signIn div.via{
+	width: 36px;
+	height: 36px;
+	overflow: hidden;
+	border-radius: 50%;
+	display: inline-block;
+}
+div.signIn span.upDown {
+	position: relative;
+}
+div.signIn span.upDown span.showMsg{
+	width: 0px;
+	height: 0px;
+	position: absolute;
+    top: 0px;
+	left: 50%;
+	margin-left: 5px;
+	border:8px solid transparent;
+	border-top-color: black;
+}
+div.signIn:hover span.upDown span.showMsg{
+    border-top-color: transparent;
+    border-bottom-color: #000;
+	top: -15px;
+}
+div.signIn:hover div.message{
+   display: block;
+}
+div.signIn div.message{
+	width: 160px;
+	height: 200px;
+	box-shadow: -5px -2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	position: absolute;
+	left: -98px;
+	top: 25px;
+	z-index: 99;
+	background-color: #fff;
+	display: none;
+}
+div.signIn div.message::before{
+	content: '';
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	top: -18px;
+	left: 50%;
+	margin-left: -10px;
+	border:10px solid transparent;
+	border-bottom-color: #fff;
+}
+div.signIn div.message li{
+	display: inline-block;
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 12px;
+
+}
+div.signIn div.message li:nth-of-type(5){
+	border-top:1px solid #999;
+	margin-top: -1px;
+}
+div.signIn div.message li:hover{
+	background-color: #f7f7f7;
+}
+
+
+/*----------------------轮播图---------------------------------*/
+section#showStar{
+	width: 100%;
+	height: 480px;
+	/*background-color: #ddd;*/
+	position: relative;
+}
+
+section#showStar div.picBox{
+	width: 100%;
+	height: 480px;
+	text-align: center;
+}
+
+section#showStar div.picBox li.picLi{
+	width: 100%;
+	height: 480px;
+	display: none;
+}
+
+li.picLi:nth-of-type(1){
+    background-color: #d11a1c;
+}
+li.picLi:nth-of-type(2){
+    background-color: #0a0809;
+}
+
+li.picLi:nth-of-type(3){
+   background-color:#d11a1c;
+}
+
+li.picLi:nth-of-type(4){
+	background-color: #05193e;
+
+}
+
+li.picLi:nth-of-type(5){
+    background-color: #fee1b9;
+}
+
+
+section#showStar div.picBox li.active{
+	display: block;
+}
+
+section#showStar div.showRound{
+    width: 100%;
+    height: 6px;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+section#showStar div.showRound li{
+    display: inline-block;
+}
+section#showStar div.showRound li a{
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #fff;
+}
+section#showStar div.showRound li.hot a{
+	background-color: red;
+}
+
+/*点击切换上一个下一个*/
+section#showStar div.prevNext a{
+	position: absolute;
+	top: 50%;
+	margin-top: -40px;
+	display:block;
+	width: 40px;
+	height: 80px;
+	background-color:#222;
+	opacity: 0.5;
+	/*position: relative;*/
+}
+div.prevNext a::before{
+	content: '';
+	width: 0;
+	height: 0;
+	border:20px solid transparent;
+	border-width: 20px 10px ;
+	border-left-color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -20px;
+}
+div.prevNext a.prev::before{
+   border-left-color:transparent ;
+   border-right-color: #eee;
+   margin-left: -15px;
+}
+div.prevNext a::after{
+	content: '';
+	width: 0;
+	height: 0;
+	border:20px solid transparent;
+	border-width: 16px 8px ;
+	border-left-color: #222;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -16px;
+}
+div.prevNext a.prev::after{
+   border-left-color:transparent ;
+   border-right-color:#222;
+   margin-left: -11px;
+}
+section#showStar div.prevNext a:hover{
+	opacity: 0.8;
+}
+section#showStar div.prevNext a.next{
+	right: 0px;
+}
+/*--------------------------------------------*/
+
+/*-----------------四个菜单-----------------------*/
+section#fourTabs{
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid #d9d9d9;
+}
+section#fourTabs div.fourtabs{
+	display: flex;
+	flex-direction: row;
+}
+.eline{
+	display: inline-block;
+    margin-top: 10px;
+	width: 1px;
+	height: 60px;
+	background-color: #d9d9d9;
+}
+section#fourTabs div.fourtabs div.onetab{
+	display: inline-block;
+	padding:0 10px;
+	width: 25%;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	/*background-color: red;*/
+}
+section#fourTabs div.fourtabs div.onetab img{
+	vertical-align: middle;
+}
+
+/*------------------两个顶部图片---------------------*/
+section#mainGifts{
+	width: 100%;
+	/*height: 300px;*/
+    margin-top: 40px;
+}
+
+section#mainGifts div.gs_top{
+	width: 100%;
+	height: 300px;
+}
+section#mainGifts div.gs_top div{
+	float: left;
+}
+section#mainGifts div.gs_top  div.gs_top_left{
+	padding-right: 16px;
+}
+
+
+/**/
+section#mainGifts div.main_block{
+	width: 100%;
+    margin-top: 50px;
+}
+
+section#mainGifts div.main_block span.recom{
+	font-size: 24px;
+	color: #333;
+	font-weight: bold;
+	/*background-color: #c8c8c8;*/
+}
+section#mainGifts div.main_block div.recommand ul{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content:flex-start;
+   margin-top: 20px;
+}
+
+div.recommand ul li{
+	width: 275px;
+	height: 382px;
+	text-align: center;
+	font-size: 15px;
+	position: relative;
+	/*background-color: #333;*/
+}
+
+div.recommand ul li span.pianyi{
+	width: 60px;
+	height: 60px;
+	background-color:#d74d45 ;
+	border-radius: 50%;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	line-height: 30px;
+	color: white;
+	text-decoration: none;
+}
+
+div.recommand ul li em.tejia{
+	color: #d74d45;
+	border:1px solid #d74d45;
+	border-radius: 2px;
+	font-style: normal;
+	font-size: 12px;
+	padding: 2px;
+}
+div.recommand ul li span{
+	padding: 5px ;
+}
+
+div.recommand ul li span:hover{
+	text-decoration: underline;
+}
+div.recommand ul li p{
+	color: #d74d45;
+}
+
+div.recommand ul li img{
+	width: 263px;
+	height: 263px;
+	background-color: #f9f9f9;
+}
+
+/*-----*/
+div.cnt{
+	width: 100%;
+	height: 180px;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	background-color: #f9f9f9;
+}
+
+div.cnt div.cnt_main{
+	width: 100%;
+	height: 180px;
+}
+div.cnt div.cnt_main div.cnt_main_left{
+   width: 700px;
+   margin:  0 20px 0 60px;
+   padding-top: 30px;
+   line-height: 40px;
+   float: left;
+}
+div.cnt_main_left h2{
+	font-size: 32px;
+}
+
+div.cnt_main_left h3{
+	font-size: 24px;
+}
+div.cnt div.cnt_main div.cnt_main_right{
+   width: 210px;
+   height: 120px;
+   padding-top: 30px;
+   float: left;
+}
+div.cnt_main_right img:nth-of-type(2){
+	margin-left: -40px;
+}
+
+
+
+
+
+/*----------------bottom------------------*/
+section#bottom{
+	width: 100%;
+	height: 100px;
+	/*margin-top: 20px;*/
+	background-color: #f2f2f2;
+	font-size: 12px;
+}
+section#bottom div.copy_left{
+    float: left;
+	width: 490px;
+	height: 83px;
+    padding-top: 35px;
+}
+
+div.copy_left p{
+	display: inline-block;
+	padding: 5px 0;
+}
+
+div.copy_left span.line{
+	display: inline-block;
+	width: 1px;
+	height: 16px;
+	padding: 0 8px;
+	/*background-color: #999;*/
+}
+section#bottom div.copy_left a{
+	display: inline-block;
+	width: 48px;
+	height: 16px;
+	line-height: 16px;
+	color: #999;
+}
+section#bottom div.copy_right ul{
+	float: right;
+	display: inline-block;
+	height: 70px;
+	width: 330px;
+	margin-top: 30px;
+	/*background-color: red;*/
+	display: flex;
+}
+div.copy_right ul li{
+	width: 60px;
+	height: 70px;
+	/*background-color:skyblue;*/
+	text-align: center;
+	margin-left: 22.5px;
+}
+div.copy_right ul li a{
+	
+	color: #9e9e9e;
+}
+
+/*--------------------右侧导航栏----------------------*/
+section#navRight{
+	width: 60px;
+	height: 280px;
+	/*background-color: red;*/
+	position: fixed;
+	right: 10px;
+	top: 50%;
+	margin-top: -140px;
+	cursor: pointer;
+	display: none;
+}
+section#navRight div.navR{
+	width: 60px;
+	height: 40px;
+	border:1px solid #888;
+	margin-top: -1px;
+	text-align: center;
+	font-size: 12px;
+	padding-top: 16px;
+	color: #666;
+	/*line-height: 40px;*/
+}
+section#navRight div.navR span{
+}
+
+section#navRight div.backTop{
+	width: 60px;
+	height: 40px;
+	background-color: #000;
+	text-align: center;
+	color: #fff;
+	border:1px solid #888;
+}
+
+

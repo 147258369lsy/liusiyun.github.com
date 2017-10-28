@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'musicPlayerFont';
+  src:  url('fonts/musicPlayerFont.eot?9esi1u');
+  src:  url('fonts/musicPlayerFont.eot?9esi1u#iefix') format('embedded-opentype'),
+    url('fonts/musicPlayerFont.ttf?9esi1u') format('truetype'),
+    url('fonts/musicPlayerFont.woff?9esi1u') format('woff'),
+    url('fonts/musicPlayerFont.svg?9esi1u#musicPlayerFont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="music-"], [class*=" music-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'musicPlayerFont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.music-chevron-right:before {
+  content: "\e900";
+}
+.music-chevron-left:before {
+  content: "\e901";
+}
+.music-th-large:before {
+  content: "\e902";
+}
+.music-media-pause:before {
+  content: "\e903";
+}
+.music-media-stop:before {
+  content: "\e904";
+}
+.music-media-record:before {
+  content: "\e905";
+}
+.music-media-play:before {
+  content: "\e906";
+}
+.music-pipette:before {
+  content: "\e908";
+}
+.music-archive:before {
+  content: "\e909";
+}
+.music-volume-down:before {
+  content: "\e907";
+}
+.music-thumbs-up:before {
+  content: "\e90a";
+}
+.music-lock-open:before {
+  content: "\e90b";
+}
+.music-lock:before {
+  content: "\e90c";
+}
