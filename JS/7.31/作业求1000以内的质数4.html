@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	   //质数:只有1和本身两个因数,1既不是质数也不是合数!
+	 // 判断一个数是否为质数满足的条件:1.找出因数 
+	 //                               2.该数的因数个数只有2个
+		for(var num = 1; num <= 1000; num++){
+			var count = 0;
+			for(var i = 1 ; i<=num ;i++){
+				if(num % i == 0){
+                   count++;
+                }
+			}
+			if(count == 2){
+			console.log(num);
+		  }
+		}
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

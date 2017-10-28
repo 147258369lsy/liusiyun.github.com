@@ -1,0 +1,135 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">		
+		*{margin: 0;padding: 0;}
+		.slider{
+			margin: 100px auto;
+			width: 640px;
+			height: 400px;
+			position: relative;
+		}
+		.slider .control{
+			position: absolute;
+			width: 640px;
+			height: 20px;
+			left: 0;
+			bottom: 30px;
+		}
+
+		.slider .control ul{
+			list-style: none;
+			width: 150px;
+			margin: 0 auto;
+		}
+
+		.slider .control li{
+			width: 20px;
+			height: 20px;
+			margin: 0 5px;
+			float: left;
+			border-radius: 50%;
+			background-color: #fff;
+			cursor:pointer;
+		}
+		.slider .control li.active{
+			background-color: red;
+		}
+		.slider .content img{
+			width: 640px;
+			height: 400px;
+			display: none;
+		}
+		.slider .content img.active{
+			display: block;
+		}
+        .slider .content #tupian{
+        	list-style: none;
+        }
+	</style>
+	<script type="text/javascript">
+		
+	window.onload = function () {
+		//在轮播图中，小白点的个数和图片个数相同
+		//图片个数是变化的，随着网站内容而变化
+		//小白点的个数应该随着图片个数而改变
+
+		//计算图片个数
+		//手动创建小白点
+		var images = document.getElementsByTagName('img');
+		//图片个数
+		var imageCount = images.length;
+		console.log(imageCount); //6
+
+ //步骤一:根据图片个数创建小白点，添加到ul中
+		var ul = document.getElementsByTagName('ul')[0];
+		for (var i = 0; i < imageCount; i++){
+			//创建li小白点
+			var li = document.createElement('li');
+			li.index = i;
+			//默认的第一个被选中
+			if (i == 0){
+				li.className = 'active';
+			}
+			//添加到ul中
+			ul.appendChild(li);
+  //步骤二:点击小白点,切换当前显示的图片   
+           var select = 0;
+		    li.onclick = function(){
+		    	select = this.index;
+		    	changeImage(this.index);
+	    	    console.log(this);
+	        }
+	        li.onmouseover = function(){
+	        	changeImage(this.index);
+	        }
+	        li.onmouseout = function(){
+	        	//显示前一次点击的那一个
+	        	changeImage(select);
+	        }
+	 }      
+		//设置宽度
+		ul.style.width = (imageCount*30) + 'px';
+	}
+  //步骤三:定义这个函数用于图片的切换显示
+    function changeImage(i){
+
+    	var index = i;
+    	var ul = document.getElementsByTagName('ul')[0];
+    	 var lis = ul.getElementsByTagName('li');
+	     var images = document.getElementsByTagName('img');
+	    	for(var j = 0; j < lis.length; j++){
+	    		var li = lis[j];
+	    		//获取单个img
+                var img = images[j];
+                //清除所有的active
+                li.className = '';
+                img.className = '';
+	    	}
+	    	// 对当前的点添加active
+	    	lis[index].className = 'active';
+            images[index].className = 'active';
+    }
+	</script>
+</head>
+<body>
+
+	<div class="slider">
+		<div class="control">
+			<ul>
+			</ul>
+		</div>
+		<div class="content">
+		  	 <img src="img/1.jpg" alt="" class="active" />
+			 <img src="img/2.jpg" alt="" />
+			 <img src="img/3.jpg" alt="" />
+			 <img src="img/4.jpg" alt="" />
+			 <img src="img/5.jpg" alt="" />
+			 <img src="img/6.jpg" alt="" />			
+		</div>
+	</div>	
+</body>
+</html>

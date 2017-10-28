@@ -1,0 +1,128 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+
+	//构造一个函数，用来获取某个标签
+	function elementById(id) {
+		return document.getElementById(id);
+	}
+
+
+
+	//封装$函数
+	// 函数名=$
+	// 1. 如果传入的参数是 #h  则选择id=h的标签
+	// 2. 如果传入的是 .box 则选择所有的class=box的标签
+	// 3. 如果传入的参数第一个字母不是#也不是. 查找复合参数名的标签选择器
+	function $(select){
+
+
+		//参数类型判断
+		if (typeof select != 'string') {
+			console.log('传入的参数有误');
+			
+			//传入的参数不是字符串，无法查找标签，所以返回空表示没找到
+			return null;
+		}
+
+		//获取参数的第一个字母
+		var firstChar = select.charAt(0);
+
+		switch(firstChar){
+			case '#':
+				//id选择器
+				//需要截取字符串，因为#需要被去除
+				return document.getElementById(select.substr(1));
+			break;
+			case '.':
+				//类选择器
+				//getElementsByClassName 是在JavaScript的演化过程中，新加入的函数
+				//在老版本的IE6，IE7中无法使用
+				// return document.getElementsByClassName(select.substr(1));
+
+
+				//兼容性
+				//1. 判断是否能够使用getElementsByClassName
+				//在函数名后面没有加括号，表示函数体本身，在判断document中某没有这个函数
+				if (document.getElementsByClassName){
+					//在有getElementsByClassName的时候，可以直接调用来获取;
+					return document.getElementsByClassName(select.substr(1));
+				} else {
+
+					//2. 获取所有的标签
+					//3. 一个一个判断是否带有select类名
+					//4. 如果有则添加到数组中，然后最后进行返回
+
+
+					var result = [];
+					//所有的标签
+					var allElemnts = document.getElementsByTagName('*');
+					console.log(allElemnts);
+					//遍历所有标签
+					for (var i = 0; i < allElemnts.length; i++){
+						var e = allElemnts[i];
+						//获取这个标签的类名
+						var className = e.className;
+						// console.log(className);
+						// console.log(className.indexOf(select.substr(1)));
+						//查找类名中是否包含复合要求的类名 -1表示没找到
+						if (className.indexOf(select.substr(1)) != -1) {
+							// console.log(className);
+							//查找到符合要求的标签，添加到数组中
+							result.push(e);
+						}
+					}
+
+					return result;
+				}
+			break;
+			default :
+				//既不是id选择器也不是类选择器
+				//则默认为标签选择器
+				return document.getElementsByTagName(select);
+
+		}
+	}
+
+
+	window.onload = function () {
+		
+		//根据选择查找元素
+		var box_arr = document.getElementsByClassName('box');
+		// console.log(box_arr);
+		//document中提供的获取元素的函数，使用起来非常复杂，并且容易写错函数名。
+		//书写复杂，耗时长，容易拼错
+		// document.getElementById
+
+		// var h1 = elementById('h');
+		// console.log(h);
+
+		// console.log($('#h'));
+		// console.log($('#p1'));
+		// console.log($('p'));
+		console.log($(".red"));
+
+
+	}
+	</script>
+</head>
+<body>
+	
+
+	<div class="box">
+		<h1 id="h" class="red">h1</h1>
+		<p id="p1" class="h300"></p>
+		<p id="p2" class="redBoder"></p>
+	</div>
+
+	<div class="box red"></div>
+
+
+
+</body>
+</html>

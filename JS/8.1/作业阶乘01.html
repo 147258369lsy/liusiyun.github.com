@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	    var num = prompt("请输入一个数");
+	    var jiecheng = 1;	    
+			for(var i = 1; i <= num; i++){
+				jiecheng = jiecheng * i;
+			}			
+		console.log(jiecheng);
+		//用递归函数方法
+		function jiecheng(number) {
+			//判断参数的合法性 正整数
+			if(number <= 0){
+				return 0;
+			}
+			if(1 == number){
+				return 1;
+			}
+			return jiecheng(jiecheng(number - 1) * number);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

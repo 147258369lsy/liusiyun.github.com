@@ -1,0 +1,172 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+
+		.box{
+			height: 300px;
+		}
+
+		.nav{
+			width: 50px; 
+			position: fixed;
+			right: 10px;
+			top: 100px;
+			border: 1px solid #f40;
+		}
+		.nav ul{
+			list-style: none;
+		}
+		.nav li a{
+			display: block;
+			width: 50px;
+			height: 30px;
+			padding: 10px 0;
+			line-height: 15px;
+			font-size: 12px;
+			text-align: center;
+			text-decoration: none;
+			border-bottom: 1px solid #f40;
+			background-color: #fff;
+			color: #333;
+
+		}
+
+		.nav li.current a{
+			background-color: #f40;
+			color: #fff;
+		}
+
+	</style>
+
+
+	<script type="text/javascript">
+	function scroll() {
+		var y;
+		var x;
+		if (window.pageYOffset || window.pageXOffset) {
+			//高版本浏览器下
+			y = window.pageYOffset;
+			x = window.pageXOffset;
+		} else if (document.compatMode == 'CSS1Compat') {
+			//旧版本IE浏览器
+			y = document.documentElement.scrollTop;
+			x = document.documentElement.scrollLeft;
+		} else {
+			//怪异模式浏览器
+			y = document.body.scrollTop;
+			x = document.body.scrollLeft;
+		}
+		//返回值
+		//以json格式的数据作为返回值，在一个json中可以包含多个数据
+		return {
+			left : x,
+			top  : y
+		};
+	}
+
+	window.onload = function () {
+
+		//获取所有的栏目
+		var boxArr = document.getElementsByClassName('box');
+		var liArr = document.getElementsByTagName('li');
+
+
+		window.onscroll = function () {
+			var scrollTop = scroll().top;
+			//0~299 服饰美妆
+			//300~599 家电手机
+			//.... 
+	
+			//从上到下 依次判断每一个盒子的offsetTop值 和 scrollTop 做比较
+			//记录下最后一个大于的值
+			var index = 0;
+
+			for (var i = 0; i < boxArr.length; i++){
+				var box = boxArr[i];
+				if (scrollTop > box.offsetTop) {
+					// console.log('大于'+box.innerHTML);
+					index = i;
+				}
+			}
+			console.log(index);
+			//根据当前滑动到的序号，来显示侧边栏
+			//改变当前选中的菜单栏
+			for (var i = liArr.length - 1; i >= 0; i--) {
+				liArr[i].className = '';
+			}
+			liArr[index].className = 'current';
+		}	
+
+
+		//给每一个a添加点击事件
+		var aArr = document.getElementsByTagName('a');
+		//遍历并且添加click
+		for (var i = 0; i < aArr.length; i++){
+			var a = aArr[i];
+			//给a加编号
+			a.index = i;
+			var timer;
+			a.onclick = function () { 
+				//停止前一个定时器
+				clearInterval(timer);
+
+				// console.log(this.index);
+				var index = this.index;
+				//根据index序号来获取所对应的box
+				var box = document.getElementsByClassName('box')[index];
+
+				//滚动到这个box
+				var currentY = scroll().top;
+				//滚动到当前盒子的最顶部
+				var target = box.offsetTop;
+				timer = setInterval(function () {
+					currentY = currentY + (target - currentY) /10 + 25;
+					window.scrollTo(0, currentY);
+					//当移动到目标位置时，停止定时器
+					if (currentY - target <= 0.1 && target - currentY <= 0.1) {
+						clearInterval(timer);
+					}
+				},30)
+			}
+		}  
+	}
+	</script>
+</head>
+<body>
+	
+
+<div class="box" style="background-color: red;">服饰美妆</div>
+<div class="box" style="background-color: blue;">家电手机</div>
+<div class="box" style="background-color: yellow;">电脑数码</div>
+<div class="box" style="background-color: green;">3C运动</div>
+<div class="box" style="background-color: pink;">爱吃零食</div>
+<div class="box" style="background-color: skyblue;">母婴家居</div>
+<div class="box" style="background-color: yellowgreen;">图书汽车</div>
+<div class="box" style="background-color: greenyellow;">游戏金融</div>
+<div class="box" style="background-color: purple;">健康旅行</div>
+<div class="box" style="background-color: gray;">还没逛够</div>
+
+<div class="nav">
+	<ul>
+		<li class="current"><a href="javascript:;">服饰<br />美妆</a></li>
+		<li><a href="javascript:;">家电<br />手机</a></li>
+		<li><a href="javascript:;">电脑<br />数码</a></li>
+		<li><a href="javascript:;">3C<br />运动</a></li>
+		<li><a href="javascript:;">爱吃<br />零食</a></li>
+		<li><a href="javascript:;">母婴<br />家居</a></li>
+		<li><a href="javascript:;">图书<br />汽车</a></li>
+		<li><a href="javascript:;">游戏<br />金融</a></li>
+		<li><a href="javascript:;">健康<br />旅行</a></li>
+		<li><a href="javascript:;">还没<br />逛够</a></li>
+	</ul>
+</div>
+
+
+
+</body>
+</html>

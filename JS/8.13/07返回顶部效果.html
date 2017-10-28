@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		a{
+			/*display: block;*/
+			position: fixed;
+			right: 10px;
+			bottom: 10px;
+		}
+	</style>
+	<script>
+		function scroll(){
+           var x;
+           var y;
+
+           if(window.pageYOffset ||window.pageYOffset){
+           	 //高版本浏览器
+           	 y = window.pageYOffset;
+           	 x = window.pageXOffset;
+           }else if(document.compatMode == 'CSS1Compat'){
+           	 //旧版本IE浏览器
+           	 y = document.documentElement.scrollTop;
+           	 x = document.documentElement.scrollLeft;
+           }else{
+           	 //怪异模式浏览器
+           	 y = document.body.scrollTop;
+           	 x = document.body.scrollLeft;
+           }
+           //返回值,用json格式的数据作为返回值,在一个json中可以包含多个数据
+           return {
+           	left : x,
+           	top  : y
+           };
+		}
+		window.onload = function(){
+			var backTop = document.getElementById('backTop');
+			var target = 0;
+			var current = 0;
+			var timer;
+			backTop.onclick = function(){
+				//当我要开始一个新的定时器时，一般会先来停止前一次的定时器
+				clearInterval(timer);
+				current =scroll().top;
+				timer = setInterval(function(){
+                   current = current + (target - current)/10;
+                   //scrollTo()函数是将页面滚到某一个位置,有两个参数,分别是x轴方向和y轴方向滚动的位置
+                   window.scrollTo(0, current);
+                   console.log(current);
+                   if(current - target <= 0.1){
+                   	clearInterval(timer);
+                   }
+				},30);
+			}
+		}
+	</script>
+</head>
+<body>
+    <a href="javascript:;" id="backTop">回到顶部</a>
+	<div class="p">
+		<p>一段文字1</p>
+		<p>一段文字2</p>
+		<p>一段文字3</p>
+		<p>一段文字4</p>
+		<p>一段文字5</p>
+		<p>一段文字6</p>
+		<p>一段文字7</p>
+		<p>一段文字8</p>
+		<p>一段文字9</p>
+		<p>一段文字10</p>
+		<p>一段文字11</p>
+		<p>一段文字12</p>
+		<p>一段文字13</p>
+		<p>一段文字14</p>
+		<p>一段文字15</p>
+		<p>一段文字16</p>
+		<p>一段文字17</p>
+		<p>一段文字18</p>
+		<p>一段文字19</p>
+		<p>一段文字20</p>
+		<p>一段文字21</p>
+		<p>一段文字22</p>
+		<p>一段文字23</p>
+		<p>一段文字24</p>
+		<p>一段文字25</p>
+		<p>一段文字26</p>
+		<p>一段文字27</p>
+		<p>一段文字28</p>
+		<p>一段文字29</p>
+		<p>一段文字30</p>
+		<p>一段文字31</p>
+		<p>一段文字32</p>
+		<p>一段文字33</p>
+		<p>一段文字34</p>
+		<p>一段文字35</p>
+		<p>一段文字36</p>
+		<p>一段文字37</p>
+		<p>一段文字38</p>
+		<p>一段文字39</p>
+		<p>一段文字40</p>
+		<p>一段文字41</p>
+		<p>一段文字42</p>
+		<p>一段文字43</p>
+		<p>一段文字44</p>
+		<p>一段文字45</p>
+		<p>一段文字46</p>
+		<p>一段文字47</p>
+		<p>一段文字48</p>
+		<p>一段文字49</p>
+		<p>一段文字50</p>
+		<p>一段文字51</p>
+		<p>一段文字52</p>
+		<p>一段文字53</p>
+		<p>一段文字54</p>
+		<p>一段文字55</p>
+		<p>一段文字56</p>
+		<p>一段文字57</p>
+		<p>一段文字58</p>
+		<p>一段文字59</p>
+		<p>一段文字60</p>
+		<p>一段文字61</p>
+		<p>一段文字62</p>
+		<p>一段文字63</p>
+		<p>一段文字64</p>
+		<p>一段文字65</p>
+		<p>一段文字66</p>
+		<p>一段文字67</p>
+		<p>一段文字68</p>
+		<p>一段文字69</p>
+		<p>一段文字70</p>
+		<p>一段文字71</p>
+		<p>一段文字72</p>
+		<p>一段文字73</p>
+		<p>一段文字74</p>
+		<p>一段文字75</p>
+		<p>一段文字76</p>
+		<p>一段文字77</p>
+		<p>一段文字78</p>
+		<p>一段文字79</p>
+		<p>一段文字80</p>
+		<p>一段文字81</p>
+		<p>一段文字82</p>
+		<p>一段文字83</p>
+		<p>一段文字84</p>
+		<p>一段文字85</p>
+		<p>一段文字86</p>
+		<p>一段文字87</p>
+		<p>一段文字88</p>
+		<p>一段文字89</p>
+		<p>一段文字90</p>
+		<p>一段文字91</p>
+		<p>一段文字92</p>
+		<p>一段文字93</p>
+		<p>一段文字94</p>
+		<p>一段文字95</p>
+		<p>一段文字96</p>
+		<p>一段文字97</p>
+		<p>一段文字98</p>
+		<p>一段文字99</p>
+		<p>一段文字100</p>
+	</div>
+	
+</body>
+</html>

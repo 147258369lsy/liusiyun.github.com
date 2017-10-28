@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 100px;
+			line-height: 100px;
+			border:1px solid #ccc;
+            padding: 50px;
+            border-radius: 10px;
+            margin: 100px auto;
+		}
+		.box button{
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			outline: none;
+		}
+		.box button:hover{
+			background-color: #fcc;
+
+		}
+		.box button:disabled{
+			background-color: #fcc;
+			border-color: #faa;
+			color: #f88;
+		}
+	</style>
+    <script>
+    	window.onload = function() {
+    		var btn = document.getElementById('btn');
+    		btn.onclick = function(){
+    			this.disabled = true;
+    			var that = this;
+    			// console.log(that);
+    			var seconds = 5;
+    			var timer = setInterval(function(){
+    				btn.innerHTML = seconds-- + '秒重新发送验证码';
+    				if(seconds < 0){
+    					clearInterval(timer);
+    					that.disabled = false;
+    					that.innerHTML = '重新发送验证码';
+    				}
+    			},1000);
+    		}
+
+    	}
+    </script>
+</head>
+<body>
+	<div class="box">
+		手机号码
+		<input type="text" />
+		<button id="btn">发送验证码</button>
+	</div>
+</body>
+</html>

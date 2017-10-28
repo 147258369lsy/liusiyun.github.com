@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		body{background-color: black;}
+		.nav{
+			width: 1000px;
+			height: 50px;
+			border-radius:10px;
+			background-color: #fff;
+			border:1px solid #aaa;
+			margin:100px auto;
+			background: #fff url(images/rss.png)  900px center no-repeat;
+			position: relative;
+		}
+		.nav ul{
+			list-style: none;
+			margin-left: 50px;
+		}
+		.nav li{
+			width: 83px;
+			line-height: 50px;
+			float:left;
+			padding: 0 10px;
+			font-size: 18px;
+			cursor: pointer;
+			position: relative;
+		}
+		.nav #cloud{
+			/*display: block;*/
+			width: 83px;
+			height: 42px;
+			background: url(images/cloud.gif) center no-repeat;
+			position: absolute;/*和nav盒子的相对定位匹配*/
+			left:40px;
+			top: 6px;
+
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			
+			var cloud = document.getElementById('cloud');
+			var target = cloud.offsetLeft ;    //目标值
+			var current = target;
+			var select = target;
+           //步骤二:利用缓动动画来做云彩的动画效果
+           setInterval(function(){
+              current = current + (target - current) / 10;
+              cloud.style.left = current + 'px';
+           }, 20);
+
+
+
+            //步骤一:先获取所有的li,并且添加需要的3个事件
+			var lis = document.getElementsByTagName('li');
+			// 遍历每一个li
+			for( var i = 0 ; i < lis.length ; i++){
+				var li = lis[i];
+
+				//添加点击 滑入 滑出3个事件
+				li.onclick = function(){
+					// console.log(this);
+					// console.log('click');
+					// target = 900;
+                    var left = this.offsetLeft;
+                    target = left;
+                    select = left;
+				}
+				li.onmouseover = function(){
+					// console.log(this);
+					// console.log('over');
+					target = this.offsetLeft;
+				}
+				li.onmouseout = function(){
+					// console.log(this);
+					// console.log('out');
+					target = select;
+					//鼠标滑出时 ,返回起始时被选中的值 
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="nav">
+	<span id="cloud"></span>
+		<ul>
+			<li>标签1</li>
+			<li>标签2</li>
+			<li>标签3</li>
+			<li>标签4</li>
+			<li>标签5</li>
+			<li>标签6</li>
+		</ul>
+	</div>
+</body>
+</html>

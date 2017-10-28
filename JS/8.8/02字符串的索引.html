@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload = function() {
+		document.getElementById('btn').onclick = function(){
+			var text_p = document.getElementById('text_p').innerText;
+			var text_input = document.getElementById('text_input').value;
+			console.log(text_p);
+			console.log(text_input);
+
+             console.log(text_p.indexOf('H'));    // 0
+			var location = text_p.lastIndexOf(text_input);
+			console.log(location);
+
+
+		}
+			//字符串的截取
+			document.getElementById('cutString').onclick =function(){
+				var text_p = document.getElementById('text_p').innerText;
+			   var text_input = document.getElementById('text_input').value;
+
+			   var location = text_p.lastIndexOf(text_input);
+			   console.log(location);
+
+			   var result = document.getElementById('result');
+
+			   if(location != -1){
+			   	var string = text_p.substr(location,text_input.length);
+			   	console.log(string);
+			   	result.innerText = string;
+			   }else {
+			   	 console.log('未找到字符');
+			   	 result.innerText = '未找到字符';
+			   }
+			}
+	}
+		
+	</script>
+</head>
+<body>
+	<p id="text_p">Hello HTML CSS JavaScript</p>
+	<input type="text" id="text_input"><button id="btn">查找</button>
+	<button id="cutString">截取字符串</button>
+	<p id="result"></p>
+</body>
+</html>

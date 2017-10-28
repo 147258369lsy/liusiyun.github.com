@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function qiusum(num1, num2) {
+			
+			var min = num1 > num2 ? num2 : num1;
+			var max = num1 > num2 ? num1 :num2;
+			for(var i = min; i <= max; i++){
+				var sum = 0;
+                sum = sum + i;
+                console.log(sum); 
+                // break;
+			}
+			  
+		}
+		while(true){
+			var a = parseInt(prompt("请输入第一个数"));
+			var b = parseInt(prompt("请输入第二个数"));
+			qiusum(a, b);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

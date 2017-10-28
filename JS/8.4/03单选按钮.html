@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+     <style>
+     	.radio{
+     		display:inline-block;
+     		width: 20px;
+     		height: 20px;
+     		border-radius:50%;
+     		border:2px solid blue;
+
+     		/*鼠标指针效果 pointer表示手指*/
+     		cursor :pointer;
+     	}
+     	.radio.checked{
+     		background-color: greenyellow;
+     	}
+     </style>
+     <script>
+     	window.onload = function() {
+     		//1.获取所有的单选框
+     		var radios = document.getElementsByClassName('radio');
+     		//2.遍历每一个单选框,添加点击事件
+     		for(var i = 0;i < radios.length;i++){
+     			// console.log(i);
+     			// var radio = radios[i];
+     			radios[i].onclick = function(){
+     				// console.log(this);
+     				//找到所有没被选到的单选框
+     				//第二次遍历
+     				for(var j = 0; j < radios.length; j++){
+     					//其他单选框
+     					var otherRadio = radios[j];
+     					// 重置类名
+     					otherRadio.className = 'radio';    				
+     				}
+     				//被点中的单选框添加checked类名
+     				this.className += ' checked';
+     			}
+     		}
+     	}
+     </script>
+</head>
+<body>
+	<p>
+		<span class="radio checked"></span>
+		<span class="radio"></span>
+		<span class="radio"></span>
+		<span class="radio"></span>
+		<span class="radio"></span>
+		<span class="radio"></span>
+	</p>
+</body>
+</html>

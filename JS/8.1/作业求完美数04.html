@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	for(var num = 1; num <=10000 ;num++){
+       var sum = 0;
+       for(var i = 1;i <= num; i++){
+         if(num % i == 0){
+           sum = sum + i;
+          }
+       }
+       if(sum == 2*num){
+        console.log(num+"是完全数");
+       }
+    }
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

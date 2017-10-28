@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		html,body,#bg{
+			height: 100%;
+			overflow: hidden;
+		}
+		#bg .box{
+           width: 1200px;
+           margin: 50px auto;
+		}
+		#bg .box ul{
+            list-style: none;
+		}
+		#bg .box ul li img{
+			padding: 0 20px;
+			width: 200px;
+			height: 100px;
+			float: left;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			
+			var bg = document.getElementById('bg');
+			console.log(bg);
+			var images = document.getElementsByTagName('img');
+			console.log(images);
+			for(var i = 0;i<images.length;i++){
+				images[0].onclick = function(){
+					console.log(this);
+					bg.style.backgroundImage = "url('images/1.jpg')";
+               }
+               images[1].onclick = function(){
+					console.log(this);
+					bg.style.backgroundImage = "url('images/2.jpg')";
+               }
+               images[2].onclick = function(){
+					console.log(this);
+					bg.style.backgroundImage = "url('images/3.jpg')";
+               }
+               images[3].onclick = function(){
+					console.log(this);
+					bg.style.backgroundImage = "url('images/4.jpg')";
+               }
+               images[4].onclick = function(){
+					console.log(this);
+					bg.style.backgroundImage = "url('images/1.jpg')";
+               }
+		    }
+           
+		}
+	</script>
+</head>
+<body>
+    <div id="bg">
+	 <div class="box">
+		<ul id="imgID">
+			<li><a href="javascript:;"><img src="images/1.jpg" alt="" id="img1"></a></li>
+			<li><a href="javascript:;"><img src="images/2.jpg" alt="" id="img2"></a></li>
+			<li><a href="javascript:;"><img src="images/3.jpg" alt="" id="img3"></a></li>
+			<li><a href="javascript:;"><img src="images/4.jpg" alt="" id="img4"></a></li>
+			<li><a href="javascript:;"><img src="images/5.jpg" alt="" id="img5"></a></li>
+	 	</ul> 
+	  </div>
+	</div>
+</body>
+</html>

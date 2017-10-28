@@ -1,0 +1,116 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 40px;
+			left: 30px;
+			background-color: red;
+
+		}
+	</style>
+	<script type="text/javascript">
+
+	//右移函数
+	function animateMoveRight(element, target) {
+		//获取起始状态
+		var left = element.offsetLeft;
+		var timer = setInterval(function () {
+			left += 1;
+			element.style.left = left + 'px';
+			if (left >= target) {
+				clearInterval(timer);
+			}
+
+		}, 10);
+	}
+
+	var timer;
+	//封装一个函数  同时解决左右移动的问题
+	function animate(element, target) {
+
+		//左移 或者 右移
+		//通过比较element当前的left值和target值的大小，来确定平移方向
+		var left = element.offsetLeft;
+		// if (left > target) {
+		// 	//左移
+		// 	left -= XX;
+		// } else {
+		// 	//右移
+		// 	left += XX;
+		// }
+		//步进值  表示一步动作的差值
+		var step = (target - left) / 100;
+		// console.log(left);
+		// console.log(target);
+		// console.log(step);
+		timer = setInterval(function () {
+			left += step;
+			box.style.left = left + 'px';
+			//结束动画
+			// console.log(left);
+			// console.log(target);
+			//所有的浮点类型数字都是不精确的。所有有可能出现误差导致target和left不能完全相等
+			//比较差值 当两者的差值小于了步进值时，停止动画
+			if (Math.abs(target-left) <= Math.abs(step)) {
+				clearInterval(timer);
+				//强制将当期的动画状态设置为target状态.
+				element.style.left = target + 'px';
+			}
+		},20)
+	}
+
+
+		window.onload = function () {
+			var box = document.getElementById('box');
+
+			// document.getElementById('btn200').onclick = function(){
+			// 	//获取起始状态
+			// 	var left = box.offsetLeft;
+			// 	//执行动画  
+			// 	var timer = setInterval(function () {
+			// 		left += 1;	//步进值
+			// 		box.style.left = left + 'px';
+			// 		//动画的停止
+			// 		if (left >= 200) {
+			// 			clearInterval(timer);
+			// 		}
+			// 	}, 10);
+			// }
+
+			// //使用所定义的函数，来实现右移动画
+			// document.getElementById('btn400').onclick = function () {
+			// 	animateMoveRight(box, 400);
+			// }
+
+			//动态创建控制按钮
+			for (var i = 200; i < 1000; i += 100){
+				var button = document.createElement('button');
+				button.innerHTML = '右移 '+ i +'px';
+				button.target = i;
+
+				button.onclick = function () {
+					animate(box, this.target);
+				}
+
+				document.body.appendChild(button);
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+
+	<!-- <button id="btn200">右移 200px</button>
+	<button id="btn400">右移 400px</button>
+	<button id="btn600">右移 600px</button> -->
+
+</body>
+</html>

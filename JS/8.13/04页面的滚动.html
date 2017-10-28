@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			height: 2000px;
+			width: 2000px;
+		}
+	</style>
+	<script>
+		window.onscroll = function() {
+			console.log('页面滚动');
+
+			//三合一  在各种不同方式下,都可以获取到当前滚动偏移值的方式
+           var scrollOffsetTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollOffsetLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft;
+           console.log('scrollOffsetTop = ' + scrollOffsetTop); 
+           console.log('scrollOffsetLeft = ' + scrollOffsetLeft); 
+		}
+
+		//封装函数
+		function scroll(){
+           var x;
+           var y;
+
+           if(window.pageYOffset ||window.pageYOffset){
+           	 //高版本浏览器
+           	 y = window.pageYOffset;
+           	 x = window.pageXOffset;
+           }else if(document.compatMode == 'CSS1Compat'){
+           	 //旧版本IE浏览器
+           	 y = document.documentElement.scrollTop;
+           	 x = document.documentElement.scrollLeft;
+           }else{
+           	 //怪异模式浏览器
+           	 y = document.body.scrollTop;
+           	 x = document.body.scrollLeft;
+           }
+           //返回值,用json格式的数据作为返回值,在一个json中可以包含多个数据
+           return {
+           	left : x,
+           	top  : y
+           };
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

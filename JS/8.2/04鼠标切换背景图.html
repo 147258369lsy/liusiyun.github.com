@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html,body,#bg{
+			height: 100%;
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+		}
+		#bg{
+			background-color: red;
+			background: url('images/2.jpg') top center no-repeat;
+		}
+		#bg .tab{
+			height: 200px;
+			background-color: rgba(255,255,255,0.5);
+		}
+		#bg .tab ul{
+			list-style: none;
+			padding-left: 0;
+			width: 900px;
+			margin: 0 auto;
+			padding-top:50px;
+		}
+		#bg .tab ul li{
+			float: left;
+			margin: 0 10px;
+		}
+		#bg .tab li img{
+			width: 160px;
+			height: 100px;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			
+			//用函数来获取图片的ID和路径
+			function changeBGImage(tabID, imgURL){
+				var tab = document.getElementById(tabID);
+				tab.onclick = function(){
+					var bg = document.getElementById('bg');
+					bg.style.backgroundImage = imgURL;
+				}
+			}
+			// var bg = document.getElementById('bg');
+			// var tab1 = document.getElementById('tab1');
+			// tab1.onclick = function(){
+			// 	bg.style.backgroundImage = "url('./images/1.jpg')";
+			// }
+			for( var index = 1; index <= 5;index++){
+				var tabID = "tab" + index;
+				var imageURL = "url('./images/"+ index +".jpg')";
+				changeBGImage(tabID, imageURL);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="bg">
+		<div class="tab">
+			<ul>
+				<li><a id="tab1" href="#"><img src="images/1.jpg" alt=""></a></li>
+				<li><a id="tab2" href="#"><img src="images/2.jpg" alt=""></a></li>
+				<li><a id="tab3" href="#"><img src="images/3.jpg" alt=""></a></li>
+				<li><a id="tab4" href="#"><img src="images/4.jpg" alt=""></a></li>
+				<li><a id="tab5" href="#"><img src="images/5.jpg" alt=""></a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

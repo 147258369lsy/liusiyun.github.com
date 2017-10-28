@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0;padding: 0;}
+		#box{
+			width: 200px;
+			height: 400px;
+			background-color: pink;
+			border:5px solid red;
+			overflow: hidden;
+			padding: 10px;
+			position: relative;
+		}
+		#box #slider{
+			width: 10px;
+			height: 100%;
+			background-color: #999;
+			position: absolute;
+			top: 0;
+			left: 210px;
+		}
+		#box #slider #mask{
+			width: 10px;
+			height: 100px;
+			background-color: blue;
+			border-radius: 5px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			cursor: pointer;
+		}
+		#box #wenzi{
+			margin:10px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+    <script>
+    	window.onload = function() {
+    		var  box = document.getElementById('box');
+
+    		var boxHeight = box.offsetHeight;
+    		// console.log(boxHeight); //651 盒子高度
+    		var boxWidth = box.offsetWidth;
+    		// console.log(boxWidth);  //210
+
+    		//offset只能用来获取高度宽度,不能用来设置宽高
+    		// box.offsetHeight = 1000;
+    		// boxHeight = box.offsetHeight;
+    		// console.log(boxHeight); //高是651而不是1000!
+
+    		//滑动条
+    		var slider = document.getElementById('slider');
+    		var mask = document.getElementById('mask');
+    		var wenzi_p = document.getElementById('wenzi');
+    		var body = document.getElementsByTagName('body')[0];
+    		// console.log(wenzi_p);
+    		mask.onmousedown = function(){
+    			// console.log('按压下鼠标');
+    			body.onmousemove = function(e){
+                     var event = e ? e : window.event;
+                     var y = e.pageY - slider.offsetTop;
+                     // console.log(y);
+                     y = y < 100 ? 100 : y;  //100是mask的高度
+                     y = y > slider.offsetHeight ? slider.offsetHeight : y;
+          
+                     mask.style.top = (y - mask.offsetHeight)  + 'px';
+                 
+                     wenzi.style.top = (y - mask.offsetHeight) * (-1.5) + 'px';	
+                  
+                  //取消文字的选中
+                  window.getSelection ? window.getSelection().removeAllRanges() : 
+                  document.selection.empty();
+    			}
+    			   //当鼠标松开时 ,移除监听事件
+               document.onmouseup = function(){
+               	document.onmousemove = null;
+               }
+    		}
+    	}
+    </script>
+</head>
+<body>
+	<div id="box">
+		<p id="wenzi">一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字一段文字<a href="">回到顶部</a></p>
+      <div id="slider"><div id="mask"></div></div>
+	</div>
+</body>
+</html>

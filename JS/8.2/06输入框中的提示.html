@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	
+		div{
+			width: 400px;
+			height: 100px;
+			border: 1px solid gray;
+			margin: 0 auto;
+			padding: 30px;
+		}
+		div input{
+			height: 50px;
+			width: 250px;
+            border: 2px solid red;
+            outline: none;
+            
+
+		}
+		div button{
+			height: 56px;
+			width: 70px;
+			outline: none;
+			border: 2px solid red;
+			background-color: red;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			//1.获取输入框
+			var input = document.getElementById('searchInput');
+			console.log(input);
+
+			//输入框成为焦点时执行的事件
+			input.onfocus = function(){
+				console.log('开始输入');
+				if(this.value == '请输入搜索的内容....'){
+					//在输入框中 value表示输入框中的文字
+					this.value = '';
+					this.style.color = "#666";
+				}
+			}
+			//输入框失去焦点时执行的事件
+			input.onblur = function(){
+				console.log('结束编辑');
+
+				//如果结束编辑时 输入框中没有文字
+				if(this.value == ''){
+					this.value = '请输入搜索的内容....';
+						this.style.color = "#ccc";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<input type="text" id="searchInput" value="请输入搜索的内容...."><button>搜索</button>
+	</div>
+</body>
+</html>

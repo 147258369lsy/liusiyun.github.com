@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var number = 100;
+		console.log(typeof number);
+         
+         // .将数字转化成字符串的方法
+		//方法1:加一个空格
+		var string1 = number + '';
+        
+        //方法2:用String()函数
+		var string2 = String(number);
+		console.log(string2);
+		console.log(typeof string2);
+        //方法3:toString()但是转化为相应的进制;
+		var string3 = number.toString(2);//转化为二进制字符串
+		console.log(string3);
+		console.log(typeof string3);
+
+		var string = 'Hello World 欢迎来到本网站';
+		var c1 = string.charCodeAt(7);//获取一个字符的字符编码 ASCII编码 
+		var c2 = string.charAt(7);
+		console.log(c1);  // 
+		console.log(c2);   // W
+
+		for(var i = 0 ;i < string.length; i++){
+			var str = string.charAt(i);
+			console.log(str);
+		}
+      function zifu(str) {
+      	   var number = 0;
+        var zimu = 0 ;
+        var sum = 0;
+        var n = 0 ;
+        for( var j = 0 ;j < string.length; j++){
+        	var charCode = string.charCodeAt(j);
+        	if(charCode >= 97 && charCode <= 122){
+        		zimu++;
+        	} else if(charCode >= 48 && charCode <= 57){
+        		number++;
+        	}
+        }
+      }
+      window.onload = function(){
+      	document.getElementById('btn').onclick = function(){
+      		zifu();
+      	}
+      }
+
+	</script>
+</head>
+<body>
+	<input type="text"><button id="btn">提交</button>
+</body>
+</html>

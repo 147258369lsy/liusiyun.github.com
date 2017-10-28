@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			console.log('window.onload');
+
+          //通过getElementById函数,及再通过标签的ID来获取HTML文档中的任意标签对象.
+			var button = document.getElementById('btn');
+			console.log(button);
+			console.log(document);
+
+           //当我点击按钮时,在控制台输出提示文字
+			button.onclick = function(){
+				console.log("按钮被你点了一下");
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="btn">按钮</button>
+</body>
+</html>

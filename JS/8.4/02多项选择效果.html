@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	   window.onload = function(){
+		function selectAllCheckbox(checked) {
+			var boxArr = document.getElementsByTagName('input');
+			for (var i = boxArr.length - 1; i >= 0; i--){
+				//找到每一个checkbox 都设置成选中
+				boxArr[i].checked = checked;
+		     //checked属性只在多选框或者单选框中使用,表示是否被选中,
+		     //可以使用true和false来进行设置
+			}
+		}
+		//获取全部三个按钮
+		var btns = document.getElementsByTagName('button');
+		//全选
+		btns[0].onclick = function(){
+
+			selectAllCheckbox(true);
+		}
+		//取消
+		btns[1].onclick = function(){
+
+			selectAllCheckbox(false);
+		}
+		//反选
+		btns[2].onclick = function(){
+			var boxArr = document.getElementsByTagName('input');
+			for (var i = boxArr.length - 1; i >= 0; i--) {
+				var box = boxArr[i];
+				// //方法一用if else选择语句
+				// if(box.checked){
+				// 	box.checked = false;
+				// }else{
+				// 	box.checked = true;
+				// }
+				//方法二:使用三目运算符来优化代码
+				box.checked = box.checked ? false : true;
+
+				//方法三:使用反操作符
+				// box.checked = !box.checked;
+			}
+		}
+   }
+	</script>
+</head>
+<body>
+	<button>全选</button>
+	<button>取消</button>
+	<button>反选</button>
+	<form action="">
+		<ul>
+			<li>选项1:<input type="checkbox" id="check1" /></li>
+			<li>选项2:<input type="checkbox" /></li>
+			<li>选项3:<input type="checkbox" /></li>
+			<li>选项4:<input type="checkbox" /></li>
+			<li>选项5:<input type="checkbox" /></li>
+			<li>选项6:<input type="checkbox" /></li>
+			<li>选项7:<input type="checkbox" /></li>
+			<li>选项8:<input type="checkbox" /></li>
+			<li>选项9:<input type="checkbox" /></li>
+			<li>选项10:<input type="checkbox" /></li>
+		</ul>
+	</form>
+</body>
+</html>

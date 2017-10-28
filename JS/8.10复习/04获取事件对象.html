@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			height: 2000px;
+			margin: 0;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var body = document.getElementsByTagName('body')[0];
+			// console.log(body);
+
+			body.onclick = function(e){
+               var e = event ? event : window.event;
+               // console.log(e);
+               console.log('clientY = ' + e.clientY);
+               console.log('clientX = ' + e.clientX);
+            //clientY指到网页窗口的顶部距离,且该值不会随网页的滑动而改变
+              
+              console.log('pageY = ' + e.pageY);
+              console.log('pageX = ' + e.pageX);
+             //pageX pageY以网页为坐标参考系,来进行计算点击位置的坐标,会随着网页的滑动而改变
+
+             console.log('screenY = ' + e.screenY);
+             console.log('screenX = ' + e.screenX);
+             //screenX screenY screen:屏幕的意思
+             //是以电脑屏幕为参考系来计算点击坐标的,如果浏览器在屏幕中被拖动,那么坐标值也会改变
+             console.log('offsetY = ' + e.offsetY);
+             console.log('offsetX = ' + e.offsetX);
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		div{
+			width: 500px;
+			margin: 0 auto;
+			border: 1px solid red;
+		}
+		#box ul{
+			list-style: none;			
+		}
+		#box li{
+			line-height: 25px;
+			padding: 0 20px;
+		}
+		#box li.current{
+			background-color: #888 !important;
+			color:#fff;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			//1.获取li元素
+			var liArr = document.getElementsByTagName('li');
+			//console.log(liArr);
+
+			//2.遍历,并且判断序号的奇偶性
+			for(var i = 0;i < liArr.length;i++){
+               //获取第i对象
+               var li = liArr[i];
+               //console.log(li);
+               //3.根据奇偶性来设置背景颜色
+               if(i % 2 == 0){
+               	li.style.backgroundColor = "#f5f5f5";
+               } else {
+               	li.style.backgroundColor = "#eee";
+               }
+               li.onmouseover = function(){
+               	  //设置某一个元素的类
+               	  this.className = 'current';
+               }
+               //鼠标滑出时,移除类
+               li.onmouseout = function(){
+               	this.className = '';
+               }
+			}
+		}
+			// var box = document.getElementById('box');
+   //          //从clssName中获取当前类名,className是以字符串形式来读取的
+			// console.log(box.className);
+			// console.log(typeof box.className);
+
+			// //设置某一个类,会默认覆盖这个DOM对象中已有的类
+			// //在原有类的基础上,给对象添加一个新的类
+			// box.className += 'box1';
+	</script>
+
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li>li里面的内容1</li>
+			<li>li里面的内容2</li>
+			<li>li里面的内容3</li>
+			<li>li里面的内容4</li>
+			<li>li里面的内容5</li>
+			<li>li里面的内容6</li>
+			<li>li里面的内容7</li>
+			<li>li里面的内容8</li>
+			<li>li里面的内容9</li>
+			<li>li里面的内容10</li>
+			<li>li里面的内容11</li>
+			<li>li里面的内容12</li>
+			<li>li里面的内容13</li>
+			<li>li里面的内容14</li>
+			<li>li里面的内容15</li>
+		</ul>
+	</div>
+</body>
+</html>

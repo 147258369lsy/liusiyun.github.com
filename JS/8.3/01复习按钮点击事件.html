@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function() {
+			var button = document.getElementById('btn');
+			button.style.backgroundColor = 'red';
+			console.log(button);
+
+			button.onclick = function(){
+				console.log('按钮被你点了一下');
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="btn">按钮</button>
+</body>
+</html>

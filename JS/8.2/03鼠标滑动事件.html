@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function() {
+			//获取图片对象
+			var img = document.getElementById('jd-logo');
+
+			//鼠标从元素外部,滑动进入到元素内部
+			img.onmouseover = function(){
+				img.src = './images/jd2.png';
+			}
+			//鼠标从元素内部,滑动进入到元素外部
+			img.onmouseout = function(){
+				//恢复原图
+				img.src = 'images/jd1.png';
+			}
+		}
+	</script>
+</head>
+<body>
+	<img src="./images/jd1.png" id="jd-logo">
+</body>
+</html>

@@ -1,0 +1,61 @@
+*{margin: 0;padding: 0;}
+.box{
+  width: 310px;
+  height: 250px;
+  margin: 100px auto;
+  overflow: hidden;
+  position: relative; /*父相2*/
+}
+.slider-content{
+	width: 310px;
+	height: 220px;
+	overflow: hidden;
+	position: relative;  /*父相1*/
+}
+.slider-content div{
+	position: absolute;  /*子绝1*/
+	width: 310px;
+	height: 220px;
+	top: 0;
+	left: 0;
+}
+.slider-content div img{
+	width: 100%;
+}
+.slider-control{
+	width: 310px;
+	height: 30px;
+	background-color: #f5f5f5;
+	text-align: center;
+}
+.slider-control .slider-control-bar{
+	display: inline-block;
+	width: 24px;
+	height: 5px;
+	background: url('../img/icon.png') no-repeat -24px -790px;
+	margin-top: 12px;
+	cursor: pointer;
+	margin:12px 2px 0 2px;
+}
+.slider-control .slider-control-bar:hover{
+	background: url('../img/icon.png') no-repeat -24px -770px;
+}
+.slider-control .slider-control-bar.current{
+	background: url('../img/icon.png') no-repeat 0 -770px;
+}
+#prev,
+#next{
+	width: 20px;
+	height: 34px;
+	position: absolute; /*子绝2*/
+	top: 50%;
+	margin-top: -32px;
+}
+#prev{
+	left: 3px;
+	background: url('../img/icon.png') no-repeat 0 0;
+}
+#next{
+	right: 3px;
+	background: url('../img/icon.png') no-repeat -9px -45px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+
+			var button = document.getElementById('btn');
+			var box = document.getElementById('box');
+			
+         //按钮点击事件:
+		//1.事件源:按钮   
+		//2.事件:click  
+		//3.响应:function可以自己来定义函数的响应事件的操作
+		    button.onclick = function(){
+
+		      //在JavaScript中,操作DOM对象的CSS属性
+		      //DOM对象指的是在HTML文档中的标签对在JavaScript中所对应的对象
+		      //操作一个DOM对象的CSS属性,使用style来进行设置
+			  box.style.width = '500px';
+			  box.style.height = '500px';
+		  }
+          
+		}
+	
+	</script>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+	<div id="box"></div>
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload = function(){
+
+		var buttons = document.getElementsByTagName('button');
+
+		for (var i = buttons.length - 1; i >= 0; i--) {
+			var button = buttons[i]; //遍历所有的八个按钮
+			console.log(buttons[i]);
+			button.onclick = function () {
+				this.style.backgroundColor = "#00ec00";
+			  //this指针指向函数的调用者button,就是这个按钮!
+			}
+		}
+	}
+		
+	</script>
+</head>
+<body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+	<button>按钮5</button>
+	<button>按钮6</button>
+	<button>按钮7</button>
+	<button>按钮8</button>
+</body>
+</html>

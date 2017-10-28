@@ -1,0 +1,67 @@
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+.box{
+	width: 1000px;
+    margin: 0 auto;
+    /*background-color: pink;*/
+    position: relative; /*父相1*/
+}
+#next,#prev{
+	position: absolute; /*子绝1*/
+	top: 0;
+	background: url('../img/next_1.png') 0 0 no-repeat;
+	width: 76px;
+	height: 112px;
+	z-index: 5;
+}
+#next{
+	right: 10px;
+}
+#prev{
+	left: 10px;
+	background: url('../img/prev_1.png');
+}
+.box .content li{
+	position: absolute;
+}
+.box .content li img{
+	width: 100%;
+	
+}
+/*.box .content .li1{
+   width: 350px;
+   top: 50px;
+   left: 30px;
+   z-index: 1;
+   opacity: 0.5;
+}
+.box .content .li2{
+	width: 450px;
+	top: 100px;
+	left: 0;
+	z-index: 2;
+	opacity: 0.8;
+}
+.box .content .li3{
+	width: 600px;
+	top: 200px;
+	left: 150px;
+	z-index: 3;
+	opacity: 1;
+}
+.box .content .li4{
+	width: 450px;
+	top: 100px;
+	right: 0;
+	z-index: 2;
+	opacity: 0.8;
+}
+.box .content .li5{
+   width: 350px;
+   top: 50px;
+   right: 30px;
+   z-index: 1;
+   opacity: 0.5;
+}
+*/
+

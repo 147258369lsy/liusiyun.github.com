@@ -1,0 +1,144 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+
+	.box{
+		width: 320px;
+		height: 600px;
+		border: 1px solid red;
+		/*使用overflow：scroll 会出现系统定制的滚动条。*/
+		/*如果要自己定制滚动条，就要将overflow设置为hidden*/
+		overflow: hidden;
+		position: relative;
+	}
+	.content{
+		width: 300px;
+		position: absolute;
+	}
+	.slider{
+		width: 20px;
+		background-color: #f1f1f1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 600px;
+	}
+
+	.slider .slider-bar{
+		width: 18px;
+		margin-left: 1px;
+		height: 200px;
+		border-radius: 9px;
+		background-color: red;
+		position: absolute;
+		cursor: pointer;
+	}
+
+
+
+	</style>
+
+
+	<script type="text/javascript">
+		
+		window.onload = function () {
+			
+			//获取到滑动条对象
+			var bar = document.getElementById('bar');
+			var content = document.getElementById('content');
+
+			//计算滑块高度
+			// box高度 / 内容高度 = 滑块高度 / slider高度
+			var barHeight = Math.pow(bar.parentNode.offsetHeight, 2) / content.offsetHeight;
+			bar.style.height = barHeight + 'px';
+
+
+
+			bar.onmousedown = function (e) {
+				var event = e ? e : window.event;
+				//在mousedown时，记录鼠标的起始位置Y值
+				var startY = event.pageY;
+				//记录滑块的起始位置，在鼠标滑动时，其实只是计算一个相对移动
+				var startTop = bar.offsetTop;
+				// console.log(startTop);
+
+				//给document添加鼠标移动的事件
+				document.onmousemove = function (e) {
+					var event = e ? e : window.event;
+					var pageY = event.pageY;
+
+					// console.log('startY = ' + startY);
+					// console.log('pageY = ' + pageY);
+					//鼠标向下移动的距离是 pageY - startY
+					//滑块向下移动 pageY - startY
+					//在移动鼠标的过程中，根据起始位置的Y值，来计算出鼠标的偏移值
+					//top值是在每次移动的情况下，直接设置当前移动的状态为top
+					//没有考虑滑块在开始点击时的位置
+					// bar.style.top = (pageY - startY) + 'px';
+
+					//鼠标相对移动的距离
+					var moveY = pageY - startY;
+					//滑块当前的top值 = 起始状态的top值 + 移动的距离
+					var barTop = startTop + moveY;
+					//计算滑动范围
+					if (barTop < 0) {
+						barTop = 0;
+					} else if (barTop > bar.parentNode.offsetHeight - bar.offsetHeight) {
+						barTop = bar.parentNode.offsetHeight - bar.offsetHeight;
+					}
+
+					bar.style.top = barTop + 'px';
+
+					//计算内容部分的偏移值
+					//滑块的移动范围 0 ~ bar.parentNode.offsetHeight - bar.offsetHeight
+					//内容的滑动范围 -(content高度 - box高度) ~ 0
+					//滑动距离的比例
+					var scale = (content.offsetHeight - bar.parentNode.offsetHeight) / (bar.parentNode.offsetHeight - bar.offsetHeight);
+
+					//计算内容的偏移值
+					contentTop = scale * barTop * (-1);
+					content.style.top = contentTop + 'px';
+
+					//取消文字的选中
+					//清除当前网页中被选中的内容  文字/图片/链接
+					window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+
+
+
+				}
+
+
+				document.onmouseup = function () {
+					//取消滑动
+					document.onmousemove = null;
+				}
+			}
+
+
+
+
+
+
+
+		}
+	</script>
+</head>
+<body>
+	
+
+	<div class="box">
+		<div class="content" id="content">文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容</div>
+		<div class="slider">
+			<div class="slider-bar" id="bar"></div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
