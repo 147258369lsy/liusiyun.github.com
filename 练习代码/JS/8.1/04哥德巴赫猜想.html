@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function isZhiShu(a) {
+			var count = 1;
+			for(var i = 1;i < a/2;i++){
+				if(a % i == 0){
+					count++;
+				}
+			}
+			if(count == 2){
+				return true;
+			} else {
+				return false;
+			}
+		}
+         //验证一个数不符合哥德巴赫猜想
+		function isGDBHNumber(num) {
+			for(var i = 1; i <= num/2;i++){
+				var j = num - i;
+				if(isZhiShu(i) && isZhiShu(j)){
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		//4 ~100的每一个偶数的遍历
+		for(var number = 6;number<=30; number+=2){
+			var isGDBH = isGDBHNumber(number);
+
+			if(!isGDBH){
+				console.log("找到一个不符合哥德巴赫猜想的数:"+number);
+				break;
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

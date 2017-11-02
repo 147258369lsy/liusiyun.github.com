@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<!-- ng-init指令:初始化应用时创建一个变量,并执行给定的表达式。
+当需要多个变量定义时，必须用分号隔开，而不是用逗号。-->
+<body ng-app ng-init="msg='Hello Angular';abc='你好'">
+	<h1>{{msg}}</h1>
+	<h1 ng-bind="msg"></h1>
+	<h1 ng-bind="abc"></h1>
+	<!-- AngularJS 表达式把数据绑定到HTML，这与ng-bind 指令有异曲同工之妙。 -->
+</body>
+</html>

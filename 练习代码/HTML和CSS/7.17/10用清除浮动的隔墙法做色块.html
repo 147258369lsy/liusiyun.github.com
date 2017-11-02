@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+	    *{
+	    	margin: 0;
+	    	padding: 0;
+	    }
+	    .cl{
+	    	clear: both;
+	    }
+	    .h10{
+	    	height: 10px;
+	    }
+		.header{
+			width: 970px;
+			margin: 0 auto;
+			/*height: 103px;*/
+		}
+		.header .left{
+			width: 277px;
+			height: 103px;
+			background-color: red;
+			float: left;
+		}
+		.header .right{
+			width: 679px;
+			/*height: 103px;*/
+			float: right;
+		}
+		.header .right .time{
+			width: 137px;
+			height: 49px;
+			background-color: green;
+			float: right;
+		}
+		.header .right .msg{
+			width: 679px;
+			height: 46px;
+			background-color: green;
+			margin-top: 8px;
+			float: right;
+		}
+		/*内容盒子区域*/
+		.content{
+			width: 970px;
+			/*height: 435px;*/
+			background-color: black;
+			margin: 0 auto;
+		}
+		.content .hezi1{
+			width: 310px;
+			height: 435px;
+			background-color: yellow;
+			float: left;
+		}
+		.content .hezi2{
+			float: right;
+			width: 650px;
+		}
+		.content .hezi2 .top{
+			width: 650px;
+
+		}
+		.content .hezi2 .top .hezi2_msg{
+			float: left;
+			width: 450px;
+		}
+		.content .hezi2 .top .hezi2_msg .box1{
+			width: 450px;
+			height: 240px;
+			background-color: #D15FEE;
+		}
+
+		.content .hezi2 .top .hezi2_msg .box2{
+			width: 450px;
+			height: 110px;
+			background-color: #D15FEE;
+			margin: 10px 0;
+		}
+		.content .hezi2 .top .hezi2_msg .box3{
+			width: 450px;
+			height: 30px;
+			background-color: #D15FEE;
+		}
+		.content .hezi2 .top .right{
+			float: right;
+			width: 190px;
+			height: 400px;
+			background-color: purple;
+		}
+		.content .hezi2 .bottom{
+			width: 650px;
+			height: 25px;
+			background-color: #D15FEE;
+		}
+
+		/*脚部盒子*/
+		.footer{
+			width: 970px;
+			height: 35px;
+			background-color: blue;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="left"></div>
+		<div class="right">
+			<div class="time"></div>
+			<div class="msg"></div>
+		</div>
+	</div>
+	<div class="cl h10"></div> <!-- 加一个墙，用来清除浮动 -->
+	<div class="content">      <!-- 分成左右两块 -->
+		<div class="hezi1"></div>
+		<div class="hezi2">    <!-- 分成上下两块 --> 
+			<div class="top">  
+				<div class="hezi2_msg">
+					<div class="box1"></div>
+					<div class="box2"></div>
+					<div class="box3"></div>
+				</div>
+				<div class="right"></div>
+			</div>
+			<div class="cl h10"></div>
+			<!-- 加一个墙，用来清除浮动 -->
+			<div class="bottom"></div>
+		</div>
+	</div>
+	<div class="cl h10"></div><!-- 加一个墙，用来清除浮动 -->
+	<div class="footer"></div>
+</body>
+</html>

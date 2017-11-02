@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function() {
+			var body = document.getElementsByTagName('body')[0];
+			// console.log(body);
+			var body = document.body;
+			console.log(body);
+			//head
+			var head = document.head;
+			console.log(head);
+			//title获取的不是标签,而是标题的文本,也可以通过document.title来修改标题
+			var title = document.title;
+			document.title = '网页标题';
+			console.log(title);
+
+			//html
+			console.log(document.documentElement);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

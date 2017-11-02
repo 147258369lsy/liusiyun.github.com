@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr1 = [3,6,19,34,66,23,9,1,2];
+		//方法一:
+	
+    var max = arr1[0];
+    for(var i=0;i<arr1.length;i++){ 
+
+    if(max<arr1[i]){
+  	  max=arr1[i];
+    }
+   }
+
+console.log(max);
+//方法二:	
+ // console.log(Math.max.apply(null,arr1));
+ // console.log(Math.min.apply(null,arr1));
+	</script>
+</body>
+</html>

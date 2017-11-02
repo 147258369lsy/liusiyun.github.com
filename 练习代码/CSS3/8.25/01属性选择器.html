@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.section1 [href]{
+			color: red;
+		}
+
+		.section1 a[href]{
+			background-color: green;
+		}
+
+		.section2 a[href='www.taobao.com']{
+			color: red;
+		}
+		.section3 img{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			display: inline-block;
+		}
+		.section3 img[src ^='./image']{
+			border:5px solid blue;
+		}
+		.section3 img[src ^= './pic']{
+			border:5px dashed green;
+		}
+		section li:only-child{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="section1">
+		<a href="http://www.baidu.com">百度</a>
+		<a href="http://www.weibo.com">微博</a>
+		<a href="http://www.taobao.com">淘宝</a>
+	</div>
+	<div class="section2">
+		<a href="www.baidu.com">百度</a>
+		<a href="www.weibo.com">微博</a>
+		<a href="www.taobao.com">淘宝</a>
+	</div>
+	<div class="section3">
+		<img src="./image/1.png" alt="">
+		<img src="./pic/1.png" alt="">
+	</div>
+
+	<section class="section7">
+		<h2>完全匹配,或者属性的值中连字符之前的内容进行匹配</h2>
+		<span calss='font-size-20'>span1</span>
+		<span class="font-weight-900">span2</span>
+		<span class="border-10">span3</span>
+		<p>1.完全匹配</p>
+		<p>2.在属性的值得开头部分,匹配连字符之前的部分</p>
+	</section>
+
+	<section>
+		<ul>
+			<li>这里有khdf</li>
+		</ul>
+		<ul>
+			<li>这里有khdf</li>
+			<li>这里有khdf</li>
+			<li>这里有khdf</li>
+		</ul>
+		<ul>
+			<li>这里有khdf</li>
+			<li>这里有khdf</li>
+			<li>这里有khdf</li>
+			<li>这里有khdf</li>
+		</ul>
+	</section>
+</body>
+</html>

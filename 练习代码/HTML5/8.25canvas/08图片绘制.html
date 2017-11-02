@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<button data-target='up'>上</button>
+	<button data-target='down'>下</button>
+	<button data-target='left'>左</button>
+	<button data-target='right'>右</button>
+	<canvas id="demo" width="600" height="600"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById('demo');
+		var context = canvas.getContext('2d');
+
+		//加载图片到内存中
+		//Image 图片对象
+		//创建一个新的图片对象
+		var img = new Image();
+		//设置图片的src属性，当设置了src，图片会自动的进行读取和加载
+		img.src = 'img/a.jpg';
+		//当图片下载完成后，在进行绘制
+		img.onload = function () {
+			
+			//图片的绘制
+			// drawImage(image,x,y)
+			// x,y 绘制的位置，将图片的左上角为基准点，绘制到指定的位置上。
+			// context.drawImage(img, 50, 50);
+
+
+			// 在绘制图片时，可以来设置图片的绘制大小
+			// 强制设定图片的宽高，会导致图片的宽高比发生变化
+			// context.drawImage(img, 50, 50, 100, 200);
+
+			// w1/h1 = w2/h2
+			// h2 = w2*h1/w1
+
+			// 等宽高比的绘制
+			// 图片的原始尺寸
+			// var imageWidth = img.width;
+			// var imageHeight = img.height;
+			// context.drawImage(img, 50, 50, 500, 500*imageHeight/imageWidth);
+
+		}
+
+		//游戏主角的图片绘制
+		var playerImage = new Image();
+		playerImage.src = 'img/DMMban.png';
+		// playerImage.onload = function(){
+		// 	//图片总大小 160*260
+		// 	//单个角色的图片大小为 40*65
+		// 	//ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+		// 	//sx,sy 在整个图片文件中，所截取的图像的位置
+		// 	//sWidth, sHeight截取的图像大小
+		// 	context.drawImage(playerImage, 80, 65, 40,65, 100, 100, 80, 130);
+
+		// };
+
+
+
+		//图片动画
+		//序列帧动画
+		playerImage.onload = function(){
+
+			var index = 0;
+			var index2 = 2;
+			var x = 100;
+			var y = 100;
+			//开启定时器，不断的绘制新的图片
+			setInterval(function(){
+				//清除前一张图片
+				//清除某一个矩形范围内的所有内容
+				context.clearRect(0,0,600,600);
+
+				//刷新图片绘制
+				context.drawImage(playerImage, index * 40, 65 * index2,40,65,x,y,80,130);
+				//每绘制一次  index自增1
+				// index++;
+				// index %= 4;
+				index++;
+				index %= 4;
+
+
+				if (index2 == 0) {
+					y+=5;
+				} else if(index2 == 1){
+					x-=5;
+				} else if(index2 == 2){
+					x+=5;
+				} else{
+					y-=5;
+				}
+
+			}, 300);
+
+
+			//获取所有的按钮
+			var buttonArr = document.getElementsByTagName('button');
+			//遍历按钮
+			for (var i = buttonArr.length - 1; i >= 0; i--) {
+				buttonArr[i].onclick = function(){
+					// console.log(this);
+					//获取target
+					var target = this.dataset.target;
+					console.log(target);
+					if (target == 'left') {
+						index2 = 1;
+					} else if(target == 'right'){
+						index2 = 2;
+					} else if(target == 'up'){
+						index2 = 3;
+					} else {
+						index2 = 0;
+					}
+				}
+			}
+
+		}
+
+	</script>
+</body>
+</html>

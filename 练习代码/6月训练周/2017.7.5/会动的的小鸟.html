@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="huatu" width="400" height="600"></canvas>
+
+<script>
+    var canvas = document.getElementById("huatu").getContext('2d');
+    var niao1 = new Image();
+    var i = 0;
+    var imgSrcArr = ["./images/0.gif","./images/1.gif","./images/2.gif"];
+    function niaofei(){
+        canvas.clearRect(0, 0, 400, 600);
+        i ++;
+        i = i % 3;
+        niao1.src = imgSrcArr[i];
+        canvas.drawImage(niao1, 100,150, 40, 40);
+    }
+    setInterval(niaofei,200);
+</script>
+</body>
+</html>

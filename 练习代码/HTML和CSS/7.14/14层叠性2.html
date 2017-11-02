@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*权重：1个id选择器  2个类选择器  4个标签选择器
+	         100         2*10        4*1*/
+		div.hezi1 div.hezi2 div#box3 p{
+			color:red;
+		}
+/*权重：2个id选择器  1个类选择器  4个标签选择器
+	        2*100         1*10        4*1*/
+		div#box1 div.hezi2 div#box3 p{
+			color:purple;
+		}
+
+		div div div div div div div div div div div div div div div div p{
+			color:red;
+		}
+		.ppp{
+			color:purple;
+		}
+	</style>
+</head>
+<body>
+	<div class="hezi1" id="box1">
+		<div class="hezi2" id="box2">
+			<div class="hezi3" id="box3">
+				<p>猜猜我是什么颜色</p> <!-- 由上面权重比较大小可知为紫色 -->
+			</div>
+		</div>
+	</div>
+	<div>
+		<div>
+			<div>
+				<div>
+					<div>
+						<div>
+							<div>
+								<div>
+									<div>
+										<div>
+											<div>
+												<div>
+													<div>
+														<div>
+															<div>
+																<div >
+																	<p class="ppp">猜猜我是什么颜色</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

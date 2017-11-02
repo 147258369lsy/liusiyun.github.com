@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box1{
+			width: 300px;
+			height: 300px;
+			margin: 100px;
+			background-color: red;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			margin: 50px;
+			background-color: green;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var box1 = document.getElementById('box1');
+			var box2 = document.getElementById('box2');
+
+			box1.onclick = function(){
+				console.log('box1 click');
+			}
+			box2.onclick = function(){
+				console.log('box2 click');
+			}
+			document.documentElement.onclick = function(){
+				console.log('html click');
+			}
+			document.body.onclick = function(){
+				console.log('body click');
+			}
+
+            //取消冒泡
+			// box2.onclick = function(event){
+			// 	console.log('box2 click');
+			// 	var event = event ? event : window.event;
+                
+
+   //              //判断所支持的阻止冒泡的方式
+   //              if(event.stopPropagation){
+   //              	event.stopPropagation();
+   //              }else{
+   //              	event.cancelBubble = true;
+   //              }
+			// }
+		}
+	</script>
+</head>
+<body>
+	<div id="box1">
+		<div id="box2">
+			
+		</div>
+	</div>
+</body>
+</html>

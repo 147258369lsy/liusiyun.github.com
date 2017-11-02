@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="600"></canvas>
+<script>
+   var canvas = document.getElementById("canvas").getContext("2d");
+    //这块内容是画地
+    var img = new Image();
+    img.src = "./images/ground.png";
+
+    canvas.drawImage(img, 0, 500, 400, 200);
+
+    //这里是画下管道
+    var downPipeImg = new Image();
+    downPipeImg.src = "./images/pipe.png";
+    var downPipeX = 400;
+    var downPipeHeight;
+
+    //downPipe的X
+    canvas.drawImage(downPipeImg, 0, 500, 150, 500, downPipeX, 400, 100, 200);
+
+   function DownpPipe(imgSrc,x, y, width, height){
+       this.imgSrc = imgSrc;
+       this.x = x;
+       this.y = y;
+       this.width = width;
+       this.height = height;
+   }
+
+   var downPipe = new DownpPipe("./images/pipe.png", 0, 400, 100, 200);
+   console.log(downPipe.x);
+
+   function drawDownPipe(){
+       var image = new Image();
+       image.src = downPipe.imgSrc;
+       canvas.drawImage(image, 0, 500, 150,500,downPipe.x,downPipe.y,downPipe.width,downPipe.height );
+   }
+   drawDownPipe();
+</script>
+</body>
+</html>

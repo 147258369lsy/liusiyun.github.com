@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 400px;
+            height: 400px;
+            border: 1px solid darkslategray;
+            padding: 100px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="father" class="father">
+    <div class="son"></div>
+</div>
+
+<script>
+    var father = document.getElementById("father");
+    var index = 0;
+    father.onmouseover = function (event) {
+        index++;
+        console.log(index, event.type, event.target.className);
+    }
+    father.onmouseout = function () {
+        index++;
+        console.log(index, event.type, event.target.className);    }
+    father.onmouseenter = function () {
+        index++;
+        console.log(index, event.type, event.target.className);    }
+    father.onmouseleave = function () {
+        index++;
+        console.log(index, event.type, event.target.className);    }
+
+</script>
+</body>
+</html>

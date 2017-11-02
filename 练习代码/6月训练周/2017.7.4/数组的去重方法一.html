@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr1 = [1,2,3,4,3,5,4];
+		var arr2 = [];
+
+		function quchong(args) {
+			for(var i =0; i < args.length; i++){
+				if(arr2.indexOf(args[i]) < 0){
+					arr2.push(args[i]);
+				}
+			}
+            return arr2;
+		}
+        quchong(arr1);
+        console.log(arr2);
+
+// 从arr1数组中依次插入数据到arr2数组中，arr2.indexOf(arr[i]) <0
+// 表示查询arr2数组中已插入的数据是否存在arr1中要插入相同重复的数据。。若该索引值< 0，表示没有.
+   // 则将arr1中此数据插入到arr2中，否则不执行，进行下一次循环。。
+	</script>
+</body>
+</html>

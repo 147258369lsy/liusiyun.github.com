@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var APP = {
+			bamboo: 200,
+			getBamboo: function(){
+				console.log(this.bamboo); //200
+			},
+			showBanboo: function(bamboo){
+				console.log(bamboo);  //undefined
+				bamboo = 300;
+				setTimeout(function(){
+					this.bamboo = 400;
+					console.log(bamboo);  //300
+				},0);
+			}
+		};
+
+		var bamboo = 100, getBamboo = APP.getBamboo;
+		
+		APP.getBamboo();  // 结果为200
+		APP.showBanboo(); // 结果为undefined
+		getBamboo();      // 结果为100
+	</script>
+</body>
+</html>

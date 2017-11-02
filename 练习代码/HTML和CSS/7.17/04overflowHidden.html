@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    ul li{
+	    	list-style:none;
+	    	float:left;
+	    }
+		.qiang{
+			clear:both;
+		}
+		.father{
+			overflow:hidden;
+			width: 200px;
+			height: 200px;
+			border:1px solid gray;
+		}
+		#div1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			
+		}
+		#div2{
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+		
+		}
+		#div3{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			
+		}
+	</style>
+</head>
+<body>
+<ul>
+	<li><a href="#div1">div1</a></li>
+	<li><a href="#div2">div2</a></li>
+	<li><a href="#div3">div3</a></li>
+</ul>
+    <div class="qiang"></div>
+<div class="father">
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+</div>
+</body>
+</html>

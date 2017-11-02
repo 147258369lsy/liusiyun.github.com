@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <img src="center.jpg" alt="风景" title="123"/><!--在同一文件夹-->
+	<img src="../1.gif" alt="动态图" /><!-- 图片在上一层文件夹中 -->
+	<img src="./images1/2.gif" alt="dsf" /><!--图片在下一层文件夹中-->
+	<img src="../../images2/1.jpg" /><!--图片在上一层的上一层文件夹中  -->
+	<!-- 在图片的路径中, 绝对路径是没有意义的
+相对路径:
+情形一: 图片和html文件在同一个文件夹中, 则src="baba.jpg" 或者src=”./baba.jpg”
+
+情形二: 图片在上一层文件夹中, 则  src=”../baba.jpg”
+
+情形三: 图片在下一层文件夹中, 则 src="./images/打字手型.jpg"或src="images\.打字手型.jpg"
+
+情形四, 图片在上一层的上一层文件夹中, 则  src=”../../baba.jpg”
+</body> -->
+</html>

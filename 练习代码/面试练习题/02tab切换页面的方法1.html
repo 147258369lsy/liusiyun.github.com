@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	 *{margin: 0;padding: 0;}
+		.box{
+			width: 800px;
+			height: 400px;      
+	        margin: 50px auto;
+			border:1px solid red;
+			overflow: hidden;
+			display: flex;   /*作用和给子盒子加浮动一样*/
+		}
+		.box .tabList{
+             width: 20%;
+             height: 100%;
+             background-color: #ccc;
+             /*float: left;*/
+		}
+		.box .tabList ul{
+			list-style: none;
+			height: 400px;
+			display: flex;
+			flex-direction: column;
+		}
+		.box .tabList li{
+             flex:1;
+             line-height: 133.3px;
+             text-align: center;
+             border-bottom: 1px solid gray;
+		}
+		.box .tabList li a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+		}
+		.box .tabContent{
+             width: 80%;
+             height: 100%;
+             background-color: pink;
+             /*float: right;*/
+             overflow: hidden;
+		}
+		.box .tabContent div{
+              height: 100%;
+		}
+		#one{
+			background-color: red;
+		}
+		#two{
+			background-color: blue;
+		}
+		#three{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<!-- 方法一:利用a标签的锚点实现tab切换
+	方法二: 利用radio和 :checked 选择器来切换-->
+    
+
+
+    <div class="box">
+    	<div class="tabList">
+    		<ul>
+    			<li><a href="#one">北京</a></li>
+    			<li><a href="#two">上海</a></li>
+    			<li><a href="#three">广州</a></li>
+    		</ul>
+    	</div>
+    	<div class="tabContent">
+    		<div id="one">页面一</div>
+    	    <div id="two">页面二</div>
+    	    <div id="three">页面三</div>
+    	</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery-3.2.1.js'></script>
+	<script type="text/javascript">
+		$(function () {
+			
+			// var btn = $('button');
+
+			// btn.on('click', function(){
+				// console.log('btn click');
+			// })
+
+			//在js代码中  模拟btn的点击
+			// btn.trigger('click');
+
+
+			//代码合并
+			//当定义完某个事件后  直接触发一次
+			// btn.on('click', function(){
+			// 	console.log('btn click');
+			// }).trigger('click');
+
+			// $('#submitButton').on('click', function(){
+			// 	alert('submit');
+			// })
+
+
+			//模拟submit的点击
+			// btn.on('click', function(){
+			// 	//trigger 会触发元素的默认事件  例如表单提交
+			// 	// $('#submitButton').trigger('click');
+			// 	//triggerHandler只会触发元素的点击事件，但是不会触发默认事件
+			// 	$('#submitButton').triggerHandler('click');
+			// })
+
+
+			$('.box button').on('click', function(){
+				console.log(this.innerHTML);
+			});
+			//trigger 会触发所有元素的事件  而triggerHandler只触发第一个元素的事件
+			$('.box button').triggerHandler('click');
+		})
+	</script>
+</head>
+<body>
+	<button>按钮</button>
+
+	<form action="./07事件的解绑和绑定.html">
+		<p>在表单中，submit有一个默认的提交动作。跳转到form标签中action所对应的网页，并且添加网页参数。</p>
+		<input type="text"  name="username" />
+		<input type="submit" id="submitButton" />
+	</form>
+
+	<div class="box">
+		<button>button1</button>
+		<button>button2</button>
+		<button>button3</button>
+		<button>button4</button>
+		<button>button5</button>
+		<button>button6</button>
+		<button>button7</button>
+		<button>button8</button>
+		<button>button9</button>
+		<button>button10</button>
+		<button>button11</button>
+		<button>button12</button>
+		<button>button13</button>
+		<button>button14</button>
+		<button>button15</button>
+		<button>button16</button>
+		<button>button17</button>
+		<button>button18</button>
+		<button>button19</button>
+		<button>button20</button>
+	</div>
+
+</body>
+</html>

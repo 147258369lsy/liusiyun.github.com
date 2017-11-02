@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			height: 2000px;
+			margin: 0;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var body = document .getElementsByTagName('body')[0];
+			body.onclick = function(event){
+                console.log(event);
+
+                var e = event ? event : window.event;//获取事件对象
+
+                //clientX clientY鼠标点击的位置在浏览器窗口中的相对位置,不会随着网页的滑动而改变
+                console.log('clientY = ' + e.clientY);
+
+             //pageX pageY以网页为坐标参考系,来进行计算点击位置的坐标,会随着网页的滑动而改变
+             console.log('pageY = ' + e.pageY);
+             console.log('pageX = ' + e.pageX);
+
+             //screenX screenY screen:屏幕的意思
+             //是以电脑屏幕为参考系来计算点击坐标的,如果浏览器在屏幕中被拖动,那么坐标值也会改变
+             console.log('screenY = ' + e.screenY);
+
+             //offsetX offsetY 被点击的盒子本身作为参考系,可以得到点击的点在盒子中的位置
+             console.log('offsetY = ' + e.offsetY);
+             console.log('offsetX = ' + e.offsetX);
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

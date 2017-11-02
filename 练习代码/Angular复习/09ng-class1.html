@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.width{
+			width: 30%;
+		}
+		.red{
+			background-color: red;
+		}
+		.border{
+			border:1px solid green;
+		}
+	</style>
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+<!-- ng-class 指令用于给HTML元素动态绑定一个或多个CSS 类。
+ng-class 指令的值可以是字符串，对象，或一个数组。
+如果是字符串，多个类名使用空格分隔。 -->
+	<ul>
+		<li ng-repeat="item in students" ng-class="{{className}}">{{item.name}}</li>
+	</ul>
+
+	<script>
+		angular.module('app',[])
+		.controller('AppCtrl',function($scope){
+			$scope.className = "'red'";
+			$scope.students = [];
+			for(var i = 0; i < 10; i++){
+				$scope.students[i] = {
+					id : i,
+					name : 'wfeng' + i + '代',
+					age: 30 + i
+				}
+			}
+		})
+	</script>
+</body>
+</html>

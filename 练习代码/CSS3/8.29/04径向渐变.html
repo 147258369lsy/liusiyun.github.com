@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+		.container h2{
+			text-align: center;
+		}
+		.container section.item{
+			box-sizing: border-box;
+			width: 200px;
+			height: 200px;
+			border: 1px solid #bbb;
+			float: left;
+			margin: 25px;
+			position: relative;
+		}
+		.container section.item h3{
+			width: 200px;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 28px;
+		}
+		.container section.item:hover h3{
+			display: block;
+		}		
+		div.content{
+			width: 150px;
+			height: 150px;
+			/*background-color: red;*/
+			margin: 25px;
+			border: 1px solid red;
+			box-sizing: border-box;
+		}
+	</style>
+	<style>
+       .item:nth-of-type(1) .content{
+       	 background-image: radial-gradient(red, green, blue);
+       }
+       .item:nth-of-type(2) .content{
+       	/*圆心位置 使用center left right bottom top来进行描述 100位半径*/
+       	 background-image: radial-gradient(100px at left bottom, red, green);
+       }
+        .item:nth-of-type(3) .content{
+       	/*圆心位置也可使用坐标来表示*/
+       	 background-image: radial-gradient(50px at 100px 50px, red, green);
+       }
+       .item:nth-of-type(4) .content{
+       	 background-image: radial-gradient(75px, red 10%,green 40%, blue 60%,yellow);
+       }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>径向渐变</h2>		
+		<section class="item">
+			<h3>基础径向渐变</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>中心和半径</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>坐标表示</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>颜色渐变</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+	</div>
+</body>
+</html>

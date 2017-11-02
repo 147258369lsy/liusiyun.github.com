@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box1{
+			width: 100px;
+			height: 100px;
+
+			/*三种方式*/
+			/*颜色名称*/
+			/*background-color: green;*/
+			/*十六进制的颜色表示法*/
+			/*background-color: #0f0;*/
+			/*rgb法*/
+			background-color: rgb(0,128,0);
+			opacity: 0.5;
+			/*background: rgba(0,0,0,0.2);*/
+
+		}
+		div{
+			position: relative;
+			width: 100px;height: 100px;
+		}
+
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: red; 
+			/*opacity 是将整个盒子透明，而不是里面的颜色。使用opacity会导致内部所有的内容都透明，包括文字和子元素。子元素会在父元素的透明度之上再来进行透明度的计算。*/
+			opacity: 0.3;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.box2 span{
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-color: green;
+			opacity: 0.5;
+		}
+		/*透明颜色*/
+		.box3{
+			width: 100px;
+			height: 100px;
+			/*使用rgba来设置一个透明的颜色，a表示alpha透明度，用rgba设置的只是一个透明度背景颜色，所以不会影响盒子内部的内容。*/
+			background-color: rgba(0,128,0,0.1);
+		}
+
+		.box4{
+			background-color: transparent; 
+			/*transparent 代表当前div的颜色和父元素保持一致，可以理解为就是透明.*/
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box1"></div>
+
+	<h2>opacity</h2>
+	<div>
+	<!-- 文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容6文字内容文字内容文字内容6文字内容文字内容文字内容文字内容6文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容666 -->
+	<div class="box2">
+	box2
+	<span></span>
+	</div>
+	</div>
+
+
+	<h2>透明色</h2>
+	<div class="box3">文字内容</div>
+
+
+	<div class="box4">文字内容</div>
+
+</body>
+</html>

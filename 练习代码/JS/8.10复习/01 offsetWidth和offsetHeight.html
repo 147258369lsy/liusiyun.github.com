@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 200px;
+			border:1px solid red;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var box = document.getElementsByClassName('box')[0];
+			// console.log(box);
+            
+			var boxWidth = box.offsetWidth;
+			console.log(boxWidth);//202 用offset获取的是宽度的数值,没有单位
+			var boxHeight = box.offsetHeight;
+			console.log(boxHeight);//160 
+
+     // 注意:offsetWidth 和offsetHeight只能用来获取盒子实际宽高的数值,不能用来设置宽高!
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<p>段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签段落标签</p>
+	</div>
+</body>
+</html>

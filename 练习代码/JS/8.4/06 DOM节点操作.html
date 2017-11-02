@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			//DOM 节点操作
+			//创建一个新的节点
+			var p = document.createElement('p');
+			//填文字
+			p.innerText = '这是新创建的PPPPP';
+
+			console.log(p);
+
+			//将p添加到box中
+			var box = document.getElementById('box');
+			//在box标签内部 追加一个新创建的p元素
+			box.appendChild(p);
+
+			//查找到ul节点 然后删除
+			var ul = box.getElementsByTagName('ul')[0];
+			box.removeChild(ul);
+
+			// console.log(ul);
+
+
+
+			//查找ul的子元素
+			console.log(ul.children);
+
+
+			//查找box的父元素
+			var parent = box.parentNode;
+			console.log(parent);
+	}
+
+
+	</script>
+
+</head>
+<body>
+	
+	<div id="father">
+		<div id="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

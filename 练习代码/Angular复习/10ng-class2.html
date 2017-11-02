@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+		}
+		.red{
+			background-color: red;
+		}
+		.blue{
+			background-color: blue;
+		}
+	</style>
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+	<div ng-click="changeColor()" ng-class="{true:'red',false:'blue'}[isSelected]">盒子</div>
+
+	<script>
+		angular.module('app',[])
+		.controller('AppCtrl',function($scope){
+			$scope.isSelected = true;
+			$scope.changeColor = function(){
+				$scope.isSelected = !$scope.isSelected;
+			}
+		})
+	</script>
+</body>
+</html>

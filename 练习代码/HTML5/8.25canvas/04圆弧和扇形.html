@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="demo" width="600" height="600"></canvas>
+	<script>
+		var canvas = document.getElementById('demo');
+		var context = canvas.getContext('2d');
+
+
+		context.moveTo(300,300);
+		//绘制圆形 
+		//参数:x y圆心坐标 radius半径 圆弧的起始角度和结束角度
+		//圆弧的方向:顺时针=false 逆时针=true
+		
+		context.arc(300,300,100,-Math.PI /2 ,Math.PI,false);
+        
+        context.closePath();
+		context.lineWith = 3;
+		context.strokeStyle = 'blue';
+		context.stroke();
+
+		//填充
+		context.fillStyle = 'yellow';
+		context.fill();
+	</script>
+</body>
+</html>

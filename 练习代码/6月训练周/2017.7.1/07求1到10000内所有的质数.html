@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+     /*
+     思路：1.找出因数
+          2.求出因数个数
+          3.求出一个数的因数个数是否为2
+          4.判断一个数是否为质数
+          5.求1到10000内的所有质数
+      */
+    for(var num = 1 ; num <= 10000; num++){
+        var count = 0;
+        for(var i = 1;i <= num; i++){
+            if(num % i == 0){
+                count++;
+            }
+        }
+        if(count == 2){
+            console.log(num +"是质数");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"CodeFormatter",
+		"Emmet",
+		"HTML-CSS-JS Prettify",
+		"Package Control",
+		"Pretty JSON",
+		"Tag"
+	]
+}

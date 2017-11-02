@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		img{
+			position: absolute;
+			top: 50px;
+			right: 5px;
+		}
+	</style>
+	<script>
+		function scroll(){
+           var x;
+           var y;
+
+           if(window.pageYOffset ||window.pageYOffset){
+           	 //高版本浏览器
+           	 y = window.pageYOffset;
+           	 x = window.pageXOffset;
+           }else if(document.compatMode == 'CSS1Compat'){
+           	 //旧版本IE浏览器
+           	 y = document.documentElement.scrollTop;
+           	 x = document.documentElement.scrollLeft;
+           }else{
+           	 //怪异模式浏览器
+           	 y = document.body.scrollTop;
+           	 x = document.body.scrollLeft;
+           }
+           //返回值,用json格式的数据作为返回值,在一个json中可以包含多个数据
+           return {
+           	left : x,
+           	top  : y
+           };
+		}
+
+		var current = 50;
+		var target = 50;
+		window.onload = function(){
+			//开启缓动动画
+			var ad = document.getElementById('ad');
+			setInterval(function(){
+               //改变ad的top值
+               current = current + (target - current) /10;
+               ad.style.top = current + 'px';
+			},30);
+		}
+
+		//当前页面滚动时,ad通过一个移动动画,从页面外移入到当前位置
+		window.onscroll = function(){
+			var scrollTop = scroll().top;
+			target = 50 + scrollTop;
+		}
+	</script>
+</head>
+<body>
+    <img src="images/aside.jpg" id="ad" alt="">
+	<div class="text">
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+		<p>一段文字</p>
+	</div>
+</body>
+</html>

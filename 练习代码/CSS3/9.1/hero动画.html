@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .box{
+        	width: 400px;
+        	height: 350px;
+        	/*border:1px solid red;*/
+        	position: absolute;
+        	top: 100px;
+        	left: 0px;
+        }
+        .box:hover {
+        	animation: move 10s;
+        }
+        @keyframes move {
+			0% {
+				left: 0px;
+			}
+			100% {
+				left: 1000px;
+			}
+		}
+    	.box .hero{
+    		width: 389px;
+    		height: 327px;
+    		background: url('img/hero1.png') no-repeat;
+    		position: absolute;
+    		top: 100px;
+    		left: 0px;
+    	}
+    	.hero:hover{
+    		animation:run 1s 100;
+    	}
+    	@keyframes run {
+    		0%{
+    			background: url('img/hero1.png') no-repeat;
+    		}
+    		25%{
+    			background: url('img/hero2.png') no-repeat;
+    		}
+    		50%{
+    			background: url('img/hero3.png') no-repeat;
+    		}
+    		100%{
+    			background: url('img/hero4.png') no-repeat;
+    		}
+    	}
+    </style>
+</head>
+<body>
+	<div class="box">
+		<div class="hero"></div>
+	</div>
+</body>
+</html>

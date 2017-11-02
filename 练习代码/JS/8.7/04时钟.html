@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		div{
+			width: 600px;
+			height: 600px;
+		}
+		.clock{
+			margin: 50px auto;
+			background: url("images/clock.jpg") center center no-repeat;
+			position: relative;
+		}
+		.clock div{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.h{
+			background: url("images/hour.png") center center no-repeat;
+		}
+		.m{
+			background: url("images/minute.png") center center no-repeat;
+		}
+		.s{
+			background: url(images/second.png) center center no-repeat;
+		}
+	</style>
+	<script>
+		function changeTime() {
+			var now = new Date();//获取当前时间
+			var s = now.getSeconds();
+			var m = now.getMinutes() + s / 60;
+			var h = now .getHours() % 12 + m /60;
+
+			//根据当期那时间的值,来对div进行旋转
+			var h_div = document.getElementById('hour');
+			var m_div = document.getElementById('minute');
+			var s_div = document.getElementById('second');
+
+			//根据时间的值来计算角度
+			h_div.style.transform = "rotate(" + (h / 12 *360) +'deg)';
+			//chrome
+			// h_div.style.webkitTransform = 'rotate(' + (h / 12 *360) +'deg)';
+			// //火狐浏览器
+			// h_div.style.MozTransform = 'rotate(' + (h / 12 *360) +'deg)';
+
+			//分钟
+			m_div.style.transform = "rotate(" + (m / 60 *360) +'deg)';
+			//chrome
+			// m_div.style.webkitTransform = 'rotate(' + (h / 60 *360) +'deg)';
+			// //火狐浏览器
+			// m_div.style.MozTransform = 'rotate(' + (h / 60 *360) +'deg)';
+
+			//秒钟
+			s_div.style.transform = "rotate(" + (s / 60 *360) +'deg)';
+			//chrome
+			// s_div.style.webkitTransform = 'rotate(' + (h / 60 *360) +'deg)';
+			// //火狐浏览器
+			// s_div.style.MozTransform = 'rotate(' + (h / 60 *360) +'deg)';
+
+		}
+		window.onload = function(){
+			setInterval(changeTime,500);
+		}
+	</script>
+</head>
+<body>
+	<div class="clock">
+		<div class="h" id="hour"></div>
+		<div class="m" id="minute"></div>
+		<div class="s" id="second"></div>
+	</div>
+</body>
+</html>

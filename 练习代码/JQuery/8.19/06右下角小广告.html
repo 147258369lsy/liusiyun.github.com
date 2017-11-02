@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 250px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			background: url('1.jpg');
+		}
+		.box span{
+			width: 20px;
+			height: 20px;
+			background-color: red;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$('.box').find('span').click(function(){
+				$('.box').fadeOut(1000);
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<span></span>
+	</div>
+</body>
+</html>

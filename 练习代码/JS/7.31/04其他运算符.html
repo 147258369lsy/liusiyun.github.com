@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	    //复合运算符
+		var x = 10 ;
+		var y = 3;
+		//+=  x+=y  --> x=x+y;
+		var result1 = x + y;
+		x+=y;
+		x*=y;
+		x/=y;
+		x%=y;
+
+		//自增运算符++
+		x++;
+		console.log(x);
+		x++;
+		console.log(x);
+		x++;
+		console.log(x);
+
+		//自减运算符x--;
+		y--;
+		console.log(y);
+		y--;
+		console.log(y);
+		y--;
+		console.log(y);
+        console.log("=======================")
+
+        x = 10;
+        y = 3;
+
+        x += ++y;
+        //++符号写在后,先进行其他运算,在来自增.++在前,先自增,在进行其他运算
+        console.log('x=' + x);
+        console.log('y' + y);
+
+
+        console.log('=========================');
+        //三目运算符(条件运算符)
+        //a ? b : c
+        //如果a=true 则选择b,如果a=false,则选择c.
+        var todayIsSunny = true;
+        var string = todayIsSunny ? '涂防晒霜' : '带雨伞';
+        console.log(string);
+
+        x = todayIsSunny ? x + y : x - y;
+        console.log('x=' + x);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

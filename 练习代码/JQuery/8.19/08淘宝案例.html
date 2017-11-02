@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{list-style: none;}
+		.box{
+			width: 300px;
+			height: 250px;
+			margin: 100px auto;
+			border:1px solid pink;
+		}
+		.left,.center,.right{
+			height: 100%;
+			float:left;
+		}
+		.left{
+			width: 50px;
+			background-color: red;
+		}
+		.center{
+			width: 200px;
+			background-color: green;
+			position: relative;
+		}
+		.center img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		.right{
+			width: 50px;
+			background-color: yellow;
+		}
+		.left a,
+		.right a{
+			display: block;
+			width: 50px;
+			height: 27.78px;
+            line-height: 27px;
+            text-align: center;
+            font-size: 14px;
+            text-decoration: none;
+            border-top: 1px solid pink;
+            margin-top:-1px;
+            background: url('./images/lili.jpg');
+		}
+		.left a:hover,
+		.right a:hover{
+			background: url('./images/abg.gif');
+		}
+	</style>
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+		$(function () {
+			 var lis = $('li');
+			 lis.mouseenter(function(){
+			 	var $this = $(this); //显示所对应的图片
+			 	// console.log($this);
+                
+                //做法2: 根据序号来获取图片
+			 	var index = $this.index();//.index()获取当前元素在父元素中的序号
+
+			 	if(this.parentNode.parentNode.className == 'right'){
+			 		index += 9;
+			 	}
+			 	//根据序号获取图片
+			 	var img = $('img:eq('+index+')');
+
+			 	img.fadeIn();
+			 })
+			 lis.mouseout(function(){
+			 	var $this = $(this);
+
+			 	var index = $this.index();
+
+			 	if(this.parentNode.parentNode.className == 'right'){
+			 		index += 9;
+			 	}
+			 	//根据序号获取图片
+			 	var img = $('img:eq('+index+')');
+
+			 	img.fadeOut();
+			 })
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="left">
+			<ul>
+				<li><a href="javascript:;">登山鞋</a></li>
+				<li><a href="javascript:;">冬裙</a></li>
+				<li><a href="javascript:;">毛衣</a></li>
+				<li><a href="javascript:;">棉服</a></li>
+				<li><a href="javascript:;">男包</a></li>
+				<li><a href="javascript:;">男毛衣</a></li>
+				<li><a href="javascript:;">男棉服</a></li>
+				<li><a href="javascript:;">男靴</a></li>
+				<li><a href="javascript:;">呢大衣</a></li>
+
+			</ul>
+		</div>
+		<div class="center">
+			<img src="./images/登山鞋.jpg" alt="" style="display: block;">
+			<img src="./images/冬裙.jpg" alt="">
+			<img src="./images/毛衣.jpg" alt="">
+			<img src="./images/棉服.jpg" alt="">
+			<img src="./images/男包.jpg" alt="">
+			<img src="./images/男毛衣.jpg" alt="">
+			<img src="./images/男棉服.jpg" alt="">
+			<img src="./images/男靴.jpg" alt="">
+			<img src="./images/呢大衣.jpg" alt="">
+			<img src="./images/牛仔裤.jpg" alt="">
+			<img src="./images/女包.jpg" alt="">
+			<img src="./images/女裤.jpg" alt="">
+			<img src="./images/女靴.jpg" alt="">
+			<img src="./images/皮带.jpg" alt="">
+			<img src="./images/皮衣.jpg" alt="">
+			<img src="./images/围巾.jpg" alt="">
+			<img src="./images/雪地靴.jpg" alt="">
+			<img src="./images/羽绒服.jpg" alt="">
+		</div>
+		<div class="right">
+			<ul>
+				
+				<li><a href="javascript:;">牛仔裤</a></li>
+				<li><a href="javascript:;">女包</a></li>
+				<li><a href="javascript:;">女裤</a></li>
+				<li><a href="javascript:;">女靴</a></li>
+				<li><a href="javascript:;">皮带</a></li>
+				<li><a href="javascript:;">皮衣</a></li>
+				<li><a href="javascript:;">围巾</a></li>
+				<!-- <li><a href="javascript:;">效果图</a></li> -->
+				<li><a href="javascript:;">雪地靴</a></li>
+				<li><a href="javascript:;">羽绒服</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

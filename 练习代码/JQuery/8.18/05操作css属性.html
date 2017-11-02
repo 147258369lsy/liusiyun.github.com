@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			border:2px solid blue;
+			background-color: red;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			var box_jQuery = $('#box');
+			// box_jQuery.css('backgroundColor', 'green');
+			// box_jQuery.css('height', '400px');
+            
+
+            //通过json格式来设置多个css属性
+			box_jQuery.css({
+				backgroundColor : 'red',
+				width : '500px',
+				borderWidth : '10'
+			});
+
+			var lis = $('li');
+			lis.css('font-size', function(index, value){
+				console.log(this);//指针指向被设置的元素对象(DOM对象)
+				console.log('index = ' + index);//index表示当期在设置的li的序号
+				console.log('value = ' + value);
+
+				//将要设置的新值通过return进行返回
+				return(index + 15) + 'px';
+			});
+		})
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	<ul>
+       <li>这里是第1</li>
+       		<li>这里是第2</li>
+       		<li>这里是第3</li>
+       		<li>这里是第4</li>
+       		<li>这里是第5</li>
+       		<li>这里是第6</li>
+       		<li>这里是第7</li>
+       		<li>这里是第8</li>
+       		<li>这里是第9</li>
+       		<li>这里是第10</li>
+       		<li>这里是第11</li>
+       		<li>这里是第12</li>
+       		<li>这里是第13</li>
+       		<li>这里是第14</li>
+       		<li>这里是第15</li>
+       		<li>这里是第16</li>
+       		<li>这里是第17</li>
+       		<li>这里是第18</li>
+       		<li>这里是第19</li>
+       		<li>这里是第20</li>
+       		<li>这里是第21</li>
+       		<li>这里是第22</li>
+       		<li>这里是第23</li>
+       		<li>这里是第24</li>
+       		<li>这里是第25</li>
+       		<li>这里是第26</li>
+       		<li>这里是第27</li>
+       		<li>这里是第28</li>
+       		<li>这里是第29</li>
+       		<li>这里是第30</li>
+       		<li>这里是第31</li>
+       		<li>这里是第32</li>
+       		<li>这里是第33</li>
+       		<li>这里是第34</li>
+       		<li>这里是第35</li>
+       		<li>这里是第36</li>
+       		<li>这里是第37</li>
+       		<li>这里是第38</li>
+       		<li>这里是第39</li>
+       		<li>这里是第40</li>
+       		<li>这里是第41</li>
+       		<li>这里是第42</li>
+       		<li>这里是第43</li>
+       		<li>这里是第44</li>
+       		<li>这里是第45</li>
+       		<li>这里是第46</li>
+       		<li>这里是第47</li>
+       		<li>这里是第48</li>
+       		<li>这里是第49</li>
+       		<li>这里是第50</li>		
+	</ul>
+</body>
+</html>

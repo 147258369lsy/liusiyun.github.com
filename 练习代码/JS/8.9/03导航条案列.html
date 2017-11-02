@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		body{
+			background-color: #000;
+		}
+		.nav{
+			width: 900px;
+			padding:0 50px;
+			height: 50px;
+			border-radius: 10px;
+			background-color: #fff;
+			margin: 100px auto;
+			background: #fff url('images/rss.png') 950px center no-repeat;
+			position: relative;
+		}
+		.nav ul{
+			list-style: none;
+		}
+		.nav li{
+			float:left;
+			font-size: 18px;
+			line-height: 50px;
+			padding: 0 20px;
+			cursor: pointer;
+
+			/*设置z-index 让文字浮在图标上方*/
+			position: relative;
+			z-index: 99;  /*cloud的z-index默认为0,故给li设置大的z-index值使其在上面*/
+		}
+		#cloud{
+			position: absolute; /*和nav盒子匹配,子绝父相*/
+			top: 4px;
+			width: 83px;
+			height: 42px;
+			background: url(images/cloud.gif);
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			//获取cloud
+			var cloud = document.getElementById('cloud');
+			//读取其初始值得left
+			var target = cloud.offsetLeft;//目标值
+			// console.log(target);//50
+			var current = target;      //当前值
+			var select = target;       //当前被选中值
+			//思路二:使用缓动动画,后续只需要修改target值,即可执行动画
+			setInterval(function(){
+                current = current + ( target - current) / 10;
+                cloud.style.left = current + 'px';
+			},20);
+
+			//思路一:先获取所有的li,遍历并添加事件(有点击,滑入,滑出3个事件)
+			var lis = document.getElementsByTagName('li');
+			//遍历每一个li 添加事件
+			for( var i = 0 ;i < lis.length; i++){
+				//其中一个li
+				var li = lis[i];
+
+				li.onclick = function(){
+					// console.log(this);
+					// console.log('click');
+					//target = 1000;
+
+					//点击一个标签,则获得当前被点击标签的left值
+					var left = this.offsetLeft;
+					target = left;
+					//保存选中的值
+					select = left;
+				}
+				li.onmouseover = function(){
+					target = this.offsetLeft;
+				}
+				li.onmouseout = function(){
+					//返回初始时被选中的值
+					target = select;
+				}
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="nav">
+		<span id="cloud"></span>
+		<ul>
+			<li>标签1</li>
+			<li>标签2</li>
+			<li>标签3</li>
+			<li>标签4</li>
+			<li>标签5</li>
+			<li>标签6</li>
+		</ul>
+	</div>
+</body>
+</html>

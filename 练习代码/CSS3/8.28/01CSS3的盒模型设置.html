@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			float: left;
+			width: 200px;
+			height: 300px;
+			padding: 50px;
+			border: 5px dashed blue;
+			margin:20px 30px 30px 40px;
+			background-color: #0f0;
+		}
+		.box2{
+			float: left;
+			width: 200px;
+			height: 300px;
+			padding: 50px;
+			border:5px dashed blue;
+			margin:20px 30px 30px 40px;
+			background-color: red;
+			/*box-sizing: content-box;*/
+			/*content-box 默认值 指设置的大小为content内容的大小,盒子实际大小=content+padding+border*/
+			box-sizing: border-box; /* 表示设置的宽高为盒子的实际的大小*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+</html>

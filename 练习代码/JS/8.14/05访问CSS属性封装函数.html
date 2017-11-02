@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 300px;
+			margin: 100px;
+			background-color: pink;
+		}
+	</style>
+	<script>
+
+	   window.onload =function(){
+	   	var box = document.getElementById('box');
+
+	   	var boxHeight = getStyle(box,'height');
+	   	console.log(boxHeight);
+	   	var boxWidth = getStyle(box,'width');
+	   	console.log(boxWidth);
+
+	   	var boxMargin = getStyle(box,'margin');
+	   	console.log(boxMargin);
+
+	   	var boxBGC= getStyle(box,'backgroundColor');
+	   	console.log(boxBGC);
+
+	   	var boxLeft = getStyle(box,'left');
+	   	console.log(boxLeft);
+	   }
+		//封装一个函数用于获取某一个元素的某一条CSS属性值
+		function getStyle(element,styleName) {
+			if(element.currentStyle){
+				return element.currentStyle[styleName];
+			}else{
+				var computedStyle = window.getComputedStyle(element,null);
+				return computedStyle[styleName];
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

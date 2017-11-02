@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#box{
+           width: 200px;
+           height:200px;
+           border:1px solid red;
+           margin:100px 0 0 100px;
+		}
+		#box #small{
+           width: 100px;
+           height: 100px;
+           background-color: pink;
+           margin:50px;
+		}
+		#box #small .span{
+			display: block; /*span是行内元素,不能设置宽高,故之前没显示出来,所以只能转化为块级元素*/
+           width: 20px;
+           height: 20px;
+           background-color: green;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var span = document.getElementsByClassName('span')[0];
+			var spanLeft = span.offsetLeft;
+			console.log(spanLeft); //151 获取的是到网页最左边的距离数值
+
+			var spanTop = span.offsetTop;
+			console.log(spanTop);//151 是到网页最顶边的距离
+
+			//当父元素中存在定位(固,相对,绝对)元素时,通过offsetLet和offsetTop获取的距离由第一个被定位的父元素决定
+
+			console.log(span.offsetParent); //body
+			//offsetParent
+			//当前元素的父元素中,第一个被定位的元素
+			//如果所有的父元素都没有被定位,则返回body
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="small">
+			<span class="span"></span>
+		</div>
+	</div>
+</body>
+</html>

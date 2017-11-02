@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <p>1.canvas一般设置的方式是给canvas设置宽高</p>
+    <p>2.另一种是用js设置大小</p>
+    <p>3.注意:用style设置大小会导致画的线条也会进行等比例缩放!!!!一般不用!</p>
+	<canvas id="demo" width="500" height="800"></canvas>
+	<script>
+		//canvas默认大小为300*150
+		var canvas = document.getElementById('demo');
+
+        //用javascript设置画布大小,注意要写在设置路径的前面!!!
+        // canvas.width = 500;
+        // canvas.height = 800;
+
+		//context:是上下文，环境，绘制内容的环境   的意思
+		//通过Context可以来设置绘制图像的路径和各种属性
+		//canvas可以进行2D和3D的绘图，那么2D和3D有不同的context，所以在获取context需要指定类型
+
+		var context = canvas.getContext('2d')
+
+		//设置路径,在使用context进行绘制时,坐标系的位于画布的左上角原点;    
+        //路径的起始点
+		context.moveTo(0,0);
+		//设置路径点,并且用线段链接
+		context.lineTo(50,50);
+		context.lineTo(150,50);
+		context.lineTo(200,100);
+		context.lineTo(0,50);
+		context.lineTo(500,800);
+
+		//设置线段颜色
+		context.strokeStyle = 'red';
+		//描边粗细
+		context.lineWidth = 10;
+
+		//进行线条的描边
+		context.stroke();
+	</script>
+</body>
+</html>

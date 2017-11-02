@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/angular/angular.js"></script>
+</head>
+<body>
+<!-- ng-app 指令定义了 AngularJS 应用程序的 根元素。
+ng-app 指令在网页加载完毕时会自动引导（自动初始化）应用程序。 -->
+<!-- module2 并不生效, 这是因为, 在html文档中, 只能生效一个ng-app-->
+<div ng-app="module1" ng-controller="Module1Ctrl">
+    <input type="button" value="test" ng-click="todo1()">
+</div>
+<div ng-app="module2" ng-controller="Module2Ctrl">
+    <input type="button" value="test" ng-click="todo2()">
+</div>
+<script>
+    var module1 =angular.module('module1',[]);
+    module1.controller('Module1Ctrl',function ($scope) {
+        $scope.todo1 = function () {
+            console.log('module1');
+        }
+    })
+    var module2 =angular.module('module2',[]);
+    module2.controller('Module2Ctrl',function ($scope) {
+        $scope.todo1 = function () {
+            console.log('module2');
+        }
+    })
+//    angular.bootstrap(document.querySelector('[ng-app="module2"]'),['module2']);
+    //用属性获取节点元素
+    angular.module('app',['module1', 'module2']);
+</script>
+</body>
+</html>

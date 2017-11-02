@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+<h3>ng-repeat 指令用于循环输出指定次数的 HTML 元素,
+集合必须是数组或对象.</h3>
+	<ul>
+		<li ng-repeat="item in arr track by $index">{{item}}</li>
+<!-- 用ng-repeat指令遍历一个javascript数组，当数组中有重复元素的时候,angularjs会报错,因此数组中是不允许存在两个或多个相同的数字的。为了规避这个错误，需要定义自己的track  by $index表达式。 -->
+	</ul>
+    <ul>
+    	<li ng-repeat="(key,value) in obj">{{key+ ' : ' +value}}</li>
+    </ul>
+    <ul>
+    	<li ng-repeat="student in studentArr">
+    	   {{student.name+student.age}}
+    	   <input type="button" value="X" ng-click="delete(student)">
+    	</li>
+    </ul>
+	<script>
+		angular.module('app',[])
+		.controller('AppCtrl',function($scope){
+			$scope.arr = [1,2,3,3,3,4,];
+			$scope.obj = {
+				name: '汪峰',
+				age: '39',
+				Id: 'singer'
+			}
+
+			$scope.studentArr = [];
+		    for(var i = 0; i < 10 ; i++){
+			   $scope.studentArr[i] = {
+				 id : i,
+				 name: '刘氏' + i + '代',
+				 age: 20 + i
+			   }
+		    }
+
+		    //点击删除相应的li
+		    $scope.delete = function(student){
+               var index = $scope.studentArr.indexOf(student);
+               console.log(index);
+               $scope.studentArr.splice(index,1);
+               console.log(student);
+               // indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+               // 如果没有找到匹配的字符串则返回 -1。
+               // array.splice(index,num)，第一个参数为第一项位置，
+               // 第二个参数为要删除几个返回值为删除内容，array为结果值。
+		    }
+		})
+	</script>
+</body>
+</html>

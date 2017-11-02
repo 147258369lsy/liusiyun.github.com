@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var arr = [1, 2, 3, 4, 5, 6, 7];
+    //splice
+    //1. 可以传入两参数, 那么第一个参数代表起始下标, 第二个参数代表删除的数量
+   arr.splice(1,2);
+   console.log(arr);
+
+    //2. 还可以传入三个参数, 那么第一个参数代表起始下标, 第二个参数代表删除的数量,
+    //   第三个参数, 就是添加到第一个参数下标的元素
+//    arr.splice(1,2,3333);
+
+    //做在某个下标之前 添加元素
+//    arr.splice(3, 0, 222323);
+
+    //做替换某个元素
+    arr.splice(3, 1, 324324);
+    console.log(arr);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+				width: 100px;
+				height: 100px;
+				padding: 100px;
+				border: 20px dashed blue;
+				background: url(images/bg.jpg) no-repeat;
+				margin: 100px auto;
+                /*背景原点决定图片的起始位置*/
+				/*background-origin: content-box;/*图片从内容区域开始平铺*/
+				/*background-origin: padding-box;图片从padding区域开始平铺*/
+				background-origin: border-box;图片从边框区域开始平铺
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+</body>
+</html>

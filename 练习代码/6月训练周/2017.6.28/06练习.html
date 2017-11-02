@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="application/javascript">
+
+    var num = prompt("请输入三位数");
+    num  = Number(num);
+    var bai = parseInt(num/100);
+    var shi = parseInt((num-bai*100)/10);
+    var ge = num % 10;
+
+    alert(bai + " "+shi+" "+ge);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/demo.css" />
+
+	<script src="js/animate.js"></script>
+	<script src="js/select.js"></script>
+    <script>
+    	window.onload = function() {
+    		//用五个数组  定位置
+    		var json = [{  //li1
+    			      width: 350,
+                 top: 50,
+                 left: 30,
+                 zIndex: 1,
+                 opacity: 0.5
+    		},{  //li2
+    		    width: 450,
+	            top: 100,
+	            left: 0,
+	            zIndex: 2,
+	            opacity: 0.8 
+    		},{    //li3
+    			width: 800,
+	            top: 200,
+	            left: 100,
+	            zIndex: 3,
+	            opacity: 1 
+    			
+    		},{  //li4
+    			width: 450,
+	            top: 100,
+	            left: 550,
+	            zIndex: 2,
+	            opacity: 0.8
+    		},{ 
+	               //li5
+    			 width: 350,
+                 top: 50,
+                 left: 620,
+                 zIndex: 1,
+                 opacity: 0.5
+    		}];
+
+    		refreshImageLocation(0);
+    		function refreshImageLocation(index){
+
+    			//默认情况下,第i个对应第i个位置
+    			//当index=i时 第i个图 对应i-index位置
+    			//当界面加载完成后,设定每一个li的位置以及透明度
+    			var liArr = $('li');
+    			for(var i = 0; i < liArr.length;i++){
+    				var li = liArr[i];  //li和位置是一一对应
+    				var locationIndex = i - index;
+    				//判断
+    				if(locationIndex < 0){
+    					locationIndex += 5;
+    				}
+    				var locationData = json[locationIndex];
+    				animate(li, locationData, null);  //动画
+    			}
+    		}
+    		var index = 0;
+    		$('#next').onclick = function(){
+                  index++;
+                  if(index == 5){
+                  	index = 0;
+                  }
+                  refreshImageLocation(index);
+                  //根据index的值来刷新位置
+    		}
+    		$('#prev').onclick = function(){
+                  index--;
+                  if(index < 0){
+                  	index = 4;
+                  }
+                  refreshImageLocation(index);
+    		}
+        setInterval(function(){
+           index--;
+           if(index < 0){
+             index = 4;
+           }
+           refreshImageLocation(index);  
+        },2000);
+    	}
+    </script>
+</head>
+<body>
+	<div class="box">
+		<div class="content">
+			<ul>
+				<li class="li1"><img src="img/slidepic1.jpg" alt="" /></li>
+				<li class="li2"><img src="img/slidepic2.jpg" alt="" /></li>
+				<li class="li3"><img src="img/slidepic3.jpg" alt="" /></li>
+				<li class="li4"><img src="img/slidepic4.jpg" alt="" /></li>
+				<li class="li5"><img src="img/slidepic5.jpg" alt="" /></li>
+			</ul>
+			<div class="control">
+				<a href="javascript:;" id="prev"></a>
+				<a href="javascript:;" id="next"></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

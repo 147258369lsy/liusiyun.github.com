@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    //某路公共汽车，总共有八站，从一号站发轩时车上已有n位乘客，到了第二站先下一半乘客，再上来了六位乘客；
+    // 到了第三站也先下一半乘客，再上来了五位乘客，以后每到一站都先下车上已有的一半乘客，
+    // 再上来了乘客比前一站少一个??，到了终点站车上还有乘客六人，问发车时车上的乘客有多少？
+    function chengke(n){
+        if(n == 7){
+            return 6;
+        }
+          else {
+            return 2*(chengke(n+1) + n-7);
+        }
+    }
+    console.log(chengke(1));
+</script>
+</body>
+</html>

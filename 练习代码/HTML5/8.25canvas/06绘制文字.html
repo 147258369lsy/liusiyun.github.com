@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="demo" width="600" height="600"></canvas>
+	<script>
+		var canvas = document.getElementById('demo');
+		var context = canvas.getContext('2d');
+
+        //文字的绘制 设置文字的大小和字体
+        context.font = '50px 微软雅黑';
+        //设置字体的对齐方式
+        context.textAlign = 'left';
+
+        //设置颜色
+        context.strokeStyle = 'red';
+        context.fillStyle = 'blue';
+
+        //绘制文本  描边是空心字体
+        //x y 文本坐标位置,  max-width 文本的最大宽度
+        context.strokeText('文本描边',50,100,200);
+
+        //填充是实心文本
+        context.fillText('实心文本',50,200,300);
+        context.strokeText('实心文本',50,200,300);
+
+        //柱状图
+        context.beginPath();
+        context.rect(300,50,40,200); //画矩形
+        context.stroke();
+        context.fill();
+
+        //柱状图的日期
+        context.font = '20px 微软雅黑';
+        //计算绘制文本的宽度
+        var textWidth = context.measureText('9月21日').width;
+        //文本居中
+        console.log(textWidth);
+        context.fillText("9月21日",300-(textWidth -40) /2,270,300);
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			margin: 100px;
+			background-color: red;
+		}
+	</style>
+	<script src="./jquery-3.2.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#btn').click(function(){
+				//改变颜色
+				$('.box').css('backgroundColor','green');
+				$('.box').css('borderRadius','50%');
+			});
+
+			//click事件可以重复绑定,并且不会冲突
+			$('#btn').click(function(){
+				console.log('click');
+			})
+		});
+	</script>
+</head>
+<body>
+	<button id="btn">按钮</button>
+	<div class="box">
+		<p>
+		 PPP
+		 <span></span>
+		</p>
+	</div>
+</body>
+</html>

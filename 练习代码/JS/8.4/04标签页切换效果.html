@@ -1,0 +1,98 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml 
+
+" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+    <style type="text/css">
+		
+		*{margin: 0;padding: 0;}
+		.box{
+			width: 400px;
+			height: 500px;
+			margin: 100px auto;
+			border: 1px solid red;
+		}
+		.box .tabs{
+			height: 50px;
+			border-bottom: 1px dashed red;
+		}
+		
+		.box .tabs ul{
+			list-style: none;
+		}
+
+		.box .tabs li{
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			float: left;
+			/*四等分*/
+			width: 25%;
+			/*鼠标指针样式*/
+			cursor: pointer;
+		}
+		.box .content{
+			height: 449px;
+			background-color: #ccc;
+		}
+
+		.box .content div{ 
+			width: 400px;
+			height: 449px;
+			display: none;
+		}
+
+	</style>
+	<script>
+		window.onload = function () {
+			//在比较复杂的网页中,一般使用多级查询来精确查找目标
+			// var tabs = document.getElementsByTagName('li');
+			var ul = document.getElementById('tabs-list');
+			var lis = ul.getElementsByTagName('li');
+			// console.log(li);
+			//遍历li
+			for(var i = 0; i < lis.length; i++){
+				var li = lis[i];
+				//自定义属性index,在每一个li中定义了一个变量名叫index
+			li.index = i;
+			//监控鼠标划入的事件
+			li.onclick = function(){
+				//查找div
+				var content = document.getElementsByClassName('content')[0];
+				var divs = content.getElementsByTagName('div');
+				//1.隐藏全部
+				for (var j = 0; j < divs.length;j++){
+					//选择其中一个盒子,隐藏掉
+					divs[j].style.display = 'none';
+				}
+				//2.显示当前那一个
+				console.log(this.index);
+				//根据标签的索引值,从数组获取所对应的div
+				divs[this.index].style.display = 'block';
+			}
+			
+		  }
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+	    <div class="tabs">
+	    	<ul id="tabs-list">
+	    		<li>话费</li>
+	    		<li>机票</li>
+	    		<li>酒店</li>
+	    		<li>游戏</li>
+	    	</ul>
+	    </div>
+	    <div class="content">
+	       <div style="display: block;">话费页面</div> 
+		   <div style="background-color: red">机票页面</div>
+		   <div style="background-color: blue">酒店页面</div>
+		   <div style="background-color: green">游戏页面</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			width: 600px;
+			margin: 0px auto;
+		}
+	</style>
+</head>
+<body>
+	<!-- <h2>绘制网格线</h2> -->
+    <!-- <p>每隔20px画一条线,宽1px,颜色#ccc</p> -->
+	<div class="container">
+		<canvas id="canvas" width="600" height="600"></canvas>
+	</div>
+
+	<script>
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+        
+		for(var i =0; i<=30;i++){
+		 //第一横条线
+		 // context.moveTo(0,0);
+		 // context.lineTo(600,0);
+		 //第二横条线
+		 // context.moveTo(0,20);
+		 // context.lineTo(600,20);
+		 context.moveTo(0,20*i);
+		 context.lineTo(600,20*i);
+
+		 context.moveTo(20*i,0);
+		 context.lineTo(20*i,600);		
+		}
+		context.strokeStyle = '#ccc';
+		context.lineWidth = 1;
+		context.stroke();
+
+		//开启一条新的路径画坐标轴
+		context.beginPath();
+		//画X轴
+		context.moveTo(20,580);
+		context.lineTo(580,580);
+		//画X轴箭头
+		context.moveTo(580,580);
+		context.lineTo(560,585);
+		context.lineTo(565,580);
+	    context.lineTo(560,575);
+	    context.lineTo(580,580);
+        
+        //画Y轴
+		context.moveTo(20,580);
+		context.lineTo(20,20);
+		//画y轴箭头
+		context.moveTo(20,20);
+		context.lineTo(15,40);
+        context.lineTo(20,35);
+		context.lineTo(25,40);
+		context.lineTo(20,20);
+		//描边(粗细,颜色)
+		context.lineWidth = 2;
+		context.strokeStyle = 'blue';
+		context.stroke();
+		//填充颜色
+		context.fillStyle = 'blue';
+		context.fill();
+     
+        //折线图数据
+	var data = [{
+		x : 50,
+		y : 100
+	},{
+		x : 100,
+		y : 300
+	},{
+		x : 150,
+		y : 180
+	},{
+		x : 200,
+		y : 330
+	},{
+		x : 250,
+		y : 80
+	},{
+		x : 300,
+		y : 500
+	},{
+		x : 350,
+		y : 180
+	},{
+		x : 400,
+		y : 100
+	},{
+		x : 450,
+		y : 275
+	},{
+		x : 500,
+		y : 420
+	},{
+		x : 550,
+		y : 390
+	}];
+       
+       // 折线图
+		//开启一条新的路径画坐标轴
+		context.beginPath();
+		//坐标原点
+        var originX = 20;
+        var originY = 580;
+        //第一个点的位置
+        var point1 = data[0];
+        context.moveTo(originX + point1.x, originY - point1.y);
+        //后续的点
+        for(var index = 1; index < data.length; index++){
+        	var point2 = data[index];
+        	context.lineTo(originX + point2.x, originY - point2.y);
+        }
+
+        context.strokeStyle = 'red';
+        context.stroke();
+
+         //画柱状图
+         
+         var originX = 20;
+         var originY = 580;
+         console.log(originY);
+         context.strokeStyle = 'skyblue';
+         context.fillStyle = 'skyblue';
+         for(var index =0;index < data.length;index++){
+         	var point = data[index];
+         	context.beginPath();
+         	//画矩形路径rect() 参数x y width height
+         	context.rect(originX + point.x -20, originY - point.y,40, point.y);
+         	
+             // context.stroke();  描边         
+             context.fill();
+         }
+	</script>
+</body>
+</html>

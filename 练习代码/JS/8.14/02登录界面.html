@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.loginButton,
+		.registerButton{
+			width: 80px;
+			height: 40px;
+			border-radius: 10px;
+			line-height: 40px;
+			font-size: 18px;
+			color: #fff;
+			text-align: center;
+			background-color: red;
+			cursor:pointer;
+		}
+		.registerButton{
+			background-color: blue;
+		}
+		.login-mask{
+			/*全屏*/
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: rgba(0,0,0,0.5);
+			display: none;
+		}
+		.login-mask .login-box{
+			background-color: #fff;
+			width: 400px;
+			height: 200px;
+			padding: 100px;
+			border-radius: 20px;
+			margin: 100px auto;
+			position: relative;
+		}
+		.login-box .loginButton{
+			position: absolute;
+			right: 100px;
+			bottom: 80px;
+		}
+		.login-box .registerButton{
+			position: absolute;
+			left: 100px;
+			bottom: 80px;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var btn1 = document.getElementById('btn1');
+			var btn2 = document.getElementById('btn2');
+			var mask = document.getElementById('mask');
+
+			btn1.onclick = function(){
+				//显示登录界面
+				mask.style.display = 'block';
+			}
+
+			btn2.onclick = function(event){
+				alert('登录成功');
+				//阻止冒泡
+				var event = event ? event : window.event;
+				if(event.stopPropagation){
+					event,stopPropagation();
+				}else {
+					event.cancelBubble = true;
+				}
+			}
+			mask.onclick = function(){
+				//隐藏登录界面
+				mask.style.display = 'none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="loginButton" id="btn1">登录</div>
+
+	<div class="login-mask" id="mask">
+		<div class="login-box">
+			<div class="loginButton" id="btn2">登录</div>
+			<div class="registerButton">注册</div>
+		</div>
+	</div>
+</body>
+</html>

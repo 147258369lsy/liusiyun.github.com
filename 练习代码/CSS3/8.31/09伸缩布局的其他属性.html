@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+
+		.container header h2{
+			text-align: center;
+		}
+
+		.container section.item{
+			box-sizing: border-box;
+			width: 950px;
+			border: 1px solid #bbb;
+			margin: 25px;
+			position: relative;
+			padding: 25px;
+
+			height: 1000px;
+			display: flex;
+		}
+		.container section.item h3{
+			width: 100%;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 28px;
+		}
+
+		.container section.item:hover h3{
+			display: block;
+		}
+		
+		div.content{
+			width: 200px;
+			height: 150px;
+			/*background-color: red;*/
+			/*margin: 25px auto;*/
+			border: 1px solid red;
+			box-sizing: border-box;
+			background-color: pink;
+			font-size: 40px;
+			font-weight: 900;
+			color: #fff;
+			line-height: 150px;
+			text-align: center;
+		}
+	
+
+		/*order 排序，将伸缩项设置order值，会根据order从小到大的顺序对每一个元素进行排序*/
+		/*当某一个元素没有设定order值时，默认值为0*/
+		/*当两个元素的order相等时，在HTML中谁在前则谁先排序*/
+		.item:nth-of-type(1) .content:nth-of-type(1){
+			order: 6;
+		}
+		.item:nth-of-type(1) .content:nth-of-type(2){
+			order: 5;
+		}
+		.item:nth-of-type(1) .content:nth-of-type(3){
+			order: 5;
+		}
+
+	
+	
+		.item:nth-of-type(2){
+			/*侧轴方向内容分布在中心位置*/
+			align-items: center;
+
+		}
+
+		.item:nth-of-type(2) .content:nth-of-type(2){
+			background-color: blue;
+			/*在侧轴方向 布局在侧轴的起始位置*/
+			/*在align-self属性中可以设置当前元素在父元素中的侧轴方向布局位置*/
+			align-self: flex-start;
+		}
+
+
+		.item:nth-of-type(2) .content:nth-of-type(3){
+			align-self: stretch;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<header>
+		<h2>其他属性</h2>
+	</header>
+	<section class="item">
+		<h3>order</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+	</section>
+
+	<section class="item">
+		<h3>align-self</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+	</section>
+	
+	
+</div>
+	
+</body>
+</html>

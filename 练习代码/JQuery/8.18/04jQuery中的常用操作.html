@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+           var box = $('.box');
+
+           box.click(function(){
+           	console.log('box click');
+           })
+           box.mouseover(function(){
+           	 console.log('box mouseover');
+           })
+
+           
+           //隐藏操作hide()
+           box.click(function(){
+           	 box.hide(5000); //参数表示动画的时间
+
+           	 box.show(2000); //显示操作
+           })
+           
+           // document.onclick = function(){
+           // 	 box.show();
+           // }
+           var li = $('li');
+           // console.log(li);  
+           li.click(function(){
+           	console.log(this);
+           	 // li.hide();  //这里的li代表所有的li 都隐藏掉
+           	 $(this).hide();
+           })
+	   });
+	</script>
+</head>
+<body>
+	<div class="box"></div>
+	<ul>
+		<li>001</li>
+		<li>002</li>
+		<li>003</li>
+		<li>004</li>
+		<li>005</li>
+		<li>006</li>
+		<li>007</li>
+		<li>008</li>
+		<li>009</li>
+	</ul>
+</body>
+</html>

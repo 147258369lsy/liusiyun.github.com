@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑';
+			background-color: #F7F7F7;
+		}
+		.container{
+			width: 1000px;
+			margin: 0 auto;
+			border-top: 1px solid #ccc;
+
+		}
+
+		.container section{
+			padding: 50px;
+			border-bottom: 1px solid #ccc;
+		}
+
+
+		.section1 li:nth-child(5){
+			color: red;
+		}
+
+		.section1 li:nth-child(2n+1){
+			background-color: #ccc;
+		}
+
+		section:nth-child(5){
+			background-color: pink;
+		}
+
+		section:nth-child(6) li:nth-last-child(3){
+			color:red;
+		}
+
+		section:nth-child(7) li:first-child{
+			color: red;
+		}
+
+		section:nth-child(8) li:last-child
+		{
+			color: red;
+		}
+
+		section:nth-child(9) li:only-child{
+			color: red;
+		}
+
+	
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>伪类选择器</h1>
+	<p> a:hover a:active ....  </p>
+	<p> 某个元素在某种特定的情况下的状态。 </p>
+	<p> 伪类：将某个元素的某种状态看作为一个类，但是实际上并没有给这个元素添加类。</p>
+<section class="section1">
+	<h2>nth-child()</h2>
+	<ul>
+		<p>这是一个p</p>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+		<li>第6个li</li>
+		<li>第7个li</li>
+		<li>第8个li</li>
+		<li>第9个li</li>
+		<li>第10个li</li>
+		<li>第11个li</li>
+		<li>第12个li</li>
+		<li>第13个li</li>
+		<li>第14个li</li>
+		<li>第15个li</li>
+		<li>第16个li</li>
+		<li>第17个li</li>
+		<li>第18个li</li>
+		<li>第19个li</li>
+		<li>第20个li</li>
+	</ul>
+
+	<ul>
+		<li>另一个ul中的第1个li</li>
+		<li>另一个ul中的第2个li</li>
+		<li>另一个ul中的第3个li</li>
+		<li>另一个ul中的第4个li</li>
+		<li>另一个ul中的第5个li</li>
+		<li>另一个ul中的第6个li</li>
+		<li>另一个ul中的第7个li</li>
+		<li>另一个ul中的第8个li</li>
+		<li>另一个ul中的第9个li</li>
+		<li>另一个ul中的第10个li</li>
+	</ul>
+	<p>nth-child(n) 选中的是当前所有指定元素中，第n个元素。从1开始数，而不是从0开始。</p>
+	<p>括号中可以写一个变量为n的表达式，来进行限定。2n表示2的倍数，即所有的偶数。2n+1和2n-1都可以用来表示奇数。但是在表达式中n只能出现一次，并且只能使用加减法。</p>
+	<p>当所有选中的元素，在不同的父元素内时，序号分别计算。</p>
+	<p>nth-child() 在计算元素序号时，首选找到被选中元素。然后计算其在父元素中的序号，但是这个计算不论这个元素之前有多少个其他元素，都会被算进去。</p>
+</section>
+
+<section>
+	<h2>nth-last-child(n)</h2>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+		<li>第6个li</li>
+		<li>第7个li</li>
+		<li>第8个li</li>
+		<li>第9个li</li>
+		<li>第10个li</li>
+	</ul>
+	<p>nth-last-child和nth-child在计算元素序号是，计算方向相反。从所有的子元素的最后一个开始标序号。</p>
+</section>
+
+<section>
+	<h2>first-child</h2>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+		<li>第6个li</li>
+		<li>第7个li</li>
+		<li>第8个li</li>
+		<li>第9个li</li>
+		<li>第10个li</li>
+	</ul>
+	<p>所选中的元素在父元素中的序号为1，如果在父元素中，序号为1的元素并不是所选中的元素，则都不选中。</p>
+</section>
+
+
+<section>
+	<h2>last-child</h2>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+		<li>第6个li</li>
+		<li>第7个li</li>
+		<li>第8个li</li>
+		<li>第9个li</li>
+		<li>第10个li</li>
+	</ul>
+	<p>所选中的元素在父元素序号为最后一个</p>
+</section>
+<section>
+	<h2>only-child</h2>
+	<ul>
+		<li>第1个li</li>
+	</ul>
+	<ul>
+		<li>第1个li</li>
+		<p>这是一个p</p>
+	</ul>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+	</ul>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+	</ul>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+		<li>第6个li</li>
+	</ul>
+	<p>only-child 独生子，所选中的元素，它的父元素只有一个子元素。哪怕这个元素的父元素下有一个另外类型的其他元素，也会导致这个元素无法被选中。</p>
+</section>
+</div>
+</body>
+</html>

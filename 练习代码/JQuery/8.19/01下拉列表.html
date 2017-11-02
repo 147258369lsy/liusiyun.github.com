@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd 
+
+">
+<html xmlns="http://www.w3.org/1999/xhtml 
+
+" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+
+		.select{
+			width: 100px;
+			margin: 50px auto;
+		}
+		.select > a{
+			display: inline-block;
+			width: 100%;
+			height: 30px;
+			border:1px solid #ccc;
+			line-height: 30px;
+			text-align: center;
+			color: #333;
+			text-decoration: none;
+		}
+
+		.select > ul{
+			position: absolute;
+			border :1px solid #ccc;
+			border-top-width: 0;
+			width: 100px;
+			display:none;
+			list-style: none;
+		}
+
+		.select > ul > li{
+			text-align: center;
+			border-top: 1px solid #ccc;
+			margin-top: -1px;
+		}
+
+		.select > ul > li > a{
+			text-decoration: none;
+			color: #333;
+		}
+	</style>
+
+	<script src='./jquery-3.2.1.js'></script>
+	<script>
+		$(function(){
+			 $(".select").mouseover(function(){
+			 	$("#cityList").show();
+			 })
+			 $(".select").mouseout(function(){
+			 	$("#cityList").hide();
+			 })
+             
+             $(".select #cityList a").click(function(){
+             	var $this = $(this);//转化为jquery对象
+
+             	var cityName = $this.text();
+             	$('#selectCity').text(cityName);
+             	$('#cityList').hide();
+             })
+             
+		});
+	</script>
+</head>
+<body>
+	<h3>系统样式的下拉列表</h3>
+	<select name="" id="">
+		<option value="1">杭州</option>
+		<option value="2">上海</option>
+		<option value="3">北京</option>
+		<option value="4">广州</option>
+	</select>
+
+	<h3>自定义下拉列表</h3>
+	<div class="select">
+		<a href="javascript:;" id="selectCity">选择城市</a>
+		<ul id="cityList">
+			<li><a href="javascript:;">杭州</a></li>
+			<li><a href="javascript:;">北京</a></li>
+			<li><a href="javascript:;">上海</a></li>
+			<li><a href="javascript:;">广州</a></li>
+		</ul>
+	</div>
+	<p>下面的文字内容</p>
+</body>
+</html>

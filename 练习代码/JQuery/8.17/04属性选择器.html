@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http:www.shouhu.cn">
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+           //1.包含某条属性的选择器,在整个document搜素,不管标签类型是什么,只要带有href都被选中
+           var a = $('body [href]'); //在body里找href属性
+           console.log(a);
+
+           //2.匹配属性的值的元素(完全要匹配)
+           var b = $('[href ="https://www.baidu.com"]');
+           console.log(b);
+
+           //3.模糊匹配(匹配起始位置)
+           var c = $('[href ^= "http"]');
+           console.log(c);
+
+           //4.匹配末尾
+           var d = $('[href $= ".com"]');
+           console.log(d);
+
+           //全文模糊匹配
+           var e = $('[class *= "box"]');
+           console.log(e);
+           
+           //应用实例
+           $('input[type="text"]').css('borderColor', 'red');
+           console.log($('input[type="text"'));
+		});
+	</script>
+</head>
+<body>
+	<a href="https://www.baidu.com">百度</a>
+	<div class="box1">盒子1</div>
+	<div class="box3">盒子2</div>
+	<div class="blackbox">黑盒子</div>
+	<div class="redbox">白盒子</div>
+	<img src="images.png" alt="">
+	<input type="text">
+	<input type="button" value="按钮">
+	<input type="submit">
+</body>
+</html>

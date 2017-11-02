@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+	</style>
+	<script type="text/javascript" src="select.js"></script>
+	<script>
+		window.onload = function() {
+			//开始按钮的点击
+			$('#btn').onclick = function(){
+				var box = $('#box');
+				//匀速动画
+				var startLeft = 100;
+				//每个10毫秒,盒子向右移动1px
+				var timer = setInterval(function(){
+                    startLeft++;
+                    //移动到1000距离时,清除定时器,结束动画
+                    if(startLeft >=1000){
+                    	clearInterval(timer);
+                    }else{
+                    	box.style.left = startLeft + 'px';
+                    }
+				},10);
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="btn">开始动画</button>
+	<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+
+		.container header h2{
+			text-align: center;
+		}
+
+		.container section.item{
+			box-sizing: border-box;
+			width: 950px;
+			border: 1px solid #bbb;
+			margin: 25px;
+			position: relative;
+			padding: 25px;
+
+			/*height: 1000px;*/
+			display: flex;
+		}
+		.container section.item h3{
+			width: 100%;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 28px;
+		}
+
+		.container section.item:hover h3{
+			display: block;
+		}
+		
+		div.content{
+			/*width: 200px;*/
+			/*height: 150px;*/
+			/*background-color: red;*/
+			/*margin: 25px auto;*/
+			border: 1px solid red;
+			box-sizing: border-box;
+			background-color: pink;
+			font-size: 40px;
+			font-weight: 900;
+			color: #fff;
+			line-height: 150px;
+			text-align: center;
+		}
+		/*
+			在主轴的伸缩布局中，如果主轴中排满了内容，并且主轴不换行。那么内部元素的实际宽度会被缩小以便能够在主轴中放下一行所有的元素。并且如果给每一个元素设置了不同的宽度，虽然不会以所设置的宽度来进行显示，但是也会自动的保持这些元素之间的宽度比例。
+			比如说在东一个伸缩容器中，a=1000px,b=500px。当伸缩容器总宽度为900px时，a和b需要进行等比例的缩小后才能布局到容器中去，那么此时a=600px,b=300px
+			因为所设置的值和实际显示的值不匹配，所以一般不会直接设置伸缩项的宽度。	
+		*/
+
+		.item:nth-of-type(1) .content:nth-of-type(1){
+			/*background-color: blue;*/
+			flex: 3;
+		}
+		.item:nth-of-type(1) .content:nth-of-type(2){
+			flex: 3;
+		}
+		.item:nth-of-type(1) .content:nth-of-type(3){
+			flex: 2;
+		}
+
+		.item:nth-of-type(1) .content:nth-of-type(4){
+
+			flex:1;
+		}
+		.item:nth-of-type(1) .content:nth-of-type(5){
+
+			flex: 1;
+		}
+
+
+		/*section 2*/
+		.item:nth-of-type(2) .content:nth-of-type(1){
+			/*background-color: blue;*/
+			flex: 3;
+		}
+		.item:nth-of-type(2) .content:nth-of-type(2){
+			flex: 4;
+		}
+
+		.item:nth-of-type(2) .content:nth-of-type(3){
+
+			flex: 1;
+		}
+
+		.item:nth-of-type(2) .content:nth-of-type(4){
+			width: 100px;
+		}
+
+
+		/*当伸缩容器中，某些元素没有被设定flex值时，它的宽度会按照其中所设定的固定宽度进行显示。然后其余元素分配剩余空间。如果某个元素没有设定固定的宽度，则由其中的内容撑出宽度。*/
+
+		/*section 3*/
+		.item:nth-of-type(3) .content:nth-of-type(1){
+			/*background-color: blue;*/
+			flex: 3;
+		}
+		.item:nth-of-type(3) .content:nth-of-type(2){
+			flex: 4;
+		}
+		.item:nth-of-type(3) .content:nth-of-type(3){
+
+			flex: 1;
+		}
+		.item:nth-of-type(3) .content:nth-of-type(4){
+			/*当其中一个元素的宽度已经超出了容器总宽度，则这个元素的宽度会竟可能的大，其余元素缩小到最小，并且flex所设置的比例失效。*/
+			width: 2000px;
+		}
+		.item:nth-of-type(3) .content:nth-of-type(5){
+			/*当多个元素的宽度都超出了容器宽度时，则这些巨大的元素按照所设定的大小进行等比例分配宽度*/
+			width: 4000px;
+		}
+	</style>
+</head>
+<body>
+
+
+<div class="container">
+	<header>
+		<h2>flex</h2>
+	</header>
+	<section class="item">
+		<h3>使用flex来进行按比例分主轴的宽度</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+	</section>
+	<p>各个宽的比例是3:3:2:1:1</p>
+	<section class="item">
+		<h3></h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+	</section>
+	<section class="item">
+		<h3></h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+	</section>
+</div>
+	
+</body>
+</html>

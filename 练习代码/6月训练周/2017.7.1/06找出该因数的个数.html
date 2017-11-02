@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var num = Number(prompt("请输入一个数"));
+    var shengzi = 0;
+
+    for(var i = 1;i <= num; i++){
+        if(num % i == 0){
+            console.log(i);
+            shengzi = shengzi + 1;
+        }
+    }
+    console.log(shengzi);
+</script>
+</body>
+</html>

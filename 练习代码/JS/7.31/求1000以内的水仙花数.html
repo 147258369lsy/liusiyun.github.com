@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    var num = prompt("请输入一三位数个数");
+    for(num = 100; num <1000; num++){
+       var ge = num % 10;
+       var shi = parseInt(num % 100 /10);
+       var bai = parseInt(num / 100);
+
+       if(ge*ge*ge + shi*shi*shi + bai*bai*bai  == num){
+       console.log(num + "是水仙花数");
+      }
+    }
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

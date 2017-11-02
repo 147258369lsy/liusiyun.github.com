@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="konva.js"></script>
+	<script src="封装函数进度条.js"></script>
+</head>
+<body>
+	<button id="btn">补满进度条</button>
+	<div id="demo"></div>
+	<script>
+		var stage = new Konva.Stage({
+			container : 'demo',
+			width : window.innerWidth,
+			height : window.innerHeight
+		});
+		var layer = new Konva.layer({});
+		stage.add(layer);
+
+		var progress = new Progress({
+			x : 100,
+			y : 100,
+			height : 50,
+			width: 600
+		})
+
+		progress.addProgressToLayer(layer);
+		layer.draw();
+
+		var btn = document.getElementById('btn');
+		btn.onclick = function(){
+			//改变进度条的值
+			progress.changeValue(1);
+		}
+	</script>
+</body>
+</html>

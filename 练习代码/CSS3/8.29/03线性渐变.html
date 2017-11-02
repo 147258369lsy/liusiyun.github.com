@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+			<style>
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+		.container h2{
+			text-align: center;
+		}
+		.container section.item{
+			box-sizing: border-box;
+			width: 200px;
+			height: 200px;
+			border: 1px solid #bbb;
+			float: left;
+			margin: 25px;
+			position: relative;
+		}
+		.container section.item h3{
+			width: 200px;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 28px;
+			z-index: 9;
+		}
+		.container section.item:hover h3{
+			display: block;
+		}
+		
+		div.content{
+			width: 150px;
+			height: 150px;
+			/*background-color: red;*/
+			margin: 25px;
+			border: 1px solid red;
+			box-sizing: border-box;
+		}
+	</style>
+	<style>
+		.item:nth-of-type(1) .content{
+           background-image: linear-gradient(red, green);
+		}
+		.item:nth-of-type(2) .content{
+			/*默认渐变方向是从上到下*/
+			background-image: linear-gradient(red, blue, yellow, green);
+		}
+		.item:nth-of-type(3) .content{
+			/*前面为0:表示从下到上的方向*/
+			background-image: linear-gradient(90deg,red, blue, yellow, green);
+		}
+		.item:nth-of-type(4) .content{
+			background-image: linear-gradient(135deg,red, blue, yellow, green);
+		}
+		.item:nth-of-type(5) .content{
+			/*使用英文单词来改变渐变方向,关键词to*/
+		  background-image: linear-gradient(to left bottom, red, blue, yellow,green);
+		}
+		.item:nth-of-type(9) .content{
+			/*使用英文单词来改变渐变方向,关键词to*/
+			width: 900px;
+		  background-image: linear-gradient(to left, red 10%, blue 80%, green);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>线性渐变</h2>		
+		<section class="item">
+			<h3>线性渐变</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>多个颜色渐变</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>方向渐变90度</h3>
+			<div class="content"></div>
+		</section>
+			<section class="item">
+			<h3>135度</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>to leftBottom</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+		<section class="item" style="width: 950px;">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+	</div>
+</body>
+</html>

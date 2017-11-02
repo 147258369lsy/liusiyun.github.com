@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{
+			width: 1200px;
+			height: 500px;
+			margin: 100px auto;
+			border:1px solid red;
+		}
+		.box ul{
+			list-style: none;
+			width: 1210px; /*多10px使动画流畅运行*/
+		}
+		.box li{
+			width: 240px;
+			height: 500px;
+			float: left;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			//each遍历分别给每个li设置背景图片
+			$('li').each(function(index,element){
+                 // console.log(element);//每个li DOM对象元素
+                 var imageName = "./img/slidepic" + (index+1) + ".jpg";
+                 $(element).css('background',"url('"+imageName+"')");
+			});//加$符号是把DOM对象改变为jQuery对象
+
+			//鼠标滑入时 改变li的宽度
+			$('li').mouseenter(function(){
+                //stop()函数:在开始一个新的动画之前,先停止已经在执行的动画,否则新的动画会自动添加到动画队列中区,等前一个执行完毕后在执行
+				$(this).siblings('li').stop().animate({width:100});
+				$(this).stop().animate({width:800});
+			})
+            //鼠标移出时,恢复初始状态
+			$('li').mouseout(function(){
+				$('li').stop().animate({width:240});
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="600"></canvas>
+<script>
+    var canvas = document.getElementById("canvas").getContext("2d");
+    var img = new Image();
+    img.src = "./images/bg.png";
+
+    //drawImage 参数从第二个开始,当只有两个参数时候,仅仅只是规定了画图在canvas标签中的起始坐标
+    //当有四个参数的时候,后两个规定原图缩放成多少size
+    //当有八个参数时,第二三个参数是从原图截图的位置左上角坐标,第四五个参数代表截图框的大小;第六七个参数在画布左上角的坐标;第八九个参数,就是原图截图之后缩放成多少size
+
+    canvas.drawImage(img, 270, 440, 50, 50, 150, 150, 100, 100);
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			var sex = $('.r:checked');
+			console.log(sex);
+
+			var aihao = $('.cb:checked');
+			console.log(aihao);
+			var select = $('option:checked');
+			console.log(select);
+		})
+	</script>
+</head>
+<body>
+	<form action="">
+		<p>
+			性别
+			<br>
+			男<input type="radio" name="sex" class="r">女<input type="radio" name="sex" class="r">
+		</p>
+		<p>
+			爱好
+			<br>
+			打游戏<input type="checkbox" class="cb">
+			打篮球<input type="checkbox" class="cb">
+			睡觉<input type="checkbox" class="cb">
+		</p>
+		<p>
+			所在城市
+			<br>
+			<select name="city" id="city">
+				<option value="1">杭州</option>
+				<option value="2">上海</option>
+				<option value="3">北京</option>
+				<option value="4">广州</option>
+			</select>
+		</p>
+	</form>
+</body>
+</html>

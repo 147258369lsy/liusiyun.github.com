@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		section{
+			width: 1000px;
+			height: 100px;
+			border:1px solid red;
+			padding: 10px;
+			margin: 10px auto;
+			background-color: #aaa;
+			position: relative;
+		}
+		section h3{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			color: #fff;
+			line-height: 122px;
+			text-align: center;
+			font-size: 50px;
+		}
+		section .box{
+			width: 100px;
+			height: 100px;
+			background-color: #0f0;
+			transition: width 10s;
+		}
+		body:hover .box{
+			width: 100%;
+		}
+		section:nth-of-type(1) .box{
+			transition-timing-function: linear;
+			/*动画过渡为线性变化,宽度的改变速率不变*/
+		}
+		section:nth-of-type(2) .box{
+			transition-timing-function: ease;
+			/*动画速度:慢-->快-->慢; ease为默认值*/
+		}
+		section:nth-of-type(3) .box{
+			transition-timing-function: ease-in;
+			/*动画速度: 慢-->快;*/
+		}
+		section:nth-of-type(4) .box{
+			transition-timing-function: ease-out;
+			/*动画速度:快-->慢;*/
+		}
+		section:nth-of-type(5) .box{
+			transition-timing-function: ease-in-out;
+			/*动画速度:慢-->快-->慢,但快慢的变化区间比ease更小;*/
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h3>linear</h3>
+		<div class="box"></div>
+	</section>
+	<section>
+		<h3>ease</h3>
+		<div class="box"></div>
+	</section>
+	<section>
+		<h3>ease-in</h3>
+		<div class="box"></div>
+	</section>
+	<section>
+		<h3>ease-out</h3>
+		<div class="box"></div>
+	</section>
+	<section>
+		<h3>ease-in-out</h3>
+		<div class="box"></div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var v1 = 1;
+    var v2;
+    var a = 0.98;
+    var s = 0;
+    function autoAdd(){
+
+        v2 = v1 + a;
+
+        s= s + (v1 + v2)/2;
+        v1 = v2;
+        console.log(s);
+    }
+    setInterval(autoAdd,2000);
+</script>
+</body>
+</html>

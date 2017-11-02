@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="demo" width="600" height="600"></canvas>
+	<script>
+		var canvas = document.getElementById('demo');
+		var context = canvas.getContext('2d');
+        
+        var data = [{
+			title : 'HTML',
+			value : 20,
+			color : 'red',
+			textColor : "#fff"
+		}, {
+			title : "JavaScript",
+			value : 35,
+			color : "green",
+			textColor : "#fff"
+
+		}, {
+			title : 'C',
+			value : 25,
+			color : 'yellow',
+			textColor : "#000"
+		}, {
+			title : 'C++',
+			value : 20,
+			color : 'blue',
+			textColor : "#fff"
+		}];
+         
+        var origin = {
+        	x : 300,
+        	y : 300
+        };
+        //半径 200
+        var  radius = 200
+        //初始角度(从竖的一边开始)
+        var angle = -Math.PI*0.5;
+         for(var index = 0; index < data.length;index++){
+         	var item = data[index];
+         	context.beginPath();
+         	//计算当期扇形的角度  所占百分比 * 2PI
+         	var currentAngle = 2 * Math.PI * (item.value / 100);
+         	//设置起始位置为圆心
+         	context.moveTo(origin.x, origin.y);
+         	//绘制圆形
+         	context.arc(origin.x,origin.y,radius, angle, angle+currentAngle ,false);
+         	//设置颜色
+         	context.fillStyle = item.color;
+         	context.fill();
+
+         	//绘制文字
+         	context.font = '16px 微软雅黑';
+         	context.fillStyle = item.textColor;
+         	var a = angle + 0.5*currentAngle;
+         	var y1 = Math.sin(a) * radius /2;
+         	var x1 = Math.cos(a) * radius /2;
+         	var textWidth = context.measureText(item.value + '%').width;
+
+         	context.fillText(item.value + '%', 300+x1-textWidth/2,300+y1+8,100);
+         	context.fillText(item.title, 300+x1-textWidth/2,300+y1-10,100);
+
+         	//累加起始角度
+         	angle += currentAngle;
+         }
+	</script>
+</body>
+</html>

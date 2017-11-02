@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*权重一样，谁写下面，谁生效*/
+	  /*  .hezi1 div #box3 p{
+		color:red;
+	    }
+	    .hezi1 div#box2 p{
+	    	color:blue;
+	    }
+
+	    p{
+	    	color:yellow;
+	    }
+*/
+	    /*都没有直接选中p,则谁离得近，谁生效*/
+	  /*  #box3{
+	    	color:red;
+	    }
+	    .hezi1 div#box2{
+	    	color:blue;
+	    }*/
+	    
+		.hezi1 .hezi2 div{
+			color:pink;
+		}
+		div#box1 div div{
+			color:red;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="hezi1" id="box1">
+		<div class="hezi2" id="box2">
+			<div class="hezi3" id="box3">
+				<p>猜猜我是什么颜色</p> <!-- 根据权重来判断 -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

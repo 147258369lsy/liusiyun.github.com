@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+          var lis = $('li');
+          
+          //jquery的each遍历
+          lis.each(function(index,element){
+          	// console.log(index);//0~9
+          	// console.log(element);//li
+          	var text = $(element).text();
+          	console.log(text);
+          	text += '  index =' + index;
+          	$(element).text(text);
+          });
+
+            //map(映射)遍历
+            var array2 = lis.map(function(index, element){
+
+           	  return element.offsetTop;
+            });
+            console.log(array2);//用返回每个li元素到顶部的距离所组成的数组
+         })
+
+	</script>
+</head>
+<body>
+	<ul>
+		<li>这里是第1个</li>
+		<li>这里是第2个</li>
+		<li>这里是第3个</li>
+		<li>这里是第4个</li>
+		<li>这里是第5个</li>
+		<li>这里是第6个</li>
+		<li>这里是第7个</li>
+		<li>这里是第8个</li>
+		<li>这里是第9个</li>
+		<li>这里是第10个</li>
+	</ul>
+</body>
+</html>

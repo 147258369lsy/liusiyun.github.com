@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="testApp" ng-controller="TestCtrl">
+<!-- 1.AngularJS表达式很像JavaScript表达式它们可以包含文字字符、运算符和变量,数组.对象.
+注意:但不能写 if else 因为只能写表达式 -->
+<!-- AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同工之妙。
+AngularJS 将在表达式书写的位置"输出"数据。 -->
+<p>{{msg}}</p>	
+<p>{{123+msg}}</p>
+<p>{{isBool === true ? 'hello' : 'no'}}</p>
+<p>{{arr[0]+arr[3]}}</p>
+<p>{{obj.name + obj.age}}</p>
+
+<script>
+	var test = angular.module('testApp',[])
+	test.controller('TestCtrl',function($scope){
+       $scope.msg = 'Hello Angular';
+       $scope.isBool = 'false';
+       $scope.arr = [1,2,3,4];
+       $scope.obj = {
+       	age : '38岁',
+       	name: '汪峰'
+       }
+	})
+</script>
+</body>
+</html>

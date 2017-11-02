@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>纯css实现tab切换</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab{
+            width: 300px;
+            height: 150px;
+            margin-left: 30px;
+            margin-top: 30px;
+            border: 1px solid #eee;
+            position: relative;
+            /*overflow: hidden;*/
+            
+        }
+        input{
+            display: none;
+        }
+        .tab label{
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            width: 149px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .label-1{
+            left: 0;
+            top: 0;
+        }
+        .label-2{
+            right: 0;
+            top: 0;
+        }
+        /*E~F{ cssRules },CSS3兄弟选择符,选择 E 元素后面的所有兄弟元素 F。*/
+        input:checked ~ div{
+            display: block;
+        }
+        input:checked ~ label{
+            background: orange;
+        }
+        .mod-1, .mod-2{
+             margin: 30px 0 0 20px;
+             display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div>
+            <input type="radio" id="r-1" name="tab" checked>
+            <label for="r-1" class="label-1">第一张</label>
+            <div class="mod-1">
+                <ul>
+                    <li>275万购昌平邻铁三居</li>
+                    <li>总价20万买一居</li>
+                    <li>200万内购五环三居</li>
+                    <li>北京首现零首付楼盘</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <input type="radio" id="r-2" name="tab">
+            <label for="r-2" class="label-2">第二张</label>
+            <div class="mod-2">
+                <ul>
+                    <li>新中式的酷色温情</li>
+                    <li>深圳房价大跌,每平8W</li>
+                    <li>800万买沙井三房</li>
+                    <li>宝安房价平均900W</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

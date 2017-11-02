@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div.box1{   
+			color:red;
+		}   /*div标签选择器和类box1选择器的2个交集显示的颜色*/
+		div#hezi1.box1{
+			color:purple;
+		}   /*div标签选择器和id选择器hezi1及类box1选择器的3个交集显示的颜色*/
+	</style>
+</head>
+<body>
+	<div>一个盒子</div> 
+	<!-- 由于没有单独说明div标签选择器的颜色，故默认为黑色-->
+	<p>一段文字</p>  <!-- 同理 -->
+	<div class="box1" id="hezi1">一个盒子2</div> 
+	        <!--  3个选择器交集显示的颜色 -->
+	<p class="box1">一段文字</p>
+	<!-- p标签和类box1选择器的交集上面没说，故默认黑色 -->
+</body>
+</html>

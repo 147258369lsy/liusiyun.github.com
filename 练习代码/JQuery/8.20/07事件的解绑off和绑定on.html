@@ -1,0 +1,63 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery-3.2.1.js'></script>
+	<script type="text/javascript">
+		
+		$(function () {
+			
+			var button = $('button');
+			//绑定点击事件
+			//直接使用click来进行事件的绑定，确定是无法解绑事件
+
+			//事件的绑定和解绑
+			//.on(事件名称, 执行函数)
+			//使用on进行事件的绑定，也可以多次来绑定
+			button.on('click', function(){
+				console.log('button click1');
+			})
+			button.on('click', function(){
+				console.log('button click2');
+			})
+			button.on('click', function(){
+				console.log('button click3');
+			})
+			//同时给多个操作绑定事件触发函数，多个事件名称之间使用空格隔开 
+			button.on('click mouseenter', function(){
+				console.log('两个事件的触发');
+			})
+			//事件的解绑//解绑所有的点击事件
+			// button.off('click');
+
+
+			//事件的命名空间
+			//对指定的事件进行命名，在绑定和解绑过程中，可以使用这个名字来精确的解绑不需要触发的事件..
+			// click.c1  表示一个click事件被命名为c1
+			button.on('click.c1', function(){
+				console.log('c1 事件');
+			})
+
+			//解绑c1事件
+			// button.off('click.c1');
+			//如果在解绑时，没有指定事件的命名，那么会解绑所有的事件
+			button.off('click');
+
+			//单次事件
+			//有些事件只希望被触发一次，触发完毕后直接解绑事件
+			button.one('mouseout', function(){
+				console.log('mouse out one');
+			})
+
+
+			//模拟事件
+			
+		})
+	</script>
+</head>
+<body>
+	<button>按钮</button>
+</body>
+</html>

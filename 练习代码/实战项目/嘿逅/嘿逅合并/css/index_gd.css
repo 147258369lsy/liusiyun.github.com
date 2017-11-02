@@ -1,0 +1,106 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+#more{
+    width: 750px;
+    height: 1334px;
+    background-color: #dfdfdf;
+}
+#more .more{
+    height: 96px;
+    background-color: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 34px;
+    color: #282828;
+    text-align: center;
+    line-height: 96px;
+    position: relative;
+}
+#more .more a::before{
+    content: " ";
+    width: 21px;
+    height: 41px;
+    background: url(../img/banner-details-page_06.png) 0 0 no-repeat;
+    position: absolute;
+    left: 30px;
+    top: 28px;
+}
+#more .content div{
+    height: 254px;
+    background-color: #fff;
+    font-size: 30px;
+    color: #282828;
+    padding: 30px 30px 30px 77px;
+    position: relative;
+    margin-bottom: 30px;
+}
+#more .content div:nth-of-type(1) i::before,
+#more .content div:nth-of-type(2) i::before,
+#more .content div:nth-of-type(3) i::before,
+#more .content div:nth-of-type(4) i::before,
+#more .content div:nth-of-type(5) i::before{
+    content: " ";
+    width: 44px;
+    height: 44px;    
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+#more .content div:nth-of-type(1) i::before{
+    background: url(../img/gengduotubiao_07.png) 0 0 no-repeat;
+}
+#more .content div:nth-of-type(2) i::before{
+    background: url(../img/gengduotubiao_26.png) 0 0 no-repeat;
+}
+#more .content div:nth-of-type(3) i::before{
+    background: url(../img/gengduotubiao_42.png) 0 0 no-repeat;
+}
+#more .content div:nth-of-type(4) i::before{
+    background: url(../img/gengduotubiao_55.png) 0 0 no-repeat;
+}
+#more .content div:nth-of-type(5) i::before{
+    background: url(../img/gengduotubiao_68.png) 0 0 no-repeat;
+}
+#more .content div:nth-of-type(1) .check::before,
+#more .content div:nth-of-type(2) .check::before,
+#more .content div:nth-of-type(3) .check::before,
+#more .content div:nth-of-type(4) .check::before,
+#more .content div:nth-of-type(5) .check::before{
+    content: " ";
+    width: 58px;
+    height: 20px;
+    background: url(../img/gengduotubiao_71.png) 0 0 no-repeat;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+#more .content div ul{
+    margin-top: 30px;
+    /*margin-left: 95px;*/
+}
+#more .content div ul li{
+    width: 120px;
+    height: 50px;
+    border: 1px solid #dfdfdf;
+    font-size: 26px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 6px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+#more .content div ul li a{
+    text-decoration: none;
+    color: #959595;
+}
+#more .content div ul li.active{
+    border-color: #ff9914;
+}
+#more .content div ul li.active a{
+    color: #ff9914;
+}

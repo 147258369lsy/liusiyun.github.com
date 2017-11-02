@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.no1{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: relative;
+			left: 0;
+			top: 0;
+			z-index: 99;
+		}
+		.limo{
+			width: 30px;
+			height: 30px;
+			background-color: green;
+			position: absolute;
+			left: 150px;
+			top: 120px;
+		    z-index: 99;
+		}
+		.no2{
+			width: 150px;
+			height: 100px;
+			background-color: red;
+			position: relative;
+			left: 0;
+			top: 0;
+			z-index: 199;
+		}
+		.no2 .lty{
+			width: 30px;
+			height: 30px;
+			background-color: black;
+			position: absolute;
+			left: 155px;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="no1">
+		<div class="limo"></div>
+	</div>
+	<div class="no2">
+		<div class="lty"></div>
+	</div>
+</body>
+</html>

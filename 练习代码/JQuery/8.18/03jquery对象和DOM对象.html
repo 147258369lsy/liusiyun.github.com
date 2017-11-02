@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		window.onload = function() {
+			var box_DOM = document.getElementById('box');
+
+			var box_jQuery = $('#box');
+			console.log(box_jQuery);
+			// box_DOM.onclick = function(){
+			// 	console.log('DOM click');
+			// }
+			// box_jQuery.onclick = function(){
+			// 	console.log('jQuery click');
+			// }
+
+			// box_jQuery.click(function(){
+			// 	console.log('jQuery click1');
+			// });
+			// box_jQuery.click(function(){
+			// 	console.log('jQuery click2');
+			// });
+
+			//对象的转化
+			box_jQuery.click(function(){
+				console.log('jQuery click');
+				console.log(this);//指向盒子对象元素
+                
+                //DOM对象转化为jquery对象
+				var this_jQuery = $(this);
+				//在点击事件中，this指针是一个DOM对象，不能直接使用jQuery中的方法
+				console.log(this_jQuery);
+				
+				//jQuery转化为DOM对象
+				var this_DOM = this_jQuery[0];
+				console.log(this_DOM);
+			});
+
+			var lis = $('li');
+			//直接通过中括号获取到的DOM对象
+			console.log(lis[3]);
+			//通过eq获取到的jQuery对象
+			console.log(lis.eq(3));
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li>第1个li</li>
+			<li>第2个li</li>
+			<li>第3个li</li>
+			<li>第4个li</li>
+			<li>第5个li</li>
+			<li>第6个li</li>
+			<li>第7个li</li>
+			<li>第8个li</li>
+			<li>第9个li</li>
+			<li>第10个li</li>
+		</ul>
+	</div>
+</body>
+</html>

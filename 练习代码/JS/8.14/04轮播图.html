@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	*{margin: 0;padding: 0;}
+	ul{list-style: none;}
+	/*外部盒子*/
+	.slider{
+		width: 800px;
+		height: 500px;
+		position: relative;/*父相*/
+		overflow: hidden;
+		margin: 100px auto;
+	}
+	/*控制器*/
+	.slider .control{
+		position: absolute;/*子绝*/
+		width: 100%;
+		bottom: 30px;
+		left: 0;
+		z-index: 10;
+		text-align: center;
+	}
+
+	.slider .control span{
+		display: inline-block;
+		background-color: #fff;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		line-height: 20px;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.slider .control span.current{
+		background-color: red;
+		color: #fff;
+	}
+
+	/*图片内容*/
+	.slider img{
+		width: 800px;
+		height: 500px;
+
+	}	
+	.slider .content ul{
+		width: 4800px;
+		position: absolute;
+		left: 0px;
+	}
+	.slider .content li{
+		float: left;
+	}
+	#prev,#next{
+		display: block;
+		width: 40px;
+		height: 70px;
+		background: rgba(0,0,0,0.4);
+		z-index: 999;
+		position: absolute;
+		top: 50%;
+		margin-top: -40px;
+		padding-top: 10px;
+		font-size: 50px;
+		text-align: center;
+		color: white;
+		font-family: '宋体';
+		cursor: pointer;
+		text-decoration: none;
+	}
+	#prev{
+		left: 0;
+	}
+	#next{
+		right: 0;
+	}
+	</style>
+	<script type="text/javascript">
+	var animateTimer;
+	function animate(element, target) {
+		clearInterval(animateTimer);
+		var left = element.offsetLeft;
+		var step = (target - left) / 50;
+		animateTimer = setInterval(function () {
+			left += step;
+			element.style.left = left + 'px';
+			if (Math.abs(target-left) <= Math.abs(step)) {
+				clearInterval(animateTimer);
+				element.style.left = target + 'px';
+			}
+		},10)
+	}
+
+	window.onload = function () {
+		var ul = document.getElementsByTagName('ul')[0];
+		var spanArr = document.getElementsByTagName('span');
+
+		//将第一个li，进行克隆，然后将克隆完毕的li，添加到ul中
+		ul.appendChild(ul.children[0].cloneNode(true));
+
+		var ulLeft = ul.offsetLeft;
+		var ulIndex = 0;
+
+
+//步骤一:图片移动动画:每隔5秒钟，向右边平移一个画面
+		var autoPlayTimer = setInterval(function () {			
+			if (ulIndex == 5) {
+				//从最后一张 滚动回第一张之后//重置回第一张的状态			
+				ulIndex = 0;
+				ul.style.left = '0';
+				ulLeft = 0;
+			}
+			ulLeft -= 800; //向右平移一个画面   left-800
+			animate(ul, ulLeft);//加动画		
+			ulIndex++;//使用index 来表示当前是在第几个画面
+			//循环滚动  无需停止定时器
+
+			
+ //步骤二:滚到那张图,显示相应页码数
+			for (var i = 0; i < spanArr.length; i++){
+				spanArr[i].className = '';
+			}
+			spanArr[ulIndex % 5].className = 'current';
+			// console.log(ulIndex);
+		} ,2000);
+
+
+
+		for (var i = 0; i < spanArr.length; i++){
+			var span = spanArr[i];
+			span.index = i;  //span的下标
+  //步骤三:给圆点添加点击事件,点哪切换到那张图
+			span.onclick = function () {
+				// console.log(this);
+				//1. 轮播图的滚动 //滚动的left偏移值
+				var targetLeft = -800 * this.index;
+				//滚动动画
+				animate(ul, targetLeft);
+				//在自动滚动的参数中，进行同步更改
+				ulLeft = targetLeft;
+				ulIndex = this.index;
+
+				//2. 切换当前显示的span
+				for (var j = 0; j < spanArr.length; j++){
+					spanArr[j].className = '';
+				}
+				this.className = 'current';
+			}
+		}
+
+	}
+	</script>
+</head>
+<body>
+	
+
+<div class="slider">
+	<div class="control">
+		<span class="current">1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>5</span>
+	</div>
+	<div class="content" id="image-list">
+		<ul>
+			<li><img src="./images/1.jpg" alt="" /></li>
+			<li><img src="./images/2.jpg" alt="" /></li>
+			<li><img src="./images/3.jpg" alt="" /></li>
+			<li><img src="./images/4.jpg" alt="" /></li>
+			<li><img src="./images/5.jpg" alt="" /></li>
+		</ul>
+	</div>
+
+</div>
+
+</body>
+</html>

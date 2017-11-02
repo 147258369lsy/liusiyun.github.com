@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+	用户名:<input type="text" placeholder="请输入用户名" ng-model="username">
+	密 码:<input type="password" placeholder="请输入密码" ng-model="password"><br>
+	<input type="button" value="注册" ng-click="register()">
+</body>
+<script>
+	angular.module('app',[]) 
+	.controller('AppCtrl',function($scope){ 
+         $scope.register = function(){
+         	console.log('ng-click');
+         	console.log($scope.username);
+         	console.log($scope.password);
+         }
+	})
+	//1.先注册一个模块(模块中传入两个参数:一个是模块名,一个是数组(函数的依赖))
+	//2.注册控制器(也传入两个参数:一个名字,一个函数的声明$scope)
+	//Angular Scope(作用域): Scope(作用域)是应用在HTML(视图)和JavaScript(控制器)之间的纽带。
+    //当你在AngularJS创建控制器时，你可以将$scope对象当作一个参数传递:
+    //scope 是一个JavaScript对象带有属性和方法,这些属性和方法可以在视图和控制器中使用。
+</script>
+</html>

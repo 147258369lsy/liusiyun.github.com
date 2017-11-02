@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			padding: 10px;
+			width: 120px;
+			height: 120px;
+			background-color:#5caeff;
+			margin: 100px auto; 
+		}
+		div p{
+			color: #fff;
+			height:20px;
+			line-height: 20px;
+			text-align: center;
+			font-size: 12px;
+		}
+		div .day{
+			height: 80px;
+			width: 80px;
+			line-height: 80px;
+			background-color: #fb0;
+			font-weight: bold;
+			font-size: 50px;
+			margin-left: 20px;
+			border-radius: 5px;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+          setInterval(function(){
+            var rili = document.getElementsByClassName('rili')[0];
+			var child =  rili.children;//获取rili的子元素,且格式一定是:父元素xx.children
+			// console.log(child);
+			var date_p = child[0];
+			var time_p = child[1];
+			var day_p = child[2];
+
+			var now = new Date();//获取当前时间
+	     
+			// console.log(now);
+			// console.log(now.getDay());
+			var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+			//设置日期
+			date_p.innerHTML = now.getFullYear() + '-' + (now.getMonth()+1) + '-'+ now.getDate() + '&nbsp' + week[now.getDay()];
+			//设置时间(判断:当毫秒数小于10时,前面加个0)
+			var miao = now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds();
+			var minutes = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+			time_p.innerHTML = now.getHours() + ':' + minutes + ':'+ miao;
+			//大数字日期
+			day_p.innerHTML = now.getDate();
+           },10);
+		}
+	</script>
+</head>
+<body>
+	<div class="rili">
+		<p>2017-8-1 星期二</p>
+		<p>10:30</p>
+		<p class="day">1</p>
+	</div>
+</body>
+</html>

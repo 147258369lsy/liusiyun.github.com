@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var obj1 = {
+			name: 'lsy',
+			age: '22',
+			sex: 'man'
+		}
+		var str = '{"name":"lsy","age":"22","sex":"man"}';
+
+
+		var obj1Tostr = JSON.stringify(obj1);
+		console.log(typeof obj1Tostr); //string
+
+		var strToObj = JSON.parse(str);
+		console.log(typeof strToObj); //object
+
+// 在ie6 ie7等兼容性不好的浏览器中可以使用eval()方法将字符串转化为JSON对象
+       var toObj = eval("("+str+")");
+       console.log(typeof toObj);   //object
+	</script>
+</body>
+</html>

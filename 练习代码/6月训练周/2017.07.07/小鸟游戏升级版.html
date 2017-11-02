@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小鸟游戏升级版</title>
+</head>
+<body>
+<canvas id = "canvas" width="400" height="600"></canvas>
+<audio src="bgm.mp3" controls></audio>
+<script>
+    var canvas = document.getElementById("canvas").getContext("2d");
+
+    var  space = 150 ;
+    uplen = 100 + (Math.random() * 200);
+    downheight = uplen + space ;
+    downlen = 600 - downheight ;
+
+    //定义背景
+
+    var image1 = new Image();
+    image1.src = "./images/bg.png"
+
+    //定义会动的小鸟
+
+    var image2 = new Image();
+    var i = 0;
+    var imgSrcArr = ["./images/0.gif","./images/1.gif","./images/2.gif"];
+
+    var v1 = 0.5;
+    var v2;
+    var a = 0.1;
+    var s = 150;
+    function autoAdd(){                     //定义加速度
+
+        v2 = v1 + a;
+
+        s= s + (v1 + v2)/2;
+        v1 = v2;
+    }
+    function xiaoniao(){
+        i++;
+        i = i % 3;
+        image2.src = imgSrcArr[i];
+        canvas.drawImage(image2,150, s, 40, 40);
+        autoAdd();
+    }
+
+
+    //移动的上管道
+    var image3 = new Image;
+    image3.src = "./images/pipe.png"
+    var  uppipe = 400;
+
+    //移动的下管道
+    var image4 = new  Image;
+    image4.src = "./images/pipe.png";
+    var downpipe = 400;
+
+
+    //地面
+    var imageGround = new  Image;
+    imageGround.src = "./images/ground.png";
+
+
+    //绑定键盘事件
+    window.onkeydown = function(event){
+        var e = event || window.event;
+        if(e.keyCode == 32){
+            s = s - 50
+        }
+    }
+
+    setInterval (function(){
+
+        uppipe = uppipe - 10;
+
+        downpipe = downpipe - 10;
+        if(downpipe < -100 && uppipe < -100){
+
+            uppipe = 400;
+            downpipe = 400;
+            uplen = 100 + (Math.random() * 200);
+            downheight = uplen + space ;
+            downlen = 600 - downheight ;
+        }
+
+        //canvas.clearRect(0, 0, 400, 600);
+        //背景
+        canvas.drawImage (image1, 0, 0, 400, 600);
+        //鸟
+        // canvas.drawImage(image2, 150, 200, 40, 32);
+        //地
+       // canvas.drawImage(imageGround, 0, 550, 400, 200);
+        //上管道
+        canvas.drawImage(image3, 150,500,150,800,uppipe,0,100,uplen);
+        //下管道
+        canvas.drawImage(image4, 0,500,150,500,downpipe,downheight,100,downlen);
+        canvas.drawImage(imageGround, 0, 550, 400, 200);
+        xiaoniao();
+    },80);
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*子选择器是一种特殊的后代选择器, 要求 ‘>’ 后面必须直接跟下一级*/
+	  /*   div p{
+		color:red;
+	    }*/
+		.hezi1 p{
+			color:yellow;
+		}
+		.hezi1>div>div>p{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<div class="hezi1">
+	<div>
+		<div>
+			<p>一段文字</p>
+		</div>
+	</div>
+</div>	
+</body>
+</html>

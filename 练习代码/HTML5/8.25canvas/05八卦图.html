@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="demo" width="600" height="600"></canvas>
+	<script>
+		var canvas = document.getElementById('demo');
+		var context = canvas.getContext('2d');
+
+         //外面圆,圆心位置:300,300,半径200
+         //里面小圆,半径100,圆心位置分别是(200,300)  (400,300)
+
+         //下半个大圆弧
+         context.arc(300,300,200,Math.PI,0,true);
+         context.arc(400,300,100,0,Math.PI,false);
+         context.arc(200,300,100,0,Math.PI,true);        
+         context.fillStyle = '#fff';
+         context.fill();
+          
+       //下半个大圆弧
+         context.beginPath();
+         context.arc(300,300,200,Math.PI,0,false);
+         context.arc(400,300,100,0, Math.PI,false);
+         context.arc(200,300,100,0, Math.PI,true);
+
+         context.fillStyle = '#000';
+         context.fill();
+         
+         //两个小圆
+         context.beginPath();
+         context.arc(200,300,30,0,2*Math.PI,true);  
+         context.fillStyle = '#000';
+         context.fill();
+
+         context.beginPath();
+         context.arc(400,300,30,0,2*Math.PI,true);  
+         context.fillStyle = '#fff';
+         context.fill();
+         
+         var a = 0;
+         setInterval(function(){         	
+         	a++;
+         	canvas.style.transform = "rotate(" + a + 'deg)';
+         },10);
+	</script>
+</body>
+</html>

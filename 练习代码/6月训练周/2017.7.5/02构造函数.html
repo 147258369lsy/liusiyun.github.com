@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Stu(){
+        this.name = "胡歌"
+        this.age = "37";
+    }
+    var xxx = new Stu();
+    console.log(xxx);
+    console.log(xxx.name);
+
+    var bbb = new Stu();
+    console.log(bbb.name);
+//构造函数传参
+    function Stu2(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    var zzz = new Stu2("啊哈哈",100);
+    console.log(zzz);
+    console.log(zzz.name);
+</script>
+</body>
+</html>

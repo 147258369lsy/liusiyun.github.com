@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="angular-sanitize/angular-sanitize.js"></script>
+</head>
+<body ng-app="myApp" ng-init="msg='<a href=\'http://www.baidu.com\'>百度</a>'">
+<p>{{msg}}</p>
+<p ng-bind-html="msg"></p>
+
+<!-- ng-bind-html 指令是通一个安全的方式将内容绑定到 HTML 元素上。
+当你想让 AngularJS 在你的应用中写入 HTML，你就需要去检测一些危险代码。通过在应用中引入 "angular-santize.js" 模块，使用 ngSanitize 函数来检测代码的安全性。 -->
+</body>
+<script>
+    angular.module('myApp',['ngSanitize'])
+</script>
+</html>

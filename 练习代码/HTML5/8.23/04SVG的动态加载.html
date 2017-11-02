@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<svg id="target_svg" data-src='GoogleLogo.svg'></svg>
+    <svg data-src="Ghostscript_Tiger.svg"></svg>
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+		var svgArr = $('svg');
+		//一次加载多个SVG
+		svgArr.each(function(index, svg) {
+			svg = $(svg);
+			var src = svg.data().src;
+
+			$.get(src, function(data){
+				var data_svg = data.documentElement;
+
+				svg.replaceWith(data_svg);
+				//修改SVG中线段的样式
+				$('svg path').attr('fill', '#0f0');
+			})
+		})
+	</script>
+</body>
+</html>

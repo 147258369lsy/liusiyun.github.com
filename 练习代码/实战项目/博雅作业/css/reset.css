@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+em, i, u, strong{
+    font-style: normal;
+}
+body{
+    font-family: "Microsoft Yahei", "ËÎÌו";
+}
+.cl{
+    clear: both;
+}

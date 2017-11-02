@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    /*
+     // 小猴子第一天摘下若干桃子,当即吃掉一半,又多吃一个.
+     // 第二天早上又将剩下的桃子吃一半,又多吃一个.
+     // 以后每天早上吃前一天剩下的一半加一个.
+     // 到第10天早上猴子想再吃时发现,只剩下一个桃子了.
+     // 问第一天猴子共摘多少个桃子？
+fn = x   假设第一天有x 个桃子 则第二天有x/2-1   f0 = x
+                                  剩余条数  f1= x/2-1/2
+                                          f2=f1-(1/3f1+1/3)
+                                          f3=f2-(1/4f2+1/4)
+                                          fn=x/2-1/2
+                                          f(n+1)=fn-(1/(n+1)fn+1/(n+1))
+                                          (n/n+1)fn=1/(n+1)+f(n+1)
+                                          fn=1/n+(n+1/n)f(n+1)
+f(n+1)=x/2-1;==>  fn=(f(n+1)+1)*2
+     */
+    function taozi(n){
+        if(n == 10){
+            return 1;
+        }else{
+            return (taozi(n+1)+1)*2;
+        }
+    }
+    console.log(taozi(1));
+</script>
+</body>
+</html>

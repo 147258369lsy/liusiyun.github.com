@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		   span p {
+			color:red;
+		}
+		.box1 #hezi2 p{
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<div>
+		<div>
+			<span>一个小范围0</span>
+			<p>
+				一段文字1
+				<span>一个小范围1</span>
+			</p>
+		</div>
+	</div>
+
+	<span>一个小范围2</span>
+
+	<div class="box1">
+		<div id="hezi2">
+		<p>一段小文字</p>
+		</div>
+	</div>
+	<!-- 选择的是后代, 只要满足这个条件就可以成功选择上
+注意: 后代选择器, 空格后面跟着的一定的是后代, 该选择器才会生效, 否则选择器失效,后代选择器是共性与个性的平衡, 描述的是上下层关系 -->.
+</div>
+</body>
+</html>

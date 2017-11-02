@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#progress2{
+			
+			/*-webkit-appearance: none;*/
+		}
+		#progress2{
+			-webkit-appearance: none;
+		}
+		#progress2::-webkit-progress-bar{
+			width: 300px;
+			height: 30px;
+			background-color: #ccc;
+			 border:10px solid #aaa;
+			 border-radius: 15px;
+		}
+		#progress2::-webkit-progress-value{
+			background-color: greenyellow;
+			height: 10px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<progress></progress><br>
+
+	<progress value="20" max="50" id="progress2"></progress>
+
+    <h3>DataList数据列表</h3>
+    <input type="text" name="username" list="nameList">
+    <datalist id="nameList">
+    	<option value="Laowang"></option>
+    	<option value="Laozhu"></option>
+    	<option value="Laoli"></option>
+    </datalist>
+    
+    <h3>Meter 数据显示器</h3>
+    <ol>
+    	<li>min 最小值</li>
+    	<li>max 最大值</li>
+    	<li>value当前值</li>
+    	<li>low 颜色区间 当value小于low时,显示红色</li>
+        <li>high 当value大于high时 显示绿色</li>
+    </ol>
+    <meter min="10" max="100" value="30" low="20" high="50"></meter>
+</body>
+</html>

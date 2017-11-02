@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function() {
+
+			var li = document.querySelector('.box > #list > li');
+			console.log(li);//获取的是DOM对象
+
+			//查找多个元素,并且以数组的形式返回
+			var liArr = document.querySelectorAll('.box ul li');
+			console.log(liArr);
+
+			//艺术租的形式 获取DOM元素中的所有类名
+			console.log(li.classList);
+
+			//增加一个类
+			li.classList.add('newClass');
+			//删除一个类
+			li.classList.remove('red')
+
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul id="list">
+			<li class="red color 1pxborder"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

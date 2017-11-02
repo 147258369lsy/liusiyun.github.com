@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		div{
+			width: 1000px;
+            height: 650px;
+            background-color: pink;
+			border-top:2px solid gray ;
+			margin: 0 auto;
+		    margin-top: 200px;
+		    position: relative;  /*相对定位的参考点是自己*/
+		    left: 0;
+		    top: 0;
+
+		}
+		ul {
+           list-style: none;
+           position: absolute;
+           left: 50%;
+           top: 0;
+           margin-left: -34px;  /*往左移ul一半距离使其居中*/
+           margin-top: -6px;
+           background-color: white;
+		}
+		ul li{
+			width: 12px;
+			height: 12px;
+			border-radius:8px;
+			background-color: red;
+			float:left;
+			margin-right:8px;
+
+		}
+		ul li.no1{
+			margin-left: 8px;
+		} 
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li class="no1"></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

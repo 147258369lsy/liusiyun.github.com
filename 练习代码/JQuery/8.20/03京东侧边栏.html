@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{
+			width: 1000px;
+			margin: 0 auto;
+		}
+		img{width: 100%;}
+		.nav{
+			width: 36px;
+			/*height: 228px;*/
+			position: fixed;
+			top: 50%;
+			margin-top: -108px;
+			left: 50%;
+			margin-left:500px;
+			border:1px solid red;
+			display: none;
+		}
+		.nav ul{list-style: none;}
+		.nav li{
+			width: 36px;
+			height: 36px;
+			border-top: 1px solid red;
+			margin-top: -1px;
+		}
+		.nav li a{
+			display: block;
+			font-size: 12px;
+			line-height: 15px;
+			text-align: center;
+			text-decoration: none;
+			padding:3px 0;
+			/*color:#666;*/
+			background: url('images/bg.png') no-repeat 0 0;
+			color: transparent; /* 变为透明*/
+			background-color: #f8f8f8;
+		}
+		.nav li a:hover,
+		.nav li.current a{
+			color: #fff !important;
+			background-color: red;
+			background-image: none;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function (){
+			$('#returnTop').siblings().find('a').each(function(index,element){
+				$(element).css('background-position',"0 -" + (index*55) +"px").click(function(){
+					// console.log(this);
+				//index()获取的是当前元素在父元素中的序号
+                   var index = $(this).parent().index();
+                   //获取对应的div
+                   var targetBox = $('.box div').eq(index+1);
+                   //滚动到目标位置
+                   $('html,body').stop().animate({scrollTop : targetBox.offset().top});
+				});
+			});
+
+			//单独操作最后一个a
+			$('#returnTop a').css({
+				backgroundImage : 'none',
+				color : '#666'
+			}).click(function(){
+				$('html, body').stop().animate({scrollTop : 0});
+			})
+
+			$(window).scroll(function(){
+				//获取滚动的高度
+				var scrollTop = $(document).scrollTop();
+
+				if(scrollTop < $('.box div').eq(1).offset().top){
+					$('.nav').fadeOut();
+				}else{
+					$('.nav').fadeIn();
+					var minIndex = $('.nav li').length;
+					$('.box div').each(function(index,element){
+						if(scrollTop < $(element).offset().top){
+							if(index < minIndex){
+								minIndex = index;
+							}
+						}
+					})
+					minIndex -=2;
+					$('.nav li').eq(minIndex).addClass('current').siblings('li').removeClass('current');
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div><img src="images/top.png" alt=""></div>
+		<div><img src="images/jia.png" alt=""></div>
+		<div><img src="images/dian.png" alt=""></div>
+		<div><img src="images/fu.png" alt=""></div>
+		<div><img src="images/mei.png" alt=""></div>
+		<div><img src="images/bottom.png" alt=""></div>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li class="current"><a href="javascript:;">家电<br>通讯</a></li>
+			<li><a href="javascript:;">电脑<br>数码</a></li>
+			<li><a href="javascript:;">服装<br>美饰</a></li>
+			<li><a href="javascript:;">美容<br>珠宝</a></li>
+			<li><a href="javascript:;">家居<br>生活</a></li>
+			<li id="returnTop"><a href="javascript:;">返回<br>顶部</a></li>
+		</ul>
+	</div>
+</body>
+</html>

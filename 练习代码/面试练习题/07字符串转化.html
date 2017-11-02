@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var strA = "Uyun";
+		for(var i = 0; i < strA.length; i++){
+			var strB = strA.charAt(0) + ','+strA.charAt(1) + ','+strA.charAt(2) + ','+strA.charAt(3);
+
+			console.log(strB);  //U,y,u,n
+		
+		}
+       
+
+       //数组的合并concat();
+		var arr1 = [1,2,3];
+		var arr2 = [4,5];
+		console.log(arr1.concat(arr2[0])); 
+
+		var a = 1;
+		function xx(){
+			console.log(a);  //undefined
+			var a =2; 
+			console.log(a);  //2
+		}
+		xx();
+		console.log(a);  //1
+	</script>
+</body>
+</html>

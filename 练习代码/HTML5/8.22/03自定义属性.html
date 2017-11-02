@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		window.onload = function() {
+			//获取属性
+			var name = document.getElementById('name');
+			console.log(name.dataset);
+
+			console.log(name.dataset.age);
+			console.log(typeof name.dataset.age);
+			console.log(name.dataset['height']);
+
+			//设置一条自定义属性
+			name.setAttribute('data-weight', '200');
+
+			//在Jquery中使用
+			var sex = $('#sex');
+			console.log(sex.data().sex);
+			console.log(sex.data('sex'));
+		}
+	</script>
+</head>
+<body>
+	<h3>自定义属性</h3>
+	<p>格式 data-属性名</p>
+
+	<p>
+		姓名:<span data-age="20" data-height="175" id="name">小明</span>
+		性别:<span data-sex="M" id="sex">男</span>
+	</p>
+</body>
+</html>

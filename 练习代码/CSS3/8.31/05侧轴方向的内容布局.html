@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+		.container h2{
+			text-align: center;
+		}
+		.container section.item{
+			box-sizing: border-box;
+			width: 950px;
+			height: 600px;
+			border: 1px solid #bbb;
+			float: left;
+			margin: 25px;
+			position: relative;
+			display: flex; /*开启伸缩布局*/
+		}
+		.container section.item h3{
+			width: 100%;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 40px;
+		}
+		.container section.item:hover h3{
+			display: block;
+		}		
+		div.content{
+			width: 250px;
+			/*height: 150px;*/
+			/*margin: 25px auto;*/
+			border: 1px solid red;
+			box-sizing: border-box;
+			font-size: 30px;
+			line-height: 150px;
+			text-align: center;
+			background-color: pink;
+			color: white;
+		}
+    	.item:nth-of-type(1){
+            align-items: flex-start;/*内容分布在侧轴的起始位置一段*/
+    	}
+    	.item:nth-of-type(2){
+    		align-items: flex-end;/*内容分布在侧轴的末尾一段*/
+    	}
+    	.item:nth-of-type(3){
+    		align-items: center;
+    		/*justify-content:center;   居中的一种新方式*/
+    		/*内容分布在侧轴的中心位置*/
+    	}
+    	.item:nth-of-type(4){
+    		align-items: baseline;/*内容中的文本的基准线对齐*/
+    	}
+    	.item:nth-of-type(5){
+    		align-items: stretch;
+    		/*
+			将元素的高度（宽度，侧轴反向变化时）进行拉伸，拉伸到当前侧轴长度，
+			如果给元素设定了固定的大小，则无效
+			使高度或者宽度的值 为auto时此属性才生效
+			*/
+    	}
+
+    </style>
+</head>
+<body>
+	<div class="container">
+		<h2>侧轴方向的内容布局</h2>		
+		<section class="item">
+		    <h3>flex-strat</h3>
+			<div class="content">1</div>
+			<div class="content">2</div>
+			<div class="content">3</div>
+		</section>
+		<section class="item">
+			<h3>end</h3>
+			<div class="content">1</div>
+			<div class="content">2</div>
+			<div class="content">3</div>
+		</section>
+		<section class="item">
+			<h3>center</h3>
+			<div class="content">1</div>
+			<div class="content">2</div>
+			<div class="content">3</div>
+		</section>
+		<section class="item">
+			<h3>baseline</h3>
+			<div class="content">1</div>
+			<div class="content">2</div>
+			<div class="content">3</div>
+		</section>
+		<section class="item">
+			<h3>stretch</h3>
+			<div class="content">1</div>
+			<div class="content">2</div>
+			<div class="content">3</div>
+		</section>
+	</div>
+</body>
+</html>

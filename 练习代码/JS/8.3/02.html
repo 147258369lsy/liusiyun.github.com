@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload = function() {
+		var box = document.getElementById('box');
+		console.log(box);
+		box.style.color = "red";
+		box.style.fontWeight = "bold";//注意驼峰法的使用
+		//获取页面中的所有li
+		// var lis = document.getElementsByTagName('li');
+		// //该方法得到是多个DOM元素,而且返回值是数组!
+		// console.log(lis.length);
+
+		//获取id外list11下面的所有的li
+		var lis = document.getElementById('list').getElementsByTagName('li');
+		// console.log(lis.length);
+		// lis.style.color = "blue"; //给每个li设置颜色,错误方法:由于得到的lis是一个数组,故不能给数组设置style等属性
+
+		//用遍历方法
+		for(var i = 0 ,len = lis.length;i < lis.length; i++){
+            // console.log(lis[i]);
+            lis[i].style.color = "orange";
+            lis[0].style.backgroundColor = "#ccc";
+            lis[1].style.backgroundColor = "#666";
+            lis[2].style.backgroundColor = "#333";
+		}
+	}
+		
+	</script>
+</head>
+<body>
+	<div id="box">元素一</div>
+	<div class="yuansu">元素二</div>
+	<ul id="list">
+		<li>web前端</li>
+		<li>Java</li>
+		<li>UI设计</li>
+	</ul>
+<!-- 	<ol>
+		<li>html</li>
+		<li>Css</li>
+		<li>js</li>
+	</ol> -->
+</body>
+</html>

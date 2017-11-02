@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery.js"></script>
+	<style>
+		div{
+			width: 1000px;
+			height: 1000px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+	//方法一:javascript
+		// var div = document.createElement('div');
+		// div.className = 'Hello';
+		// // console.log(div);
+		// var body = document.getElementsByTagName('body')[0];
+		// body.appendChild(div);
+    //方法二:jQuery
+		$(function(){
+			var body = $('body');
+			console.log(body);
+			body.append('<div></div>');
+			console.log($('body div'));
+			// $('body div').css({
+			// 	height: '200px',
+			// 	width: '100px',
+			// 	backgroundColor: 'red'
+			// });
+			$('body').addClass('Hello');
+			$('body div').click(function(){
+				console.log('click');
+				// $('body').toggleClass('abfd');
+				$('body div').toggleClass('helloWorld'); //点击添加文本 html()也行
+			});
+			
+		})
+		// $("#tow").attr("class")    获取ID为tow的class属性
+        // $("#two").attr("class","xxxname")  设置Id为two的class属性。
+    // $("#two").removeClass("divClass")//移除ID为two的对象的class名为divClass的样式。
+    // $(#two).removeClass("divClass divClass2")//移除多个类名。
+	</script>
+</body>
+</html>

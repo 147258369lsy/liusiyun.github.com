@@ -1,0 +1,198 @@
+伪类选择器-of-type.html<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑';
+			background-color: #F7F7F7;
+		}
+		.container{
+			width: 1000px;
+			margin: 0 auto;
+			border-top: 1px solid #ccc;
+
+		}
+
+		.container section{
+			padding: 50px;
+			border-bottom: 1px solid #ccc;
+		}
+
+		section:nth-child(1) li:nth-of-type(3){
+			color: red;
+		}
+	
+
+		section:nth-child(2) li:nth-last-of-type(5){
+			color:red;
+		}
+	
+
+		section:nth-child(3) li.red{
+			color: red;
+		}
+
+		section:nth-child(3) .red:nth-of-type(3){
+			background-color: #ccc;
+		}
+
+		section:nth-child(4) li:last-of-type{
+			color: skyblue;
+		}
+
+		section:nth-child(5) li:first-of-type{
+			color: red; 
+		}
+
+		section:nth-child(6) li:only-of-type{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	
+<div class="container">
+	
+<section>
+	<h2>nth-of-type(n)</h2>
+	<ul>
+		<p>则是一个p</p>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+		<li>第6个li</li>
+		<li>第7个li</li>
+		<li>第8个li</li>
+		<li>第9个li</li>
+		<li>第10个li</li>
+	</ul>
+
+
+	<ul>
+		<li>这是另一个ul中的第1个li</li>
+		<li>这是另一个ul中的第2个li</li>
+		<li>这是另一个ul中的第3个li</li>
+		<li>这是另一个ul中的第4个li</li>
+		<li>这是另一个ul中的第5个li</li>
+	</ul>
+
+	<p>使用nth-child 在进行子元素序号排列时，会计算所有的子元素，不管这个子元素是否符合我们的要求。这种计算方式实际上和程序员的思维方式有一点矛盾。</p>
+	<p>nth-of-type(n)，和nth-child不同的是，在of-type中计算元素的序号时，只计算复合前一个条件的所对应的元素。无关紧要的子代元素不会影响当前元素的序号计算。nth-of-type是首先将同一类标签放在同一个集合(数组)中，然后在这个集合中，来计算元素的序号。</p>
+</section>
+
+<section>
+	<h2>nth-last-of-type</h2>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+		<li>第6个li</li>
+		<li>第7个li</li>
+		<li>第8个li</li>
+		<li>第9个li</li>
+		<li>第10个li</li>
+		<p></p>
+	</ul>
+
+	<p>
+		nth-last-of-type，从被选中的元素的最后一个开始，向前面来计算序号。
+	</p>
+</section>
+<section>
+	<p>class对nth-of-type的影响</p>
+	<ul>
+		<li class="red">第1个li</li>
+		<li>第2个li</li>
+		<li class="red">第3个li</li>
+		<li>第4个li</li>
+		<li class="red">第5个li</li>
+		<li>第6个li</li>
+		<li>第7个li</li>
+		<li class="red">第8个li</li>
+		<li>第9个li</li>
+		<li>第10个li</li>
+		<p class="red">1</p>
+		<p>2</p>
+		<p class="red">3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+	</ul>
+	<p>li.red:nth-of-ytpe(3)</p>
+	<p>首先前半个选择器选中的是class=red的所有的li</p>
+	<p>后半个选择器表示在所有的li中排第三个的li元素,nth-of-type只对和当前元素标签名一样的元素来进行计算。</p>
+	<p>当同一个父元素下，有多个不同标签名的标签，都同时被nth-of-ytpe所选中，那么不用类型的标签，会进行分别的计算。</p>
+</section>
+
+
+<section>
+	<h2>last-of-type</h2>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+		<p>这是一个p元素</p>
+	</ul>
+	<p>last-of-type 选中当前指定元素中，相同标签名的最后一个元素。如果在后面还有其他类型的元素，则忽略。</p>
+
+</section>
+
+
+<section>
+	<h2>first-of-type</h2>
+	<ul>
+	<p>p元素</p>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+	</ul>
+	<p>last-of-type 选中当前指定元素中，相同标签名的第一个元素。如果在前面还有其他类型的元素，则忽略。</p>
+
+</section>
+
+
+<section>
+	<h2>only-of-type</h2>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+	</ul>
+	<ul>
+		<li>第1个li</li>
+	</ul>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+		<li>第4个li</li>
+		<li>第5个li</li>
+	</ul>
+	<ul>
+		<li>第1个li</li>
+		<li>第2个li</li>
+		<li>第3个li</li>
+	</ul>
+	<ul>
+		<li>第1个li</li>
+		<p>这事一个P</p>
+	</ul>
+	<p>only-of-type 选中所有的在父元素中只有一个li的li元素。选中的元素再其父元素中没有同样标签名的其他元素。</p>
+</section>
+
+
+</div>
+
+</body>
+</html>

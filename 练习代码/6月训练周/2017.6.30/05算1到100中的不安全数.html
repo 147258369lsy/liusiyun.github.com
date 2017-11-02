@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*
+    安全数是指：是含7的数和是7的倍数，同理，不安全数就是指不含。。。。。。
+     */
+    for(var a = 1;a <= 100;a++)
+    {
+        if(a % 10 != 7 && a % 7 != 0 && parseInt( a / 10)!=7)
+        {
+        console.log(a);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		.weibo{
+			width: 800px;
+			border: 1px solid red;
+			margin: 100px auto;
+		}
+
+		.weibo li{
+			padding: 10px;
+			border-bottom: 1px dashed red;
+		}
+		.weibo li button{
+			float: right;
+		}
+		textarea{
+			width: 798px;
+		    height: 200px;
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px;
+			line-height: 18px;
+			overflow: hidden;
+			outline: none;
+
+			/*固定大小*/
+			resize: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			//1. 当button被点击时，获取到textarea中所输入的文本内容
+			//2. 创建一个新的li对象,填入文字内容
+			//3. 将这个li 添加到ul中去
+			document.getElementById('sendWeibo').onclick = function () {
+				// console.log('发布微博');
+				//获取文本
+				var text = document.getElementById('text');
+
+				//如果没有输入文本，则不做后续操作
+				if (text.value == '') {
+					return;
+				}
+
+				//创建li
+				var li = document.createElement('li');
+				//直接在li中，添加一个删除按钮
+				li.innerHTML = text.value + '<button>删除</button>';
+				//将这个li添加到ul中
+				var ul = document.getElementById('weiboList');
+				// ul.appendChild(li);
+
+				//按照发微博的逻辑，最新发送的微博在最顶端
+				//新发送的微博应该处于ul的最前面
+				//添加一个子元素到父元素的内部，但是可以手动决定添加的位置
+				//将子元素插入到某个元素之前
+				//将element1.插入到ul中，并且排在element2之前
+				//ul.insertBefore(element1, element2)
+				//插入到第一个元素之前，就是放在第一个ss
+				ul.insertBefore(li, ul.children[0]);
+
+				//清空输入框
+				text.value = '';
+
+
+				//删除按钮的点击事件
+				var deleteButton = li.getElementsByTagName('button')[0];
+				// console.log(deleteButton);
+				deleteButton.onclick = function () {
+					// console.log(this);
+					//获取到li
+					// this.parentNode;
+					// console.log(this.parentNode);
+					//拿他亲爹
+					var li = this.parentNode;
+					//删他亲爹
+					ul.removeChild(li);
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+
+
+	<div class="weibo">
+		
+		<textarea name="" cols="30" rows="10" id="text"></textarea>
+		<button id="sendWeibo">发布微博</button>
+		
+
+		<ul id="weiboList">
+
+		</ul>
+
+	</div>
+	
+</body>
+</html>

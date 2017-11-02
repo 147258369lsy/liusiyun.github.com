@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+		.bgc{background-color: red;}
+		.border1{
+			border:2px solid green;
+		}
+		.width{
+			width: 200px;
+		}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			var box = $('div');
+			$('button').eq(0).click(function(){
+				box.addClass('bgc');
+			})
+
+			$('button').eq(1).click(function(){
+				box.removeClass('bgc');
+			})
+			$('button').eq(2).click(function(){
+				var has1pxBorder = box.hasClass('border1');
+				if(has1pxBorder){
+					alert('有绿色边框wpx');
+				}else{
+					alert('没有2px的绿色边框');
+				}
+			})
+			$('button').eq(3).click(function(){
+				box.toggleClass('width');
+			})
+		})
+	</script>
+</head>
+<body>
+    <button>添加一个红色背景</button>
+    <button>移除红色背景</button>
+    <button>判断有没有1px的绿色边框</button>
+    <button>宽度切换</button>
+	<div class="box border1"></div>
+</body>
+</html>

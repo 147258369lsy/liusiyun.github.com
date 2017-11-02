@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+		}
+	</style>
+	<script>
+		function getStyle(element, styleName) {
+		
+		if (element.currentStyle) {
+			return element.currentStyle[styleName];
+		} else {
+			var computedStyle =  window.getComputedStyle(element, null);
+			return computedStyle[styleName];
+		}
+	}
+
+	function animate(element, json){
+		clearInterval(element.timer);
+		element.timer = setInterval(function(){
+
+			isStop = true;
+			for(var key in json){
+				var target = json[key];
+				var current = parseInt(getStyle(element, key));//转化为数值
+				var step = (target - current)/10;
+				step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+				current += step;
+			
+				console.log('current = ' + current);
+				console.log('target = ' + target);
+				console.log('step = ' + step);
+				console.log(Math.abs(target - current));
+				if(Math.abs(target - current) > Math.abs(step)){
+					isStop = false;
+				}else{
+					current = target;
+				}
+			   element.style[key] = current + 'px';
+			}
+			if(isStop){
+				clearInterval(element.timer);
+				console.log('动画完成');
+			}
+		},30);
+	}
+	 window.onload = function(){
+	 	var box = document.getElementById('box');
+	 	document.onclick = function(){
+	 		animate(box,{
+              left : 500,
+              top : 300
+
+              // height : 200,
+
+	 		});
+	 	}
+	 }
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

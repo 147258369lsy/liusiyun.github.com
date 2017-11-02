@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function getGe(num){
+        return num % 10;
+    }
+    function getShi(num){
+        return parseInt(num % 100 / 10);
+    }
+    function getBai(num){
+        return parseInt(num / 100);
+    }
+    function isShuixianhua(num){
+        if(Math.pow(getBai(num),3)+ Math.pow(getShi(num),3) + Math.pow(getGe(num),3) == num ){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    for(var x = 100;x < 1000;x++){
+        var result = isShuixianhua(x);
+        if(result == true){
+            console.log(x + "是水仙花数");
+        }
+    }
+
+</script>
+</body>
+</html>

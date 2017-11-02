@@ -1,0 +1,386 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.topbar{
+	width: 100%;
+	height: 120px;
+}
+.topBar .header{
+	height: 70px;
+	background-color: #242424;
+}
+.topBar .header .wrap{
+	width: 1100px;
+	height: 0;
+	margin: 0 auto;
+}
+/********logo*************/
+.topBar .header .wrap .logo {
+    float: left;
+    width: 175px;
+    height: 70px;
+    background: url(../images/topbar.png) no-repeat 0 -21px;
+}
+.topBar .header .wrap .logo a {
+    float: left;
+    width: 157px;
+    height: 100%;
+    padding-right: 20px;
+    text-indent: -9999px;
+}
+/*************导航条***********/
+.topBar .header .wrap ul{
+	list-style: none;
+	margin: 0;
+	float: left;
+	padding-left: 0;
+}
+.topBar .header .wrap ul li{
+	float: left;
+	height: 70px;
+	position: relative;
+}
+.topBar .header .wrap ul li .arrow{
+	width: 12px;
+	height: 6px;
+	display: block;
+	background: url(../images/topbar.png) no-repeat -226px 0;
+	background-color: red;
+	position: relative;
+	top: -5px;
+	left: 50%;
+}
+.topBar .header .wrap>ul li a{
+	padding: 0 20px;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	margin: 0;
+    font-size: 14px;
+    height: 70px;
+    line-height: 70px;
+    color: #ccc;
+}
+.topBar .header .wrap ul li a:hover,
+.topBar .header .wrap ul li a.active{
+    background-color: #000;
+    color: #fff;
+}
+.topBar .header .wrap ul li .hot{
+	background: url(../images/topbar.png) no-repeat -191px 0;
+	width: 26px;
+	height: 13px;
+	display: inline-block;
+	position: absolute;
+	left: 100px;
+	top: 21px;
+}
+
+/************login**********/
+.topBar .header .wrap .login{
+	float: right;
+	height: 45px;
+	margin: 20px 0 0 20px;
+	padding: 0 22px 0 0;
+	position: relative;
+	background: url(../images/topbar.png) no-repeat -195px -45px;
+}
+.topBar .header .wrap .login>a{
+	color: #787878;
+	font-size: 12px;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 10px;
+}
+.topBar .header .wrap .login:hover .loginBox{
+	display: block;
+}
+.topBar .header .wrap .login .loginBox{
+	display: block;
+	width: 160px;
+	height: 190px;
+	background-color: #333;
+	z-index: 10;
+	position: absolute;
+	top: 40px;
+	left: -67px;
+	display: none;
+}
+.topBar .header .wrap .login .loginBox ul{
+	float: left;
+	display: block;
+}
+.topBar .header .wrap .login .loginBox ul li{
+	float: left;
+	list-style: none;
+	width: 158px;
+	height: 38px;
+}
+.topBar .header .wrap .login .loginBox ul li a{
+	width: 100%;
+	padding-left: 24px;
+	font-size: 12px;
+	height: 38px;
+	line-height: 38px;
+	float: left;
+	display: inline-block;
+	text-decoration: none;
+	color: #ccc;
+}
+.topBar .header .wrap .login .loginBox ul li a:hover{
+	color: #fff;
+}
+.topBar .header .wrap .login .loginBox ul li a i{
+	margin: 10px 10px 0 -7px;
+	float: left;
+}
+.topBar .header .wrap .login .loginBox ul li:nth-of-type(1) a i{	
+	width: 10px;
+	height: 14px;
+	background: url(../images/toplist.png) no-repeat -3px -2px;
+}
+.topBar .header .wrap .login .loginBox ul li:nth-of-type(2) a i{
+	width: 18px;
+	height: 15px;
+	background: url(../images/toplist.png) no-repeat -20px -22px;
+}
+.topBar .header .wrap .login .loginBox ul li:nth-of-type(3) a i{
+	width: 14px;
+	height: 17px;
+	background: url(../images/toplist.png) no-repeat -20px -40px;
+}
+.topBar .header .wrap .login .loginBox ul li:nth-of-type(4) a i{
+	width: 16px;
+	height: 13px;
+	background: url(../images/toplist.png) no-repeat 0 -23px;
+}
+.topBar .header .wrap .login .loginBox ul li:nth-of-type(5) a i{
+	width: 12px;
+	height: 15px;
+	background: url(../images/toplist.png) no-repeat -2px -42px;
+}
+/****************视频投稿*********/
+.topBar .header .wrap .vedio{
+	float: right;
+    width: 90px;
+    height: 32px;
+    margin: 19px 0 0 12px;
+    box-sizing: border-box;
+    padding-left: 32px;
+    line-height: 30px;
+    color: #ccc;
+    font-size: 12px;
+	text-decoration: none;
+    background: url(../images/topbar.png) no-repeat 0 -140px;
+}
+.topBar .header .wrap .vedio:hover{
+	width: 90px;
+    height: 32px;
+	background: url(../images/topbar.png) no-repeat -100px -140px;
+	color: #fff;
+}
+
+/***********搜索框***********/
+.topBar .header .wrap .search{
+	width: 158px;
+	height: 32px;
+	margin-left: 50px;
+	border-radius: 32px;
+	float: right;
+	margin-top: 19px;
+	background: url(../images/topbar.png) no-repeat 0 -99px;
+	background-color: #fff;
+}
+.topBar .header .wrap .search span{
+	display: block;
+	position: relative;
+	margin: 8px 0 0 30px;
+}
+.topBar .header .wrap .search span input{
+	color: #333;
+	z-index: 1;
+	line-height: 16px;
+	width: 95%;
+	background: transparent;
+	border: 0;
+	position: absolute;
+	top: 0;
+	outline: none;
+}
+.topBar .header .wrap .search span label{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	color: #9b9b9b;
+	font-size: 12px;
+}
+/*****************nav****************/
+.topBar .header .choose{
+	height: 5px;
+	background-color: #c20c0c;
+	position: relative;
+	box-sizing: border-box;
+	top: 70px;
+}
+.topBar .header .nav{
+	height: 29px;
+	background-color: #c20c0c;
+	border-bottom: 1px solid #a40011;
+	position: relative;
+	top: 70px;
+	display: none;
+}
+.topBar .header .nav .navBox{
+	width: 1100px;
+	height: 34px;
+	margin: 0 auto;
+}
+.topBar .header .nav .navBox ul{
+	list-style: none;
+	float: left;
+	padding-left: 180px;
+	position: absolute;
+	margin: 0;
+}
+.topBar .header .nav .navBox ul li{
+	height: 34px;
+	float: left;
+	text-align: center;
+}
+.topBar .header .nav .navBox ul li a{
+	font-size: 12px;
+	text-decoration: none;
+	color: #fff;
+	padding: 0 13px;
+	margin: 2px 17px 0 20px;
+	border-radius: 20px;
+	height: 21px;
+	display: block;
+	line-height: 21px;
+}
+.topBar .header .nav .navBox ul li:nth-of-type(1) a,
+.topBar .header .nav .navBox ul li a:hover{
+	background-color: #9b0909;
+}
+/*************************banner************/
+ .banner{
+	width: 100%;
+	height: 336px;
+	margin-top: 34px;
+	position: relative;
+}
+ .banner .item{
+	/*width: 982px;*/
+ 	/*margin: 0px auto;*/
+	/*position: absolute;*/
+	/*left: 50%;*/
+	/*margin-left: -365px;*/
+}
+ .banner img{
+ 	margin: 0px auto;
+ 	/*margin-right: 254px;*/
+ 	/*position: absolute;*/
+ 	/*left: 0;*/
+ 	position: relative;
+ 	right: 127px;
+	width: 730px;
+	height: 336px;
+}
+ .banner .download{
+	position: absolute;
+	/*top: 0;*/
+	/*left: 913px;*/
+	width: 254px;
+	height: 336px;
+	left: 50%;
+	margin-left: 236px;
+	top: 0;
+	right: 0;
+	background: url(../images/download.png) no-repeat 0 0;
+}
+ .banner .download a{
+	display: block;
+	color: transparent;
+	width: 215px;
+	height: 56px;
+	margin: 212px 0 0 19px;
+}
+ .banner .download a:hover{
+	width: 215px;
+	height: 56px;
+	background: url(../images/download.png) no-repeat 0 -340px;
+}
+ .banner .download p{
+	font-size: 12px;
+	text-align: center;
+	color: #8d8d8d;
+	margin: 10px auto;
+}
+ .banner .carousel-control{
+	width: 37px;
+	height: 63px;
+	position: absolute;
+	top: 50%;
+	margin-top: -31px;
+	z-index: 11;
+}
+ .banner .carousel-control.left{
+	left: 110px;
+	width: 37px;
+	height: 63px;
+	opacity: 10;
+	background: url(../images/banner.png) no-repeat 0 -360px;
+}
+ .banner .carousel-control.left:hover{
+	background: url(../images/banner.png) no-repeat 0 -430px;
+}
+ .banner .carousel-control.right{
+	right: 110px;
+	width: 37px;
+	height: 63px;
+	opacity: 10;
+	background: url(../images/banner.png) no-repeat 0 -508px;
+}
+ .banner .carousel-control.right:hover{
+	background: url(../images/banner.png) no-repeat 0 -578px;
+}
+ .banner .carousel-indicators{
+	width: 730px;
+	height: 20px;
+	position: absolute;
+	left: 50%;
+	margin-left: -365px;
+	top: 310px;
+	/*left: 590px;*/
+	text-align: center;
+}
+ .banner .carousel-indicators li{
+	width: 20px;
+	height: 20px;
+	background: url(../images/banner.png) no-repeat 3px -343px; 
+	outline: none;
+	border: 0;
+}
+ .banner .carousel-indicators li:hover,
+ .banner .carousel-indicators li.active{
+	background: url(../images/banner.png) no-repeat -16px -343px; 
+}
+.carousel-fade .carousel-inner .item{  
+    opacity: 0;   
+    transition-property: opacity ;
+}
+.carousel-fade .carousel-inner .active{  
+    opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right{  
+    left: 0;  
+    opacity: 0;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}

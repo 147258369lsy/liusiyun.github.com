@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// [1,2,3,4,5].sort(function(){ 代码 });如果需要实现对数组进行随机排序,
+		// 那么代码处怎么写
+		function sortNumber(){
+			return Math.random() > 0.5 ? -1 : 1;
+		}
+		var arr = [1,2,3,4,5];
+		arr.sort(sortNumber);
+		console.log(arr);
+	</script>
+</body>
+</html>

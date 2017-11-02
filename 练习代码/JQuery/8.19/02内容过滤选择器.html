@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			var p3 = $('p:empty');
+			console.log(p3);
+
+			var p4 = $('p:has(a)');
+			console.log(p4);
+
+			var box = $('div:has(p a)');
+			console.log(box);
+
+			var box2 = $('div:parent');
+			console.log(box2);
+		})
+	</script>
+</head>
+<body>
+<div>
+	<p>这是第一个段落</p>
+	<p>这不是第一个段落</p>
+	<p>这是第三个段落</p>
+	<p><a href=""></a></p>
+	<p></p>
+</div>
+</body>
+</html>

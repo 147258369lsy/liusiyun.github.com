@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		img{
+			width: 500px;
+			height: 400px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.onload = function () {
+				
+			var img = document.getElementById('image');	
+
+			//对于一些常用的属性，我们可以使用JavaScript中所提供的接口来直接操作
+			//比如src，value（input里面的文字）,id,type
+			//但是只是一部分常用的属性可以直接来操作，其他所有属性都需要通过特殊的函数来处理
+			//按钮1 点击切换图片1
+			document.getElementById('btn1').onclick = function () {
+				// img.src = './1.jpg';
+				img.setAttribute('src', './1.jpg');
+			}
+
+			//按钮2 点击切换图片2
+			document.getElementById('btn2').onclick = function () {
+				// img.src = './222.jpg';
+				img.setAttribute('src', './2.jpg');
+				img.id = '12345';
+				img.alt = "图裂了";
+				//class不能直接操作
+				// img.class = 'img-class';
+			}
+
+
+			var input = document.getElementById('input');
+			input.type = "password";
+
+
+			//按钮的点击
+			document.getElementById('btn3').onclick = function () {
+				//给input标签添加一条属性
+				input.setAttribute('name', 'password');
+				//使用 setAttribute函数可以任意的设置属性到标签中
+				input.setAttribute('abc', '123');
+			}
+
+			document.getElementById('btn4').onclick = function () {
+				console.log(input.getAttribute('abc'));
+			}
+
+
+		}
+
+	</script>
+
+
+
+</head>
+<body>
+	
+	<button id="btn1">1.jpg</button>
+	<button id="btn2">2.jpg</button>
+	<br />
+	<!-- 在HTML标签中，起始标签的内部可以添加属性	 -->
+	<img src="./sfjsf.jpg" alt="文字内容" id="image" />
+	
+
+	<br />
+	<button id="btn3">添加属性</button>
+	<button id="btn4">获取属性</button>
+	<br />
+	<input type="text" id="input" abc='abc'/>
+
+
+
+</body>
+</html>

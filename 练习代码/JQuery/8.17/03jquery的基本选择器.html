@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			//标签选择器
+            var box1 = $('div');
+            console.log(box1);
+
+            //id选择器
+            var box2 = $('#div2');
+            console.log(box2);
+
+            //类选择器
+            var box3 = $('.div3');
+            console.log(box3);
+
+            //并集选择器 两个选择器,满足其中一个条件
+            var box4 = $('.div1, .div3');
+            console.log(box4);
+
+            //交集选择器 两个条件都要满足
+            var box5 = $('.div1#box3');
+            console.log(box5);
+            
+            //子代选择器 选择的是盒子内所有符合要求的元素
+            var box6 = $('.div1 p');
+            console.log(box6);
+		});
+	</script>
+</head>
+<body>
+	<div class="div1">
+		<p class="p1">盒子1里的p1</p>
+		<p>盒子1里的p2</p>
+	</div>
+	<div id="div2">
+		<p>盒子2里的p</p>
+	</div>
+	<div class="div1" id="div3">盒子3</div>
+	<div>盒子4</div>
+	<div>盒子5</div>
+
+	<p>外面的p</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+        <script type="text/javascript">  
+            var str = window.prompt("请输入要统计的字符串");  
+              
+            var countBigLetter = 0;  
+            var countSmallLetter = 0;  
+            var countNumber = 0;  
+            var countOther = 0;  
+              
+            /*遍历字符串中的每个字符*/  
+            for(var i = 0; i < str.length; i++) {  
+                var c = str.charAt(i);  
+                if(c >= "a" && c <= "z") {  
+                    countSmallLetter++;  
+                } else if(c >= "A" && c <= "Z") {  
+                    countBigLetter++;  
+                } else if(c >= "0" && c <= "9") {  
+                    countNumber++;  
+                } else {  
+                    countOther++;  
+                }  
+            }  
+              
+            console.log("字符串:" + str + "中:" + "<br />");  
+            console.log("大写字母个数：" + countBigLetter + "<br />");  
+            console.log("小写字母个数: " + countSmallLetter + "<br />");  
+            console.log("数字： " + countNumber + "<br />");  
+            console.log("其他字符：" + countOther);  
+        </script>  
+  
+</body>
+</html>

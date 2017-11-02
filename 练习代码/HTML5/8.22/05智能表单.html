@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h5>原表单元素</h5>
+	<form action="">
+	    <p>1.文本输入框</p>
+	    <p>新增属性placeholder:指在没有输入时显示的文字内容</p>
+		<input type="text" placeholder="用户名">
+		<br>
+
+		<h4>2.特殊的输入框</h4>
+		<input type="password" placeholder="密码">
+
+		<p>3.按钮</p>
+		写法一:<input type="button" value="按钮1">
+        写法二:<button>按钮2</button>
+
+        <p>4.单选框和多选框</p>
+        <p>单选框radio 使用name属性可以做到选择的互斥效果</p>
+        男:<input type="radio" name="sex">女:<input type="radio" name="sex"><br>
+        星期一<input type="checkbox">星期二<input type="checkbox">
+
+        <p>5.提交按钮(有一个默认的跳转效果)</p>
+        <input type="submit">
+
+        <p>6.重置按钮</p>
+        <input type="reset">
+
+        <h4>7.下拉列表</h4>
+        <select name="city" id="city">
+        	<option value="1">杭州</option>
+        	<option value="2">深圳</option>
+        	<option value="3">北京</option>
+        	<option value="4">上海</option>
+        </select>
+	</form>
+    
+    <h3>HTML5中的表单元素</h3>
+	<form action="">
+		<h4>1.图片按钮</h4>
+		<p>图片按钮是一个点击后会自动提交表单的按钮,提交时会在提交的参数中加入点击时鼠标的位置</p>
+		<input type="image" src="https://www.baidu.com/img/bd_logo1.png">
+
+		<h4>2.时间选择控件</h4>
+		<input type="time">
+         
+         <h4>3.日期选择控件</h4>
+         <input type="date">
+
+         <h4>4.时间+日期</h4>
+         <input type="datetime-local">
+
+         <h4>5.颜色选择器</h4>
+         <input type="color">
+
+         <h4>6.滑块</h4>
+         <p>最大值,最小值,步长值</p>
+         <input type="range" min="10" max="30" step="1">
+
+
+	     <h4>必填项</h4>
+	     <p>在提交表单时,会逐一的判断必填项中是否填写了文本内容,如果没有则提示用户</p>
+	     <input type="text" placeholder="用户名" required>
+	     <!-- required 属性规定必须在提交之前填写输入域（不能为空） -->
+	     <br>
+	     <input type="submit">
+
+	     <h4>使用正则表达式来判断填写内容</h4>
+	     <p>正则表达式是一种用来表达某个字符串规律的表达式,用于查找/匹配字符串内容,如果不匹配则弹出提示</p>
+	     <input type="text" placeholder="请输入手机号码" pattern='^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$' required>
+
+	     <h4>数字输入框</h4>
+	     <input type="number" min="1" max="10" step="1">
+
+	     <h4>手机端的虚拟键盘适配</h4>
+	     <p>数字键盘</p>
+	     <input type="number" placeholder="number">
+	     <p>E-mail</p>
+	     <input type="eail" placeholder="email">
+	     <h4>tel电话拨号键盘</h4>
+	     <input type="tel" placeholder="tel">;
+	     <h4>网址输入框url</h4>
+	     <input type="url" placeholder="url">
+	</form>
+
+</body>
+</html>

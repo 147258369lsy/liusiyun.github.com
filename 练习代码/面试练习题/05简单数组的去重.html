@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+    var arr1 = [1,2,2,2,3,3,3,4,5,6],
+    var arr2 = [];
+    for(var i = 0; i < arr1.length; i++){
+        if(arr2.indexOf(arr1[i]) < 0){
+            arr2.push(arr1[i]);
+        }
+    }
+    console.log(arr2); // 1,2,3,4,5,6
+    
+// indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+// 如果没有找到匹配的字符串则返回 -1。
+// arr2.indexOf(arr[i]) <0 表示查询arr2数组中已插入的数据不存在arr1中要插入相同重复的数,
+// 则将arr1中此数据继续插入到arr2中，否则不执行，进行下一次循环。
+
+
+	</script>
+</body>
+</html>

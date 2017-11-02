@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+      *{
+      	margin: 0;
+      	padding: 0;
+      	text-decoration: none;
+      }
+      .line{
+            width: 100%;
+            height: 20px;
+            background-color: #dfdfdf;
+      } 
+      body{
+      /*background-color: #ccc;*/
+      }
+      section.me{
+      	width: 100%;
+      	height: 1300px;
+        position: relative;
+      }
+      div.personal{
+      	width: 100%;
+      	background-color: #ff9914;
+      	height: 490px;
+        position: relative;
+      }
+
+      section.me .set{
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            background:  url(./img/set@2.png) center center no-repeat;
+            background-size: 44px 44px;
+            position: absolute;
+            top: 28px;
+            right: 28px;
+        }
+      div.face{
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+        margin-top: 90px;
+        margin-left: -90px;
+      }
+      div.face span.datou{
+      	width: 60px;
+      	height: 60px;
+      	background-color: #ff9914;
+      	border-radius: 50%;
+      	position: absolute;
+      	top: 10%;
+      	left: 50%;
+      	margin-left: -30px;
+      }
+      div.face span.shenti{
+      	width: 120px;
+      	height: 60px;
+      	background-color: #ff9914;
+      	border-radius:60px 60px 0 0 ;
+      	position: absolute;
+      	top: 42%;
+      	left: 50%;
+      	margin-left: -60px;
+      }
+      div.register{
+      	width:100%;
+      	height: 50px;
+      	font-size: 30px;
+      	position: absolute;
+      	bottom: 60px;
+      	padding:0 30px;
+      	line-height: 50px;
+      }
+      div.register a{
+      	text-align: center;
+      	display: inline-block;
+      	border-radius: 10px;
+      	width: 40%;
+      	height: 50px;
+      	background-color: #fff;
+      	color: #ff9914;
+      }
+      div.register .login{
+        float: left;
+      }
+      div.register .registerd{
+        float: right;
+      }
+      section.me div.like{
+      	height: 100px;
+      	background-color: #fff;
+      	padding: 25px 0;
+      }
+      section.me div.like a{
+      	display: inline-block;
+      	float: left;
+      	text-align: center;
+      	line-height: 50px;
+      	width: 50%;
+      	height: 50px;
+      	font-size: 30px;
+      	color: #686868;
+      }
+      section.me div.like a.shoucang{
+      	border-right: 1px solid #686868;
+      }
+        a i.shoucang{
+        	display: inline-block;
+        	margin-right: 20px;
+        	width: 44px;
+        	height: 44px;
+    		background:url('./img/shoucang@2x.png') center center no-repeat;
+    		vertical-align: -20%;
+    	}
+    	a i.guanzhu{
+    		display: inline-block;
+    		margin-right: 20px;
+    		width: 44px;
+    		height: 44px;
+    		background:url('./img/guanzhu@2x2.png') center center no-repeat;
+    		vertical-align: -20%;
+    	}
+
+
+    	section.me .footer ul{
+    		margin-top: 20px;
+    		background-color: #fff;
+            list-style: none;
+    	}
+    	section.me .footer ul li{
+    		font-size: 28px;
+    		line-height: 88px;
+    		margin: 0 28px 0 98px;
+    		border-bottom: 1px solid #e6e6e6;
+    		position: relative;
+    	}
+    	section.me .footer ul li a{
+    		color: #686868;
+    	}
+    	section.me .footer ul li a i{
+    		display: inline-block;
+			width: 44px;
+			height: 44px;
+			color: #282828;
+			background:  url(./img/back1@2x.png) center center no-repeat;
+			position: absolute;
+			top: 50%;
+			margin-top: -22px;
+			right: 0;
+    	}
+    	section.me .footer ul li a::before{
+    		content: '';
+    		width: 44px;
+    		height: 44px;
+    		display: inline-block;
+			position: absolute;
+			top: 22px;
+			left: -66px;
+			color: #282828;
+    	}
+    	section.me .footer .top-list li:nth-of-type(1) a::before{
+    		background: url(./img/dingdan@2x.png) center center no-repeat;
+    	}
+    	section.me .footer .top-list li:nth-of-type(2) a::before{
+    		background:  url(./img/tuijian@2x.png) center center no-repeat;
+    	}
+    	section.me .footer .und-list li:nth-of-type(1) a::before{
+    		background: url(./img/yonghufankui@2x.png) center center no-repeat;
+    	}
+    	section.me .footer .und-list li:nth-of-type(2) a::before{
+    		background:  url(./img/kefu@2.png) center center no-repeat;
+            background-size: 44px 44px;
+    	}
+
+
+      /**/
+      #footer nav.navbar{
+        width: 100%;
+      }
+    #footer ul{
+        width: 100%;
+        height: 100px;
+        margin: 0;
+    }
+    #footer ul li a{
+        text-align: center;
+        /*width: 100%;*/
+        padding: 0;
+        line-height: 100px;
+        /*margin-right:20%; */
+    }
+   
+    #footer ul li{
+        height: 100%;
+        background-color: #fff;
+        box-shadow:  0 0 0 #fff;
+    }
+    </style>
+</head>
+
+<body>
+   <section class="me">
+   	<div class="personal">
+        <a href="settings-un.html" class="set"></a>
+   		<div class="face">
+   			<span  class="datou"></span>
+   			<span class="shenti"></span>
+   		</div>
+   		
+   		<div class="register" >
+   			<a href="EnterIn.html " class="login">登录</a>
+   			<a href="register.html " class="registerd">注册</a>
+   		</div>
+   	</div>
+   	<div class="like">
+   		<a href="collection.html" class="shoucang"><i class="shoucang"></i>收藏</a>
+   		<a href="attention.html"><i class="guanzhu"></i>关注</a>
+   	</div>
+
+
+   	<div class="footer">
+    <div class="line"></div>
+			<ul class="top-list">
+				<li><a href="MyOrder.html">我的订单<i></i></a></li>
+				<li style="border: 0;"><a href="#">推荐给好友<i></i></a></li>
+			</ul>
+      <div class="line"></div>
+			<ul class="und-list">
+				<li><a href="opinion.html">用户反馈<i></i></a></li>
+				<li style="border: 0;"><a href="#">联系客服<i></i></a></li>
+			</ul>
+      <div class="line"></div>
+	 </div>
+     
+
+
+      <section id="footer">
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+        <!-- 板心 -->
+            <div class="container-fliud">
+                 <ul class="nav navbar-nav">
+                    <li class="col-xs-3"><a href="index.html"><img src="./img/dibiaoqian_15.png" data-image="./img/dibiaoqian_03.png"></a></li>
+                    <li class="col-xs-3"><a href="zixunshishouye.html"><img src="./img/dibiaoqian_16.png" data-image="./img/dibiaoqian_05.png"></a></li>
+                    <li class="col-xs-3"><a href="./元素-首页/yuansu.html"><img src="./img/dibiaoqian_17.png"  data-image="./img/dibiaoqian_07.png"></a></li>
+                    <li class="col-xs-3 "><a href="#"><img src="./img/dibiaoqian_09.png"  data-image="./img/dibiaoqian_09.png"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+   </section>
+  
+
+    <script src="./lib/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    <!-- js代码 -->
+    <script type="text/javascript">
+    $(function () {
+      var img = $("#footer ul li img");
+         var arrimgSrc = [];
+            img.on("click",function () {
+              $("#footer ul li img").each(function (index,subimg) {
+                var imgup = subimg.dataset.image;
+                var imghover = $("#footer ul li img").eq(index).attr('src');
+                arrimgSrc.push($(subimg).attr("src"));
+                $(subimg).attr("src",arrimgSrc[index]);
+              });
+              $(this).attr('src',$(this).attr("data-image"));
+              
+            });
+    });
+    </script>
+
+
+</body>
+
+</html>

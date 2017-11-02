@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function() {
+			var file = document.getElementById('wenjian');
+			file.onchange = function(){
+				var path = this.value;
+   
+				var index = path.lastIndexOf('.');
+				var fileType = path.substr(index);
+				console.log(fileType);
+
+				fileType = fileType.toLowerCase();
+
+				//判断文件类型
+				if(fileType == '.jpg' || fileType== '.png'){
+					console.log('这是一个图片文件');
+				}else if(fileType == '.html'){
+					console.log('这是一个网页')
+				}else {
+					console.log('这是一个未知文件');
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="file" id="wenjian">
+</body>
+</html>

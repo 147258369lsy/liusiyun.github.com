@@ -1,0 +1,88 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			width: 500px;
+			height: 500px;
+			background-color: #f00;
+		}
+	</style>
+	<script type="text/javascript" src='./select.js'></script>
+	<script type="text/javascript">
+		
+
+	window.onload = function () {
+		
+		//动画对象
+		var box = $('#box');
+		//当前颜色
+		var red = 255;
+		var green = 0;
+		var blue = 0;
+		//目标颜色
+		var red_target = 255;
+		var blue_target = 0;
+		var green_target = 0;
+		//开启缓动动画
+		setInterval(function () {
+
+			//计算当前值 并取整
+			//不做取整操作的话  在转化为16进制数的时候会变成带有小数点的十六进制数
+			red = parseInt(red + (red_target - red) / 20);
+			green = parseInt(green + (green_target - green) / 20);
+			blue = parseInt(blue + (blue_target - blue) / 20);
+
+			// 当一个颜色值转化为16进制的时候，会出现问题
+			// 比如颜色值为  255，0，5   
+			// 255 ~ ff
+			// 0 ~ 0
+			// 5 ~ 5
+			//所以最后的值是 #ff05  这样的格式是不合符颜色的书写规则的
+			//需要我们在转化完毕后对十六进制数的字符串判断长度，如果长度为1则需要在前面补全0
+			var redString = red.toString(16);
+			if (redString.length == 1) {
+				redString = '0'+redString;
+			}
+
+			var greenString = green.toString(16);
+			if (greenString.length == 1) {
+				greenString = '0'+greenString;
+			}
+			var blueString = blue.toString(16);
+			if (blueString.length == 1) {
+				blueString = '0'+blueString;
+			}
+
+			//通过加法  得到最后的颜色值
+			var color = "#" + redString + greenString + blueString;
+			//设置背景颜色
+			box.style.backgroundColor = color;
+		}, 50);	
+
+		$('#btn').onclick = function () {
+
+			//根据点击改变目标颜色
+			red_target = parseInt($("#red").value);
+			green_target = parseInt($("#green").value);
+			blue_target = parseInt($("#blue").value);
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+
+	<div class="from">
+		<p>Red: <input type="text" id="red" /></p>
+		<p>Green: <input type="text" id="green" /></p>
+		<p>Blue: <input type="text" id="blue" /></p>
+		<button id="btn">变色</button>
+	</div>
+
+
+</body>
+</html>

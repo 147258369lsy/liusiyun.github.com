@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+
+		.container header h2{
+			text-align: center;
+		}
+
+		.container section.item{
+			box-sizing: border-box;
+			width: 200px;
+			height: 200px;
+			border: 1px solid #bbb;
+			float: left;
+			margin: 25px;
+			position: relative;
+		}
+		.container section.item h3{
+			width: 200px;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 28px;
+			z-index: 9;
+		}
+
+		.container section.item:hover h3{
+			display: block;
+		}
+		
+		div.content{
+			width: 150px;
+			height: 150px;
+			/*background-color: red;*/
+			margin: 25px;
+			border: 1px solid red;
+		}
+
+		.item:nth-of-type(1) .content{
+			
+			/*设置box的圆角边框*/
+			border-radius: 10px;
+		}
+		.item:nth-of-type(2) .content{
+			
+			/*50%表示半径为当前矩形边长的一半*/
+			/*正圆形*/
+			border-radius: 50%;
+		}
+		.item:nth-of-type(3) .content{
+			/*拱形*/
+			/*设置圆角半径时，可以按照顺时针的顺序，从左上角开始分别设置每一个角的圆角半径*/
+			border-radius: 50% 50% 0 0; 
+		}
+		.item:nth-of-type(4) .content{
+			border-radius: 75px 75px 0 0;
+			/*半圆就是没有下半部分的拱形*/
+			/*高度发生变化时，高度的50%也会随之改变。所以圆角半径需要设定75px的固定值*/
+			height: 75px ;
+			margin-top: 60px ;
+		}
+        .item:nth-of-type(5) .content{
+        	border-radius: 50% 0 0 0;
+        }
+        .item:nth-of-type(6) .content{
+        	border-radius: 75px 0 0 0;
+        	height: 75px ;
+        	width: 75px ;
+        	margin-top: 60px ;
+        	margin-left: 50px ;
+        }
+        .item:nth-of-type(7) .content{
+        	height: 75px ;
+        	border-radius: 50%;
+        	margin-top: 60px ;
+        }
+        .item:nth-of-type(8) .content{
+        	width: 75px ;
+        	border-radius: 50%;
+            margin: 25px auto ;
+        }
+        .item:nth-of-type(9) .content{
+        	height: 37.5px ;
+        	border-radius: 75px 75px 0 0 / 37.5px 37.5px 0 0;
+        	margin-top: 60px ;
+        }
+        .item:nth-of-type(10) .content{
+        	width: 37.5px ;
+        	border-radius: 37.5px 0 0 37.5px / 75px 0 0 75px;
+        	margin: 25px auto ;
+        }
+        .item:nth-of-type(11) .content{
+        	width: 37.5px ;
+        	height: 75px ;
+        	border-radius: 37.5px 0 0 0 / 75px 0 0 0;
+        	margin: 25px auto ;
+        }
+        .item:nth-of-type(12) .content{
+            border-radius: 75px 0 0 0 / 37.5px 0 0 0;
+        }
+        .item:nth-of-type(13) .content{
+        	width: 50px ;
+        	height: 50px ;
+        	border: 50px solid red ;
+        	border-radius: 50%;
+        }
+          .item:nth-of-type(14) .content{
+        	width: 50px ;
+        	height: 50px ;
+        	border: 50px solid red ;
+        	border-radius: 55px;
+        }
+        .item:nth-of-type(15) .content{
+        	width: 50px ;
+        	height: 50px ;
+        	border:50px solid red ;
+        	border-radius: 75px 0 0 0;
+        }
+         .item:nth-of-type(16) .content{
+            width: 50px ;
+        	height: 50px ;
+        	border:50px solid red ;
+        	border-radius: 75px 0; /*相对相等 ,左上角和右下角半径相对*/
+         }
+        .item:nth-of-type(17) .content{
+        	width: 0 ;
+        	height: 0 ;
+        	border: 75px solid red;
+        	border-color:red green blue yellow ;
+        }
+        .item:nth-of-type(18) .content{
+        	width: 0;
+        	height: 0 ;
+        	border: 75px solid red;
+        	border-color:red transparent blue yellow ;
+        }
+        .item:nth-of-type(19) .content{
+        	width: 0 ;
+        	height: 0 ;
+        	border: 75px solid red ;
+        	border-right-color: transparent  ;
+        	border-radius: 50%;
+        }
+        .item:nth-of-type(20) .content{
+        	width: 0 ;
+        	height: 0 ;
+        	border: 75px solid transparent ;
+        	border-right-color: red ;
+        	border-radius: 50%;
+        }
+        .item:nth-of-type(21),
+        .item:nth-of-type(22){
+        	background-color: #888 ;
+        }
+        .item:nth-of-type(21) .content{
+        	width: 150px ;
+        	height: 0 ;
+        	border-radius: 75px;
+        	border:75px solid #fff ;
+        	border-color: #fff #fff #000 #000 ;
+        	border-width: 75px 0 ;
+        }
+        .item:nth-of-type(22) .content{
+        	width: 150px ;
+        	height: 0 ;
+        	border-radius: 75px;
+        	border:75px solid #fff ;
+        	border-color: #fff #fff #000 #000;
+        	border-width: 75px 0 ;
+        	position: relative;
+        }
+        .item:nth-of-type(22) .content::before,
+        .item:nth-of-type(22) .content::after{
+             content: '';
+             width: 25px;
+             height: 25px;
+             border:25px solid #fff;
+             position: absolute;
+             top: 50%;
+             margin-top: -37.5px;
+             border-radius: 50%;
+        }
+        .item:nth-of-type(22) .content::before{
+        	background-color: #fff;
+        	border-color: #000;
+        	left: 0;
+        }
+        .item:nth-of-type(22) .content::after{
+        	background-color: #000;
+        	border-color: #fff;
+        	right: 0;
+        }
+        .item:nth-of-type(23) .content{
+        	width: 50px;
+        	height: 50px;
+        	border-width: 40px 0 40px 50px;
+        	border-style: solid;
+        	border-color: red;
+        	border-radius: 0 0 60px 0;
+        	margin-left: 50px;
+        }
+          .item:nth-of-type(24) .content{
+          	height: 75px;
+            margin-top: 60px;
+            background-color: red;
+            border-radius: 10px;
+            position: relative;
+        }
+        .item:nth-of-type(24) .content::before{
+        	content: '';
+        	width: 0;
+        	height: 0;
+        	border:10px solid transparent;
+        	border-right-color: red;
+        	position: absolute;
+        	left: -20px;
+        	top: 20px;
+        	border-width: 6px 10px;
+        }
+        .item:nth-of-type(25) .content{
+             box-sizing: border-box;
+             width: 150px;
+             height: 100px;
+             border-width: 30px 15px 30px 50px;
+             border-style: solid;
+             border-color: red;
+             border-radius: 45px;
+             margin-top: 50px;
+        }
+        .item:nth-of-type(26) .content{
+          	height: 75px;
+            margin-top: 60px;
+            background-color: red;
+            border-radius: 5px;
+            position: relative;
+        }
+        .item:nth-of-type(26) .content::before{
+        	content: '';
+        	width: 20px;
+        	height: 30px;
+        	position: absolute;
+        	right: -20px;
+        	border-color: red;
+        	border-width: 0 0 30px 30px;
+        	border-style: solid;
+        	border-radius:0 0 50px 0 ;
+        }
+        .box{
+        	width: 50px;
+        	height: 50px;
+        	margin: 50px auto;
+        	background-color: red;
+        	border-left-color: blue;
+        	border-bottom-color: green;
+        	border-width:0 0 50px 50px;
+        	border-style: solid;
+        	border-radius: 0 0 80px 0 ;
+        }
+	</style>
+</head>
+<body>
+
+<div class="container">
+	
+	<header>
+		<h2>边框圆角</h2>
+	</header>
+
+	<section class="item">
+		<h3>圆角矩形1</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>正圆2</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>拱形3</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>半圆4</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>左上角5</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>四分之一圆6</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>横的椭圆7</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>竖的椭圆8</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>半个椭圆9</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>半个竖椭圆10</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>1/4的椭圆11</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>椭圆切左上角</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>圆环13</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>方圆饼14</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>左上角圆饼15</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>对角圆饼16</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>17</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>18</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>19</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>20</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>21</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>22</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>23</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>24</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>25</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>26</h3>
+		<div class="content"></div>
+	</section>
+	<section class="item">
+		<h3>27</h3>
+		<div class="box"></div>
+	</section>
+	<section class="item">
+		<h3>28</h3>
+		<div class="content"></div>
+	</section>
+</div>
+
+
+</body>
+</html>

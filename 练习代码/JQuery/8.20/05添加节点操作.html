@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			var box1 = $('#box1');
+            //append添加一个节点到里面指定节点内部的末尾
+			box1.append('<ul></ul>');
+			//用法二:添加文本(在DOM中文本也是一种节点)
+			box1.append('一些文本内容');
+			//用法三:添加DOM对象
+			var h3 = document.createElement('h3');
+			h3.innerHTML = '三好标题'
+			box1.append(h3);
+			//用法四:添加jQuery对象
+			var h4 = '<h4 class="red">四号标题</h4>';
+			console.log($(h4));
+			box1.append($(h4));
+
+			//prepend 添加一个节点到指定节点内部的开头
+			box1.prepend('<div id="box2"></div>')
+
+			//反向加入
+			box1.appendTo($('.box8'));
+
+			//在该元素的前后分别添加节点
+			box1.after('<p>后面加一个p</p>');
+			box1.before('<p>前面加一个p</p>');
+		})
+	</script>
+</head>
+<body>
+	<div id="box1">
+		<h3>3级标签</h3>
+		<p>p1</p>
+		<p>p2</p>
+	</div>
+
+	<div class="box8"></div>
+</body>
+</html>

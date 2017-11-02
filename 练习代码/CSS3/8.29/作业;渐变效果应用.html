@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+		.container h2{
+			text-align: center;
+		}
+		.container section.item{
+			box-sizing: border-box;
+			width: 200px;
+			height: 200px;
+			border: 1px solid #bbb;
+			float: left;
+			margin: 25px;
+			position: relative;
+		}
+		.container section.item h3{
+			width: 200px;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 28px;
+		}
+		.container section.item:hover h3{
+			display: block;
+		}		
+		div.content{
+			width: 150px;
+			height: 150px;
+			/*background-color: red;*/
+			margin: 25px;
+			border: 1px solid red;
+			box-sizing: border-box;
+		}
+	</style>
+	<style>
+       .item:nth-of-type(1) .content{
+         text-align: center;
+         line-height: 75px;
+         color: white;
+       	 /*用线性渐变*/
+       	 height: 75px;
+       	 border-radius: 5px;
+       	 border:0;
+       	 margin-top: 60px;
+       	 background-color: green;
+       	 background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
+       }
+       .item:nth-of-type(2) .content{
+       	  /*用径向渐变*/
+       	  border:0;
+       	  border-radius: 50%;
+       	  background-color: blue;
+       	  background-image: radial-gradient(75px at 40px 40px, rgba(0,0,0,0),rgba(0,0,0,0.7));
+       }
+       .item:nth-of-type(3) .content{
+       	 border:0;
+       	 height: 40px;
+       	 margin-top: 80px;
+       	 background-image: repeating-linear-gradient(135deg,yellow 10%, yellow 20%, green 20%, green 30%);
+       	 background-position: 0;
+       }
+	</style>
+	<script>
+		window.onload = function(){
+           var gundong = document.getElementById('gundong');
+           var backgroundPosition = 0;
+           setInterval(function(){
+           	  backgroundPosition++;
+           	  gundong.style.backgroundPosition = backgroundPosition +'px';
+           },10);
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h2>实例作业</h2>		
+		<section class="item">
+			<h3></h3>
+			<div class="content">保存</div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content" id="gundong"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+	</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jquery-3.2.1.js'></script>
+	<script>
+		$(function() {
+          //兄弟选择器
+          //#li4之后的所有的li 并且#li4和后面的li是兄弟关系
+          $('#li4 ~ li').css('color', 'red');
+
+          //下一个兄弟选择器 
+          //某一个标签同一等记下,相邻的一个元素
+          $('#li4 + li').css('fontSize', '100px');
+
+          //过滤选择器(奇数,偶数)
+          //奇数选择器:所有li中选中序号为奇数的li,序号从0开始
+          $('li:odd').css('color', 'red');
+          //偶数选择器
+          $('li:even').css('color','green');
+
+          //eq  选中的事执行序号的li
+          $('li:eq(5)').css('backgroundColor','#ccc');
+            
+          //li:lt(x) 序号小于x的所有的li  不包括边界(lt:less than)
+          $('li:lt(3)').css('border', '1px solid yellow');
+          //li:gt(x) 序号大于x的所有的li 不包括边界(gt:great than)
+          $('li:gt(7)').css('border', '1px dashed blue');
+
+
+    //first(选择序号为0的第一个li) last(选择最后一个li) 
+          $('li:first').css('fontSize', '30px');
+          $('li:last').css('fontSize', '8px');
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>第1个li</li>
+			<li>第2个li</li>
+			<li>第3个li</li>
+			<li id="li4">第4个li</li>
+			<li>第5个li</li>
+			<li>第6个li</li>
+			<li>第7个li</li>
+			<li>第8个li</li>
+			<li>第9个li</li>
+		</ul>
+
+		<ul>
+			<li>这里有第1</li>
+			<li>这里有第2</li>
+			<li>这里有第3</li>
+			<li>这里有第4</li>
+			<li>这里有第5</li>
+			<li>这里有第6</li>
+		</ul>
+	</div>
+</body>
+</html>

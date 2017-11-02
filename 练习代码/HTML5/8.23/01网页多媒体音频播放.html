@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0;padding: 0;}
+	   #play_btn{
+	   	display: block;
+	   	width: 400px;
+	   	height: 100px;
+	   	border-radius: 20px;
+	   	background-color: #0f0;
+	   	position: relative;
+	   }
+	   #play_btn #music_time{
+	   	display: inline-block;
+	   	 height: 64px;
+	   	 width: 64px;
+	   	 background: url('2.png') no-repeat;
+	   	 position: absolute;
+	   	 top: 18px;
+	   	 left: 18px;
+	   }
+	   #progress{-webkit-appearance: none;}
+	  	#progress::-webkit-progress-bar{
+			width: 220px;
+			height: 11px;
+			/*background-color: #ccc;*/
+			border:3px solid white;
+			border-radius: 15px;
+			position: absolute;
+			left: 85px;
+			top: 44px;
+		}
+		#progress::-webkit-progress-value{
+			background-color: blue;
+			height: 5px;
+			width: 10px;
+			border-radius: 5px;
+		}
+		#time1{
+			display: inline-block;
+			float:right;
+			margin-top: 38px;
+			margin-right: 25px;
+		}
+	</style>
+</head>
+<body>
+	<h3>音频播放</h3>
+	<p>audio标签 HTML5中用于播放音频文件的新标签</p>
+	<p>controls="controls"在当前的音频播放器中显示默认的播放控制器</p>
+	<audio src="media/music.mp3" id="music" controls="controls" style="display: none;"></audio>
+	<a href="javascript:;" id="play_btn">
+		<span id="music_time"></span>
+		<progress id="progress" value="0" max="214"></progress>
+		<span id="time1"></span>
+	</a>
+	<!-- <a href="javascript:;" id="pause_btn">停止播放</a> -->
+	
+	<script>
+		var music_player =document.getElementById('music');
+		var play_btn =document.getElementById('play_btn');
+		var pause_btn =document.getElementById('pause_btn');
+		var music_time = document.getElementById('music_time');
+		var progress = document.getElementById('progress');
+		var timeSpan1 = document.getElementById('time1');
+		// console.log(progress.value);
+        //播放
+		// play_btn.onclick = function() {
+		// 	music_player.play();
+		// }
+  //       //暂停
+		// pause_btn.onclick = function(){
+		// 	music_player.pause();
+		// }
+		music_time.onclick = function(){
+			if(music_player.paused){
+				music_player.play();
+				music_time.style.backgroundImage = "url('1.png')";
+			}else{
+				music_player.pause();
+				music_time.style.backgroundImage = "url('2.png')";
+			}
+			
+		}
+
+		music_player.ondurationchange = function(){
+			// var timeSpan1 = document.getElementById('time1');
+			// var duration = parseInt(music_player.duration);
+			// timeSpan1.innerHTML = parseInt(duration / 60) + ':' + (duration % 60);
+
+			setInterval(function(){				
+				var duration = parseInt(music_player.duration);
+			    var currentTime = parseInt(music_player.currentTime);
+			     var s = currentTime%60;
+			     s = s < 10 ? '0' + s : s;
+			    timeSpan1 .innerText = parseInt(currentTime/60) + ':' + s + '/' + parseInt(duration / 60) + ':' + (duration % 60);
+			    progress.value = currentTime;
+			    // console.log(currentTime);
+			    if(progress.value == 214){
+			    	music_player.pause();
+			    	music_time.style.backgroundImage = 'url("2.png")';
+			    }
+         //        progress.onclick = function(event){
+			      // // console.log('click');
+			      // var e = event ? event : window.event;
+			      // var left = e.offsetX - 88;
+			      // console.log(left);
+			      // currentTime = left;
+         //          progress.value = left;
+                
+                                                 
+		       // }
+		
+			},400);
+
+			
+				
+		}
+		
+
+	</script>
+</body>
+</html>

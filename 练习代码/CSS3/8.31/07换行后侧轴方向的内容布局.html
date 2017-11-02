@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+
+		.container header h2{
+			text-align: center;
+		}
+
+		.container section.item{
+			box-sizing: border-box;
+			width: 950px;
+			border: 1px solid #bbb;
+			margin: 25px;
+			position: relative;
+			padding: 25px;
+
+			height: 1000px;
+			display: flex;
+		}
+		.container section.item h3{
+			width: 100%;
+			height: 100%;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 28px;
+		}
+
+		.container section.item:hover h3{
+			display: block;
+		}
+		
+		div.content{
+			width: 200px;
+			height: 150px;
+			border: 1px solid red;
+			box-sizing: border-box;
+			background-color: pink;
+			font-size: 40px;
+			font-weight: 900;
+			color: #fff;
+			line-height: 150px;
+			text-align: center;
+		}
+	
+		.item{
+			flex-wrap: wrap;
+		}
+
+		/*warp值可以控制元素的是否换行，默认值为nowarp*/
+		/*换行后，控制多行元素在侧轴方向的布局*/
+		/*align-content*/
+		.item:nth-of-type(1){
+			/*侧轴方向所有的元素贴靠到侧轴的起始方向*/
+			align-content: flex-start;
+		}
+		.item:nth-of-type(2){
+			/*侧轴方向所有的元素贴靠到侧轴的末尾方向*/
+			align-content: flex-end;
+		}		
+		.item:nth-of-type(3){
+			/*侧轴方向所有的元素贴靠到侧轴的中间位置*/
+			align-content: center;
+		}
+		.item:nth-of-type(4){
+			/*和 justify-content中的space-around相同*/
+			align-content: space-around;
+		}	
+		.item:nth-of-type(5){
+			/*和 justify-content中的space-around相同*/
+			align-content: space-between;
+		}
+		.item:nth-of-type(6){
+			/*根据内容所占的行数进行拉伸，默认情况下每一行的高度相同*/
+			align-content: stretch;
+		}
+		.item:nth-of-type(6) .content{
+			height: auto;
+				/*
+			将元素的高度（宽度，侧轴反向变化时）进行拉伸，拉伸到当前侧轴长度，
+			如果给元素设定了固定的大小，则无效
+			使高度或者宽度的值 为auto时此属性才生效
+			*/
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<header>
+		<h2>flex-warp</h2>
+		<p>flex-warp用于控制主轴中元素的换行，有两个值，warp和nowarp</p>
+	</header>
+	<section class="item">
+		<h3>flex-start</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+		<div class="content">6</div>
+		<div class="content">7</div>
+		<div class="content">8</div>
+		<div class="content">9</div>
+	</section>
+	<section class="item">
+		<h3>flex-end</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+		<div class="content">6</div>
+		<div class="content">7</div>
+		<div class="content">8</div>
+		<div class="content">9</div>
+	</section>
+
+	<section class="item">
+		<h3>center</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+		<div class="content">6</div>
+		<div class="content">7</div>
+		<div class="content">8</div>
+		<div class="content">9</div>
+	</section>
+
+	<section class="item">
+		<h3>space-around</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+		<div class="content">6</div>
+		<div class="content">7</div>
+		<div class="content">8</div>
+		<div class="content">9</div>
+	</section>
+	<section class="item">
+		<h3>space-between</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+		<div class="content">6</div>
+		<div class="content">7</div>
+		<div class="content">8</div>
+		<div class="content">9</div>
+	</section>
+	<section class="item">
+		<h3>stretch</h3>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+		<div class="content">6</div>
+		<div class="content">7</div>
+		<div class="content">8</div>
+	</section>	
+</div>
+	
+</body>
+</html>

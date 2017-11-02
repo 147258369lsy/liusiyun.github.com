@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    function fibo(num){
+
+        var fibo1 = 1;
+        var fibo2 = 1;
+        for(var i = 1 ;i < num; i++){
+
+            var temp = fibo2;
+            fibo2 = fibo1 + fibo2;
+            fibo1 = temp;
+        }
+       return fibo1;
+    }
+      console.log(fibo(6));
+
+</script>
+</body>
+</html>

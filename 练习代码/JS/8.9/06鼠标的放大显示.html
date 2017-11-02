@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd 
+
+">
+<html xmlns="http://www.w3.org/1999/xhtml 
+
+" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			padding:100px;
+
+		}
+		.box .small{
+			width: 200px;
+			height: 200px;
+			float: left;
+			border:1px solid #aaa;
+			margin-right: 20px;
+			position: relative;  /*父相1*/
+		}
+		.box .small img{
+			width: 200px;
+			height: 200px;
+		}
+  /* mask / small = large / img原图大小(800) -->算出mask宽高为90*/
+		.box .small #mask{
+			width: 90px;
+			height: 90px;
+			position: absolute;  /*定位:子绝1,用定位使其再父盒子里移动*/
+			background-color: rgba(255,255,0,0.3);
+			left: 0;
+			top: 0;
+            cursor: move;
+		}
+		.box .large {
+			width: 360px;
+			height: 360px;
+			float: left;
+			border:1px solid #aaa;
+			overflow: hidden;
+			position: relative;  /*定位:子绝2;*/
+		}
+		.box .large img{
+			position: absolute;  /*定位:父相2;*/
+			top: 0;
+			left: 0;
+		}
+	</style>
+
+	<script>
+		window.onload = function(){
+	 //步骤一:先获取需要的元素
+			var small = document.getElementsByClassName('small')[0];
+			var large = document.getElementsByClassName('large')[0];
+			var mask = document.getElementById("mask");
+
+	 //步骤二:添加鼠标滑入显示大图,滑出时滑出时隐藏大图!
+			//鼠标滑入时,显示大图
+			//由于是在samll里任意移动遮盖层,故点击事件应该加给small!
+			small.onmouseover = function(){
+				large.style.display = 'block';
+				mask.style.display = 'block';
+			}
+			//鼠标滑出时,隐藏大图
+			small.onmouseout = function(){
+				large.style.display = 'none';
+				mask.style.display = 'none';
+			}
+	 //步骤三:鼠标在小图中移动时
+			small.onmousemove = function(e){
+				//获取事件对象
+				var event = e ? e : window.event;
+				var x;
+				var y;
+				//event.target指的是鼠标点击或移动时,所在的盒子,计算坐标的参考系
+
+				//判断参考系是小盒子,需要做转化
+				if (event.target == mask){
+				    x = e.offsetX + mask.offsetLeft;
+				       // offsetX为中心到黄色小盒子左边的距离
+					y = e.offsetY + mask.offsetTop;
+				} else {
+				//此时参考系为small,获取鼠标在small中的坐标位置
+					x = e.offsetX;
+					y = e.offsetY;
+				}
+      //步骤四:判断鼠标移动范围
+                //将黄色盒子框死在small中,使其只能在small中移动
+				if(x < mask.offsetWidth / 2){
+					x = mask.offsetWidth / 2;
+				} else if (x > small.offsetWidth - mask.offsetWidth / 2){
+					x = small.offsetWidth - mask.offsetWidth / 2;
+				}
+
+				if(y < mask.offsetHeight / 2){
+					y = mask.offsefHeight / 2;
+				} else if (y > small.offsetHeight - mask.offsetHeight / 2){
+					y = small.offsetHeight - mask.offsetHeight / 2;
+				}
+      //步骤五:改变黄色遮罩层位置(移动时注意要加px!)
+				mask.style.left = (x - mask.offsetWidth / 2) + 'px';
+				mask.style.top = (y - mask.offsetHeight / 2) + 'px';
+
+	  //步骤六:获取大图,并且移动显示相应的位置
+			    var largeImage = large.getElementsByTagName('img')[0];
+                // console.log(largeImage);
+			    //小图和大图的偏移比例 1:4 且方向相反
+			    //大图偏移 = 小图偏移 * (-4)
+			    largeImage.style.left = (mask.offsetLeft * (-4)) + 'px';
+			    largeImage.style.top = (mask.offsetTop * (-4)) + 'px';
+
+			}		
+		}
+	</script>
+</head>
+<body>
+    <div class="box">
+    	<div class="small">
+    		<img src="./images/mouse_s.jpg" alt="" />
+    		<div id="mask"></div>
+    	</div>
+    	<div class="large">
+    		<img src="./images/mouse_l.jpg" alt="" />
+    	</div>
+    </div>
+	
+</body>
+</html>

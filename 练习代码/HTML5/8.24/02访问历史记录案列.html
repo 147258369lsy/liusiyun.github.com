@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{list-style: none;}
+		html,body{height: 100%;}
+		.box{
+			width: 80%;
+			height: 80%;
+			background-color: #ccc;
+			margin: 50px auto;
+			position: relative;
+		}
+		.left{
+			height: 100%;
+			width: 200px;
+			position: absolute;
+			background-color: #ccc;
+		}
+		.left li{
+			text-align: center;
+			line-height: 2.5;
+		}
+		.left li a{
+			color: #666;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		.right{
+			height: 100%;
+			padding-left: 200px;
+			background-color: #eee;
+			overflow: scroll;
+		}
+		.right .content{
+			padding: 20px;
+			color: #666;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="left">
+			<ul>
+				<!-- <li><a href="javascript:;">五环之歌</a></li>
+				<li><a href="javascript:;">我的滑板鞋</a></li>
+				<li><a href="javascript:;">咱们屯里人</a></li> -->
+			</ul>
+		</div>
+		<div class="right">
+			<div class="content">
+				
+			</div>
+		</div>	
+	</div>
+
+	<script src='data.js'></script>
+	<script>
+		var listring = '';
+
+		//遍历data中的内容 json数据类似的对象
+		for(var title in data){
+			listring += '<li><a href="javascript:;"> '+title+ '</a></li>' ;
+		}
+        document.querySelector('.box > .left > ul').innerHTML = listring;
+
+        var title = getQueryString('title');
+        if(title == null){
+        	var fistA = document.querySelector('.box > .left >ul a');
+        	var text = data[fistA.innerText];
+        	document.querySelector('.content').innerHTML = text;
+        }else{
+        	title = documentURIComponent(title);
+        	document.querySelector('.content').innerHTML =data[title];
+        }
+
+        var aArray = document.querySelectorAll('.box > .left > ul  a');
+        for (var i = aArray.length - 1; i >= 0; i--) {
+        	var a = aArray[i];
+        	a.addEventListener('click',function () {
+        		var text = data[this.innerText];
+        		document.querySelector('.content').innerHTML = text;
+
+        		if(window.history && history.pushState){}
+
+        			history.pushState(this.innerText, 'title', '?title'+this.innerText);
+
+        	});
+        }
+
+        window.addEventListener('popstate', function(event){
+        	var event = event ? event : window.event;
+        	var name = event.state;
+        	var text = data[name];
+        	if(!text){
+        		text = data['五环之歌'];
+        	}
+        	document.querySelector('.content').innerHTML = text;
+        });
+
+        function getQueryString(name){
+        	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        	var r = window.location.search.substr(1).match(reg);
+        	if(r != null){
+        		return r[2];
+        	}else{
+        		return null;
+        	}
+        }
+	</script>
+</body>
+</html>

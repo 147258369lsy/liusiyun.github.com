@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 150px;
+			background-color: red;
+			margin: 100px auto;
+
+			transform-origin: 80% 30%;
+			/*设置当前元素的旋转中心起点,默认是盒子中心(50%,50%)*/
+		}
+		.box:hover{
+			animation: change 5s;
+		}
+		@keyframes change {
+			0% {
+				background-color: red;
+				transform: translate(0, 0);
+				/*transform:rotate(0deg);*/
+				/*transform: rotateX(0deg);*/
+				/*transform: rotateY(0deg);/*/
+				/*transform: skew(0deg, 0deg);*/
+
+			}
+			100% {
+				background-color: green;
+				transform: translate(100px, 200px); 向右移动100向下移动200到达的位置
+                /*transform: rotate(45deg);*/
+                /*transform: rotateX(180deg);*/
+                /*transform: rotateY(90deg);*/
+                /*transform: skew(45deg, 45deg);*/
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

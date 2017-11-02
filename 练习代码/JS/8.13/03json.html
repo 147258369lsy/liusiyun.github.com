@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//json Javascript对象标记,是在JavaScript中常用的一种数据类型
+		//因为json轻量级,使用便捷,所以已经拓展到各种平台使用
+		//json格式  键值对的形式:  key : value
+		var xiaoming = {
+			name : '小明',
+			age : 18,
+			height : 170
+		};
+		console.log(xiaoming);
+		console.log(typeof xiaoming);
+        
+
+	   //值的获取  从某个json数据中，获取某一个值
+	   //.操作符 成员操作符 用于从Object类型的对象数据中，获取其中的成员属性
+       var age = xiaoming.age;
+       console.log(age);
+
+       //Object数据类型,也可以作为函数的参数或返回值
+
+       function f1(argument) {
+       	console.log(argument);
+       	console.log('name = ' + argument.name);
+       }
+
+       //调用函数 参数为json类型的数据
+       f1({
+       	key1 : 'value',
+       	name : '老王'
+       });
+
+       f1(xiaoming);
+
+       	var laowang = {
+		name : "老王",
+		age : 28,
+		height : 178
+	}
+
+
+	//在json中，可以完美使用JavaScript中的数组类型
+	var laoli = {
+		name : "老李",
+		age : 30,
+		height : 165,
+		friends : [laowang , xiaoming, {
+			name : "王尼玛",
+			age : 25,
+			height : 180
+		}]
+	};
+
+	console.log(laoli);
+	var laoliFriends = laoli.friends;
+	console.log(laoliFriends);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

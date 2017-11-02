@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0;padding: 0;}
+		#box{
+			width: 100px;
+			height: 100px;
+			border:5px solid red;
+            margin:100px;
+            padding: 50px;
+            position: absolute;
+		}
+		#p1{
+           width: 100px;
+           height: 100px;
+           background-color: pink;
+           position: absolute;
+		}
+		#span{
+			display: block;
+           width: 10px;
+           height: 10px;
+           background-color: green;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var span = document.getElementById('span');
+			var left =  span.offsetLeft;
+			console.log(left); //155 = 100 + 50 + 5
+			//在默认情况下,offsetLeft获取到的值是网页最左边的距离,offsetTop则是到网页最顶边的距离
+			var top =  span.offsetTop;
+			console.log(top);
+			//当父元素中存在定位(固,相对,绝对)元素时,通过offsetLet和offsetTop获取的距离由靠得最近被定位的父盒子元素决定
+            
+			//没有offsetRight 和offsetBottom
+
+			//offsetParent
+			//当前元素的父元素中,第一个被定位的元素
+			//如果所有的父元素都没有被定位,则返回body
+			console.log(span.offsetParent);
+
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<p id="p1">
+			<span id="span"></span>
+		</p>
+	</div>
+</body>
+</html>

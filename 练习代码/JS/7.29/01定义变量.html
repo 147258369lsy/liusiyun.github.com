@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var a = 100;
+		var b = "200"
+
+		console.log(typeof a);  //输出变量类型
+		console.log(typeof b);
+		console.log(typeof "123");
+
+
+		var c = a + 2*5;
+		console.log(c);
+
+		var d = b + 5;  //字符串类型在使用"+"来运算时,不做加号使用,而是作为连字符
+		var d = b - 5;   //字符串遇到乘除减法是转化成数值,不过一般不使用
+		 console.log(d);
+
+		 var score = "学生成绩:" + a; //连字符多用于字符串的拼接操作
+         
+         console.log(score);
+
+         var string = "123456789";
+         var number = parseInt(string); //将一个字符串转化为整型
+
+         console.log(number + 1);
+
+         var string2 = 1.5;
+         var number2 = parseFloat(string2); // 将一个字符串转化为浮点型
+         console.log(number2);
+
+         //幂函数:指数操作 2^3
+         var num1 = Math.pow(2, 3);
+         console.log(num1);
+
+      
+         //开平方根
+         var num2 = Math.sqrt(9);
+         console.log(num2);
+
+         console.log(Math.PI);
+         console.log(Math.sin(0.5*Math.PI)); //三角函数
+	</script> 
+</head>
+<body>
+	
+</body>
+</html>

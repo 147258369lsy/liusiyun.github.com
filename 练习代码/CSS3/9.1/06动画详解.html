@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 50px;
+			left: 0;
+		}
+		.box{
+			/*animation: move 5s 1;*/
+			animation-name: move;
+			animation-duration: 5s;
+			animation-delay: 0s;
+
+			/*animation-fill-mode: both;*/
+
+			/*animation-iteration-count: infinite; /*无限(infinite)次数循环重复(iteration)*/*/
+			/*animation-timing-function: ease-in; 动画的时间控制函数(由慢到快)*/
+
+			animation-direction: alternate;
+			/*动画逆向播放*/
+		}
+		@keyframes move {
+			0% {
+				left: 0;
+			}
+			100% {
+				left: 1000px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+
+	<button id="btn">暂停动画</button>
+	<script>
+		var btn = document.getElementById('btn');
+		btn.onclick = function() {
+			var box =document.getElementsByTagName('div')[0];
+
+			if(box.style.animationPlayState == 'running'){
+				box.style.animationPlayState = 'paused';
+				this.innerText = '继续动画';
+			}else{
+                box.style.animationPlayState = 'running';
+				this.innerText = '暂停动画';
+			}
+		}
+	</script>
+</body>
+</html>

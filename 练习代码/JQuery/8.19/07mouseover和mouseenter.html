@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function () {
+			var overCount = 0;
+			$('.over').mouseover(function(){
+				overCount++;
+				$('.over span').text(overCount);
+			});
+			var enterCount = 0;
+			$('.enter').mouseenter(function(){
+				enterCount++;
+				$('.enter span').text(enterCount);
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="over" style="background-color: lightgray;padding: 20px;width: 40%;float: left;">
+		<h2 style="background-color: white;">被触发的 Mouseovr 事件: <span></span></h2>
+	</div>
+
+	<div class="enter" style="background-color: lightgray;padding: 20px;width: 40%;float: right;">
+		<h2 style="background-color: white;">被触发的 Mouseenter 事件: <span></span></h2>
+	</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+		.nav{
+			top: 0;
+		}
+	</style>
+	<script>
+		function scroll(){
+           var x;
+           var y;
+
+           if(window.pageYOffset ||window.pageYOffset){
+           	 //高版本浏览器
+           	 y = window.pageYOffset;
+           	 x = window.pageXOffset;
+           }else if(document.compatMode == 'CSS1Compat'){
+           	 //旧版本IE浏览器
+           	 y = document.documentElement.scrollTop;
+           	 x = document.documentElement.scrollLeft;
+           }else{
+           	 //怪异模式浏览器
+           	 y = document.body.scrollTop;
+           	 x = document.body.scrollLeft;
+           }
+           //返回值,用json格式的数据作为返回值,在一个json中可以包含多个数据
+           return {
+           	left : x,
+           	top  : y
+           };
+		}
+
+		window.onscroll = function(){
+			var scrollTop = scroll().top;
+
+			//获取nav
+			var nav = document.getElementById('nav');
+			var top = document.getElementById('top');
+			//nav的高度
+			var navHeight = nav.offsetHeight;
+			//顶部栏的高度
+			var topHeight = document.getElementById('top').offsetHeight;
+			//当偏移值大于顶部高度时
+			if(scrollTop > topHeight){
+				nav.style.position = 'fixed';
+				top.style.marginBottom = navHeight + 'px';
+			}else{
+				nav.style.position = 'static';//position属性的默认值为 static(静态的)
+				top.style.marginBottom = '0';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="top" id="top">
+		<img src="images/top.png" alt="">
+	</div>
+	<div class="nav" id="nav">
+		<img src="images/nav.png" alt="">
+	</div>
+	<div class="main">
+			<img src="images/main.png" alt="">
+	</div>
+
+</body>
+</html>

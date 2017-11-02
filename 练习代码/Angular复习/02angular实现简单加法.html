@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app>
+
+	<input type="text" ng-model="value1">
+	<input type="button" value="+" disabled>
+	<input type="text" ng-model="value2">
+	<input type="button" value="=" ng-click="result=value1*1+value2*1">
+	<!-- 要将value1和value2两个字符转换成数值才能进行加法 (方法:分别除1或乘1,Number(),parseInt()也行但必须要在Script中运行,所以最好的方法就是/1或*1)-->
+	<input type="text" ng-model="result">
+
+</body>
+</html>

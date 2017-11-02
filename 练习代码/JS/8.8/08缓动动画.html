@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top: 100px;
+			left: 0px;
+		}
+	</style>
+	<script type="text/javascript" src="select.js"></script>
+	<script>
+		window.onload = function() {
+			var box = $('#box');//调用封装函数,方便了总是要获取getElemnet...等操作!
+			var left = 0;
+			var target = 1000;
+            // var dushu = 0;
+            // var width = 100;
+            // var height = 100;
+               //缓动动画
+			setInterval(function(){
+               left = left + (target - left) / 10;
+               box.style.left = left + 'px';
+               // dushu = dushu + 30;
+               // width = width + 5;
+               // box.style.width = width + 'px';
+               // height = height + 5;
+               // box.style.height = height + 'px';
+             //   box.style.transform = 'rotate('+ dushu +'deg)';
+			},100);
+         
+			$('#btn').onclick= function(){
+				var value = parseInt($('#input').value);
+				target = value;
+			}
+	      
+        }
+	</script>
+</head>
+<body>
+
+	<button id="btn">开始动画</button>
+	  <input type="text" id="input">
+	<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			width: 1000px; 
+			margin: 20px auto;
+		}
+		.container h2{
+			text-align: center;
+		}
+		.container section.item{
+			box-sizing: border-box;
+			width: 200px;
+			height: 200px;
+			border: 1px solid #bbb;
+			float: left;
+			margin: 25px;
+			position: relative;
+		}
+		.container section.item h3{
+			width: 200px;
+			line-height: 200px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+			color: #f1f1f1;
+			font-size: 28px;
+			z-index: 9;
+		}
+		.container section.item:hover h3{
+			display: block;
+		}
+		
+		div.content{
+			width: 150px;
+			height: 150px;
+			/*background-color: red;*/
+			margin: 25px;
+			border: 1px solid red;
+		}
+	</style>
+	<style>
+		.item:nth-of-type(1) .content{
+/*box-shadow的5个参数:x(左右偏移量,向右为正)  y(上下偏移,向下为正) 模糊度(值越大越模糊,为0不模糊) 延展度(向四周延展,省略不写) 颜色  ;*/
+             box-shadow:8px 8px 20px #000;
+		}
+		.item:nth-of-type(2) .content{
+			box-shadow:-3px -5px 4px #0f0;
+		}
+		.item:nth-of-type(3) .content{
+			box-shadow:-5px 5px 0 #000;
+		}
+		.item:nth-of-type(4) .content{
+			box-shadow:6px 6px 20px #000;
+		}
+		.item:nth-of-type(5) .content{
+			box-shadow:0 0 0 10px yellow;
+			/*10px延展度(spread)阴影表示向四周扩展了10px*/
+		}
+		.item:nth-of-type(6) .content{
+			/*inset内阴影凹进去*/
+            box-shadow:3px 3px 3px 3px  #666 inset;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>边框阴影</h2>
+		<section class="item">
+			<h3>盒子阴影</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>阴影的偏移位置</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>不模糊的阴影</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>较大模糊阴影</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>阴影的延展度</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3>内阴影</h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+		<section class="item">
+			<h3></h3>
+			<div class="content"></div>
+		</section>
+	</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0;padding: 0;}
+		body{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;/*紧贴起始位置进行排列*/
+		}
+		.ad{
+			height: 80px;
+			background-color: red;
+		}
+		.topBar{
+			height: 30px;
+			background-color: green;
+		}
+		.header{
+			height: 140px;
+			background-color: pink;
+			justify-content: center;
+			display: flex;
+		}
+		.header .jdLogo{
+			width: 190px;
+			height: 140px;
+			background-color: #0f0;
+		}
+		.header .search{
+			width: 1000px;
+			height: 140px;
+			background-color: #e6e6e6;
+		}
+		.content{
+			height: 480px;
+			display: flex;
+			justify-content: center;
+			background-color: yellow;
+		}
+		.content .list{
+			width: 200px;
+			height: 480px;
+			/*box-sizing: content-box;*/
+			background-color: skyblue;
+		}
+		.list ul{
+			display: flex;
+			flex-direction: column;
+			list-style: none;
+		}
+		.content .list ul li{			
+			width: 200px;
+			height: 48px;
+			border-top: 1px solid white;
+			border-top: -1px;
+		}
+		.content .news{
+			height: 480px;
+			width: 170px;
+			background-color: deeppink;
+		}
+		.content .adImg{
+			background-color: greenyellow;
+			width: 700px;
+		}
+		footer{
+			height: 100px;
+			background-color: #000;
+			display: flex;
+			justify-content: space-around;
+			align-items:center;
+		}
+		footer div{
+			width: 200px;
+			height: 80px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+  <div class="top">
+  	 <div class="ad"></div>
+	 <div class="topBar"></div>
+  </div>	
+		
+	<div class="header">
+	    <div class="jdLogo"></div>
+		<div class="search"></div>
+	</div>
+
+	<div class="content">
+		<div class="list">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="adImg"></div>
+		<div class="news"></div>
+	</div>
+
+	<footer>
+		<div class="d"></div>
+		<div class="k"></div>
+		<div class="h"></div>
+		<div class="s"></div>
+	</footer>
+</body>
+</html>

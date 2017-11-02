@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var arr1 = [1,3,4,8,9,11];
+    var arr2 = [2,5,7,10,12,55];
+
+    //求这个两数组合并好之后并且排序好
+    //一边排序一边合并  首先arr1[0] 与  arr2[0] 进行比较
+    //小的那一个就  newArr.push(arr1[0]);
+    var newArr = [];
+//    arr1[i] > arr2[j];
+
+//    var yuansu1 = arr1.shift();
+//    console.log(yuansu1);
+//    console.log(arr1);
+//    arr1.shift();
+//    console.log(arr1);
+
+    for(var i = 0; arr1.length > 0 || arr2.length > 0; i++){
+        if(arr1[0] < arr2[0]){
+            newArr.push(arr1.shift());
+        }else{
+            newArr.push(arr2.shift());
+        }
+    }
+//    console.log(arr1);
+//    console.log(arr2);
+//    newArr = newArr.concat(arr1);
+//    newArr = newArr.concat(arr2);  用concat()方法只是没有排好序
+    console.log(newArr);
+
+</script>
+</body>
+</html>
