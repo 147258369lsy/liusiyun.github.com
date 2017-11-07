@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //call apply
+    //两个方法作用相同,但是用法不同,
+    //apply是在call上封装的一个语法糖! 可以将数组当做参数,会自动将数组解构
+
+    //apply和call作用是一样,只是元素传入的参数的类型不一样 apply的第二个参数必须是一个数组,
+    //call的第二个,第三个,第四个参数 等等...将一一对应apply第二个参数中数组中的每一个
+    //
+    console.log(Math.max.apply(null, [1,2,3,4,5,1000]));
+    console.log(Math.max.call(null,1,2,3,4,5,6,1000));
+
+    //apply和call的第一个参数,是this的指向
+    var obj1 = {
+        name: '王丰'
+    };
+    var obj2 = {
+        name: '黄瑞桦'
+    };
+    window.name = 'window';
+    var getName = function () {
+        console.log(this.name);
+    };
+    getName();
+    getName.call(obj1);
+    getName.apply(obj1);
+
+
+    // 在上述作用中, 我们有一个延伸作用, 借用构造函数来实现继承!
+    var Afunc = function () {
+        this.name = 'xiaohei';
+    };
+
+    var xiaohei = new Afunc();
+    console.log(xiaohei.name);
+
+    var Bfunc = function () {
+        Afunc.apply(this);
+    };
+
+    var xiaohei2 = new Bfunc();
+    console.log(xiaohei2.name);
+
+
+
+    /*
+    arguments 是可以拿到函数中传入的参数, 整合一个类数组
+    只是一个类数组, 可以通过下标访问元素, 但是不是一个数组, 不能使用数组的方法
+    比如push shift都不能使用
+     */
+    var text = function () {
+        console.log(arguments);
+        console.log(arguments[0]);
+        console.log(arguments[1]);
+        console.log(arguments[4]);
+//        arguments.push(1); //不是数组不能使用!
+    }
+
+    text(1,2,3,4,5);
+</script>
+</body>
+</html>

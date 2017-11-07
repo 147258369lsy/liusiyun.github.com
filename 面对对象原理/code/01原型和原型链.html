@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    1.javascript 万物皆对象
+    2.但对象是有区别的, 分为普通对象(object)函数对象(function)
+    3.规则一:凡是通过new Function()创建的对象都是函数对象,其他都是普通对象
+    4.Object和Function 都是通过new Function()创造的*/
+
+    function fn1(){}
+    var fn2 = function () {};
+    var fn3 = new Function();
+    console.log(typeof fn1);
+    console.log(typeof fn2);
+    console.log(typeof fn3);
+    //这三个验证规则一的:凡是通过new Function()创建的对象都是函数对象function
+
+
+    var obj1 = {};
+    var obj2 = new Object();
+    var obj3 = new fn1();
+    var obj4 = new fn3();
+    //其他都是普通对象object
+
+    console.log(typeof obj1);
+    console.log(typeof obj2);
+    console.log(typeof obj3);
+    console.log(typeof obj4);
+
+    console.log(typeof Function);
+    console.log(typeof Object);
+    //这两个验证观点4
+
+    console.log('===========================================')
+    //5.在js中,每当定义一个对象的时候,对象都会包含一些预定的属性,其中函数对象就有一个属性叫prototype
+    //6.普通对象没有prototype ,但是有__proto__
+    //7.原型对象就是普通对象,除了Function.prototype
+
+    /*
+    * var temp1  = new fn1();
+    fn1.prototype.name = "汪峰" temp1.name === "汪峰"*/
+
+    var temp1 = new fn1();
+    fn1.prototype.name = "汪峰";
+    console.log(temp1.name === "汪峰");
+    Array.prototype.sayhello = function () {
+        console.log("汪峰你好");
+    }
+    var arr = new Array();
+    arr.sayhello();
+
+    console.log(obj1);//验证检查可以查看属性
+    console.log(fn1.prototype);//object
+    console.log(typeof fn1.prototype);//验证原型对象就是普通对象
+    console.log(typeof Function.prototype);//(打印function)验证除了Function.prototype原型对象时函数对象
+
+    //8.原型对象的作用:主要用来做继承
+    //问题:如果构造函数和构造函数的原型对象,都有同一个方法(属性),那么会优先继承构造函数
+    //在js底层,一般都是给父构造函数的原型对象添加方法
+
+    var Student = function () {
+        this.name = "汪峰";
+    }
+    Student.prototype.name = "汪峰";
+
+    var wangfeng = new Student();
+    console.log(wangfeng.name);
+
+    //9.问题:到底是怎么实现的继承!
+    //答案:靠的是原型链!!! (什么是原型链??)
+    console.log('=====================================');
+
+
+    //10.js创在造对象的时候,不管是普通对象还是函数对象,都有__proto__的属性
+    //11.规则二:__proto__指向创建它的构造函数的原型对象
+    console.log(wangfeng.__proto__);
+    console.log(Student.prototype);
+    console.log(wangfeng.__proto__ === Student.prototype);//验证规则二
+
+    //12.构造函数Student.prototype是谁创造的 Student.prototype是Object创造的
+    //也就是说:Studnet.prototype.__proto__指向Object.prototype
+    //Student 是谁创造的??
+    //Object.prototype.__proto__  是 null
+    console.log(Object.prototype.__proto__ === null);//true
+
+
+    //13.一切归一   大家都是null创造的
+    console.log(Student.__proto__ === Function.prototype);
+    console.log(Object.__proto__ === Function.prototype);
+    console.log(Function.__proto__ === Function.prototype);
+    console.log(Function.prototype.__proto__ === Object.prototype)
+    console.log(Object.prototype.__proto__ === null);//true
+
+    //道德经曰:无, 名天地之始,所以null创造了一切!
+
+    console.log('===================================');
+    var Animal = function () {
+
+    }
+    var Cat = function () {
+
+    }
+    Animal.jiao = function () {
+        console.log('喵喵');
+    }
+    Cat.prototype = Animal;
+    Cat.__proto__ = Animal;
+    Cat.jiao();
+
+    //15.规则三:继承的实现,其实并不是靠prototype,而是靠__proto__
+    //16.规则四:原型链的作用,在于读取对象的某个属性时,js引擎会优先查找对象本身的属性,
+    //如果没有,回去该对象的构造函数的原型对象(prototype)上面找,如果没有,
+    //就会去构造函数的原型对象上寻找,如果找不到,一直找下去,直到最顶层的原型对象,
+    //Object.prototype,如果还是没有,则返回undefined!
+    //17这个过程中,维持上下层关系的靠的是__proto__
+    var HrhArray = function () {
+
+    };
+    var hrhArr = new HrhArray();
+    hrhArr.__proto__ = new Array();
+    hrhArr.push(1);
+    console.log(hrhArr);
+
+    //18.规则五:prototype(原型对象)有一个属性叫 constructor
+    //constructor默认指向prototype所在的构造函数
+    function fn5() {
+
+    }
+    console.log(fn5.prototype.constructor === fn5);
+    //由于constructor属性是定义在prototype上的,那么就意味着可以被实例对象所继承
+    var obj5 = new fn5();
+    console.log(obj5.constructor === fn5);
+
+    //可以使用hasOwnProperty方法来验证一个属性是自己的还是继承的
+    console.log(obj5.hasOwnProperty('constructor'));
+
+    //constructor的作用:
+    //作用一:分辨原型对象到底是属于哪个构造函数
+    function isInstance(Func, obj) {
+        return obj.constructor === Func;
+    }
+    console.log(isInstance(fn5, obj5));
+    //作用二:可以从一个实例对象新建另一个实例对象
+    function fn6() {
+
+    }
+    var x = new fn6();
+    var y = new x.constructor();
+
+    //系统提供一个方法来判断实例对象是否为该构造函数构造---instanceof
+    console.log(y instanceof fn6);
+    console.log(isInstance(fn6, y));
+
+    //作用三:在实例方法中,可以通过constructor调用自身的构造函数
+    fn6.prototype.createCopy = function () {
+        return new this.constructor();
+    }
+    //this.constructor 指向fn6
+    var obj6 = new fn6();
+    console.log(obj6.constructor === fn6);
+    console.log(obj6.createCopy().__proto__ === fn6.prototype);
+
+
+    //作用四: 继承 !!! 非常重要!!!!
+    function Father() {
+        this.sex = '雄性';
+    }
+    function Son() {
+        this.age = '1';
+        Son.superclass.constructor.call(this);  //相当于Father.call(this);
+    }
+    Son.superclass = new Father();
+    var chb = new Son;
+
+    console.log(chb.age);
+    console.log(chb.sex);
+
+    //由于constructor属性是一种原型对象与构造函数的关联关系
+    //所以我们在修改原型对象时,要注意!
+
+    function A() {
+
+    }
+    var a = new A();
+    console.log(a instanceof A);//true
+
+    function B() {
+
+    }
+    A.prototype = B.prototype;
+    console.log(a.prototype === B);//false
+    console.log(a.prototype === A);//true
+
+    console.log(a instanceof A);//false 结果失真
+    console.log(a instanceof B);//false 结果失真!
+
+    //谨记 不要直接修改原型对象!
+</script>
+</body>
+</html>

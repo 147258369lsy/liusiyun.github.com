@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="mama">
+    <li id="haha0">你好0</li>
+    <li id="haha">你好</li>
+    <li id="haha1">你好1</li>
+</ul>
+
+<script>
+    /*1.节点(node) 在DOM里,有许多不同节点,类型不同,有12种
+     2.和编程相关有三种:
+            (1).元素节点: element node 就是我们使用的各种标签
+            (2).文本节点: text node 指标签对中的innerHTML
+            (3).属性节点: attribute node 如:id class title
+
+       3.nodeType的值不同
+       元素节点 nodeType = 1
+       文本节点 nodeType = 3
+       属性节点 nodeType = 2  *
+
+     console.log(document.getElementsByTagName('li')[0].nodeType);
+     console.log(document.getElementsByTagName('li')[0].getAttributeNode('id').nodeType ===2);
+    console.log(document.getElementsByTagName('li')[0].firstChild.nodeType === 3);
+
+    /*兄弟节点:
+         下一个兄弟节点:ie 6 7 8是: nextSibling  其他浏览器:nextElementSiblings
+        上一个兄弟节点:ie 6 7 8是: prevSibling  其他浏览器:prevElementSiblings*/
+
+       var haha = document.getElementById('haha');
+       var gege = haha.previousElementSibling || haha.previousSibling;
+       console.log(gege);
+
+    /* 孩子们节点: childNodes 选出全部的孩子节点
+       IE 6 7 8是使用childNodes的时候,还会将注释节点算进去*/
+
+      var mama = document.getElementById('mama');
+      for(var node of mama.childNodes){
+          if(node.nodeType === 1){
+              console.log(node);
+          }
+      }
+</script>
+</body>
+</html>

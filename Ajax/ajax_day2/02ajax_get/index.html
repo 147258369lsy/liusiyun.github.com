@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+用户名: <input type="text" id="username">
+<input type="button" value="提交" id="btn">
+<div id="showData"></div>
+</body>
+<script>
+    // let 在函数内部使用let会变成函数局部变量
+    var username = document.getElementById('username');
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        let usernameValue = username.value;
+        // 使用ajax 技术将数据传递给后台
+        // 第一步创建xhr对象
+        let xhr = null;
+
+        if(window.XMLHttpRequest){
+            // 普通模式
+            xhr = new XMLHttpRequest();
+        }else{
+            // 怪异模式
+            xhr = new ActiveXObject("Miscrosoft.XMLHTTP");
+        }
+        // get 请求数据的方式, 就是将参数, 添加到url后面, 参数的起始符号是 '?'
+        let url = './data.php?flag=1';
+
+        //第二步 配置xhr对象
+        xhr.open('get', url, true);
+
+        //第三步 发送xhr对象
+        xhr.send(null);
+
+        //第四步 回调响应!
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200){
+                    //通过xhr取到response
+                    console.log(xhr.response);
+                    var showData = document.getElementById('showData');
+                    showData.innerHTML = xhr.response;
+                }
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

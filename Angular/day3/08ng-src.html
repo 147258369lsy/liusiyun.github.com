@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="app" ng-controller="AppCtrl">
+    <img ng-repeat="item in imgData" ng-src="{{item}}" alt="">
+
+    <a ng-repeat="item in imgData" ng-href="{{item}}">图 {{item}}</a>
+</div>
+<script>
+    angular.module('app',[])
+        .controller('AppCtrl',function ($scope) {
+            $scope.imgData = ['1.jpg', '2.jpg', '3.jpg'];
+        })
+</script>
+</body>
+</html>

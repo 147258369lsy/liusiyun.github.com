@@ -1,0 +1,29 @@
+<ion-view view-title="Chats">
+
+    <ion-content>
+        <ion-toggle>开关按钮</ion-toggle>
+        <ion-radio>单1</ion-radio>
+        <ion-radio>单2</ion-radio>
+
+        <ion-list>
+            <ion-item ng-repeat="item in Data">{{item}}
+                <ion-option-button class="button-calm" ng-click="delete(item)">删除</ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+  <!--<ion-content>-->
+    <!--<ion-list>-->
+      <!--<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">-->
+        <!--<img ng-src="{{chat.face}}">-->
+        <!--<h2>{{chat.name}}</h2>-->
+        <!--<p>{{chat.lastText}}</p>-->
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+
+        <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
+          <!--Delete-->
+        <!--</ion-option-button>-->
+      <!--</ion-item>-->
+    <!--</ion-list>-->
+  <!--</ion-content>-->
+</ion-view>

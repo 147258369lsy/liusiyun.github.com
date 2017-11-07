@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        .title{
+            display: flex;
+            width: 80%;
+            margin: 20px auto;
+        }
+        .title .line{
+            display: inline-block;
+            flex: 1;
+            border-bottom: 1px solid gray;
+            position: relative;
+            top: -9px;
+        }
+        .title .text{
+            display: inline-block;
+            font-size: 10px;
+            padding:2px 12px;
+        }
+    </style>
+</head>
+<body>
+
+<select id="city">
+    <option value="101240501">宜春</option>
+    <option value="101210101">杭州</option>
+    <option value="101190101">南京</option>
+    <option value="101010100">北京</option>
+</select>
+
+<button id="btn">查询天气</button>
+<div class="title">
+    <div class="line"></div>
+    <div class="text">天气预报</div>
+    <div class="line"></div>
+</div>
+<div>
+    <ul id="showData"></ul>
+</div>
+
+<div class="content"></div>
+<script src="template.js"></script>
+<script id="text" type="text/html">
+   {{each weather as value i}}
+    <li>日期: {{value.date}}</li>
+    <li>白天的天气: {{value.info.day[1]}}</li>
+    {{/each}}
+</script>
+<script>
+    let btn = document.getElementById('btn');
+
+    let showData = document.getElementById('showData');
+
+    function smartloaddata(data) {
+        console.log(data);
+        var html = template('text', data);
+        showData.innerHTML = html;
+//        let tag = '';
+//        let weather = data.weather;
+//        for(let item of weather){
+//            let date = item.date;
+//            let day = item.info.day;
+//
+//            tag += `<li>日期: ${date}</li>`;
+//            tag += `<li>白天天气: ${day[1]}</li>`;
+//            tag += `<li>白天温度: ${day[2]}</li>`;
+//            tag += `<li>白天风向: ${day[3]}</li>`;
+//            tag += `<li>白天风速: ${day[4]}</li>`;
+//        }
+//        showData.innerHTML = tag;
+    }
+    btn.onclick = function () {
+        showData.innerHTML = '';
+        let cityCode = document.getElementById('city').value;
+        let url = 'http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360&_jsonp=smartloaddata&code='+cityCode;
+        let script = document.createElement('script');
+        script.src= url;
+        document.body.appendChild(script);
+    }
+</script>
+</body>
+</html>

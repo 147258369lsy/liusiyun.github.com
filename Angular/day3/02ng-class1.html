@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .w_80{
+            width: 80%;
+        }
+        .bgc_red{
+            background-color: red;
+        }
+        .bgc_yellow{
+            background-color: yellow;
+        }
+    </style>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body>
+<ul ng-app="app" ng-controller="AppCtrl">
+    <li ng-repeat="item in students" class="w_80" ng-class="{bgc_red: $even, bgc_yellow: $odd}">
+        {{item.name}}
+    </li>
+</ul>
+
+<script>
+    angular.module('app',[])
+    .controller('AppCtrl',function ($scope) {
+
+        $scope.students = [];
+        for(var i=0; i < 10;i++){
+            $scope.students[$scope.students.length] = {
+                id : i,
+                name : 'wfeng' + i + '代',
+                age: 30 + i
+            }
+        }
+    })
+</script>
+</body>
+</html>

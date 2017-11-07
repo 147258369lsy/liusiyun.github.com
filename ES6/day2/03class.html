@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    calss Human {
+
+        constructor(sex) {
+            this.sex = sex;
+        }
+
+        sayHi() {
+            console.log("oh hi");
+        }
+
+        getSex(){
+            return this.sex;
+        }
+    }
+
+    //继承使用关键字 extends
+    //但如果在子类的构造器中,使用this指针
+    //那么需要对父类的this做继承.使用super()
+    class Studnents extends Human {
+        constructor(sex) {
+            super(sex);
+        }
+
+        xuexi() {
+            console.log("好好学习")
+        }
+    }
+
+    var wangfeng = new Human("男");
+    wangfeng.syaHi();
+    console.log(wangfeng.getSex());
+
+    var wnagfeng2 = new Students("男","王丰");
+    wangfeng2.xuexi();
+    console.log(wangfeng2.sex);
+
+</script>
+</body>
+</html>

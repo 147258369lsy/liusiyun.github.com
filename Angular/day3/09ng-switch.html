@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .size{
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body ng-app>
+<select name="" id="" ng-model="index">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+<div ng-switch="index">
+    <div ng-switch-when="1" class="size" ng-class="{red:'red'}">
+        盒子1
+    </div>
+    <div ng-switch-when="2" class="size" ng-class="{green:'green'}">
+        盒子2
+    </div>
+    <div ng-switch-when="3" class="size" ng-class="{blue:'blue'}">
+        盒子3
+    </div>
+    <div ng-switch-default>
+        默认选项
+    </div>
+</div>
+</body>
+</html>

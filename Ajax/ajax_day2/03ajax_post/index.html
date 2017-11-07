@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+用户名: <input type="text" id="username"/>
+密 &nbsp;码: <input type="password" id="password"/>
+<input type="button" value="提交" id="btn"/>
+<div id="showData"></div>
+</body>
+<script>
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+        let usernameValue = username.value;
+        let passwordValue = password.value;
+        //使用ajax技术将数据传递给后台
+        //第一步:创建xhr对象
+        let xhr = null;
+        if(window.XMLHttpRequest){
+            xhr  = new XMLHttpRequest();
+        }else {
+            xhr = new ActiveXObject("Miscrosoft.XMLHTTP");
+        }
+        //第二步配置xhr (第三个参数是否开启异步模式)
+        let url = "./data.php";
+        xhr.open('post', url, true);
+          // 设置请求头
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        //第三步:发送xhr对象
+        let data = "username="+usernameValue+"&password="+passwordValue;
+        console.log(data);
+        xhr.send(data);
+
+        //第四步:回调函数,响应后台数据
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.response);
+            }
+        }
+    }
+</script>
+</html>

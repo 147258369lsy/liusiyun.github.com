@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="customDirective">
+<breadcrumb></breadcrumb>
+
+<script>
+    angular.module('customDirective',[])
+        .directive('breadcrumb',function () {
+            return{
+                //可以规定指令的使用范围,E(element) A(attribute) C(class) M(comment)
+                restrict:'E',
+                replace:true,
+                templateUrl:'template/01lujing.html'
+            }
+        })
+</script>
+</body>
+</html>

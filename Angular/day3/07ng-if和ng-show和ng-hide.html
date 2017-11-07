@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body ng-app>
+<ul>
+    <!--ng-if当值为false时,不添加节点(节点都被注释了)-->
+    <li ng-if="false">ng-if值为false</li>
+    <li ng-if="true">ng-if值为true</li>
+    <!--ng-show:当值为falses时,相当于给该li添加display:none;的css属性-->
+    <li ng-show="false">ng-show值为false</li>
+    <li ng-show="true">ng-show值为true</li>
+    <!--ng-hide 与ng-show相反-->
+    <li ng-hide="false">ng-hide值为false</li>
+    <li ng-hide="true">ng-hide值为true</li>
+</ul>
+</body>
+</html>

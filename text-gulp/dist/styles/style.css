@@ -1,0 +1,10 @@
+body {
+  background-color: #666; }
+  body #container {
+    background-color: gold;
+    height: 1000px; }
+    body #container .hezi {
+      width: 500px;
+      height: 500px; }
+      body #container .hezi .desc {
+        color: mistyrose; }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dn{
+            display: none;
+        }
+        .db{
+            display: block;
+        }
+    </style>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/lodash/dist/lodash.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+<input type="text" ng-model="lastName">
+<ul>
+    <li class="dn" ng-class="{db: _.startsWith(item,lastName)&&lastName!=''}" ng-repeat="item in students">{{item}}</li>
+</ul>
+</body>
+<script>
+    angular.module('app',[])
+        .controller('AppCtrl',function ($scope) {
+            $scope.students = ['黄一','黄二','张三','李四','王五'];
+            $scope._ = _;  //获取上面那个startsWith()方法:该方法以xx字符开头
+        })
+</script>
+</html>

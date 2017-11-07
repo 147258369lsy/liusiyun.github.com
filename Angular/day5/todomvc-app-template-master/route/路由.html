@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="../node_modules/angular/angular.js"></script>
+	<script src="../node_modules/angular-route/angular-route.js"></script>
+</head>
+<body ng-app="app">
+<ul>
+	<li><a href="#!/template/a.html">a页面</a></li>
+	<li><a href="#!/template/b.html">b页面</a></li>
+	<li><a href="#!/a">b页面</a></li>
+</ul>
+<!--要让这个div当做承载子页面的接口, 必须添加上指令ng-view-->
+<div ng-view></div>
+
+<script id="template" type="text/ng-template">
+	<h1>{{title}}</h1>
+</script>
+</body>
+
+<script>
+	// ng是angular的缩写, js中采用驼峰式写法, 记录多个单词
+	var app = angular.module('app', ['ngRoute']);
+	//  app.controller('AppCtrl', function ($scope, $route) {
+	//
+	//  })
+	app.config(['$routeProvider', function ($routeProvider) {
+		$routeProvider
+		//              .when('/template/a.html', {
+		//                  templateUrl: './templates/a.html',
+		//                  controller: 'aCtrl'
+		//              })
+		//              .when('/template/b.html', {
+		//                  templateUrl: './templates/b.html',
+		//                  controller: 'bCtrl'
+		//              })
+		//              .when('/a', {
+		//                  templateUrl: './templates/a.html'
+		//              })
+				.otherwise({
+					redirectTo: '/a'
+				})
+
+				.when('/template/a.html', {
+					templateUrl: 'template',
+					controller: 'aCtrl'
+				})
+				.when('/template/b.html', {
+					templateUrl: 'template',
+					controller: 'bCtrl'
+				})
+	}])
+
+	app.controller('aCtrl', function ($scope) {
+		console.log("这是a控制器");
+		$scope.title = "这是a页面";
+	})
+	app.controller('bCtrl', function ($scope) {
+		console.log("这是b控制器");
+		$scope.title = "这是b页面";
+
+	})
+</script>
+</html>

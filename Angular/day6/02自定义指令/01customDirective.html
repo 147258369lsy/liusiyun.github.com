@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="app">
+<web1707-button></web1707-button>
+<div web1707-button></div>
+
+<primary-button></primary-button>
+</body>
+<script>
+    angular.module('app',[])
+        .directive('web1707Button',function () {
+        return{
+            template:'<button>web1707</button>'
+        }
+    })
+        .directive('primaryButton',function () {
+            return{
+                template:'<input type="button" class="btn btn-primary" value="primary">'
+            }
+        })
+</script>
+</html>

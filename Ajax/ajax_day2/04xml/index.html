@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    window.onload = function(){
+        var xhr = null;
+        xhr = new XMLHttpRequest();
+        xhr.open('get', './data.xml', true)
+            xhr.send(null);
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    console.log(xhr.response);
+                    console.log(xhr.responseXML);
+                    var data = xhr.responseXML;
+                    var bookstore = data.getElementsByTagName('bookstore')[0];
+                    var book = data.getElementsByTagName('book');
+
+                    //es6提供的新的遍历语言结构
+                    for(var item of book){
+                        var name = getNodeText(item.getElementsByTagName('name')[0]);
+                        var category = getNodeText(item.getElementsByTagName('category')[0]);
+                        var desc = getNodeText(item.getElementsByTagName('desc')[0]);
+                        console.log(name+" "+category+" "+desc);
+                    }
+                }
+            }
+        }
+
+    function getNodeText(el){
+        if(window.ActiveObject){
+            return el.text;
+        }else{
+            if(el.nodeType === 1){
+                return el.textContent;
+            }
+        }
+    }
+</script>
+</body>
+</html>

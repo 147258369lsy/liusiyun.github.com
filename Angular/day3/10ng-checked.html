@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body ng-app>
+<!--ng-model 是双向的,ng-checked 只能去视图模型里读取数据,并不能修改数据,是单向的-->
+<input type="checkbox" ng-model="selected">全选
+<ul>
+    <li><input type="checkbox" ng-checked="selected">1</li>
+    <li><input type="checkbox" ng-checked="selected">2</li>
+    <li><input type="checkbox" ng-checked="selected">3</li>
+    <li><input type="checkbox" ng-checked="selected">4</li>
+    <li><input type="checkbox" ng-checked="selected">5</li>
+    <li><input type="checkbox" ng-checked="selected">6</li>
+    <li><input type="checkbox" ng-checked="selected">7</li>
+</ul>
+</body>
+</html>

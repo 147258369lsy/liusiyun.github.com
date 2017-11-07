@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-3.2.1.js"></script>
+<script>
+
+    // jsonp就是跨域解决方式之一, 也是醉常用的跨域解决方式, json padding json补丁
+    // jsonp并不是一种数据格式  而是将数据放在函数调用的函数参数里,
+    // 那么写好相应的函数声明, 就能将数据传递到前台
+
+
+    //而且jsonp只能用get请求!!!
+    $.ajax({
+        type: 'get',
+        dataType: 'jsonp',
+        url: 'http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360&code=101010100',
+        jsonp: '_jsonp',
+        jsonpCallback: 'cb',
+        success:function (data) {
+            console.log(data);
+        }
+    })
+</script>
+</body>
+</html>

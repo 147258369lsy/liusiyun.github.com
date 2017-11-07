@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">查询</button>
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var xhr = new XMLHttpRequest();
+        var url = 'http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360&_jsonp=smartloaddata101190101&code=101190101';
+        xhr.open('get', url, true);
+
+        xhr.send(null);
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === 4 && xhr.status === 200){
+                var data = xhr.responseText;
+                console.log(data);
+            }
+        }
+    }
+</script>
+</body>
+</html>

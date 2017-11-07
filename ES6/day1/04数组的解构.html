@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //解构:就是打开外衣,发现里面的数据(分为对象解构 数组解构)
+    let person ={
+        name: '汪峰',
+        age: 42,
+        location: '拉斯维加斯'
+    };
+
+    console.log(person.age);//42
+    console.log(person['age']); //42
+
+    //let {age:personAge} = person;
+    // console.log(personAge);
+    let { location: currentLocation,age: personAge } = person;
+    console.log(currentLocation,personAge);
+
+    //如果取得value和 key 同名,则可以省略value
+    let{ name,age: age} = person;
+    console.log(age,name);
+
+    let numbers = [1,2,3,4,5,6];
+    let [first,second, , fourth] = numbers;
+    console.log(first,second,fourth);
+
+    let [fir,sec, ...rest] = numbers;
+    console.log(rest);
+</script>
+</body>
+</html>

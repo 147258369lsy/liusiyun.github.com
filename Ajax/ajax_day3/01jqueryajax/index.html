@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script>
+    $(function () {
+        $('#btn').click(function () {
+            $.ajax({
+                    type: 'get',
+                    url: './data.php?flag=1',
+                    success:function(data) {
+                    console.log(data);
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function hajax(dataObj) {
+        //第一步:创建一个xhr对象
+        let xhr = null;
+        try{
+            xhr = new XMLHttpRequest();
+        }catch (err){
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //第二步:配置xhr
+        let keys = Object.keys(dataObj.data);
+        let dataStr = '';
+        let url = '';
+        console.log(keys);
+        for(let param of keys){
+            //es6的模块语法 根据变量去对象的对应的值 使用语法: Obj[param]
+            dataStr += '&${param}=${dataObj.data[param]}';
+        }
+
+        let type = dataObj.type == 'get' ? 'get' : 'post';
+        if(type == 'get'){
+            url = dataObj.url + '?' + dataStr;
+        }else{
+            url = dataObj.url;
+        }
+        let async = dataObj.async;
+        xhr.open(type, url, async);
+
+        //第三步:发送xhr
+        if(type === 'get'){
+            xhr.send(null);
+        }else{
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.send(dataStr);
+        }
+
+        //响应回调
+        xhr.onreadystatechange = function () {
+          if(xhr.readyState === 4){
+              if(xhr.status === 200){
+                  let data;
+                  let dataType = dataObj.dataType;
+                  if(dataType === 'xml'){
+                      data = xhr.responseXML;
+                  }else if(dataType === 'json'){
+                      data = JSON.parse(xhr.responseText);
+                  }else{
+                      data = xhr.responseText;
+                  }
+                  dataObj.success(data);
+              }else{
+                  dataObj.failure();
+              }
+          }
+        }
+    }
+
+    let data = {
+        name: '金瓶梅',
+        desc: '一本奇书'
+    }
+    let dataObj = {
+        type: 'post',
+        url: 'data.php',
+        async:true,
+        data: data,
+        dataType:'text',
+        success:success,
+        failure:failure
+    };
+    function success(data) {
+        console.log(data);
+    }
+    function failure() {
+        console.log('请求失败')
+    }
+
+    hajax(dataObj);
+</script>
+</body>
+</html>

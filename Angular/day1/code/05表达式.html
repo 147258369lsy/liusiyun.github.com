@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="testApp" ng-controller="TestCtrl">
+<p>{{msg}}</p>
+<p>{{1 + msg}}</p>
+<!--可以写三目运算符 但不能写 if else 因为只能写表达式-->
+<p>{{ isBool === true ? 'hello' : 'no'}}</p>
+
+<p>{{arr[0]}}</p>
+<p>{{obj.name}}</p>
+<p>{{100+100}}</p>
+<script>
+    var test = angular.module('testApp', []);
+    test.controller('TestCtrl', ['$scope',function ($scope) {
+        $scope.msg = 'hello angular';
+        $scope.isBool = false;
+        $scope.arr = [1,2,3,4,5,6];
+        $scope.obj = {
+            name : '汪峰'
+        }
+    }])
+</script>
+</body>
+</html>

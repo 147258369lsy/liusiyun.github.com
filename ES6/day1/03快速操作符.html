@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sum = function () {
+        return Array.prototype.reduce.call(arguments,(prev,curr) => {
+            return prev + curr;
+        })
+    };
+
+    var result = sum(1,2,3,4,5);
+    console.log(result);
+
+    let sum2 = function (...argus) {
+        return argus.reduce( (prev,curr) => prev + curr);
+    }
+    var result2 = sum2(1,2,3,4,5);
+    console.log(result2);
+
+    //此时快速操作符,是将参数转成数组
+    let test = (m,...numbers) => {
+        console.log(m,numbers);
+    }
+    test(1,2,3,4,5);
+
+    let multiply = (m, ...numbers) => {
+        return numbers.map( (n) => {
+            return m * n;
+        } )
+    }
+    console.log(multiply(2,2,3,4));
+</script>
+</body>
+</html>

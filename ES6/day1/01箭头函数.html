@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let add = (a,b) => {
+        return a + b;
+    };
+    console.log(add(2,3));
+
+    let add2 = (a,b) => a + b;
+    console.log(add2(1,2));
+
+    let add3 = a => a+1;
+    console.log(add3(7));
+
+    let numbers = [1,2,3,4];
+    let doubled = numbers.map(function (n) {
+        return n * 2;
+    })
+    console.log(doubled);
+
+    let doubled2 = numbers.map( (n) => n * 2 );
+    console.log(doubled2);
+
+    let wangfeng = {
+        name: '汪峰',
+        sayName:function () {
+            console.log(`my name is ${this.name}`)
+        }
+    };
+    wangfeng.sayName();
+
+    let wangfeng2 = {
+        name: '汪峰',
+        //下面语法错误
+//        sayName:() => {
+//           console.log('my name is ${this.name}')
+//    }
+        //正确语法
+        sayName(){
+           console.log(`my name is ${this.name}`)
+        }
+    }
+    wangfeng2.sayName();
+
+//    var a = {
+//        "1st" : 1,
+//        "2nd" : 2,
+//        "3rd" : 3
+//    }
+//    for(var e in a){
+//        document.write(a[e]);
+//    }
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="app1" ng-controller="MyCtrl">
+    <input type="text" ng-model="yourName">
+    <p>hello {{yourName}}</p>
+</div>
+<script>
+    var app = angular.module('app1', []);
+    app.controller('MyCtrl', ['$scope', function (n) {
+        console.log('hello');
+        n.yourName = '汪峰';
+    }])
+
+//代码混淆（站长工具）
+//var BMAMw1 = angular["\x6d\x6f\x64\x75\x6c\x65"]('\x61\x70\x70\x31', []);    BMAMw1["\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72"]('\x4d\x79\x43\x74\x72\x6c', ['\x24\x73\x63\x6f\x70\x65', function (sS2) {        console["\x6c\x6f\x67"]('\x68\x65\x6c\x6c\x6f');        sS2["\x79\x6f\x75\x72\x4e\x61\x6d\x65"] = '\u6c6a\u5cf0';    }])
+</script>
+</body>
+</html>

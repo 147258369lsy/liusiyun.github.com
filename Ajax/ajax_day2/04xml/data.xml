@@ -1,0 +1,23 @@
+<bookstore>
+    <book>
+        <name>金瓶梅</name>
+        <category>文学</category>
+        <desc>不好描述</desc>
+    </book>
+    <book>
+        <name>聊斋</name>
+        <category>文学</category>
+        <desc>女鬼与书生的故事</desc>
+    </book>
+    <book>
+        <name>西游记</name>
+        <category>文学</category>
+        <desc>孙悟空被虐的故事</desc>
+    </book>
+    <book>
+        <name>红楼梦</name>
+        <category>文学</category>
+        <desc>两小无猜终没在一起</desc>
+    </book>
+</bookstore>
+

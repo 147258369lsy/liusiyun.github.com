@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body ng-app ng-init="style='red'">
+<!--ng-model会到内存中,找到模型,再找到视图模型,再找到$scope,创建$scope.style,-->
+<!--赋值$scope.style = value-->
+    <select ng-model="style">
+        <option value="red">红色</option>
+        <option value="green">绿色</option>
+    </select>
+
+<div ng-class="{red: style === 'red', green: style === 'green'}"></div>
+</body>
+</html>

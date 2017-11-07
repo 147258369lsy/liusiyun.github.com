@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+用户名: <input type="text" id="username"> <br>
+密码: <input type="password" id="password">
+<button id="btn">注册</button>
+<br>
+<span id="msg"></span>
+
+<script>
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+
+    var msg = document.getElementById('msg');
+
+    //失去焦点时（也就是输入结束时，输入光标不在input里时）
+   username.onblur = function () {
+       var flag = isTel(username.value);
+       if(!flag){
+           msg.innerHTML = '请输入正确的号码';
+       }else {
+           msg.innerHTML = '√';
+       }
+   }
+    //验证手机号码
+    function isTel(str){
+
+        var reg=/0?(13|14|15|18)[0-9]{9}/g ;
+        if(str.length18){
+            return false;
+        }
+        else{
+            return reg.exec(str);
+        }
+    }
+
+</script>
+</body>
+</html>

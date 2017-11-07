@@ -1,0 +1,5 @@
+
+<ol class="breadcrumb">
+    <li ng-repeat="(key,value) in data track by $index" ng-if="!$last"><a href="{{value}}">{{key}}</a></li>
+    <li ng-repeat="(key,value) in data track by $index" class="active" ng-if="$last">{{key}}</li>
+</ol>

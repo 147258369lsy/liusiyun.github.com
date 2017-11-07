@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="customDirective" ng-controller="CustomData">
+<breadcrumb data2="{{data1}}"></breadcrumb>
+
+<script>
+    angular.module('customDirective',[])
+        .controller('CustomData',function ($scope) {
+            $scope.data1 = {
+                home: '/',
+                library:'./library',
+                Data:'./data'
+            }
+        })
+        .directive('breadcrumb',function () {
+            return{
+                //可以规定指令的使用范围,E(element) A(attribute) C(class) M(comment)
+                scope:{
+//                    data:'@data'
+                },
+                restrict:'E',
+                replace:true,
+                templateUrl:'template/02lujing.html',
+                link:function (scope,element,attributes) {
+                    console.log(element);
+                    console.log(attributes.data2);
+                    scope.data = JSON.parse(attributes.data2);
+                    //JSON.parse()将其转化为json对象
+                }
+            }
+        })
+</script>
+</body>
+</html>

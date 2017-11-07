@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    window.onload = function(){
+        var xhr = null;
+        xhr = new XMLHttpRequest();
+        xhr.open('get', './json.php', true)
+        xhr.send(null);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText);
+                //JSON.parse()这个方法 老旧浏览器不兼容!
+                var data = JSON.parse(xhr.responseText);
+                data = data.data;
+                console.log(data);
+                for(let item of data){
+                    console.log(item.name + " " + item.category + " " + item.desc);
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

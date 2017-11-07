@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="点我">
+<script>
+    /*
+    js是一门解释型语言,
+    所以代码运行分两个阶段, 1.预解析---把所有的变量的声明都提前到程序头部!   2.执行
+     */
+    // 提前区域  function fn1  var fn2
+    fn1();
+
+    //    fn2();  is not a function
+    function fn1() {
+        console.log('fn1');
+    }
+
+    fn1();
+
+    var fn2 = function () {
+        console.log('fn2');
+    };
+
+    fn2();
+
+    // 函数传参,
+    // 参数分两种, 一种是函数声明头中(形参), 另外一种是函数外的或者函数内部声明的(实参)
+    // 实参与形参之间只存在值的复制过程!
+    var a = 1; // 实参
+    function fn3(a) { // 这个a是形参
+        a++;
+        let b = 1; // 实参
+    }
+
+    fn3(a);// 函数调用的时候才有传参的发生
+    console.log(a);// 1
+
+    var obj = {
+        a: 1
+    };
+
+    function fn4(obj) {
+        obj.a++;
+    }
+
+    fn4(obj);
+    console.log(obj.a);// 2
+
+    // 在js中 作用域分两种, 全局的和函数内的
+    for (var i = 0; i > 10; i++) {
+        var c = 1;
+    }
+    console.log(i);// 0
+    console.log(c);// undefined
+
+    if (false) {
+        var adsfaf = 1111;
+    }
+    console.log(adsfaf);// undefined
+
+
+    // n 是一个全局变量
+    var n = 1;
+
+    function fn6() {
+        n++;
+        console.log(n);
+    }
+
+    fn6();// 2
+    fn6();// 3
+    fn6();// 4
+    fn6();// 5
+
+    //闭包: 所谓闭包 function return function, 并且返回的函数被持有!
+    //一旦返回的函数被外部的变量所持有, 那么就会形成闭包区域, 一旦形成闭包区域,
+    // 那么函数内部的参数就不会被回收, 就会保存变量的值
+    function fn7() {
+        var m = 1;
+        var fn = function () {
+            m++;
+            console.log(m);
+        }
+        return fn;
+    }
+
+    fn7()();// 2
+    fn7()();// 2
+    fn7()();// 2
+    fn7()();// 2
+
+    var fn8 = fn7();
+    fn8(); // 2
+    fn8(); // 3
+    fn8(); // 4
+    fn8(); // 5
+
+    fn8 = null;
+
+    var data = [];
+    for (var i = 0; i < 4; i++) {
+        data[i] = function () {
+            var j = i;
+            console.log(j);
+        }
+    }
+    data[0]();// 4
+    data[1]();// 4
+    data[2]();// 4
+    data[3]();// 4
+
+    var data = [];
+    for (var i = 0; i < 4; i++) {
+        data[i] = (function (i){
+            return function () {   //函数返回函数形成闭包,那么函数内部的参数就不会被回收, 就会保存变量的值
+                console.log(i);
+            }
+        })(i)
+    }
+
+    data[0]();// 0
+    data[1]();// 1
+    data[2]();// 2
+    data[3]();// 3
+
+
+
+    (function fn(){
+        console.log(12345);
+    })();
+
+    //函数之所以能够自执行, 是因为 执行符号 '()' 前面必须是一个表达式
+    (function (){
+        console.log(1);
+    })()
+    !function (){
+        console.log(1);
+    }()
+    +function (){
+        console.log(1);
+    }()
+
+    /function (){
+        console.log(1);
+    }()
+
+    var abc = function () {
+        console.log(1);
+    }();
+
+
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+        console.log(111);
+    };(function fn9(){console.log(222);})();
+
+</script>
+</body>
+</html>

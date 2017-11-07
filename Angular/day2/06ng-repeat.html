@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+
+<ul>
+    <li ng-repeat="item in data track by $index">{{item}}</li>
+</ul>
+</body>
+<script>
+    angular.module('app', [])
+        .controller('AppCtrl', function ($scope) {
+            $scope.data = [1,2,3,4,4];
+        })
+
+</script>
+</html>

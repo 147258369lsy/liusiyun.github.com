@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+<div class="signin">
+    用户名: <input type="text" class="username" ng-model="user.username" ng-blur="isEmail()"/>
+    <br>
+    密码: <input type="text" class="password" ng-model="user.password" ng-keydown="timeout()"/>
+    <br>
+    重复密码: <input type="text" class="repassword" ng-model="user.repassword" ng-blur="verify()"/>
+    <button class="singin" ng-click="signin()" ng-disabled="isDisabled">注册</button>
+
+    <div class="msg">{{msg}}</div>
+</div>
+
+<script>
+    var timer = null;
+    //注册模块
+    var app = angular.module('app', []);
+    app.controller('AppCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+        $scope.user = {
+            username: '',
+            password: ''
+        };
+        $scope.msg = '';
+        $scope.isDisabled = false;
+        $scope.isEmail = function () {
+            var flag = isEmail($scope.user.username);
+            if (!flag) {
+                $scope.msg = "请输入合法的邮箱";
+            } else {
+                $scope.msg = "√";
+            }
+
+        }
+        //邮箱验证正则表达式
+        function isEmail(str) {
+            var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+            return reg.test(str);
+        }
+        //两次密码验证
+        $scope.verify = function () {
+            if ($scope.user.password === $scope.user.repassword) {
+                $scope.msg = "两次密码输入一致"
+            } else {
+                $scope.isDisabled = true;
+                $scope.msg = "请核对密码";
+            }
+        };
+        //邮箱验证
+        $scope.signin = function () {
+            if ($scope.user.password === $scope.user.repassword) {
+                $scope.msg = "注册成功"
+            } else {
+                $scope.isDisabled = true;
+                $scope.msg = "注册失败";
+            }
+        };
+        //加timeout() 让提示延迟显示
+        $scope.timeout = function () {
+            $timeout.cancel(timer);
+            $scope.msg = '';
+            console.log($scope.user.password);
+            if ($scope.user.password.length < 6 && $scope.user.password.length != 0) {
+                timer = $timeout(function () {
+                    $scope.msg = "密码不能小于6位"
+                }, 1000)
+            } else {
+                $scope.msg = ""
+            }
+        }
+//        $scope.$watch('user.password', function (newVal, oldVal) {
+//            console.log(newVal.length);
+//            console.log(oldVal);
+//            clearTimeout(timer);
+//            if(newVal.length < 6 && newVal.length != 0){
+//                timer = setTimeout(function () {
+//                    $scope.msg = "密码不能小于6位"
+//                }, 1000)
+//            }else {
+//                $scope.msg = ""
+//            }
+//        })
+//        $scope.$watch('user.password', function (newVal) {
+//            $scope.msg = "";
+//            _.debounce(function () {
+//                    if (newVal.length < 6 && newVal.length != 0) {
+//                        console.log("111");
+//                        $scope.msg = "密码不能小于6位"
+//                    }
+//                },
+//                1000
+//            )();
+//        })
+    }])
+</script>
+</body>
+</html>

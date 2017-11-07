@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app>
+    <input type="text" calss="num1" ng-model="value1">
+    <input type="button" value="+" disabled>
+    <input type="text" class="num2" ng-model="value2">
+    <input type="button" value="=" ng-click="result=value1/1+value2/1">
+    <input type="text" class="result" ng-model="result">
+</div>
+</body>
+</html>

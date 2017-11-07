@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+用户名: <input type="text" id="username"/>
+<input type="button" value="提交" id="btn"/>
+<div id="showData"></div>
+</body>
+<script>
+    var username = document.getElementById('username');
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+        let usernameValue = username.value;
+        //let 在函数内部使用let会变成函数局部变量
+
+        //第一步:创建ajax对象,也就是XMLHttpRequest对象(兼容性有问题)
+        let xhr = new XMLHttpRequest();
+
+        //第二步:配置这个对象
+        let url = './data.php?username='+usernameValue;
+        xhr.open('get', url, true);
+
+        //第三步:发送ajax (也有兼容问题)
+        xhr.send();
+
+        //第四步:异步响应,这个函数是在状态改变的时候使用
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                console.log('ajax连接成功');
+                let showData = document.getElementById('showData');
+                showData.innerHTML = xhr.responseText;
+                console.log(xhr.responseText);
+            }
+        }
+    }
+</script>
+</html>

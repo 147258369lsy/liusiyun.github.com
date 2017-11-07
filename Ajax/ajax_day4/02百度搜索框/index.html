@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" placeholder="请输入" id="keyword">
+<div id="show"></div>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    let keyword = $('#keyword');
+    let show = $('#show');
+
+    keyword.keyup(function () {
+        let keywordValue = keyword.val();
+        $.ajax({
+            type: 'get',
+            dataType: 'jsonp',
+            url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + keywordValue,
+            jsonp: 'cb',
+            success: function (data) {
+                console.log(data.s);
+                let keywordArr = data.s;
+                let tag = '';
+                tag += '<ul>';
+                for(let item of data.s){
+                    tag += `<li>${item}</li>`;
+                }
+                tag += '</ul>';
+                show.html(tag);
+
+                console.log($('#show ul li'));
+                $('#show ul li').click(function () {
+                    console.log(this.innerHTML);
+
+                    $('#keyword').val(this.innerHTML); //用jquery来改变设置value值
+                })
+            }
+        })
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let height = 4;
+    let width = 10;
+
+//    let box = {
+//        height: height,
+//        width: width
+//    }
+    //在es6中,对象的key和value相同,可以简写
+    let box = {
+        height,
+        width
+    }
+    console.log(box);
+
+    function test() {
+        function add() {
+            console.log('111');
+        }
+
+        return {
+            add
+        }
+    }
+    test().add();
+
+    //对象属性叠加
+    let person = {
+        name: '王丰',
+        isSingle: false,
+        strength: 175
+    }
+    let person2 = {
+        strength:180,
+        sex: "nan"
+    }
+
+    let newPerson = Object.assign({},person,person2);
+    console.log(newPerson);
+
+    //数组的遍历for of
+    let arrs = ['wfneg', 'zhuoshenghui','hezhichneg'];
+    for(let item of arrs){
+        console.log(item);
+    }
+
+    //可以将类数组转换成数组 比如arguments
+    function sum(){
+        arguments = Array.from(arguments);
+        return arguments.reduce((pre,cur) => { return pre + cur;});
+    }
+    console.log(sum(1,2,3,4,5));
+
+    //find findIndex 只要找到一个就返回
+    let students = [
+       {name: 'nlj', course: '体育'},
+       {name: 'cf', course: '消消乐'},
+       {name: 'cx', course: '消消乐'},
+       {name: 'ly', course: '吃苹果'},
+       {name: 'zhx', course: '吃苹果'}
+    ]
+
+    let courseXxlIndex = students.findIndex((student) => {
+        return student.course === '消消乐';
+    })
+    let courseCpg = students.find((student) => {
+        return student.course === '吃苹果';
+    })
+    let courseCpg2 = students.find((student) => {
+        return student.course === '吃苹果';
+    })
+
+    console.log(courseXxlIndex);
+    console.log(courseCpg);
+    console.log(courseCpg2);
+</script>
+</body>
+</html>

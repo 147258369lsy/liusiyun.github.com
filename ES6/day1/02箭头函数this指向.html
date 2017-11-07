@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let person = {
+        name:'wfeng',
+        hobbies:['睡觉','看电影','吃鸡'],
+        showHobbies:function () {
+            this.hobbies.forEach(function (hobby) {
+                console.log('${this.name} likes ${hobby}');
+            })
+        }
+    };
+
+    person.showHobbies(); //这里会发生this的丢失
+    //以下解决方案
+    let person2 = {
+        name:'wfeng',
+        hobbies:['睡觉','看电影','吃鸡'],
+        showHobbies:function () {
+            let self = this;
+            this.hobbies.forEach(function (hobby) {
+                console.log(`${this.name} likes ${hobby}`);
+            })
+        }
+    };
+    person2.showHobbies();
+
+    //es6 的箭头函数的做法,箭头函数不会发生this丢失
+    let person3 = {
+        name: 'wangfeng',
+        hobbies: ['睡觉', '看电影', '吃鸡'],
+        showHobbies() {
+            this.hobbies.forEach((hobby) => {
+                console.log(`${this.name} likes ${hobby}`);
+            })
+        }
+    }
+    person3.showHobbies();
+</script>
+</body>
+</html>

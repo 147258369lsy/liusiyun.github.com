@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/angular/angular.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp">
+    <div ng-controller="FirstController">
+       用户名: <input type="text" placeholder="请输入用户名" ng-model="username">
+        <br>
+        <input type="button" value="注册" ng-click="show()">
+
+    </div>
+</div>
+<script>
+    //注册模块的语法如下:缺一不可,需要传入两个参数,一个是模块名,一个是数组(依赖的模块)
+    angular.module('myApp', [])
+    //注册控制器:第一个参数是控制器的名字, 第二个参数是一个函数声明
+        .controller('FirstController', function ($scope) {
+            $scope.show = function () {
+                console.log('hello 控制器');
+                console.log($scope.username);
+            }
+        })
+</script>
+</body>
+</html>

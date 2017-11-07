@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   //预解析过程,会将变量提升
+   //var getName
+   //function getName(){} 两个都会被提升
+   function Foo() {
+        getName = function () { console.log(1); };
+        return this;
+    }
+
+    Foo.getName = function () { console.log(2); };
+
+   Foo.prototype.getName = function () {
+       console.log(3);
+   }
+
+   var getName = function () {
+       console.log(4);
+   }
+
+   function getName() {
+       console.log(5);
+   }
+
+   //只剩 getName = function(){ console.log(4); }; 故第二个结果为4
+   //写出下列运行结果
+    Foo.getName(); // 2
+    getName();//4
+    Foo().getName();  // 1 Foo()运行结果为window ===>window.getName();
+    getName(); // 1
+    new Foo.getName(); // 2
+    new Foo().getName(); // 3 ==>Foo构造函数的实例对象的getName执行
+    new new Foo().getName();// 3 ==>new Foo.getName() ==>new function(){ console.log(3); }()
+                                    //所以结果为3
+</script>
+</body>
+</html>

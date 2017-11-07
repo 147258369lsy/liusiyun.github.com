@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/lodash/dist/lodash.js"></script>
+<body ng-app="app" ng-controller="AppCtrl">
+<ul>
+    <li ng-repeat="item in items track by $index">{{item}}</li>
+</ul>
+<ul>
+    <li ng-repeat="(key,value) in data">{{key + ":" +value}}</li>
+</ul>
+<ul>
+    <li ng-repeat="student in students">
+        {{student.name + student.age}}
+        <input type="button" value="X" ng-click="remove(student)">
+    </li>
+</ul>
+</body>
+<script>
+    angular.module('app',[])
+    .controller('AppCtrl',function ($scope) {
+        $scope.items = [1,2,3,4,4];
+
+        $scope.data = {
+            name : '汪峰',
+            age : 30,
+            sex : 'man',
+            id : 01
+        }
+
+        $scope.students = [];
+        for(var i=0; i < 10;i++){
+            $scope.students[$scope.students.length] = {
+                id : i,
+                name : 'wfeng' + i + '代',
+                age: 30 + i
+            }
+        }
+
+        //点击删除相相应的li对象
+        $scope.remove = function (student) {
+            var index = $scope.students.indexOf(student);
+            $scope.students.splice(index,1);
+
+        //  方法二
+//            var rest = _.remove($scope.students,function (n) {
+//                return n === student;
+//            });
+            console.log(student);
+//            console.log(rest);
+        }
+    })
+
+
+</script>
+</html>

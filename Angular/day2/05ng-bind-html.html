@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+</head>
+<body ng-app="myApp" ng-init="msg='<a href=\'http://www.baidu.com\'>百度</a>'">
+<p>{{msg}}</p>
+<p ng-bind-html="msg"></p>
+
+
+</body>
+<script>
+    angular.module('myApp',['ngSanitize'])
+</script>
+</html>
